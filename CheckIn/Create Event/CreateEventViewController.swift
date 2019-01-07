@@ -38,7 +38,6 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         textField.backgroundColor = .white
     }
     
-    
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         let vc = LoadStudentsViewController()
         vc.modalPresentationStyle = .formSheet

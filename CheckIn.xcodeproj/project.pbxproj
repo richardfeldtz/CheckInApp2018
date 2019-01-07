@@ -32,6 +32,7 @@
 		FB1C5DD121DE9A4C00992842 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DD021DE9A4C00992842 /* UILabel.swift */; };
 		FB1C5DD321DFC6A300992842 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DD221DFC6A300992842 /* UIColor.swift */; };
 		FB1C5DD521DFC74300992842 /* IndentedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DD421DFC74300992842 /* IndentedTextField.swift */; };
+		FB6266FE21E3D4A2009CB9CA /* FilterStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6266FD21E3D4A2009CB9CA /* FilterStudentsViewController.swift */; };
 		FB85E0FD21C03D8E004C7871 /* StudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E0FC21C03D8E004C7871 /* StudentData.swift */; };
 		FB85E10021C0571C004C7871 /* AdminToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E0FF21C0571C004C7871 /* AdminToolsViewController.swift */; };
 		FB85E10521C15A92004C7871 /* EventDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB85E10421C15A92004C7871 /* EventDetails.storyboard */; };
@@ -69,6 +70,7 @@
 		FB1C5DD021DE9A4C00992842 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		FB1C5DD221DFC6A300992842 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FB1C5DD421DFC74300992842 /* IndentedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndentedTextField.swift; sourceTree = "<group>"; };
+		FB6266FD21E3D4A2009CB9CA /* FilterStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStudentsViewController.swift; sourceTree = "<group>"; };
 		FB85E0FC21C03D8E004C7871 /* StudentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentData.swift; sourceTree = "<group>"; };
 		FB85E0FF21C0571C004C7871 /* AdminToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminToolsViewController.swift; sourceTree = "<group>"; };
 		FB85E10421C15A92004C7871 /* EventDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetails.storyboard; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				14E9945821B58D9E005105A4 /* LaunchViewController.swift */,
 				14E9945A21B58D9E005105A4 /* Main.storyboard */,
+				14E9946221B58D9F005105A4 /* LaunchScreen.storyboard */,
 			);
 			path = "Launch Screen";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 		14E9945521B58D9E005105A4 /* CheckIn */ = {
 			isa = PBXGroup;
 			children = (
+				FB6266FC21E3D491009CB9CA /* Filter Students */,
 				FB1C5DC921DD39E400992842 /* Load Students */,
 				FB85E10821C18C59004C7871 /* Create Event */,
 				FB85E10321C15A79004C7871 /* Event Details */,
@@ -168,7 +172,6 @@
 				14E9946D21B5A3DF005105A4 /* Device Registration */,
 				14E9945621B58D9E005105A4 /* AppDelegate.swift */,
 				14E9946021B58D9F005105A4 /* Assets.xcassets */,
-				14E9946221B58D9F005105A4 /* LaunchScreen.storyboard */,
 				14E9946521B58D9F005105A4 /* Info.plist */,
 				14E9945D21B58D9E005105A4 /* CheckIn.xcdatamodeld */,
 			);
@@ -204,6 +207,14 @@
 				FB1C5DCC21DD3A1600992842 /* LoadStudentsViewController.swift */,
 			);
 			path = "Load Students";
+			sourceTree = "<group>";
+		};
+		FB6266FC21E3D491009CB9CA /* Filter Students */ = {
+			isa = PBXGroup;
+			children = (
+				FB6266FD21E3D4A2009CB9CA /* FilterStudentsViewController.swift */,
+			);
+			path = "Filter Students";
 			sourceTree = "<group>";
 		};
 		FB85E0FE21C056E3004C7871 /* Admin Tools */ = {
@@ -343,6 +354,7 @@
 				FB1C5DD521DFC74300992842 /* IndentedTextField.swift in Sources */,
 				14E9945F21B58D9E005105A4 /* CheckIn.xcdatamodeld in Sources */,
 				FB85E0FD21C03D8E004C7871 /* StudentData.swift in Sources */,
+				FB6266FE21E3D4A2009CB9CA /* FilterStudentsViewController.swift in Sources */,
 				FB1C5DD321DFC6A300992842 /* UIColor.swift in Sources */,
 				14E9945721B58D9E005105A4 /* AppDelegate.swift in Sources */,
 				FB1C5DCD21DD3A1600992842 /* LoadStudentsViewController.swift in Sources */,

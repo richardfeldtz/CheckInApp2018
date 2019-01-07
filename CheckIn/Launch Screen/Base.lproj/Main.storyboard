@@ -25,7 +25,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.74509803919999995" green="0.97647058819999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Hy7-DP-cGi" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" constant="1" id="Mbc-nA-NkY"/>
                             <constraint firstItem="Hy7-DP-cGi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="d6M-v8-9qY"/>

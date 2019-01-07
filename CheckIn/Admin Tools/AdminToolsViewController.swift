@@ -23,7 +23,7 @@ class AdminToolsViewController: UIViewController {
     fileprivate func setupGestureRecognizers() {
         uploadDataView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         downloadDataView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(downloadData)))
-        filterView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        filterView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(filterStudentsTapped)))
         createEventView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCreateEventVC)))
         eventDetailsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openEventDetailsVC)))
     }
@@ -38,6 +38,15 @@ class AdminToolsViewController: UIViewController {
         let url = RestHelper.urls["Get_Students"]!
         print(RestHelper.makeGet(url, nil))
         
+    }
+    
+    
+    @objc func filterStudentsTapped(){
+        let vc = FilterStudentsViewController()
+        vc.modalPresentationStyle = .formSheet
+        vc.storyboard?.instantiateInitialViewController()
+        vc.preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
+        self.present(vc, animated: true, completion: nil)
     }
     
     @objc func openCreateEventVC() {
