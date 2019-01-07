@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Sq-P5-Z6J">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="EjU-S4-JnP">
+            <objects>
+                <viewController modalPresentationStyle="formSheet" id="8Sq-P5-Z6J" customClass="ProfileViewController" customModule="CheckIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zpb-ip-rJZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIH-VT-vZz">
+                                <rect key="frame" x="16" y="615" width="44" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="dismissProfile:" destination="8Sq-P5-Z6J" eventType="touchUpInside" id="RAx-HG-22m"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfc-gS-gBx" customClass="UnderLinedLabel" customModule="CheckIn" customModuleProvider="target">
+                                <rect key="frame" x="140.5" y="67" width="94.5" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="9Bj-t5-Fup"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVd-4W-hxd">
+                                <rect key="frame" x="16" y="407" width="42" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="vez-1l-LWD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number  in party:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiY-4F-SQT">
+                                <rect key="frame" x="113" y="155" width="149.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZK-CO-k1J">
+                                <rect key="frame" x="94" y="307.5" width="187" height="72"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Check In">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WZK-CO-k1J" firstAttribute="centerY" secondItem="QEA-t4-7mN" secondAttribute="centerY" id="0WM-Vq-9JD"/>
+                            <constraint firstItem="WZK-CO-k1J" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="202-Yx-8Wt"/>
+                            <constraint firstItem="rfc-gS-gBx" firstAttribute="top" secondItem="QEA-t4-7mN" secondAttribute="top" constant="47" id="SOX-Xf-HH8"/>
+                            <constraint firstAttribute="bottom" secondItem="HVd-4W-hxd" secondAttribute="bottom" constant="202" id="igN-Vj-8bs"/>
+                            <constraint firstItem="JiY-4F-SQT" firstAttribute="top" secondItem="rfc-gS-gBx" secondAttribute="bottom" constant="17" id="irL-Gm-EuO"/>
+                            <constraint firstItem="JiY-4F-SQT" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="jrF-ex-SuC"/>
+                            <constraint firstItem="QEA-t4-7mN" firstAttribute="bottom" secondItem="pIH-VT-vZz" secondAttribute="bottom" constant="16" id="v93-vE-bzf"/>
+                            <constraint firstItem="pIH-VT-vZz" firstAttribute="leading" secondItem="QEA-t4-7mN" secondAttribute="leading" constant="16" id="wZa-mv-3Qw"/>
+                            <constraint firstItem="rfc-gS-gBx" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="xad-io-rbu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QEA-t4-7mN"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="667"/>
+                    <connections>
+                        <outlet property="checkInLabel" destination="rfc-gS-gBx" id="41J-7v-nC1"/>
+                        <outlet property="idLabel" destination="HVd-4W-hxd" id="VGG-xR-JOA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="axc-jr-h9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="161.46926536731635"/>
+        </scene>
+    </scenes>
+</document>
