@@ -105,7 +105,7 @@
                                 <state key="normal" title="Create Event"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.36470589040000001" green="0.066666670139999995" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="H14-ok-Uhh" firstAttribute="trailing" secondItem="okl-VK-pTQ" secondAttribute="trailing" id="4qH-NC-oAC"/>
                             <constraint firstItem="okl-VK-pTQ" firstAttribute="leading" secondItem="H14-ok-Uhh" secondAttribute="leading" id="5TB-nP-PsG"/>

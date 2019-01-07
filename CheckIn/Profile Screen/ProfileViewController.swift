@@ -11,11 +11,14 @@ import UIKit
 
 class ProfileViewController : UIViewController {
     
+    
+    @IBOutlet var numberInPartyTextField: UITextField!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet var checkInLabel: UILabel!
     @IBAction func dismissProfile(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     
     var fname = ""
     var lname = ""
@@ -27,6 +30,7 @@ class ProfileViewController : UIViewController {
         checkInLabel.text = "Check In \(fname) \(lname)"
         navigationController?.setNavigationBarHidden(false, animated: true)
         preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
-        
+        numberInPartyTextField.text = "3"
+        numberInPartyTextField.textAlignment = .center
     }
 }

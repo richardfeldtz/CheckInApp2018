@@ -50,7 +50,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         tableView.delegate = self
         
-        self.navigationItem.title = "Hometown Hall"
+        self.navigationItem.title = "Hometown Hall 2018"
         
         // Setup the Search Controller
         searchController.searchResultsUpdater = self

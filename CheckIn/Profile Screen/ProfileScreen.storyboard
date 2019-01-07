@@ -43,8 +43,9 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number  in party:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiY-4F-SQT">
-                                <rect key="frame" x="113" y="155" width="149.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number in party:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiY-4F-SQT">
+                                <rect key="frame" x="95" y="155" width="145" height="24"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -57,15 +58,26 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="#" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bPm-y8-NZK">
+                                <rect key="frame" x="248" y="155" width="16.5" height="24"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WZK-CO-k1J" firstAttribute="centerY" secondItem="QEA-t4-7mN" secondAttribute="centerY" id="0WM-Vq-9JD"/>
+                            <constraint firstItem="JiY-4F-SQT" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" constant="-20" id="12I-Bf-Ibn"/>
                             <constraint firstItem="WZK-CO-k1J" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="202-Yx-8Wt"/>
+                            <constraint firstItem="bPm-y8-NZK" firstAttribute="height" secondItem="JiY-4F-SQT" secondAttribute="height" id="HhL-wl-gKB"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="top" secondItem="QEA-t4-7mN" secondAttribute="top" constant="47" id="SOX-Xf-HH8"/>
+                            <constraint firstItem="bPm-y8-NZK" firstAttribute="top" secondItem="rfc-gS-gBx" secondAttribute="bottom" constant="17" id="Wnm-3C-kyc"/>
                             <constraint firstAttribute="bottom" secondItem="HVd-4W-hxd" secondAttribute="bottom" constant="202" id="igN-Vj-8bs"/>
                             <constraint firstItem="JiY-4F-SQT" firstAttribute="top" secondItem="rfc-gS-gBx" secondAttribute="bottom" constant="17" id="irL-Gm-EuO"/>
-                            <constraint firstItem="JiY-4F-SQT" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="jrF-ex-SuC"/>
+                            <constraint firstItem="bPm-y8-NZK" firstAttribute="centerY" secondItem="JiY-4F-SQT" secondAttribute="centerY" id="px1-8y-Pfi"/>
+                            <constraint firstItem="bPm-y8-NZK" firstAttribute="leading" secondItem="JiY-4F-SQT" secondAttribute="trailing" constant="8" id="rfi-uS-wDM"/>
                             <constraint firstItem="QEA-t4-7mN" firstAttribute="bottom" secondItem="pIH-VT-vZz" secondAttribute="bottom" constant="16" id="v93-vE-bzf"/>
                             <constraint firstItem="pIH-VT-vZz" firstAttribute="leading" secondItem="QEA-t4-7mN" secondAttribute="leading" constant="16" id="wZa-mv-3Qw"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="xad-io-rbu"/>
@@ -76,6 +88,7 @@
                     <connections>
                         <outlet property="checkInLabel" destination="rfc-gS-gBx" id="41J-7v-nC1"/>
                         <outlet property="idLabel" destination="HVd-4W-hxd" id="VGG-xR-JOA"/>
+                        <outlet property="numberInPartyTextField" destination="bPm-y8-NZK" id="pi0-zj-IoV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axc-jr-h9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
