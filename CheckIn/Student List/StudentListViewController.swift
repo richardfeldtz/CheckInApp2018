@@ -29,7 +29,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     }()
     
     
-    var data: Array<StudentData> = []
+    static var data: Array<StudentData> = []
     
     //Variable used to identify selected student before passing it to the profile view
     var selectedStudent: StudentData?
@@ -44,20 +44,21 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         let s3 = StudentData(id: "9012", fname: "Ginny", lname: "Weasley", checked: true,sname: "Hogwarts School Of Witchcraft and Wizardry")
         let s4 = StudentData(id: "3456", fname: "Hermione", lname: "Granger", checked: false,sname: "Hogwarts School Of Witchcraft and Wizardry")
         
-        data.append(s1)
-        data.append(s2)
-        data.append(s3)
-        data.append(s4)
+//        data.append(s1)
+//        data.append(s2)
+//        data.append(s3)
+//        data.append(s4)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        generateDummyData()
+        //generateDummyData()
         view.addSubview(roundButton)
         tableView.dataSource = self
         tableView.delegate = self
@@ -113,15 +114,17 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         var student:StudentData?
         if isFiltering() {
             student = filteredStudents[indexPath.row]
-        }
-        else {
-            student = data[indexPath.row]
+        } else {
+            if StudentListViewController.data.count == 0 {
+                return UITableViewCell()
+            }
+            student = StudentListViewController.data[indexPath.row]
         }
         
-        student = data[indexPath.row]
+        student = StudentListViewController.data[indexPath.row]
         
-        cell.fname.text = student!.fname
-        cell.lname.text = student!.lname
+        cell.fname.text = student!.fname?.components(separatedBy: " ").first
+        cell.lname.text = student!.fname?.components(separatedBy: " ").last
         cell.checkMark.image = student!.checked ? UIImage(named: "checkmark") : nil
         
         cell.fname.numberOfLines=0;
@@ -146,10 +149,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             selectedStudent = filteredStudents[indexPath.row]
         }
         else {
-            selectedStudent = data[indexPath.row]
+            selectedStudent = StudentListViewController.data[indexPath.row]
         }
         
-        selectedStudent = data[indexPath.row]
+        selectedStudent = StudentListViewController.data[indexPath.row]
         self.performSegue(withIdentifier: "showProfile", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -187,7 +190,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     //Function to create filtered list based on search text
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredStudents = data.filter({( student : StudentData) -> Bool in
+        filteredStudents = StudentListViewController.data.filter({( student : StudentData) -> Bool in
             return (student.fname!.lowercased().contains(searchText.lowercased()) || student.lname!.lowercased().contains(searchText.lowercased()))
         })
 

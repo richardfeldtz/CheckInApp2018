@@ -47,8 +47,8 @@ class AdminToolsViewController: UIViewController {
             {
                 
                 for item in jsonArray {
-                    let studentDataItem = StudentData(id: item["ID"], fname: "Harry", lname: "",checked: true , sname: item["School_Name"])
-                    print(item)
+                    let studentDataItem = StudentData(id: item["ID"], fname: item["Name"], lname: "",checked: true , sname: item["School_Name"])
+                    StudentListViewController.data.append(studentDataItem)
                     CoreDataHelper.saveStudentData(item, "Student")
    
                 }
