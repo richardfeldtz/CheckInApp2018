@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 class AdminToolsViewController: UIViewController {
     
     @IBOutlet var uploadDataView: UIView!
@@ -35,10 +37,30 @@ class AdminToolsViewController: UIViewController {
     @objc func downloadData() {
         
         let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/students")!
-        print(RestHelper.makePost(url, ["identifier": "test", "key": "123456"]))
+        let jsonString = RestHelper.makePost(url, ["identifier": "test", "key": "123456"])
+        
+        CoreDataHelper.deleteData()
+        
+        let data = jsonString.data(using: .utf8)!
+        do {
+            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]
+            {
+                
+                for item in jsonArray {
+                    let studentDataItem = StudentData(id: item["ID"], fname: "Harry", lname: "",checked: true , sname: item["School_Name"])
+                    print(item)
+                    CoreDataHelper.saveStudentData(item, "Student")
+   
+                }
+                
+            } else {
+                print("bad json")
+            }
+        } catch let error as NSError {
+            print(error)
+        }
         
     }
-    
     
     @objc func filterStudentsTapped(){
         let vc = FilterStudentsViewController()
@@ -59,5 +81,6 @@ class AdminToolsViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "EventDetails") as! EventDetailsViewController
         self.show(vc, sender: self)
     }
+    
     
 }

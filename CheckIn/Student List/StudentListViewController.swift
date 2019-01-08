@@ -21,6 +21,14 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         return roundButton
     }()
     
+    private lazy var firstNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "First Name"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
     var data: Array<StudentData> = []
     
     //Variable used to identify selected student before passing it to the profile view
@@ -43,6 +51,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         generateDummyData()
@@ -58,7 +70,6 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         searchController.searchBar.placeholder = "Search Students"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        
     }
     
     override func viewWillLayoutSubviews() {
@@ -92,10 +103,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         if isFiltering() {
             return filteredStudents.count
         }
-        return data.count
+        return CoreDataHelper.countOfEntity("Student")
+        
     }
     
-    //Method to populate the rows
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentListCell") as! StudentTableViewCell
         
@@ -185,7 +196,11 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        headerView.backgroundColor = .red
+        headerView.addSubview(firstNameLabel)
+        NSLayoutConstraint.activate([
+            firstNameLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+            firstNameLabel.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 0.1 * headerView.frame.width + 10),
+        ])
         
         return headerView
     }
