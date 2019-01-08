@@ -34,9 +34,8 @@ class AdminToolsViewController: UIViewController {
     
     @objc func downloadData() {
         
-        //let url = URL(string: RestHelper.urls["Get_Students"]!)
-        let url = RestHelper.urls["Get_Students"]!
-        print(RestHelper.makeGet(url, nil))
+        let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/students")!
+        print(RestHelper.makePost(url, ["identifier": "test", "key": "123456"]))
         
     }
     
