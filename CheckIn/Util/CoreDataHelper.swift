@@ -28,7 +28,7 @@ public class CoreDataHelper {
         let descrEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!
         let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
         obj.setValue(false, forKeyPath: "checked")
-        obj.setValue(jsonObj["Name"], forKeyPath: "fname")
+        obj.setValue(jsonObj["Name"], forKeyPath: "name")
         obj.setValue(jsonObj["School_Name"], forKey: "sname")
         obj.setValue(jsonObj["ID"], forKey: "sfid")
         
@@ -41,22 +41,33 @@ public class CoreDataHelper {
         }
     }
     
-    class func retrieveData() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+    class func retrieveStudentData() -> Array<Student>?{
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
         
         do {
-            let result = try managedContext.fetch(fetchRequest)
-            for data in result as! [NSManagedObject] {
-                print(data.value(forKey: "fname") as! String)
-            }
+            let result = try managedContext.fetch(fetchRequest) as! [Student]
+            return result 
+//            for data in result {
+//                print(type(of: data))
+//                print(data.sname)
+////                let id = item.value(forKey: "sfid")
+////                let name = item.value(forKey: "name")
+////                let sname = item.value(forKey: "sname")
+////                let checked = item.value(forKey: "checked")
+////                data.append(StudentData(id: id as? String, name: name as? String, checked: checked as? Bool ,sname: sname as? String))
+//                //return
+//                //print(data.value(forKey: "fname") as! String)
+//            }
             
         } catch {
             print("Failed")
         }
+        
+        return nil
     }
     
     
@@ -94,5 +105,7 @@ public class CoreDataHelper {
         let _ = try! managedContext.execute(request)
 
     }
+    
+    
     
 }

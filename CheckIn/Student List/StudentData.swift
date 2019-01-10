@@ -10,8 +10,7 @@ import Foundation
 
 struct StudentData {
     var id:String?
-    var fname:String?
-    var lname:String?
+    var name:String?
     var checked:Bool = false
     var sname:String?
 }
