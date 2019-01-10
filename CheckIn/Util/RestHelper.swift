@@ -61,7 +61,6 @@ public class RestHelper {
         else {
             return String(data: data!, encoding: String.Encoding.utf8)!
         }
-        
     }
     
 }

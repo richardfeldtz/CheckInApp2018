@@ -34,6 +34,8 @@
 		FB1C5DD521DFC74300992842 /* IndentedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DD421DFC74300992842 /* IndentedTextField.swift */; };
 		FB6266FE21E3D4A2009CB9CA /* FilterStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6266FD21E3D4A2009CB9CA /* FilterStudentsViewController.swift */; };
 		FB62670221E52A68009CB9CA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62670121E52A68009CB9CA /* CoreDataHelper.swift */; };
+		FB62670621E54CE6009CB9CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62670521E54CE6009CB9CA /* ViewController.swift */; };
+		FB62670821E6940E009CB9CA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62670721E6940E009CB9CA /* Date.swift */; };
 		FB85E0FD21C03D8E004C7871 /* StudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E0FC21C03D8E004C7871 /* StudentData.swift */; };
 		FB85E10021C0571C004C7871 /* AdminToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E0FF21C0571C004C7871 /* AdminToolsViewController.swift */; };
 		FB85E10521C15A92004C7871 /* EventDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB85E10421C15A92004C7871 /* EventDetails.storyboard */; };
@@ -73,6 +75,8 @@
 		FB1C5DD421DFC74300992842 /* IndentedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndentedTextField.swift; sourceTree = "<group>"; };
 		FB6266FD21E3D4A2009CB9CA /* FilterStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStudentsViewController.swift; sourceTree = "<group>"; };
 		FB62670121E52A68009CB9CA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		FB62670521E54CE6009CB9CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB62670721E6940E009CB9CA /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FB85E0FC21C03D8E004C7871 /* StudentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentData.swift; sourceTree = "<group>"; };
 		FB85E0FF21C0571C004C7871 /* AdminToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminToolsViewController.swift; sourceTree = "<group>"; };
 		FB85E10421C15A92004C7871 /* EventDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetails.storyboard; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				FB1C5DD221DFC6A300992842 /* UIColor.swift */,
 				FB1C5DD421DFC74300992842 /* IndentedTextField.swift */,
 				FB62670121E52A68009CB9CA /* CoreDataHelper.swift */,
+				FB62670521E54CE6009CB9CA /* ViewController.swift */,
+				FB62670721E6940E009CB9CA /* Date.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 				FB1C5DD121DE9A4C00992842 /* UILabel.swift in Sources */,
 				14E9945921B58D9E005105A4 /* LaunchViewController.swift in Sources */,
 				FB1C5DD521DFC74300992842 /* IndentedTextField.swift in Sources */,
+				FB62670621E54CE6009CB9CA /* ViewController.swift in Sources */,
 				14E9945F21B58D9E005105A4 /* CheckIn.xcdatamodeld in Sources */,
 				FB62670221E52A68009CB9CA /* CoreDataHelper.swift in Sources */,
 				FB85E0FD21C03D8E004C7871 /* StudentData.swift in Sources */,
@@ -366,6 +373,7 @@
 				FB85E10021C0571C004C7871 /* AdminToolsViewController.swift in Sources */,
 				14E9947221B5E061005105A4 /* InternetConnectionTest.swift in Sources */,
 				149B8E9221B76E730009ACC3 /* ProfileViewController.swift in Sources */,
+				FB62670821E6940E009CB9CA /* Date.swift in Sources */,
 				14E9947421B5E125005105A4 /* RestHelper.swift in Sources */,
 				FB1C5DCF21DE984900992842 /* UIView.swift in Sources */,
 				149B8E8D21B762700009ACC3 /* StudentTableViewCell.swift in Sources */,
@@ -518,6 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7HGN23NTW;
 				INFOPLIST_FILE = CheckIn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,6 +545,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7HGN23NTW;
 				INFOPLIST_FILE = CheckIn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -27,10 +27,10 @@ public class CoreDataHelper {
         let managedContext = appDelegate.persistentContainer.viewContext
         let descrEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!
         let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
+        obj.setValue(false, forKeyPath: "checked")
         obj.setValue(jsonObj["Name"], forKeyPath: "fname")
         obj.setValue(jsonObj["School_Name"], forKey: "sname")
         obj.setValue(jsonObj["ID"], forKey: "sfid")
-        obj.setValue("test.com", forKey: "lname")
         
         do {
             try managedContext.save()
@@ -93,21 +93,6 @@ public class CoreDataHelper {
         let request = NSBatchDeleteRequest(fetchRequest: fetch)
         let _ = try! managedContext.execute(request)
 
-//        do{
-//            let test = try managedContext.fetch(fetchRequest)
-//
-//            let objectToDelete = test[0] as! NSManagedObject
-//            managedContext.delete(objectToDelete)
-//
-//            do{
-//                try managedContext.save()
-//            }catch{
-//                print(error)
-//            }
-//
-//        }catch{
-//            print(error)
-//        }
     }
     
 }

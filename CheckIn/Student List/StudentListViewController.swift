@@ -121,8 +121,8 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             student = StudentListViewController.data[indexPath.row]
         }
         
-        student = StudentListViewController.data[indexPath.row]
-        
+        //student = StudentListViewController.data[indexPath.row]
+        //gross
         cell.fname.text = student!.fname?.components(separatedBy: " ").first
         cell.lname.text = student!.fname?.components(separatedBy: " ").last
         cell.checkMark.image = student!.checked ? UIImage(named: "checkmark") : nil
@@ -140,10 +140,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         return cell
     }
     
-    /*
-        Method that defines action to be done when a row is selected
-        In this case, populate selectedStudent and perform segue to profileView
-     */
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFiltering() {
             selectedStudent = filteredStudents[indexPath.row]

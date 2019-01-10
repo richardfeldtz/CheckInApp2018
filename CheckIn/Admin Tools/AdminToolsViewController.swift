@@ -35,6 +35,8 @@ class AdminToolsViewController: UIViewController {
     }
     
     @objc func downloadData() {
+        let progressHUD = ProgressHUD(text: "Downloding Data")
+        self.view.addSubview(progressHUD)
         
         let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/students")!
         let jsonString = RestHelper.makePost(url, ["identifier": "test", "key": "123456"])
@@ -43,8 +45,7 @@ class AdminToolsViewController: UIViewController {
         
         let data = jsonString.data(using: .utf8)!
         do {
-            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]
-            {
+            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]{
                 
                 for item in jsonArray {
                     let studentDataItem = StudentData(id: item["ID"], fname: item["Name"], lname: "",checked: true , sname: item["School_Name"])
@@ -53,12 +54,14 @@ class AdminToolsViewController: UIViewController {
    
                 }
                 
+                
             } else {
                 print("bad json")
             }
         } catch let error as NSError {
             print(error)
         }
+        
         
     }
     
