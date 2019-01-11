@@ -41,22 +41,20 @@ public class CoreDataHelper {
         }
     }
     
-    class func retrieveData() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+    class func retrieveData(_ entityName: String) -> [Any]{
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [] }
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         
         do {
             let result = try managedContext.fetch(fetchRequest)
-            for data in result as! [NSManagedObject] {
-                print(data.value(forKey: "fname") as! String)
-            }
-            
+            return result
         } catch {
             print("Failed")
         }
+        return []
     }
     
     
@@ -89,8 +87,12 @@ public class CoreDataHelper {
         
 //        let deleteRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
         //fetchRequest.predicate = NSPredicate(format: "username = %@", "Ankur3")
-        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
-        let request = NSBatchDeleteRequest(fetchRequest: fetch)
+        var fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
+        var request = NSBatchDeleteRequest(fetchRequest: fetch)
+        let _ = try! managedContext.execute(request)
+        
+        fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Checkins")
+        request = NSBatchDeleteRequest(fetchRequest: fetch)
         let _ = try! managedContext.execute(request)
 
 //        do{
