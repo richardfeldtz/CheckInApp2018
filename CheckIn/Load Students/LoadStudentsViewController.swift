@@ -120,7 +120,6 @@ class LoadStudentsViewController: UIViewController, UIPickerViewDataSource, UIPi
         NSLayoutConstraint.activate([
             addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             addButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
-            addButton.widthAnchor.constraint(equalToConstant: view.frame.width/4),
             addButton.heightAnchor.constraint(equalToConstant: 50)
             ])
         NSLayoutConstraint.activate([

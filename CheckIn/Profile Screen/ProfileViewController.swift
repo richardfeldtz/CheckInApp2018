@@ -15,8 +15,10 @@ class ProfileViewController : UIViewController {
     
     
     @IBOutlet var checkInLabel: UILabel!
+    
     @IBAction func dismissProfile(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        delegate?.myVCDidFinish(self, text: "Alex")
     }
     @IBAction func checkIn(_ sender: UIButton) {
         
@@ -73,4 +75,9 @@ class ProfileViewController : UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
     }
+    
+    @IBAction func checkInStudent(_ sender: Any) {
+        CoreDataHelper.updateStudentData(entityName: "Student", APS_ID: id)
+    }
+    
 }

@@ -10,8 +10,23 @@ import Foundation
 import CoreData
 import UIKit
 
-class StudentListViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
+protocol FooTwoViewControllerDelegate:class {
+    func myVCDidFinish(_ controller: ProfileViewController, text: String)
+}
+
+class StudentListViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, FooTwoViewControllerDelegate {
     
+    
+    func myVCDidFinish(_ controller: ProfileViewController, text: String) {
+        //swift 3
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
+        print("back to student list")
+        tableView.setNeedsDisplay()
+    }
+    
+
     @IBOutlet weak var tableView: UITableView!
     
     private lazy var roundButton: UIButton = {
@@ -54,7 +69,12 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        fetchCurrentCoreData()
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
+        print("view appearing")
+        tableView.setNeedsDisplay()
     }
     
     override func viewDidLoad() {
@@ -72,6 +92,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         searchController.searchBar.placeholder = "Search Students"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        print("view loading")
     }
     
     override func viewWillLayoutSubviews() {
@@ -116,10 +137,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         if isFiltering() {
             student = filteredStudents[indexPath.row]
         } else {
-            if StudentListViewController.data.count == 0 {
+            if data.count == 0 {
                 return UITableViewCell()
             }
-            student = StudentListViewController.data[indexPath.row]
+            student = data[indexPath.row]
         }
         
 //        student = StudentListViewController.data[indexPath.row]
@@ -134,30 +155,25 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         cell.fname.minimumScaleFactor = 0.1
         cell.fname.adjustsFontSizeToFitWidth=true
         
-        cell.lname.numberOfLines=0;
-        cell.lname.font = UIFont(name: "HelveticaNeue", size: 20)
-        cell.lname.minimumScaleFactor = 0.1
-        cell.lname.adjustsFontSizeToFitWidth=true
-        
         return cell
     }
     
-    /*
-        Method that defines action to be done when a row is selected
-        In this case, populate selectedStudent and perform segue to profileView
-     */
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFiltering() {
             selectedStudent = filteredStudents[indexPath.row]
         }
         else {
-            selectedStudent = StudentListViewController.data[indexPath.row]
+            selectedStudent = data[indexPath.row]
         }
         
-        selectedStudent = StudentListViewController.data[indexPath.row]
+        selectedStudent = data[indexPath.row]
+        
+        
         self.performSegue(withIdentifier: "showProfile", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
@@ -166,6 +182,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             
             profile.name = (selectedStudent?.name)!
             profile.id = (selectedStudent?.id)!
+            profile.delegate = self
             
         }
     }
@@ -175,14 +192,14 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         let vc = storyboard.instantiateViewController(withIdentifier: "AdminToolsViewController") as! AdminToolsViewController
         self.show(vc, sender: self)
     }
-
+    
     let searchController = UISearchController(searchResultsController: nil)
-
+    
     //Function checks if list has been filtered via search text
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
     }
-
+    
     //Function checks if search text is empty
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
@@ -194,7 +211,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         filteredStudents = StudentListViewController.data.filter({( student : StudentData) -> Bool in
             return (student.name!.lowercased().contains(searchText.lowercased()))
         })
-
+        
         tableView.reloadData()
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
-
+    
     let schoolPickerView = UIPickerView()
     let gradePickerView = UIPickerView()
     let schoolData = ["LJFF", "Hogwarts", "Durmstrang"]
@@ -186,5 +186,5 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
             gradeTextField.text = String(gradeData[row])
         }
     }
-
+    
 }

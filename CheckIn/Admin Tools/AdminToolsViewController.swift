@@ -55,6 +55,8 @@ class AdminToolsViewController: UIViewController {
     }
     
     @objc func downloadData() {
+//        let progressHUD = ProgressHUD(text: "Downloding Data")
+//        self.view.addSubview(progressHUD)
         
         let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/students")!
         let jsonString = RestHelper.makePost(url, ["identifier": "test", "key": "123456"])
@@ -65,15 +67,13 @@ class AdminToolsViewController: UIViewController {
         
         let data = jsonString.data(using: .utf8)!
         do {
-            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]
-            {
+            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]{
                 
                 for item in jsonArray {
                     let studentDataItem = StudentData(id: item["APS_Student_ID"], name: item["Name"],checked: false , sname: item["School_Name"])
                     StudentListViewController.data.append(studentDataItem)
                     StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
                     CoreDataHelper.saveStudentData(item, "Student")
-   
                 }
                 
                 let downloadAlert = UIAlertController(title: "Success", message: "Student list successfully downloaded", preferredStyle: .alert)

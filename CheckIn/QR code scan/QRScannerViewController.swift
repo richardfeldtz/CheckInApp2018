@@ -151,6 +151,10 @@ class QRScannerViewController : UIViewController {
     }
     
     @objc func returnToStudentList() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.popToRootViewController(animated: true)
     }

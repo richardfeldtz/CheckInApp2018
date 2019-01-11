@@ -27,6 +27,7 @@ public class CoreDataHelper {
         let managedContext = appDelegate.persistentContainer.viewContext
         let descrEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!
         let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
+        obj.setValue(false, forKeyPath: "checked")
         obj.setValue(jsonObj["Name"], forKeyPath: "name")
         obj.setValue(jsonObj["School_Name"], forKey: "sname")
         obj.setValue(jsonObj["APS_Student_ID"], forKey: "id")
@@ -51,34 +52,32 @@ public class CoreDataHelper {
         do {
             let result = try managedContext.fetch(fetchRequest)
             return result
+            
         } catch {
             print("Failed")
         }
         return []
     }
     
-    
-    class func updateData(){
+    class func updateStudentData(entityName: String, APS_ID: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format: "username = %@", "Ankur1")
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: entityName)
+        fetchRequest.predicate = NSPredicate(format: "id = %@", APS_ID)
         do {
-            let test = try managedContext.fetch(fetchRequest)
-            
-            let objectUpdate = test[0] as! NSManagedObject
-            objectUpdate.setValue("newName", forKey: "username")
-            objectUpdate.setValue("newmail", forKey: "email")
-            objectUpdate.setValue("newpassword", forKey: "password")
+            let studentObj = try managedContext.fetch(fetchRequest)
+            let objectUpdate = studentObj[0] as! NSManagedObject
+            objectUpdate.setValue(true, forKey: "checked")
             do{
                 try managedContext.save()
+                print("Student Updated!")
             }catch{
                 print(error)
             }
         } catch {
             print(error)
         }
-        
     }
     
     class func deleteData(){
@@ -97,19 +96,34 @@ public class CoreDataHelper {
 
 //        do{
 //            let test = try managedContext.fetch(fetchRequest)
-//
-//            let objectToDelete = test[0] as! NSManagedObject
-//            managedContext.delete(objectToDelete)
-//
+//            
+//            let objectUpdate = test[0] as! NSManagedObject
+//            objectUpdate.setValue("newName", forKey: "username")
+//            objectUpdate.setValue("newmail", forKey: "email")
+//            objectUpdate.setValue("newpassword", forKey: "password")
 //            do{
 //                try managedContext.save()
 //            }catch{
 //                print(error)
 //            }
-//
-//        }catch{
+//        } catch {
 //            print(error)
 //        }
+//        
+//    }
+    
+    class func deleteData(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        //        let deleteRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
+        //fetchRequest.predicate = NSPredicate(format: "username = %@", "Ankur3")
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
+        let request = NSBatchDeleteRequest(fetchRequest: fetch)
+        let _ = try! managedContext.execute(request)
+        
     }
+    
+    
     
 }
