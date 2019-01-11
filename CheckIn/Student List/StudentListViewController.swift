@@ -30,6 +30,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     
     static var data: Array<StudentData> = []
+    static var idmap = [String : Int]()
     
     //Variable used to identify selected student before passing it to the profile view
     var selectedStudent: StudentData?
@@ -39,10 +40,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     //Dummy data for test
     func generateDummyData() {
-        let s1 = StudentData(id: "1234", fname: "Harry",lname: "Potter",checked: true,sname: "Hogwarts School Of Witchcraft and Wizardry")
-        let s2 = StudentData(id: "5678", fname: "Ron", lname: "Weasley", checked: false,sname: "Hogwarts School Of Witchcraft and Wizardry")
-        let s3 = StudentData(id: "9012", fname: "Ginny", lname: "Weasley", checked: true,sname: "Hogwarts School Of Witchcraft and Wizardry")
-        let s4 = StudentData(id: "3456", fname: "Hermione", lname: "Granger", checked: false,sname: "Hogwarts School Of Witchcraft and Wizardry")
+//        let s1 = StudentData(id: "1234", fname: "Harry",lname: "Potter",checked: true,sname: "Hogwarts School Of Witchcraft and Wizardry")
+//        let s2 = StudentData(id: "5678", fname: "Ron", lname: "Weasley", checked: false,sname: "Hogwarts School Of Witchcraft and Wizardry")
+//        let s3 = StudentData(id: "9012", fname: "Ginny", lname: "Weasley", checked: true,sname: "Hogwarts School Of Witchcraft and Wizardry")
+//        let s4 = StudentData(id: "3456", fname: "Hermione", lname: "Granger", checked: false,sname: "Hogwarts School Of Witchcraft and Wizardry")
         
 //        data.append(s1)
 //        data.append(s2)
@@ -121,10 +122,11 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             student = StudentListViewController.data[indexPath.row]
         }
         
-        student = StudentListViewController.data[indexPath.row]
+//        student = StudentListViewController.data[indexPath.row]
+        print(student?.checked)
         
-        cell.fname.text = student!.fname?.components(separatedBy: " ").first
-        cell.lname.text = student!.fname?.components(separatedBy: " ").last
+        cell.fname.text = student!.name?.components(separatedBy: " ").first
+        cell.lname.text = student!.name?.components(separatedBy: " ").last
         cell.checkMark.image = student!.checked ? UIImage(named: "checkmark") : nil
         
         cell.fname.numberOfLines=0;
@@ -162,8 +164,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         if let profile = segue.destination as? ProfileViewController
         {
             
-            profile.fname = (selectedStudent?.fname)!
-            profile.lname = (selectedStudent?.lname)!
+            profile.name = (selectedStudent?.name)!
             profile.id = (selectedStudent?.id)!
             
         }
@@ -191,22 +192,22 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     //Function to create filtered list based on search text
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredStudents = StudentListViewController.data.filter({( student : StudentData) -> Bool in
-            return (student.fname!.lowercased().contains(searchText.lowercased()) || student.lname!.lowercased().contains(searchText.lowercased()))
+            return (student.name!.lowercased().contains(searchText.lowercased()))
         })
 
         tableView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        headerView.addSubview(firstNameLabel)
-        NSLayoutConstraint.activate([
-            firstNameLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
-            firstNameLabel.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 0.1 * headerView.frame.width + 10),
-        ])
-        
-        return headerView
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+//        headerView.addSubview(firstNameLabel)
+//        NSLayoutConstraint.activate([
+//            firstNameLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+//            firstNameLabel.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 0.1 * headerView.frame.width + 10),
+//        ])
+//
+//        return headerView
+//    }
     
 }
 

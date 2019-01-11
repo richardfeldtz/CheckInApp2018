@@ -31,7 +31,27 @@ class AdminToolsViewController: UIViewController {
     }
     
     @objc func handleTap(){
-        print("TOUCHED")
+        
+        let localData = CoreDataHelper.retrieveData("Checkins")
+        
+        var ids: Array<String> = []
+        do{
+        for data in localData {
+            ids.append((data as AnyObject).value(forKey: "id") as! String)
+            }}
+        
+        //Generate checkin id list
+        var idString = ""
+        for number in ids {
+            idString = idString + number + ","
+        }
+        idString.removeLast()
+        
+        let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/event/attendance")!
+        let jsonString = RestHelper.makePost(url, ["identifier": "test", "key": "123456", "eventName": "API Test", "studentIds": idString])
+        let uploadAlert = UIAlertController(title: "Success", message: "Check in list successfully uploaded", preferredStyle: .alert)
+        uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        self.present(uploadAlert, animated: true)
     }
     
     @objc func downloadData() {
@@ -40,6 +60,8 @@ class AdminToolsViewController: UIViewController {
         let jsonString = RestHelper.makePost(url, ["identifier": "test", "key": "123456"])
         
         CoreDataHelper.deleteData()
+        StudentListViewController.data.removeAll()
+        StudentListViewController.idmap.removeAll()
         
         let data = jsonString.data(using: .utf8)!
         do {
@@ -47,11 +69,17 @@ class AdminToolsViewController: UIViewController {
             {
                 
                 for item in jsonArray {
-                    let studentDataItem = StudentData(id: item["ID"], fname: item["Name"], lname: "",checked: false , sname: item["School_Name"])
+                    let studentDataItem = StudentData(id: item["APS_Student_ID"], name: item["Name"],checked: false , sname: item["School_Name"])
                     StudentListViewController.data.append(studentDataItem)
+                    StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
                     CoreDataHelper.saveStudentData(item, "Student")
    
                 }
+                
+                let downloadAlert = UIAlertController(title: "Success", message: "Student list successfully downloaded", preferredStyle: .alert)
+                downloadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                self.present(downloadAlert, animated: true)
+                
                 
             } else {
                 print("bad json")

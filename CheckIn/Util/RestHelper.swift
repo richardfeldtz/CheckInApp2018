@@ -41,6 +41,10 @@ public class RestHelper {
         }
         else {
             print("Made Request, status code \(String(describing: response?.getStatusCode()))")
+            print(url)
+            print(String(data: request.httpBody!, encoding: String.Encoding.utf8)!)
+            print(String(data: data!, encoding: String.Encoding.utf8)!)
+            print(error)
             return String(data: data!, encoding: String.Encoding.utf8)!
         }
 

@@ -12,6 +12,9 @@ import UIKit
 
 class QRScannerViewController : UIViewController {
     
+    //Variable used to identify selected student before passing it to the profile view
+    var selectedStudent: StudentData?
+    
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
@@ -123,11 +126,32 @@ class QRScannerViewController : UIViewController {
     func analyzeInput(_ code:String){
         if scan {
             scan = false
-            print(code)
+            let index = StudentListViewController.idmap[code]
+            if(index == nil){
+                //Show alert
+                print("Not found : "+code)
+                scan = true
+            }
+            else {
+                selectedStudent = StudentListViewController.data[index!]
+                self.performSegue(withIdentifier: "scanProfile", sender: self)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let profile = segue.destination as? ProfileViewController
+        {
+            
+            profile.name = (selectedStudent?.name)!
+            profile.id = (selectedStudent?.id)!
+            
         }
     }
     
     @objc func returnToStudentList() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.popToRootViewController(animated: true)
     }
     

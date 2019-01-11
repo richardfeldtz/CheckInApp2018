@@ -44,7 +44,15 @@ class LaunchViewController :UIViewController
         UIView.animate(withDuration: 2.0, animations: {
             self.animatedView.alpha = 1.0
         }, completion: { finished in
-            self.performSegue(withIdentifier: "CheckRegistration", sender: self)
+            
+            let coreData = CoreDataHelper.retrieveData("Student")
+            for data in coreData {
+                let studentDataItem = StudentData(id: (data as AnyObject).value(forKey: "id") as? String, name: (data as AnyObject).value(forKey: "name") as? String,checked: ((data as AnyObject).value(forKey: "checked") as! Bool) , sname: (data as AnyObject).value(forKey: "sname") as? String)
+                StudentListViewController.data.append(studentDataItem)
+                StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
+            }
+            
+            self.performSegue(withIdentifier: "ShowList", sender: self)
         })
 
         
