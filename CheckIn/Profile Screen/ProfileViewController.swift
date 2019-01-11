@@ -18,7 +18,6 @@ class ProfileViewController : UIViewController {
     
     @IBAction func dismissProfile(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        delegate?.myVCDidFinish(self, text: "Alex")
     }
     @IBAction func checkIn(_ sender: UIButton) {
         

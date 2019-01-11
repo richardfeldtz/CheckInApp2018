@@ -112,15 +112,15 @@ public class CoreDataHelper {
 //        
 //    }
     
-    class func deleteData(){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        //        let deleteRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
-        //fetchRequest.predicate = NSPredicate(format: "username = %@", "Ankur3")
-        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
-        let request = NSBatchDeleteRequest(fetchRequest: fetch)
-        let _ = try! managedContext.execute(request)
+//    class func deleteData(){
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//        
+//        //        let deleteRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
+//        //fetchRequest.predicate = NSPredicate(format: "username = %@", "Ankur3")
+//        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
+//        let request = NSBatchDeleteRequest(fetchRequest: fetch)
+//        let _ = try! managedContext.execute(request)
         
     }
     

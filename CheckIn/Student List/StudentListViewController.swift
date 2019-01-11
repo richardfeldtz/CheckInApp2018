@@ -69,7 +69,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchCurrentCoreData()
+        searchController.searchBar.text=nil
         DispatchQueue.main.async{
             self.tableView.reloadData()
         }
@@ -137,17 +137,13 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         if isFiltering() {
             student = filteredStudents[indexPath.row]
         } else {
-            if data.count == 0 {
+            if StudentListViewController.data.count == 0 {
                 return UITableViewCell()
             }
-            student = data[indexPath.row]
+            student = StudentListViewController.data[indexPath.row]
         }
         
-//        student = StudentListViewController.data[indexPath.row]
-        print(student?.checked)
-        
-        cell.fname.text = student!.name?.components(separatedBy: " ").first
-        cell.lname.text = student!.name?.components(separatedBy: " ").last
+        cell.fname.text = student!.name
         cell.checkMark.image = student!.checked ? UIImage(named: "checkmark") : nil
         
         cell.fname.numberOfLines=0;
@@ -164,11 +160,8 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             selectedStudent = filteredStudents[indexPath.row]
         }
         else {
-            selectedStudent = data[indexPath.row]
+            selectedStudent = StudentListViewController.data[indexPath.row]
         }
-        
-        selectedStudent = data[indexPath.row]
-        
         
         self.performSegue(withIdentifier: "showProfile", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
@@ -182,8 +175,6 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             
             profile.name = (selectedStudent?.name)!
             profile.id = (selectedStudent?.id)!
-            profile.delegate = self
-            
         }
     }
     
