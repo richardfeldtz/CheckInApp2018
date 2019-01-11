@@ -11,15 +11,15 @@ import UIKit
 
 class ProfileViewController : UIViewController {
     
-    
+    weak var delegate: StudentListViewController?
     @IBOutlet var numberInPartyTextField: UITextField!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet var checkInLabel: UILabel!
     
     @IBAction func dismissProfile(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        delegate?.myVCDidFinish(self, text: "Alex")
     }
-    
     
     var fname = ""
     var lname = ""

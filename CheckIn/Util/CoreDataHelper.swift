@@ -30,7 +30,7 @@ public class CoreDataHelper {
         obj.setValue(false, forKeyPath: "checked")
         obj.setValue(jsonObj["Name"], forKeyPath: "name")
         obj.setValue(jsonObj["School_Name"], forKey: "sname")
-        obj.setValue(jsonObj["ID"], forKey: "id")
+        obj.setValue(jsonObj["APS_Student_ID"], forKey: "id")
         
         do {
             try managedContext.save()

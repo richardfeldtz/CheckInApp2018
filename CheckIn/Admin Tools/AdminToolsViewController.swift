@@ -48,11 +48,8 @@ class AdminToolsViewController: UIViewController {
             if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]{
                 
                 for item in jsonArray {
-                    //data.append(studentDataItem)
                     CoreDataHelper.saveStudentData(item, "Student")
-   
                 }
-                
                 
             } else {
                 print("bad json")

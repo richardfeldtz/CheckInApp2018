@@ -10,9 +10,23 @@ import Foundation
 import CoreData
 import UIKit
 
+protocol FooTwoViewControllerDelegate:class {
+    func myVCDidFinish(_ controller: ProfileViewController, text: String)
+}
 
-class StudentListViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
+class StudentListViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, FooTwoViewControllerDelegate {
     
+    
+    func myVCDidFinish(_ controller: ProfileViewController, text: String) {
+        //swift 3
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
+        print("back to student list")
+        tableView.setNeedsDisplay()
+    }
+    
+
     @IBOutlet weak var tableView: UITableView!
     
     private lazy var roundButton: UIButton = {
@@ -28,6 +42,8 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    
     
     
     var data: Array<StudentData> = []
@@ -54,7 +70,11 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchCurrentCoreData()
-        tableView.reloadData()
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
+        print("view appearing")
+        tableView.setNeedsDisplay()
     }
     
     override func viewDidLoad() {
@@ -72,6 +92,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         searchController.searchBar.placeholder = "Search Students"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        print("view loading")
     }
     
     override func viewWillLayoutSubviews() {
@@ -86,7 +107,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             roundButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             roundButton.widthAnchor.constraint(equalToConstant: 100),
             roundButton.heightAnchor.constraint(equalToConstant: 100)
-            ])
+        ])
     }
     
     @objc func openQRCodeScanner() {
@@ -153,9 +174,9 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     {
         if let profile = segue.destination as? ProfileViewController
         {
-            
             profile.fname = (selectedStudent?.name)!
             profile.id = (selectedStudent?.id)!
+            profile.delegate = self
             
         }
     }
