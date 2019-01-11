@@ -15,6 +15,7 @@ class ProfileViewController : UIViewController {
     @IBOutlet var numberInPartyTextField: UITextField!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet var checkInLabel: UILabel!
+    
     @IBAction func dismissProfile(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -26,11 +27,16 @@ class ProfileViewController : UIViewController {
     var id = ""
     
     override func viewDidLoad() {
-        // idLabel.text = id
+//         idLabel.text = id
         checkInLabel.text = "Check In \(fname) \(lname)"
         navigationController?.setNavigationBarHidden(false, animated: true)
         preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
         numberInPartyTextField.text = "3"
         numberInPartyTextField.textAlignment = .center
     }
+    
+    @IBAction func checkInStudent(_ sender: Any) {
+        CoreDataHelper.updateStudentData(entityName: "Student", APS_ID: id)
+    }
+    
 }

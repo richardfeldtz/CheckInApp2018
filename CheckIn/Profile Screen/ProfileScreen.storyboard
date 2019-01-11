@@ -57,6 +57,9 @@
                                 <state key="normal" title="Check In">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="checkInStudent:" destination="8Sq-P5-Z6J" eventType="touchUpInside" id="edE-x1-p6S"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="#" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bPm-y8-NZK">
                                 <rect key="frame" x="248" y="155" width="16.5" height="24"/>

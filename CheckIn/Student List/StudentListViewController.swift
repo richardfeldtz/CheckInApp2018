@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
+
 class StudentListViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -39,11 +40,11 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     func fetchCurrentCoreData() {
         let currentStudentEntities = CoreDataHelper.retrieveStudentData()
-        print(currentStudentEntities)
         if let currentStudentArray = currentStudentEntities {
             
             for item in currentStudentArray{
                 data.append(StudentData(id: item.id, name: item.name, checked: item.checked ,sname: item.sname))
+                print(item.checked)
 
             }
         }
@@ -141,9 +142,12 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         }
         
         selectedStudent = data[indexPath.row]
+        
+        
         self.performSegue(withIdentifier: "showProfile", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
@@ -151,7 +155,6 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         {
             
             profile.fname = (selectedStudent?.name)!
-//            profile.lname = (selectedStudent?.lname)!
             profile.id = (selectedStudent?.id)!
             
         }
