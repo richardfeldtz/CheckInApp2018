@@ -42,13 +42,16 @@ class AdminToolsViewController: UIViewController {
         
         //Generate checkin id list
         var idString = ""
+        var guestNumbers = ""
         for number in ids {
             idString = idString + number + ","
+            guestNumbers = guestNumbers + "0,"
         }
         idString.removeLast()
+        guestNumbers.removeLast()
         
         let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/event/attendance")!
-        let jsonString = RestHelper.makePost(url, ["identifier": "test", "key": "123456", "eventName": "API Test", "studentIds": idString])
+        let jsonString = RestHelper.makePost(url, ["identifier": "test", "key": "123456", "eventName": "API Test", "studentIds": idString, "guestCounts": guestNumbers])
         let uploadAlert = UIAlertController(title: "Success", message: "Check in list successfully uploaded", preferredStyle: .alert)
         uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
         self.present(uploadAlert, animated: true)
