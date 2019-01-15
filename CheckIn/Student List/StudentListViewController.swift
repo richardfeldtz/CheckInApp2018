@@ -69,7 +69,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        searchController.searchBar.text=nil
+        StudentListViewController.searchController.searchBar.text=nil
         DispatchQueue.main.async{
             self.tableView.reloadData()
         }
@@ -87,10 +87,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         self.navigationItem.title = "Hometown Hall 2018"
         
         // Setup the Search Controller
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Students"
-        navigationItem.searchController = searchController
+        StudentListViewController.searchController.searchResultsUpdater = self
+        StudentListViewController.searchController.obscuresBackgroundDuringPresentation = false
+        StudentListViewController.searchController.searchBar.placeholder = "Search Students"
+        navigationItem.searchController = StudentListViewController.searchController
         definesPresentationContext = true
         print("view loading")
     }
@@ -184,17 +184,17 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         self.show(vc, sender: self)
     }
     
-    let searchController = UISearchController(searchResultsController: nil)
+    static let searchController = UISearchController(searchResultsController: nil)
     
     //Function checks if list has been filtered via search text
     func isFiltering() -> Bool {
-        return searchController.isActive && !searchBarIsEmpty()
+        return StudentListViewController.searchController.isActive && !searchBarIsEmpty()
     }
     
     //Function checks if search text is empty
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
-        return searchController.searchBar.text?.isEmpty ?? true
+        return StudentListViewController.searchController.searchBar.text?.isEmpty ?? true
     }
     
     //Function to create filtered list based on search text

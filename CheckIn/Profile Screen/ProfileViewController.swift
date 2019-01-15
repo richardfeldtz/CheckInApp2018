@@ -44,7 +44,9 @@ class ProfileViewController : UIViewController {
             student?.setValue(true, forKey: "checked")
             try managedContext.save()
             print("Checkin successful")
+            StudentListViewController.searchController.searchBar.text=nil
             self.dismiss(animated: true, completion: nil)
+            
         }
         catch _ as NSError{
             print("Could not check-in student")
