@@ -31,22 +31,27 @@ class AdminToolsViewController: UIViewController {
     }
     
     @objc func handleTap(){
-        
         let localData = CoreDataHelper.retrieveData("Checkins")
-        
         var ids: Array<String> = []
+        var guests: Array<Int> = []
         do{
         for data in localData {
             ids.append((data as AnyObject).value(forKey: "id") as! String)
-            }}
+            guests.append((data as AnyObject).value(forKey: "guests") as! Int)
+        }}
         
         //Generate checkin id list
         var idString = ""
         var guestNumbers = ""
+
         for number in ids {
             idString = idString + number + ","
-            guestNumbers = guestNumbers + "0,"
         }
+        
+        for number in guests {
+            guestNumbers = guestNumbers + String(number) + ","
+        }
+        
         idString.removeLast()
         guestNumbers.removeLast()
         
@@ -64,7 +69,8 @@ class AdminToolsViewController: UIViewController {
         let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/students")!
         let jsonString = RestHelper.makePost(url, ["identifier": "test", "key": "123456"])
         
-        CoreDataHelper.deleteData()
+        CoreDataHelper.deleteAllData(from: "Checkins")
+        CoreDataHelper.deleteAllData(from: "Student")
         StudentListViewController.data.removeAll()
         StudentListViewController.idmap.removeAll()
         

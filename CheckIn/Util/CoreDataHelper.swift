@@ -42,6 +42,26 @@ public class CoreDataHelper {
         }
     }
     
+    class func addToCheckInTable( _ guests: Int, _ APS_ID: String, _ entityName: String){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let descrEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!
+        let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
+        obj.setValue("API Test", forKeyPath: "event_name")
+        obj.setValue(guests, forKey: "guests")
+        obj.setValue(APS_ID, forKey: "id")
+        
+        do {
+            try managedContext.save()
+            
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+            
+        }
+    }
+    
     class func retrieveData(_ entityName: String) -> [Any]{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [] }
         
@@ -80,46 +100,16 @@ public class CoreDataHelper {
         }
     }
     
-    class func deleteData(){
+    class func deleteAllData(from entityName: String){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         
-//        let deleteRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
-        //fetchRequest.predicate = NSPredicate(format: "username = %@", "Ankur3")
-        var fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
+        var fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         var request = NSBatchDeleteRequest(fetchRequest: fetch)
         let _ = try! managedContext.execute(request)
         
-        fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Checkins")
-        request = NSBatchDeleteRequest(fetchRequest: fetch)
-        let _ = try! managedContext.execute(request)
-
-//        do{
-//            let test = try managedContext.fetch(fetchRequest)
-//            
-//            let objectUpdate = test[0] as! NSManagedObject
-//            objectUpdate.setValue("newName", forKey: "username")
-//            objectUpdate.setValue("newmail", forKey: "email")
-//            objectUpdate.setValue("newpassword", forKey: "password")
-//            do{
-//                try managedContext.save()
-//            }catch{
-//                print(error)
-//            }
-//        } catch {
-//            print(error)
-//        }
-//        
-//    }
-    
-//    class func deleteData(){
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-//        let managedContext = appDelegate.persistentContainer.viewContext
-//        
-//        //        let deleteRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
-//        //fetchRequest.predicate = NSPredicate(format: "username = %@", "Ankur3")
-//        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
-//        let request = NSBatchDeleteRequest(fetchRequest: fetch)
+//        fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Checkins")
+//        request = NSBatchDeleteRequest(fetchRequest: fetch)
 //        let _ = try! managedContext.execute(request)
         
     }

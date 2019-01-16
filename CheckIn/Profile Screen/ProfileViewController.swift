@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 import CoreData
 
-class ProfileViewController : UIViewController {
+class ProfileViewController : UIViewController, UITextFieldDelegate {
     
+    var guestsWithStudent: Int = 0
     
+    @IBOutlet var guestTextField: UITextField!
     
     @IBOutlet var checkInLabel: UILabel!
     
@@ -45,6 +47,8 @@ class ProfileViewController : UIViewController {
             try managedContext.save()
             print("Checkin successful")
             StudentListViewController.searchController.searchBar.text=nil
+            guard let text = guestTextField.text, let number = Int(text) else { return } // no text
+            CoreDataHelper.addToCheckInTable(number, id, "Checkins")
             self.dismiss(animated: true, completion: nil)
             
         }
@@ -73,12 +77,16 @@ class ProfileViewController : UIViewController {
     override func viewDidLoad() {
         // idLabel.text = id
         checkInLabel.text = name
+        guestTextField.delegate = self
         navigationController?.setNavigationBarHidden(false, animated: true)
         preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
     }
     
     @IBAction func checkInStudent(_ sender: Any) {
         CoreDataHelper.updateStudentData(entityName: "Student", APS_ID: id)
+
+        print(CoreDataHelper.retrieveData("Checkins"))
+
     }
     
 }
