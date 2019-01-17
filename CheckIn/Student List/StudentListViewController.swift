@@ -143,13 +143,29 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             student = StudentListViewController.data[indexPath.row]
         }
         
-        cell.fname.text = student!.name
+        let namePieces = student!.name?.split(separator: " ")
+        let firstName = namePieces![0]
+        cell.fname.text = String(firstName)
+        
+        var lastName = ""
+        for i in 1...namePieces!.count-1 {
+            lastName = lastName + String(namePieces![i]) + " "
+        }
+        lastName.removeLast()
+        cell.lname.text = lastName
+        
+        
         cell.checkMark.image = student!.checked ? UIImage(named: "checkmark") : nil
         
         cell.fname.numberOfLines=0;
         cell.fname.font = UIFont(name: "HelveticaNeue", size: 20)
         cell.fname.minimumScaleFactor = 0.1
         cell.fname.adjustsFontSizeToFitWidth=true
+        
+        cell.lname.numberOfLines=0;
+        cell.lname.font = UIFont(name: "HelveticaNeue", size: 20)
+        cell.lname.minimumScaleFactor = 0.1
+        cell.lname.adjustsFontSizeToFitWidth=true
         
         return cell
     }

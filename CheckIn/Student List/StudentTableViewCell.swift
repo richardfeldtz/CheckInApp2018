@@ -12,6 +12,7 @@ class StudentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var checkMark: UIImageView!
     @IBOutlet weak var fname: UILabel!
+    @IBOutlet weak var lname: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
