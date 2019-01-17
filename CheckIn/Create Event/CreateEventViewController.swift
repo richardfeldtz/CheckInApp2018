@@ -50,7 +50,6 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
-        //done button & cancel button
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: functionType)
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(CreateEventViewController.cancelDatePicker))
@@ -67,9 +66,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
     
     func showTimePicker(){
         timePicker.datePickerMode = .time
-        // add toolbar to textField
         eventTime.inputAccessoryView = setUpToolbar(functionType: #selector(timePickerFormat))
-        // add datepicker to textField
         eventTime.inputView = timePicker
     }
     
