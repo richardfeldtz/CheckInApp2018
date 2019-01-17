@@ -10,12 +10,34 @@ import Foundation
 import UIKit
 import CoreData
 
-class ProfileViewController : UIViewController, UITextFieldDelegate {
+class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 10
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(row)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        guestTextField.text = String(row)
+    }
+    
+    
+    var pickerView = UIPickerView()
     var guestsWithStudent: Int = 0
+    var name = ""
+    var sname = ""
+    var id = ""
     
     @IBOutlet var guestTextField: UITextField!
-    
     @IBOutlet var checkInLabel: UILabel!
     
     @IBAction func dismissProfile(_ sender: Any) {
@@ -57,11 +79,6 @@ class ProfileViewController : UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    var name = ""
-    var sname = ""
-    var id = ""
-    
     override func viewWillAppear(_ animated: Bool) {
         if StudentListViewController.data[StudentListViewController.idmap[id]!].checked {
             let checkInAlert = UIAlertController(title: "Warning", message: "The student has already been checked in", preferredStyle: .alert)
@@ -76,17 +93,29 @@ class ProfileViewController : UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         // idLabel.text = id
+        pickerView.delegate = self
         checkInLabel.text = name
         guestTextField.delegate = self
+        guestTextField.inputView = pickerView
+        guestTextField.inputAccessoryView = setUpToolbar(functionType: #selector(cancelPicker))
         navigationController?.setNavigationBarHidden(false, animated: true)
         preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
     }
+        
+    func setUpToolbar(functionType: Selector) -> UIToolbar {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: functionType)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+//        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(cancelPicker))
+        toolbar.setItems([spaceButton,doneButton], animated: false)
+        
+        return toolbar
+    }
     
-    @IBAction func checkInStudent(_ sender: Any) {
-        CoreDataHelper.updateStudentData(entityName: "Student", APS_ID: id)
-
-        print(CoreDataHelper.retrieveData("Checkins"))
-
+    @objc func cancelPicker(){
+        self.view.endEditing(true)
     }
     
 }
