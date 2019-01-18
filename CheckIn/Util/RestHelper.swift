@@ -11,13 +11,14 @@ import Foundation
 public class RestHelper {
     
     static var schoolName = ""
+    static let host = "https://dev1-ljff.cs65.force.com/test/services/apexrest"
     static let urls = [
-        "Register_Device":"https://dev1-ljff.cs65.force.com/test/services/apexrest/device/register",
-        "Get_Registration_Key":"https://dev1-ljff.cs65.force.com/test/services/apexrest/device",
-        "Get_Events":"https://dev1-ljff.cs65.force.com/test/services/apexrest/event",
-        "Get_Schools":"https://dev1-ljff.cs65.force.com/test/services/apexrest/schools",
-        "Get_Students":"https://dev1-ljff.cs65.force.com/test/services/apexrest/students",
-        "Get_Students_By_School":"https://dev1-ljff.cs65.force.com/test/services/apexrest/schools/" + schoolName] as Dictionary<String,String>
+        "Register_Device":host+"/device/register",
+        "Get_Registration_Key":host+"/device",
+        "Get_Events":host+"/event",
+        "Get_Schools":host+"/schools",
+        "Get_Students":host+"/students",
+        "Get_Students_By_School":host+"/schools/" + schoolName] as Dictionary<String,String>
     
     //Method to make POST REST call
     class func makePost(_ url:URL, _ params: Dictionary<String, String>) -> String {
