@@ -84,20 +84,28 @@ class AdminToolsViewController: UIViewController {
     }
     
     @objc func downloadData() {
-//        let progressHUD = ProgressHUD(text: "Downloding Data")
-//        self.view.addSubview(progressHUD)
         
         let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/students")!
+        let schoolURL = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/schools")!
         let jsonString = RestHelper.makePost(url, ["identifier": "test", "key": "123456"])
+        let schoolList = RestHelper.makePost(schoolURL, ["identifier": "test", "key": "123456"])
         
         CoreDataHelper.deleteAllData(from: "Checkins")
         CoreDataHelper.deleteAllData(from: "Student")
+        CoreDataHelper.deleteAllData(from: "School")
         StudentListViewController.data.removeAll()
         StudentListViewController.idmap.removeAll()
+        FilterStudentsViewController.schoolData.removeAll()
         
         let data = jsonString.data(using: .utf8)!
+        let schoolData = schoolList.data(using: .utf8)!
         do {
-            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]{
+            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>], let schoolArray = try JSONSerialization.jsonObject(with: schoolData, options : .allowFragments) as? [String]{
+                
+                for school in schoolArray {
+                    CoreDataHelper.saveSchoolData("School", school)
+                    FilterStudentsViewController.schoolData.append(school)
+                }
                 
                 for item in jsonArray {
                     let studentDataItem = StudentData(id: item["APS_Student_ID"], name: item["Name"],checked: false , sname: item["School_Name"])

@@ -20,6 +20,24 @@ public class CoreDataHelper {
         return try! managedContext.count(for: fetchRequest)
     }
     
+    class func saveSchoolData(_ entityName: String, _ schoolName: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let descrEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!
+        let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
+        obj.setValue(schoolName, forKeyPath: "sname")
+        
+        do {
+            try managedContext.save()
+            
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+            
+        }
+    }
+    
     class func saveStudentData(_ jsonObj: [String:String], _ entityName: String){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
