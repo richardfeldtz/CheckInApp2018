@@ -45,14 +45,37 @@ class LaunchViewController :UIViewController
             self.animatedView.alpha = 1.0
         }, completion: { finished in
             
-            let coreData = CoreDataHelper.retrieveData("Student")
-            for data in coreData {
-                let studentDataItem = StudentData(id: (data as AnyObject).value(forKey: "id") as? String, name: (data as AnyObject).value(forKey: "name") as? String,checked: ((data as AnyObject).value(forKey: "checked") as! Bool) , sname: (data as AnyObject).value(forKey: "sname") as? String)
-                StudentListViewController.data.append(studentDataItem)
-                StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
+            //Read device data
+            var coreData = CoreDataHelper.retrieveData("Device_Info")
+            let data = coreData.first
+            
+            let key = (data as AnyObject).value(forKey: "key") as? String
+            let identifier = (data as AnyObject).value(forKey: "identifier") as? String
+            
+            if key == nil {
+                self.performSegue(withIdentifier: "CheckRegistration", sender: self)
             }
             
-            self.performSegue(withIdentifier: "ShowList", sender: self)
+            if identifier == nil {
+                print("identifer empty")
+            }
+            else {
+                //Read event name
+                let eventName = (data as AnyObject).value(forKey: "id") as? String
+                if eventName != nil {
+                    StudentListViewController.eventName = eventName!
+                }
+            
+                //Read student records from core data
+                coreData = CoreDataHelper.retrieveData("Student")
+                for data in coreData {
+                    let studentDataItem = StudentData(id: (data as AnyObject).value(forKey: "id") as? String, name: (data as AnyObject).value(forKey: "name") as? String,checked: ((data as AnyObject).value(forKey: "checked") as! Bool) , sname: (data as AnyObject).value(forKey: "sname") as? String)
+                    StudentListViewController.data.append(studentDataItem)
+                    StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
+                }
+        
+                self.performSegue(withIdentifier: "ShowList", sender: self)
+            }
         })
 
         

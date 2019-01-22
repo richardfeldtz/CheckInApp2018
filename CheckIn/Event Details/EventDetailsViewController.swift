@@ -10,6 +10,8 @@ import UIKit
 
 class EventDetailsViewController: UIViewController {
     
+    @IBOutlet weak var checkInCount: UILabel!
+    @IBOutlet weak var guestCount: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
     }

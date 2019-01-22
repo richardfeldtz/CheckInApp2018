@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -164,10 +165,14 @@
                         <viewLayoutGuide key="safeArea" id="5nL-8A-NVN"/>
                     </view>
                     <navigationItem key="navigationItem" title="Event Details" id="oj6-6t-LbB"/>
+                    <connections>
+                        <outlet property="checkInCount" destination="FnJ-uQ-ksp" id="yxc-Vj-yxu"/>
+                        <outlet property="guestCount" destination="EBO-ho-5az" id="LrI-IV-NuQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZp-nX-TQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2288.8000000000002" y="18.440779610194905"/>
+            <point key="canvasLocation" x="2365" y="18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qHm-j8-ooL">
