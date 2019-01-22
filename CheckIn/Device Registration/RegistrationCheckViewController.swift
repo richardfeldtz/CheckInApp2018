@@ -17,7 +17,7 @@ class RegistrationCheckViewController : UIViewController {
     @IBOutlet weak var contentText: UILabel!
     @IBOutlet weak var deviceName: UITextField!
     @IBOutlet weak var buttonView: UIView!
-    var key: String = ""
+    var identifier: String = ""
     
     override func viewDidLoad() {
         super .viewDidLoad()
@@ -78,13 +78,46 @@ class RegistrationCheckViewController : UIViewController {
             self.present(deviceNameAlert, animated: true)
         }
         else{
+            identifier = deviceName.text!
             let url = URL(string:RestHelper.urls["Register_Device"]!)!
-            let params = ["identifier":deviceName.text!] as Dictionary<String,String>
+            let params = ["identifier":identifier] as Dictionary<String,String>
             let response = RestHelper.makePost(url, params)
-            
-            if response == "Device Registered" {
-                print("Success")
+            if response == "\"Device Registered\"" {
+                let registrationAlert = UIAlertController(title: "Success", message: "A device registration request was successfully created for your device with the name "+identifier+". Once the request is approved, you can use this device for check-ins. Please reopen the app when the request is approved.", preferredStyle: .alert)
+                registrationAlert.addAction(UIAlertAction(title: "OK", style: .cancel , handler:
+                    {
+                        (alertAction: UIAlertAction) in
+                        self.writeIdentifier(identifier: self.identifier)
+                        self.navigationController?.popToRootViewController(animated: true)
+                }))
+                self.present(registrationAlert, animated: true)
             }
+        }
+    }
+    
+    func writeIdentifier(identifier : String) {
+        guard let appDelegate = UIApplication.shared.delegate as?AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        //Get device info
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Device_Info")
+        do{
+            let temp = try managedContext.fetch(fetchRequest).first
+            if(!(temp==nil))
+            {
+                temp?.setValue(identifier, forKey: "identifier")
+                try managedContext.save()
+            }
+            else{
+                let entity = NSEntityDescription.entity(forEntityName: "Device_Info", in: managedContext)
+                let filter = NSManagedObject(entity: entity!, insertInto: managedContext)
+                filter.setValue(identifier, forKey: "identifier")
+                try managedContext.save()
+            }
+        }
+        catch _ as NSError {
+            print("Error writing identifier to core data")
         }
     }
     

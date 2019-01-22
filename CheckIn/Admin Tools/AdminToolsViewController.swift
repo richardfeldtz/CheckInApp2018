@@ -30,11 +30,11 @@ class AdminToolsViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
-        formatView(view: uploadDataView)
-        formatView(view: downloadDataView)
-        formatView(view: filterView)
-        formatView(view: createEventView)
-        formatView(view: eventDetailsView)
+//        formatView(view: uploadDataView)
+//        formatView(view: downloadDataView)
+//        formatView(view: filterView)
+//        formatView(view: createEventView)
+//        formatView(view: eventDetailsView)
     }
     
     
