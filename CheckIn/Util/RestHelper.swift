@@ -51,6 +51,8 @@ public class RestHelper {
 
     }
     
+    var test = "abc"
+    
     //Method to make GET REST call
     class func makeGet(_ url:String, _ params: Dictionary<String, String>?) -> String {
         

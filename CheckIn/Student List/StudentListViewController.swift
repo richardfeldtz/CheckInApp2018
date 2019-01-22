@@ -46,6 +46,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     static var data: Array<StudentData> = []
     static var idmap = [String : Int]()
+    static var eventName = ""
     
     //Variable used to identify selected student before passing it to the profile view
     var selectedStudent: StudentData?
@@ -53,27 +54,12 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     //Variable used to store the filtered list
     var filteredStudents = [StudentData]()
     
-    //Dummy data for test
-    func generateDummyData() {
-//        let s1 = StudentData(id: "1234", fname: "Harry",lname: "Potter",checked: true,sname: "Hogwarts School Of Witchcraft and Wizardry")
-//        let s2 = StudentData(id: "5678", fname: "Ron", lname: "Weasley", checked: false,sname: "Hogwarts School Of Witchcraft and Wizardry")
-//        let s3 = StudentData(id: "9012", fname: "Ginny", lname: "Weasley", checked: true,sname: "Hogwarts School Of Witchcraft and Wizardry")
-//        let s4 = StudentData(id: "3456", fname: "Hermione", lname: "Granger", checked: false,sname: "Hogwarts School Of Witchcraft and Wizardry")
-        
-//        data.append(s1)
-//        data.append(s2)
-//        data.append(s3)
-//        data.append(s4)
-        
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         StudentListViewController.searchController.searchBar.text=nil
         DispatchQueue.main.async{
             self.tableView.reloadData()
         }
-        print("view appearing")
         tableView.setNeedsDisplay()
     }
     
@@ -84,7 +70,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         tableView.delegate = self
         
-        self.navigationItem.title = "Hometown Hall 2018"
+        self.navigationItem.title = StudentListViewController.eventName
         
         // Setup the Search Controller
         StudentListViewController.searchController.searchResultsUpdater = self
@@ -92,7 +78,6 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         StudentListViewController.searchController.searchBar.placeholder = "Search Students"
         navigationItem.searchController = StudentListViewController.searchController
         definesPresentationContext = true
-        print("view loading")
     }
     
     override func viewWillLayoutSubviews() {

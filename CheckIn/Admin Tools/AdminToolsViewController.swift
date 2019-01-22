@@ -17,6 +17,27 @@ class AdminToolsViewController: UIViewController {
     @IBOutlet var createEventView: UIView!
     @IBOutlet var eventDetailsView: UIView!
     
+    func formatView(view : UIView){
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.backgroundColor=UIColor.white.cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = CGSize.zero
+        view.layer.shadowRadius = 10
+        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
+        view.layer.shouldRasterize = false
+        view.layer.cornerRadius = 10
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super .viewDidLayoutSubviews()
+//        formatView(view: uploadDataView)
+//        formatView(view: downloadDataView)
+//        formatView(view: filterView)
+//        formatView(view: createEventView)
+//        formatView(view: eventDetailsView)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGestureRecognizers()
@@ -56,7 +77,7 @@ class AdminToolsViewController: UIViewController {
         guestNumbers.removeLast()
         
         let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/event/attendance")!
-        let jsonString = RestHelper.makePost(url, ["identifier": "test", "key": "123456", "eventName": "API Test", "studentIds": idString, "guestCounts": guestNumbers])
+        _ = RestHelper.makePost(url, ["identifier": "test", "key": "123456", "eventName": "API Test", "studentIds": idString, "guestCounts": guestNumbers])
         let uploadAlert = UIAlertController(title: "Success", message: "Check in list successfully uploaded", preferredStyle: .alert)
         uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
         self.present(uploadAlert, animated: true)
