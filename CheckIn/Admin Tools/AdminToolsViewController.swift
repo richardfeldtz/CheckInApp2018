@@ -18,23 +18,23 @@ class AdminToolsViewController: UIViewController {
     @IBOutlet var eventDetailsView: UIView!
     
     func formatView(view : UIView){
+        view.layer.cornerRadius = 10
+        view.layer.shouldRasterize = false
+        view.layer.borderWidth = 1
+        
         view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.backgroundColor=UIColor.white.cgColor
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = CGSize.zero
         view.layer.shadowRadius = 10
-        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
-        view.layer.shouldRasterize = false
-        view.layer.cornerRadius = 10
+//        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
     }
     
     override func viewDidLayoutSubviews() {
-        super .viewDidLayoutSubviews()
-//        formatView(view: uploadDataView)
-//        formatView(view: downloadDataView)
-//        formatView(view: filterView)
-//        formatView(view: createEventView)
-//        formatView(view: eventDetailsView)
+        formatView(view: uploadDataView)
+        formatView(view: downloadDataView)
+        formatView(view: filterView)
+        formatView(view: createEventView)
+        formatView(view: eventDetailsView)
     }
     
     
