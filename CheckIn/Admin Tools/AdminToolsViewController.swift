@@ -74,7 +74,6 @@ class AdminToolsViewController: UIViewController {
         CoreDataHelper.deleteAllData(from: "School")
         StudentListViewController.data.removeAll()
         StudentListViewController.idmap.removeAll()
-        FilterStudentsViewController.schoolData.removeAll()
         
         let data = jsonString.data(using: .utf8)!
         let schoolData = schoolList.data(using: .utf8)!
@@ -83,7 +82,6 @@ class AdminToolsViewController: UIViewController {
                 
                 for school in schoolArray {
                     CoreDataHelper.saveSchoolData("School", school)
-                    FilterStudentsViewController.schoolData.append(school)
                 }
                 
                 for item in jsonArray {

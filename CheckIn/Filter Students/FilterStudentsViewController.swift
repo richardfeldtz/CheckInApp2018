@@ -12,10 +12,10 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
     
     let schoolPickerView = UIPickerView()
     let gradePickerView = UIPickerView()
-    static var schoolData = [String]()
+    var schoolData = [String]()
     let lastNameData = ["A-D", "E-H", "I-L", "M-P", "Q-T", "U-Z"]
     static var currentSelectedSchool: String?
-    var currentSelectedLastNameFilter: String?
+    static var currentSelectedLastNameFilter: String?
     
     lazy var xButton: UIButton = {
         let button = UIButton()
@@ -54,6 +54,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Last Name"
         textField.inputView = gradePickerView
+        textField.text = FilterStudentsViewController.currentSelectedLastNameFilter
         textField.inputAccessoryView = setUpToolbar(functionType: #selector(cancelPicker))
         textField.addTarget(self, action: #selector(self.addGradePickerView), for: .touchUpInside)
         return textField
@@ -111,11 +112,10 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
         let schools = CoreDataHelper.retrieveData("School")
         
         for school in schools {
-            FilterStudentsViewController.schoolData.append((school as AnyObject).value(forKey: "sname") as! String)
+            schoolData.append((school as AnyObject).value(forKey: "sname") as! String)
         }
         
         
@@ -173,7 +173,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == schoolPickerView {
-            return FilterStudentsViewController.schoolData[row]
+            return schoolData[row]
         } else {
             return String(lastNameData[row])
         }
@@ -182,8 +182,6 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
     @objc func cancelPicker(){
         self.view.endEditing(true)
     }
-    
-    
     
     func setUpToolbar(functionType: Selector) -> UIToolbar {
         let toolbar = UIToolbar()
@@ -200,12 +198,33 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == schoolPickerView {
-            schoolTextField.text = FilterStudentsViewController.schoolData[row]
-            FilterStudentsViewController.currentSelectedSchool = FilterStudentsViewController.schoolData[row]
+            schoolTextField.text = schoolData[row]
+            FilterStudentsViewController.currentSelectedSchool = schoolData[row]
         } else {
             lastNameTextField.text = lastNameData[row]
-            currentSelectedLastNameFilter = lastNameData[row]
+            FilterStudentsViewController.currentSelectedLastNameFilter = lastNameData[row]
         }
     }
     
+}
+
+extension FilterStudentsViewController {
+    class func getFilterString(_ filter: String?) -> String {
+        switch filter {
+        case "A-D":
+            return "abcd"
+        case "E-H":
+            return "efgh"
+        case "I-L":
+            return "ijkl"
+        case "M-P":
+            return "mnop"
+        case "Q-T":
+            return "qrst"
+        case "U-Z":
+            return "uvwxyz"
+        default:
+            return ""
+        }
+    }
 }

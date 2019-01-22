@@ -81,7 +81,6 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
     
     override func viewWillAppear(_ animated: Bool) {
         
-        print(sname)
         if StudentListViewController.data[StudentListViewController.idmap[id]!].checked {
             let checkInAlert = UIAlertController(title: "Warning", message: "The student has already been checked in", preferredStyle: .alert)
             checkInAlert.addAction(UIAlertAction(title: "Go back", style: .cancel, handler:{
@@ -91,7 +90,17 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
             self.present(checkInAlert, animated: true)
         }
         
-        if FilterStudentsViewController.currentSelectedSchool != "" && sname == FilterStudentsViewController.currentSelectedSchool {
+        var lastNameFilterCondition = true
+        let filterString = FilterStudentsViewController.getFilterString(FilterStudentsViewController.currentSelectedLastNameFilter)
+        let nameArray = name.byWords
+        for (_, char) in filterString.enumerated() {
+            if (Character((nameArray.last?.prefix(1).lowercased())!) == char) {
+                lastNameFilterCondition = false
+            }
+        }
+        
+        
+        if FilterStudentsViewController.currentSelectedSchool != "" && (sname == FilterStudentsViewController.currentSelectedSchool || lastNameFilterCondition) {
             let checkInAlert = UIAlertController(title: "Warning", message: "The selected student does not match the filter", preferredStyle: .alert)
             checkInAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{
                 (alertAction: UIAlertAction) in

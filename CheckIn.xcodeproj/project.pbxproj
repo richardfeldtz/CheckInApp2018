@@ -42,6 +42,7 @@
 		FB85E10721C15AA7004C7871 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E10621C15AA7004C7871 /* EventDetailsViewController.swift */; };
 		FB85E10A21C18C72004C7871 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E10921C18C72004C7871 /* CreateEventViewController.swift */; };
 		FB85E10C21C18CE4004C7871 /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */; };
+		FBAE5EEA21F7B71800B14040 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EE921F7B71800B14040 /* String.swift */; };
 		FBC4C6B821C1A6F800ADC472 /* AdminTools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC4C6B721C1A6F700ADC472 /* AdminTools.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		FB85E10621C15AA7004C7871 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		FB85E10921C18C72004C7871 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
+		FBAE5EE921F7B71800B14040 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FBC4C6B721C1A6F700ADC472 /* AdminTools.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminTools.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +208,7 @@
 				FB62670121E52A68009CB9CA /* CoreDataHelper.swift */,
 				FB62670521E54CE6009CB9CA /* ViewController.swift */,
 				FB62670721E6940E009CB9CA /* Date.swift */,
+				FBAE5EE921F7B71800B14040 /* String.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				FB1C5DCD21DD3A1600992842 /* LoadStudentsViewController.swift in Sources */,
 				149B8E9A21B78D970009ACC3 /* GifViewController.swift in Sources */,
 				FB85E10021C0571C004C7871 /* AdminToolsViewController.swift in Sources */,
+				FBAE5EEA21F7B71800B14040 /* String.swift in Sources */,
 				14E9947221B5E061005105A4 /* InternetConnectionTest.swift in Sources */,
 				149B8E9221B76E730009ACC3 /* ProfileViewController.swift in Sources */,
 				FB62670821E6940E009CB9CA /* Date.swift in Sources */,
