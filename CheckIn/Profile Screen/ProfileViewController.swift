@@ -80,15 +80,26 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        print(sname)
         if StudentListViewController.data[StudentListViewController.idmap[id]!].checked {
             let checkInAlert = UIAlertController(title: "Warning", message: "The student has already been checked in", preferredStyle: .alert)
-            checkInAlert.addAction(UIAlertAction(title: "Go back", style: .cancel, handler:
-                {
+            checkInAlert.addAction(UIAlertAction(title: "Go back", style: .cancel, handler:{
                     (alertAction: UIAlertAction) in
                     self.dismiss(animated: true, completion: nil)
             }))
             self.present(checkInAlert, animated: true)
         }
+        
+        if FilterStudentsViewController.currentSelectedSchool != "" && sname == FilterStudentsViewController.currentSelectedSchool {
+            let checkInAlert = UIAlertController(title: "Warning", message: "The selected student does not match the filter", preferredStyle: .alert)
+            checkInAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{
+                (alertAction: UIAlertAction) in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(checkInAlert, animated: true)
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -101,14 +112,14 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
         navigationController?.setNavigationBarHidden(false, animated: true)
         preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
     }
-        
+    
     func setUpToolbar(functionType: Selector) -> UIToolbar {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: functionType)
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-//        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(cancelPicker))
+        //        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(cancelPicker))
         toolbar.setItems([spaceButton,doneButton], animated: false)
         
         return toolbar

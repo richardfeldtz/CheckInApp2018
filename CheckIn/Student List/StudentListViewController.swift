@@ -191,6 +191,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             
             profile.name = (selectedStudent?.name)!
             profile.id = (selectedStudent?.id)!
+            profile.sname = (selectedStudent?.sname)!
         }
     }
     
