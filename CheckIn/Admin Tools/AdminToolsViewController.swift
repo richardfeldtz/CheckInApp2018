@@ -17,6 +17,9 @@ class AdminToolsViewController: UIViewController {
     @IBOutlet var createEventView: UIView!
     @IBOutlet var eventDetailsView: UIView!
     
+    var key : String?
+    var identifier : String?
+    
     func formatView(view : UIView){
         view.layer.cornerRadius = 10
         view.layer.shouldRasterize = false
@@ -41,6 +44,8 @@ class AdminToolsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGestureRecognizers()
+        self.key = LaunchViewController.key
+        self.identifier = LaunchViewController.identifier
     }
     
     fileprivate func setupGestureRecognizers() {
@@ -50,6 +55,8 @@ class AdminToolsViewController: UIViewController {
         createEventView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCreateEventVC)))
         eventDetailsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openEventDetailsVC)))
     }
+    
+    
     
     @objc func handleTap(){
         let localData = CoreDataHelper.retrieveData("Checkins")
@@ -77,7 +84,7 @@ class AdminToolsViewController: UIViewController {
         guestNumbers.removeLast()
         
         let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/event/attendance")!
-        _ = RestHelper.makePost(url, ["identifier": "test", "key": "123456", "eventName": "API Test", "studentIds": idString, "guestCounts": guestNumbers])
+        _ = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!, "eventName": "API Test", "studentIds": idString, "guestCounts": guestNumbers])
         let uploadAlert = UIAlertController(title: "Success", message: "Check in list successfully uploaded", preferredStyle: .alert)
         uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
         self.present(uploadAlert, animated: true)
@@ -87,8 +94,8 @@ class AdminToolsViewController: UIViewController {
         
         let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/students")!
         let schoolURL = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/schools")!
-        let jsonString = RestHelper.makePost(url, ["identifier": "test", "key": "123456"])
-        let schoolList = RestHelper.makePost(schoolURL, ["identifier": "test", "key": "123456"])
+        let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
+        let schoolList = RestHelper.makePost(schoolURL, ["identifier": self.identifier!, "key": self.key!])
         
         CoreDataHelper.deleteAllData(from: "Checkins")
         CoreDataHelper.deleteAllData(from: "Student")

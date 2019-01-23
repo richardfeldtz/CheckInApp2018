@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import CoreGraphics
 
 class LaunchViewController :UIViewController
 {
@@ -16,6 +17,10 @@ class LaunchViewController :UIViewController
     @IBOutlet weak var animatedView: UIView!
     
     let imagelayer=CALayer()
+    
+    //Global identifier and key to use in api calls
+    static var key : String?
+    static var identifier : String?
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -46,7 +51,7 @@ class LaunchViewController :UIViewController
         imagelayer.frame=animatedView.bounds
         animatedView.layer.addSublayer(imagelayer)
         
-        imagelayer.contents = UIImage(named: "LJFF_logo")?.cgImage
+        imagelayer.contents = UIImage(named: "blackLogo")?.cgImage
         imagelayer.contentsGravity = CALayerContentsGravity.resizeAspect
         imagelayer.backgroundColor=UIColor.black.cgColor
         imagelayer.shadowOpacity = 0.7
@@ -64,17 +69,17 @@ class LaunchViewController :UIViewController
             var coreData = CoreDataHelper.retrieveData("Device_Info")
             let data = coreData.first
             
-            let key = (data as AnyObject).value(forKey: "key") as? String
-            let identifier = (data as AnyObject).value(forKey: "identifier") as? String
+            LaunchViewController.key = (data as AnyObject).value(forKey: "key") as? String
+            LaunchViewController.identifier = (data as AnyObject).value(forKey: "identifier") as? String
             
-            if identifier == nil {
+            if LaunchViewController.identifier == nil {
                 self.performSegue(withIdentifier: "CheckRegistration", sender: self)
             }
             
-            else if key == nil {
-                let responseKey = self.getRegKey(identifier: identifier!)
+            else if LaunchViewController.key == nil {
+                let responseKey = self.getRegKey(identifier: LaunchViewController.identifier!)
                 if responseKey == "Not Authorized" {
-                    let registrationAlert = UIAlertController(title: "Not Authorized", message: "Your device registration has not yet been approved. Please wait till device \""+identifier!+"\" is verified.", preferredStyle: .alert)
+                    let registrationAlert = UIAlertController(title: "Not Authorized", message: "Your device registration has not yet been approved. Please wait till device \""+LaunchViewController.identifier!+"\" is verified.", preferredStyle: .alert)
                     registrationAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
                     self.present(registrationAlert, animated: true)
                 }
@@ -122,6 +127,7 @@ class LaunchViewController :UIViewController
             print("Error writing key to core data")
         }
     }
+    
     
     
 }
