@@ -122,6 +122,7 @@ class LaunchViewController :UIViewController
             let temp = try managedContext.fetch(fetchRequest).first
             temp?.setValue(key, forKey: "key")
             try managedContext.save()
+            LaunchViewController.key = key
         }
         catch _ as NSError {
             print("Error writing key to core data")
