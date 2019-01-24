@@ -25,9 +25,7 @@ class EventDetailsViewController: UIViewController {
     }
 	
 	func updateCheckInCount(checkInData: [Checkins]) {
-		//print(checkInData);
 		checkInCount.text = String(checkInData.count);
-		//TODO figure out why it checks in 2 students when you check in a student with guests
 	}
 	
 	func updateGuestCount(checkInData: [Checkins]) {
