@@ -80,14 +80,19 @@ class AdminToolsViewController: UIViewController {
             guestNumbers = guestNumbers + String(number) + ","
         }
         
-        idString.removeLast()
-        guestNumbers.removeLast()
+        if(idString != "") {
+            idString.removeLast()
+            guestNumbers.removeLast()
         
-        let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/event/attendance")!
-        _ = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!, "eventName": "API Test", "studentIds": idString, "guestCounts": guestNumbers])
-        let uploadAlert = UIAlertController(title: "Success", message: "Check in list successfully uploaded", preferredStyle: .alert)
-        uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
-        self.present(uploadAlert, animated: true)
+            let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/event/attendance")!
+            _ = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!, "eventName": "API Test", "studentIds": idString, "guestCounts": guestNumbers])
+            let uploadAlert = UIAlertController(title: "Success", message: "Check in list successfully uploaded", preferredStyle: .alert)
+            uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            self.present(uploadAlert, animated: true)
+        }
+        else {
+            print("Nothing to upload")
+        }
     }
     
     @objc func downloadData() {

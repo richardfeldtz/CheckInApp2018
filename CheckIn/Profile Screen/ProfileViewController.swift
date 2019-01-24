@@ -98,8 +98,8 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
                 lastNameFilterCondition = false
             }
         }
-        
-        
+
+
         if FilterStudentsViewController.currentSelectedSchool != "" && (sname == FilterStudentsViewController.currentSelectedSchool || lastNameFilterCondition) {
             let checkInAlert = UIAlertController(title: "Warning", message: "The selected student does not match the filter", preferredStyle: .alert)
             checkInAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{
