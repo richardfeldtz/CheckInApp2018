@@ -150,7 +150,7 @@ class AdminToolsViewController: UIViewController {
                 }
                 
                 for item in jsonArray {
-                    let studentDataItem = StudentData(id: item["APS_Student_ID"], name: item["Name"],checked: false , sname: item["School_Name"])
+                    let studentDataItem = StudentData(id: item["APS_Student_ID"], fname: item["FirstName"], lname: item["LastName"], checked: false , sname: item["School_Name"])
                     StudentListViewController.data.append(studentDataItem)
                     StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
                     CoreDataHelper.saveStudentData(item, "Student")

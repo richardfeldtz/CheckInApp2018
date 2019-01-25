@@ -99,7 +99,7 @@ class LaunchViewController :UIViewController
                 //Read student records from core data
                 coreData = CoreDataHelper.retrieveData("Student")
                 for data in coreData {
-                    let studentDataItem = StudentData(id: (data as AnyObject).value(forKey: "id") as? String, name: (data as AnyObject).value(forKey: "name") as? String,checked: ((data as AnyObject).value(forKey: "checked") as! Bool) , sname: (data as AnyObject).value(forKey: "sname") as? String)
+                    let studentDataItem = StudentData(id: (data as AnyObject).value(forKey: "id") as? String, fname: (data as AnyObject).value(forKey: "fname") as? String, lname: (data as AnyObject).value(forKey: "lname") as? String,checked: ((data as AnyObject).value(forKey: "checked") as! Bool) , sname: (data as AnyObject).value(forKey: "sname") as? String)
                     StudentListViewController.data.append(studentDataItem)
                     StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
                 }

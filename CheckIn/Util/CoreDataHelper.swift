@@ -45,10 +45,10 @@ public class CoreDataHelper {
         let managedContext = appDelegate.persistentContainer.viewContext
         let descrEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!
         let obj = NSManagedObject(entity: descrEntity, insertInto: managedContext)
-        obj.setValue(false, forKeyPath: "checked")
-        obj.setValue(jsonObj["Name"], forKeyPath: "name")
+        obj.setValue(jsonObj["FirstName"], forKey: "fname")
         obj.setValue(jsonObj["School_Name"], forKey: "sname")
         obj.setValue(jsonObj["APS_Student_ID"], forKey: "id")
+        obj.setValue(jsonObj["LastName"], forKey: "lname")
         obj.setValue(false, forKey: "checked")
         
         do {

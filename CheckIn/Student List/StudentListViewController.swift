@@ -128,17 +128,8 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             student = StudentListViewController.data[indexPath.row]
         }
         
-        let namePieces = student!.name?.split(separator: " ")
-        let firstName = namePieces![0]
-        cell.fname.text = String(firstName)
-        
-        var lastName = ""
-        for i in 1...namePieces!.count-1 {
-            lastName = lastName + String(namePieces![i]) + " "
-        }
-        lastName.removeLast()
-        cell.lname.text = lastName
-        
+        cell.fname.text = student!.fname
+        cell.lname.text = student!.lname
         
         cell.checkMark.image = student!.checked ? UIImage(named: "checkmark") : nil
         
