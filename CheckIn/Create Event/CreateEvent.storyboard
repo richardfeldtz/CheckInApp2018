@@ -196,7 +196,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeT-1y-wbj">
-                                <rect key="frame" x="20" y="55.5" width="235" height="51.5"/>
+                                <rect key="frame" x="20" y="38.5" width="235" height="51.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -210,7 +210,7 @@
                             <constraint firstItem="qCx-KI-Aye" firstAttribute="top" secondItem="H14-ok-Uhh" secondAttribute="top" constant="100" id="Vyt-ft-P0H"/>
                             <constraint firstItem="YeT-1y-wbj" firstAttribute="leading" secondItem="H14-ok-Uhh" secondAttribute="leading" constant="20" id="Za0-C8-I8h"/>
                             <constraint firstItem="qCx-KI-Aye" firstAttribute="leading" secondItem="n5m-tt-rX9" secondAttribute="leadingMargin" id="b27-F5-OIc"/>
-                            <constraint firstItem="Vke-WP-ciY" firstAttribute="top" secondItem="YeT-1y-wbj" secondAttribute="bottom" constant="13" id="bq6-hm-p4G"/>
+                            <constraint firstItem="Vke-WP-ciY" firstAttribute="top" secondItem="YeT-1y-wbj" secondAttribute="bottom" constant="30" id="bq6-hm-p4G"/>
                             <constraint firstItem="qCx-KI-Aye" firstAttribute="trailing" secondItem="n5m-tt-rX9" secondAttribute="trailingMargin" id="eoo-4R-ttj"/>
                             <constraint firstItem="okl-VK-pTQ" firstAttribute="centerX" secondItem="H14-ok-Uhh" secondAttribute="centerX" id="lrk-WX-i0k"/>
                             <constraint firstItem="okl-VK-pTQ" firstAttribute="top" secondItem="qCx-KI-Aye" secondAttribute="bottom" constant="150" id="qqS-aI-ruW"/>
@@ -277,7 +277,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90854063210000002" green="0.54843513460000004" blue="0.98407756980000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="2gz-28-Mbz" firstAttribute="centerY" secondItem="LfU-vn-Ehr" secondAttribute="centerY" id="2Jt-Ar-BBw"/>
                                     <constraint firstItem="2gz-28-Mbz" firstAttribute="centerX" secondItem="LfU-vn-Ehr" secondAttribute="centerX" id="Hdq-WB-s26"/>
@@ -301,7 +301,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90854063210000002" green="0.54843513460000004" blue="0.98407756980000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Auc-xi-5gk" firstAttribute="leading" secondItem="YzC-fX-Lli" secondAttribute="leading" constant="99" id="4ob-Bw-upZ"/>
                                     <constraint firstItem="Auc-xi-5gk" firstAttribute="top" secondItem="YzC-fX-Lli" secondAttribute="top" constant="89" id="Ivx-Yt-bap"/>

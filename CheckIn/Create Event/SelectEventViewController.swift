@@ -32,9 +32,7 @@ class SelectEventViewController: UICollectionViewController {
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(events[indexPath.row])
-        
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
         StudentListViewController.eventName = events[indexPath.row]
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }

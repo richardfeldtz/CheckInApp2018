@@ -57,6 +57,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         StudentListViewController.searchController.searchBar.text=nil
+        self.navigationItem.title = StudentListViewController.eventName
         DispatchQueue.main.async{
             self.tableView.reloadData()
         }
@@ -66,11 +67,11 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         //generateDummyData()
+        
         view.addSubview(roundButton)
         tableView.dataSource = self
         tableView.delegate = self
         
-        self.navigationItem.title = StudentListViewController.eventName
         
         // Setup the Search Controller
         StudentListViewController.searchController.searchResultsUpdater = self
