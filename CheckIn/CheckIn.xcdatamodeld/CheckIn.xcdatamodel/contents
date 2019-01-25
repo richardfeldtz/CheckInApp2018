@@ -15,8 +15,9 @@
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES" codeGenerationType="class">
         <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sfid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sname" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -24,6 +25,6 @@
         <element name="Checkins" positionX="-54" positionY="36" width="128" height="90"/>
         <element name="Device_Info" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="School" positionX="-54" positionY="36" width="128" height="60"/>
-        <element name="Student" positionX="-63" positionY="0" width="128" height="120"/>
+        <element name="Student" positionX="-63" positionY="0" width="128" height="135"/>
     </elements>
 </model>

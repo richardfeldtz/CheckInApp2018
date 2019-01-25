@@ -53,7 +53,13 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
         let checkedStudent = NSManagedObject(entity: descrEntity, insertInto: managedContext)
         checkedStudent.setValue(id, forKey: "id")
         checkedStudent.setValue("API Event", forKey: "event_name")
-        
+        var guestCount = Int(guestTextField.text!)
+        //If guest count is not updated, set it to 0
+        if guestCount == nil {
+            guestCount = 0
+        }
+        checkedStudent.setValue(guestCount, forKey: "guests")
+
         //Update checkin flag
         var studentResult : [NSManagedObject]
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
@@ -69,8 +75,6 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
             try managedContext.save()
             print("Checkin successful")
             StudentListViewController.searchController.searchBar.text=nil
-            guard let text = guestTextField.text, let number = Int(text) else { return } // no text
-            CoreDataHelper.addToCheckInTable(number, id, "Checkins")
             self.dismiss(animated: true, completion: nil)
             
         }
@@ -109,7 +113,7 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
                 self.present(checkInAlert, animated: true)
             }
         }
-        
+
         if FilterStudentsViewController.schoolFilterFlag && sname != FilterStudentsViewController.currentSelectedSchool {
             let checkInAlert = UIAlertController(title: "Warning", message: "The selected student does not match the filter", preferredStyle: .alert)
             checkInAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{
