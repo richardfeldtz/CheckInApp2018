@@ -26,7 +26,6 @@ class AdminToolsViewController: UIViewController {
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = CGSize.zero
         view.layer.shadowRadius = 10
-//        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
     }
     
     override func viewDidLayoutSubviews() {
@@ -99,11 +98,13 @@ class AdminToolsViewController: UIViewController {
         let data = jsonString.data(using: .utf8)!
         let schoolData = schoolList.data(using: .utf8)!
         do {
-            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>], let schoolArray = try JSONSerialization.jsonObject(with: schoolData, options : .allowFragments) as? [String]{
+            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>],
+                let schoolArray = try JSONSerialization.jsonObject(with: schoolData, options : .allowFragments) as? [String]{
                 
                 for school in schoolArray {
                     CoreDataHelper.saveSchoolData("School", school)
                 }
+ 
                 
                 for item in jsonArray {
                     let studentDataItem = StudentData(id: item["APS_Student_ID"], name: item["Name"],checked: false , sname: item["School_Name"])
@@ -136,7 +137,7 @@ class AdminToolsViewController: UIViewController {
     
     @objc func openCreateEventVC() {
         let storyboard: UIStoryboard = UIStoryboard(name: "CreateEvent", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CreateEvent") as! CreateEventViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "selectionScreenViewController") as! SelectionScreen
         self.show(vc, sender: self)
     }
     

@@ -43,6 +43,10 @@
 		FB85E10A21C18C72004C7871 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E10921C18C72004C7871 /* CreateEventViewController.swift */; };
 		FB85E10C21C18CE4004C7871 /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */; };
 		FBAE5EEA21F7B71800B14040 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EE921F7B71800B14040 /* String.swift */; };
+		FBAE5EEC21F8E64C00B14040 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EEB21F8E64C00B14040 /* PageViewController.swift */; };
+		FBAE5EEE21F8EFBD00B14040 /* SelectEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EED21F8EFBD00B14040 /* SelectEventViewController.swift */; };
+		FBAE5EF021F8FA3D00B14040 /* SelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */; };
+		FBB0FBF121FA52A500A6507D /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */; };
 		FBC4C6B821C1A6F800ADC472 /* AdminTools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC4C6B721C1A6F700ADC472 /* AdminTools.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +89,10 @@
 		FB85E10921C18C72004C7871 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
 		FBAE5EE921F7B71800B14040 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FBAE5EEB21F8E64C00B14040 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		FBAE5EED21F8EFBD00B14040 /* SelectEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEventViewController.swift; sourceTree = "<group>"; };
+		FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionScreen.swift; sourceTree = "<group>"; };
+		FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBC4C6B721C1A6F700ADC472 /* AdminTools.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminTools.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +260,10 @@
 			children = (
 				FB85E10921C18C72004C7871 /* CreateEventViewController.swift */,
 				FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */,
+				FBAE5EEB21F8E64C00B14040 /* PageViewController.swift */,
+				FBAE5EED21F8EFBD00B14040 /* SelectEventViewController.swift */,
+				FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */,
+				FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */,
 			);
 			path = "Create Event";
 			sourceTree = "<group>";
@@ -359,14 +371,17 @@
 			files = (
 				149B8E9521B786DF0009ACC3 /* QRScannerViewController.swift in Sources */,
 				149B8E8B21B756E10009ACC3 /* StudentListViewController.swift in Sources */,
+				FBAE5EF021F8FA3D00B14040 /* SelectionScreen.swift in Sources */,
 				FB85E10A21C18C72004C7871 /* CreateEventViewController.swift in Sources */,
 				14E9946C21B5A3BA005105A4 /* RegistrationCheckViewController.swift in Sources */,
 				FB1C5DD121DE9A4C00992842 /* UILabel.swift in Sources */,
+				FBAE5EEE21F8EFBD00B14040 /* SelectEventViewController.swift in Sources */,
 				14E9945921B58D9E005105A4 /* LaunchViewController.swift in Sources */,
 				FB1C5DD521DFC74300992842 /* IndentedTextField.swift in Sources */,
 				FB62670621E54CE6009CB9CA /* ViewController.swift in Sources */,
 				14E9945F21B58D9E005105A4 /* CheckIn.xcdatamodeld in Sources */,
 				FB62670221E52A68009CB9CA /* CoreDataHelper.swift in Sources */,
+				FBB0FBF121FA52A500A6507D /* EventCollectionViewCell.swift in Sources */,
 				FB85E0FD21C03D8E004C7871 /* StudentData.swift in Sources */,
 				FB6266FE21E3D4A2009CB9CA /* FilterStudentsViewController.swift in Sources */,
 				FB1C5DD321DFC6A300992842 /* UIColor.swift in Sources */,
@@ -380,6 +395,7 @@
 				FB62670821E6940E009CB9CA /* Date.swift in Sources */,
 				14E9947421B5E125005105A4 /* RestHelper.swift in Sources */,
 				FB1C5DCF21DE984900992842 /* UIView.swift in Sources */,
+				FBAE5EEC21F8E64C00B14040 /* PageViewController.swift in Sources */,
 				149B8E8D21B762700009ACC3 /* StudentTableViewCell.swift in Sources */,
 				FB85E10721C15AA7004C7871 /* EventDetailsViewController.swift in Sources */,
 			);

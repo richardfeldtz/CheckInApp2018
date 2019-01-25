@@ -13,24 +13,50 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var eventDate: UITextField!
     @IBOutlet var eventTime: UITextField!
 
+    @IBOutlet var createEventButton: UIButton!
     @IBOutlet var loadStudentsView: UIView!
     
     fileprivate let datePicker = UIDatePicker()
     fileprivate let timePicker = UIDatePicker()
+    
+    func formatView(view : UIView){
+        view.layer.cornerRadius = 10
+        view.layer.shouldRasterize = false
+        view.layer.borderWidth = 1
+        
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = CGSize.zero
+        view.layer.shadowRadius = 10
+        //        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         eventName.delegate = self
         eventDate.delegate = self
         eventTime.delegate = self
+        let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(self.removeScreen(_:)))
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         loadStudentsView.addGestureRecognizer(tapGesture)
         showDatePicker()
         showTimePicker()
     }
     
+    @objc func removeScreen(_ sender: UITapGestureRecognizer) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        formatView(view: eventName)
+        formatView(view: eventDate)
+        formatView(view: eventTime)
+        formatView(view: loadStudentsView)
+    }
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textField.backgroundColor = UIColor(rgb: 0x00FFFF)
+        textField.backgroundColor = UIColor.lightGray
         return true
     }
     

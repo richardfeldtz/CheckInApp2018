@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     
     let schoolPickerView = UIPickerView()
     let gradePickerView = UIPickerView()
@@ -16,6 +16,27 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
     let lastNameData = ["A-D", "E-H", "I-L", "M-P", "Q-T", "U-Z"]
     static var currentSelectedSchool: String?
     static var currentSelectedLastNameFilter: String?
+    
+    static var schoolFilterFlag = false
+    static var nameFilterFlag = false
+    
+    lazy var schoolFilterSwitch: UISwitch = {
+        let schoolSwitch = UISwitch()
+        schoolSwitch.isOn = FilterStudentsViewController.schoolFilterFlag
+        schoolSwitch.addTarget(self, action: #selector(schoolFilterWasSwitched), for: .valueChanged)
+        schoolSwitch.translatesAutoresizingMaskIntoConstraints = false
+        return schoolSwitch
+    }()
+    
+    
+    lazy var lastNameFilterSwitch: UISwitch = {
+        let schoolSwitch = UISwitch()
+        schoolSwitch.isOn = FilterStudentsViewController.nameFilterFlag
+        schoolSwitch.addTarget(self, action: #selector(nameFilterWasSwitched), for: .valueChanged)
+        schoolSwitch.translatesAutoresizingMaskIntoConstraints = false
+        return schoolSwitch
+    }()
+    
     
     lazy var xButton: UIButton = {
         let button = UIButton()
@@ -34,7 +55,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
     lazy var studentsFromLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Filter students from: "
+        label.text = "Only check in students from: "
         return label
     }()
     
@@ -53,6 +74,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Last Name"
+        textField.textAlignment = .center
         textField.inputView = gradePickerView
         textField.text = FilterStudentsViewController.currentSelectedLastNameFilter
         textField.inputAccessoryView = setUpToolbar(functionType: #selector(cancelPicker))
@@ -60,18 +82,10 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
         return textField
     }()
     
-    lazy var addButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.darkGray
-        button.setTitle("Add", for: .normal)
-        button.addTarget(self, action: #selector(addFilter), for: .touchUpInside)
-        return button
-    }()
-    
     lazy var byLastNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "By last name:"
+        label.text = "With the last name:"
         return label
     }()
     
@@ -87,8 +101,20 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
         view.addSubview(gradePickerView)
     }
     
-    @objc func addFilter(){
-        self.dismiss(animated: true, completion: nil)
+    @objc func schoolFilterWasSwitched(){
+        FilterStudentsViewController.schoolFilterFlag = schoolFilterSwitch.isOn
+        if lastNameFilterSwitch.isOn {
+            FilterStudentsViewController.nameFilterFlag = false
+            lastNameFilterSwitch.isOn = false
+        }
+    }
+    
+    @objc func nameFilterWasSwitched(){
+        FilterStudentsViewController.nameFilterFlag = lastNameFilterSwitch.isOn
+        if schoolFilterSwitch.isOn {
+            FilterStudentsViewController.schoolFilterFlag = false
+            schoolFilterSwitch.isOn = false
+        }
     }
     
     override func viewDidLoad() {
@@ -100,12 +126,13 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
         gradePickerView.delegate = self
         gradePickerView.dataSource = self
         view.addSubview(xButton)
-        view.addSubview(addButton)
         view.addSubview(filterStudentsLabel)
         view.addSubview(studentsFromLabel)
         view.addSubview(schoolTextField)
         view.addSubview(byLastNameLabel)
         view.addSubview(lastNameTextField)
+        view.addSubview(schoolFilterSwitch)
+        view.addSubview(lastNameFilterSwitch)
     }
     
     
@@ -121,17 +148,10 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
         
         xButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            xButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            xButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            xButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            xButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
             xButton.widthAnchor.constraint(equalToConstant: 25),
             xButton.heightAnchor.constraint(equalToConstant: 25)
-            ])
-        addButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
-            addButton.widthAnchor.constraint(equalToConstant: view.frame.width/4),
-            addButton.heightAnchor.constraint(equalToConstant: 50)
             ])
         NSLayoutConstraint.activate([
             filterStudentsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -140,43 +160,31 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource, UI
             ])
         NSLayoutConstraint.activate([
             studentsFromLabel.topAnchor.constraint(equalTo: filterStudentsLabel.bottomAnchor, constant: 20),
-            studentsFromLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            studentsFromLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
         NSLayoutConstraint.activate([
             schoolTextField.topAnchor.constraint(equalTo: studentsFromLabel.bottomAnchor, constant: 20),
-            schoolTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            schoolTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
-        
-        
         NSLayoutConstraint.activate([
-            byLastNameLabel.topAnchor.constraint(equalTo: schoolTextField.bottomAnchor, constant: 20),
-            byLastNameLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            byLastNameLabel.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 20),
+            byLastNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
-        
         NSLayoutConstraint.activate([
             lastNameTextField.topAnchor.constraint(equalTo: byLastNameLabel.bottomAnchor, constant: 20),
-            lastNameTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            lastNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             ])
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == schoolPickerView {
-            return CoreDataHelper.countOfEntity("School")
-        } else {
-            return lastNameData.count
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == schoolPickerView {
-            return schoolData[row]
-        } else {
-            return String(lastNameData[row])
-        }
+        
+        //switch constraints
+        NSLayoutConstraint.activate([
+            schoolFilterSwitch.topAnchor.constraint(equalTo: schoolTextField.bottomAnchor, constant: 20),
+            schoolFilterSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            ])
+        NSLayoutConstraint.activate([
+            lastNameFilterSwitch.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 20),
+            lastNameFilterSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+
+            ])
     }
     
     @objc func cancelPicker(){
@@ -225,6 +233,28 @@ extension FilterStudentsViewController {
             return "uvwxyz"
         default:
             return ""
+        }
+    }
+}
+
+extension FilterStudentsViewController: UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == schoolPickerView {
+            return CoreDataHelper.countOfEntity("School")
+        } else {
+            return lastNameData.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == schoolPickerView {
+            return schoolData[row]
+        } else {
+            return String(lastNameData[row])
         }
     }
 }

@@ -90,17 +90,27 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
             self.present(checkInAlert, animated: true)
         }
         
-        var lastNameFilterCondition = true
+        var lastNameDoesNotMatchFilter = true
         let filterString = FilterStudentsViewController.getFilterString(FilterStudentsViewController.currentSelectedLastNameFilter)
         let nameArray = name.byWords
         for (_, char) in filterString.enumerated() {
             if (Character((nameArray.last?.prefix(1).lowercased())!) == char) {
-                lastNameFilterCondition = false
+                lastNameDoesNotMatchFilter = false
             }
         }
         
+        if FilterStudentsViewController.nameFilterFlag {
+            if lastNameDoesNotMatchFilter {
+                let checkInAlert = UIAlertController(title: "Warning", message: "The selected student does not match the filter", preferredStyle: .alert)
+                checkInAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{
+                    (alertAction: UIAlertAction) in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                self.present(checkInAlert, animated: true)
+            }
+        }
         
-        if FilterStudentsViewController.currentSelectedSchool != "" && (sname == FilterStudentsViewController.currentSelectedSchool || lastNameFilterCondition) {
+        if FilterStudentsViewController.schoolFilterFlag && sname != FilterStudentsViewController.currentSelectedSchool {
             let checkInAlert = UIAlertController(title: "Warning", message: "The selected student does not match the filter", preferredStyle: .alert)
             checkInAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{
                 (alertAction: UIAlertAction) in
@@ -112,7 +122,6 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
     }
     
     override func viewDidLoad() {
-        // idLabel.text = id
         pickerView.delegate = self
         checkInLabel.text = name
         guestTextField.delegate = self
