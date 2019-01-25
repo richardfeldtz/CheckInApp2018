@@ -100,7 +100,7 @@ class AdminToolsViewController: UIViewController {
             guestNumbers.removeLast()
         
             let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/event/attendance")!
-            var response = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!, "eventName": "API Test", "studentIds": idString, "guestCounts": guestNumbers])
+            var response = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!, "eventName": StudentListViewController.eventName, "studentIds": idString, "guestCounts": guestNumbers])
             
             response.removeFirst()
             response.removeLast()

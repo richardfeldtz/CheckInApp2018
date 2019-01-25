@@ -41,7 +41,6 @@ class SelectEventViewController: UICollectionViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Device_Info")
-//        fetchRequest.predicate = NSPredicate(format: "eventName = %@", events[indexPath.row])
         do {
             let deviceInfo = try managedContext.fetch(fetchRequest)
             let objectUpdate = deviceInfo[0] as! NSManagedObject
@@ -73,8 +72,6 @@ class SelectEventViewController: UICollectionViewController {
         layout.minimumLineSpacing = 30
         layout.headerReferenceSize = CGSize(width: view.frame.width, height: 100)
         collectionView!.collectionViewLayout = layout
-        
-        //collectionView.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: "eventCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,7 +82,6 @@ class SelectEventViewController: UICollectionViewController {
         do {
             if let jsonArray = try JSONSerialization.jsonObject(with: eventData, options : .allowFragments) as? [String]{
                 for event in jsonArray {
-                    
                     self.events.append(event)
                 }
             }

@@ -12,12 +12,17 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var eventName: UITextField!
     @IBOutlet var eventDate: UITextField!
     @IBOutlet var eventTime: UITextField!
-
+    @IBOutlet var eventLocation: UITextField!
+    
     @IBOutlet var createEventButton: UIButton!
     @IBOutlet var loadStudentsView: UIView!
     
     fileprivate let datePicker = UIDatePicker()
     fileprivate let timePicker = UIDatePicker()
+    
+    fileprivate var identifier = ""
+    fileprivate var key = ""
+    
     
     func formatView(view : UIView){
         view.layer.cornerRadius = 10
@@ -28,17 +33,28 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = CGSize.zero
         view.layer.shadowRadius = 10
-        //        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
+    }
+    
+    func checkInternetConnection() -> Bool {
+        let connection = InternetConnectionTest.isInternetAvailable()
+        if !connection {
+            let internetAlert = UIAlertController(title: "No internet connection", message: "Your device is not connected to the internet. Please make sure you are connected to the internet to perform this action.", preferredStyle: .alert)
+            internetAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            self.present(internetAlert, animated: true)
+        }
+        return connection
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        eventLocation.delegate = self
         eventName.delegate = self
         eventDate.delegate = self
         eventTime.delegate = self
-        let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(self.removeScreen(_:)))
+        let createEventGesture = UITapGestureRecognizer(target: self, action: #selector(self.createEventPressed(_:)))
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         loadStudentsView.addGestureRecognizer(tapGesture)
+        createEventButton.addGestureRecognizer(createEventGesture)
         showDatePicker()
         showTimePicker()
     }
@@ -47,11 +63,59 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    @objc func createEventPressed(_ sender: UITapGestureRecognizer) {
+        
+        if (eventTime.text?.isEmpty)! || (eventTime.text?.isEmpty)! || (eventName.text?.isEmpty)! || (eventLocation.text?.isEmpty)! {
+            
+            let alert = UIAlertController(title: "Warning", message: "Fields must not be blank", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            
+            return
+        }
+        
+        //Return if not connected to the internet
+        if !checkInternetConnection(){
+            return
+        }
+        
+        let milisecondsDate = self.miliSecFromDate(date: eventDate.text! + " " + eventTime.text!)
+        
+        let localData = CoreDataHelper.retrieveData("Device_Info")
+        for data in localData {
+            self.identifier = (data as AnyObject).value(forKey: "identifier") as! String
+            self.key = (data as AnyObject).value(forKey: "key") as! String
+
+        }
+        
+        let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/createEvent")!
+        RestHelper.makePost(url, ["identifier": self.identifier, "key": self.key, "eventName": eventName.text!, "location": eventLocation.text!, "eventDate": milisecondsDate, "isHometownHall": "false", "isOrientation": "false"])
+        
+        let uploadAlert = UIAlertController(title: "Success", message: "Event successfully created", preferredStyle: .alert)
+        uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
+            (alertAction: UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(uploadAlert, animated: true)
+    }
+    
+    func miliSecFromDate(date : String) -> String {
+        print(date)
+        let strTime = date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy hh:mm a"
+        let ObjDate = formatter.date(from: strTime)
+        return (String(describing: ObjDate!.millisecondsSince1970))
+    }
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         formatView(view: eventName)
         formatView(view: eventDate)
         formatView(view: eventTime)
+        formatView(view: eventLocation)
         formatView(view: loadStudentsView)
     }
     
@@ -98,7 +162,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
     
     @objc func datePickerFormat(){
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "MM/dd/yyyy"
         eventDate.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
