@@ -29,7 +29,6 @@ class AdminToolsViewController: UIViewController {
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = CGSize.zero
         view.layer.shadowRadius = 10
-//        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
     }
     
     override func viewDidLayoutSubviews() {
@@ -49,16 +48,32 @@ class AdminToolsViewController: UIViewController {
     }
     
     fileprivate func setupGestureRecognizers() {
-        uploadDataView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        uploadDataView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(uploadData)))
         downloadDataView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(downloadData)))
         filterView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(filterStudentsTapped)))
         createEventView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCreateEventVC)))
         eventDetailsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openEventDetailsVC)))
     }
     
+    func checkInternetConnection() -> Bool {
+        let connection = InternetConnectionTest.isInternetAvailable()
+        if !connection {
+            let internetAlert = UIAlertController(title: "No internet connection", message: "Your device is not connected to the internet. Please make sure you are connected to the internet to perform this action.", preferredStyle: .alert)
+            internetAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            self.present(internetAlert, animated: true)
+        }
+        return connection
+    }
     
     
-    @objc func handleTap(){
+    
+    @objc func uploadData(){
+        
+        //Return if not connected to the internet
+        if !checkInternetConnection(){
+            return
+        }
+        
         let localData = CoreDataHelper.retrieveData("Checkins")
         var ids: Array<String> = []
         var guests: Array<Int> = []
@@ -85,17 +100,34 @@ class AdminToolsViewController: UIViewController {
             guestNumbers.removeLast()
         
             let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/event/attendance")!
-            _ = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!, "eventName": "API Test", "studentIds": idString, "guestCounts": guestNumbers])
-            let uploadAlert = UIAlertController(title: "Success", message: "Check in list successfully uploaded", preferredStyle: .alert)
-            uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
-            self.present(uploadAlert, animated: true)
+            var response = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!, "eventName": "API Test", "studentIds": idString, "guestCounts": guestNumbers])
+            
+            response.removeFirst()
+            response.removeLast()
+            if response == "Success" {
+                let uploadAlert = UIAlertController(title: "Success", message: "Check in list successfully uploaded", preferredStyle: .alert)
+                uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                self.present(uploadAlert, animated: true)
+            }
+            else {
+                let uploadAlert = UIAlertController(title: "Error", message: "There was an error uploading the check-in records.", preferredStyle: .alert)
+                uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                self.present(uploadAlert, animated: true)
+            }
         }
         else {
-            print("Nothing to upload")
+            let uploadAlert = UIAlertController(title: "Error", message: "There are no check-in records to upload", preferredStyle: .alert)
+            uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            self.present(uploadAlert, animated: true)
         }
     }
     
     @objc func downloadData() {
+        
+        //Return if not connected to the internet
+        if !checkInternetConnection(){
+            return
+        }
         
         let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/students")!
         let schoolURL = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/schools")!
