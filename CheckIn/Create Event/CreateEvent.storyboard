@@ -88,10 +88,10 @@
                                 <rect key="frame" x="20" y="120" width="728" height="579"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrs-lQ-6jx">
-                                        <rect key="frame" x="0.0" y="0.0" width="728" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="728" height="130"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vke-WP-ciY" customClass="IndentedTextField" customModule="CheckIn" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="728" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="728" height="130"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -108,10 +108,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOV-iz-TWG">
-                                        <rect key="frame" x="0.0" y="120" width="728" height="99.5"/>
+                                        <rect key="frame" x="0.0" y="150" width="728" height="129.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Location" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="w9n-38-KbW" customClass="IndentedTextField" customModule="CheckIn" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-1" width="728" height="100"/>
+                                                <rect key="frame" x="0.0" y="-1" width="728" height="130"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -127,10 +127,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8W-Er-hlx">
-                                        <rect key="frame" x="0.0" y="239.5" width="728" height="100"/>
+                                        <rect key="frame" x="0.0" y="299.5" width="728" height="130"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FrC-5f-WpO" customClass="IndentedTextField" customModule="CheckIn" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="728" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="728" height="130"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -146,10 +146,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJ3-4X-LQY">
-                                        <rect key="frame" x="0.0" y="359.5" width="728" height="99.5"/>
+                                        <rect key="frame" x="0.0" y="449.5" width="728" height="129.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZe-EC-qG7" customClass="IndentedTextField" customModule="CheckIn" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="728" height="99.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="728" height="129.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -165,11 +165,11 @@
                                             <constraint firstAttribute="bottom" secondItem="LZe-EC-qG7" secondAttribute="bottom" id="OJu-bj-hPm"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5D4-Bl-X4W">
-                                        <rect key="frame" x="0.0" y="479" width="728" height="100"/>
+                                    <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5D4-Bl-X4W">
+                                        <rect key="frame" x="0.0" y="579" width="728" height="64"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Students to Load" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mxj-d3-YCT">
-                                                <rect key="frame" x="16" y="32" width="696" height="36"/>
+                                                <rect key="frame" x="16" y="32" width="696" height="0.0"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <textInputTraits key="textInputTraits"/>
