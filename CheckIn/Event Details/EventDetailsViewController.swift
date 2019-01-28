@@ -12,6 +12,24 @@ class EventDetailsViewController: UIViewController {
     
     @IBOutlet weak var checkInCount: UILabel!
     @IBOutlet weak var guestCount: UILabel!
+	@IBOutlet weak var guestView: UIView!
+	@IBOutlet weak var checkedInStudentsView: UIView!
+	
+	func formatView(view : UIView){
+		view.layer.cornerRadius = 10
+		view.layer.shouldRasterize = false
+		view.layer.borderWidth = 1
+		
+		view.layer.shadowColor = UIColor.black.cgColor
+		view.layer.shadowOpacity = 1
+		view.layer.shadowOffset = CGSize.zero
+		view.layer.shadowRadius = 10
+	}
+	
+	override func viewDidLayoutSubviews() {
+		formatView(view: guestView)
+		formatView(view: checkedInStudentsView)
+	}
 	
     override func viewDidLoad() {
 		super.viewDidLoad();
