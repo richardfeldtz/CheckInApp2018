@@ -124,6 +124,7 @@
                     <connections>
                         <outlet property="checkInCount" destination="FnJ-uQ-ksp" id="yxc-Vj-yxu"/>
                         <outlet property="checkedInStudentsView" destination="mJj-Kt-vji" id="yLZ-3H-Bja"/>
+                        <outlet property="eventName" destination="jo6-6X-h0z" id="InG-ut-XGL"/>
                         <outlet property="guestCount" destination="EBO-ho-5az" id="LrI-IV-NuQ"/>
                         <outlet property="guestView" destination="i8u-iC-RZQ" id="K4y-QA-8QP"/>
                     </connections>

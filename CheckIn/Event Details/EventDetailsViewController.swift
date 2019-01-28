@@ -10,7 +10,8 @@ import UIKit
 
 class EventDetailsViewController: UIViewController {
     
-    @IBOutlet weak var checkInCount: UILabel!
+	@IBOutlet weak var eventName: UILabel!
+	@IBOutlet weak var checkInCount: UILabel!
     @IBOutlet weak var guestCount: UILabel!
 	@IBOutlet weak var guestView: UIView!
 	@IBOutlet weak var checkedInStudentsView: UIView!
@@ -33,6 +34,7 @@ class EventDetailsViewController: UIViewController {
 	
     override func viewDidLoad() {
 		super.viewDidLoad();
+		eventName.text = StudentListViewController.eventName;
 		let coreData = CoreDataHelper.retrieveData("Checkins");
 		updateCheckInCount(checkInData: coreData as! [Checkins]);
 		updateGuestCount(checkInData: coreData as! [Checkins]);
