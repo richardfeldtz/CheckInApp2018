@@ -19,15 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMu-F5-B5f">
-                                <rect key="frame" x="0.0" y="70" width="834" height="112"/>
+                                <rect key="frame" x="0.0" y="70" width="834" height="29"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xR-Bp-8hW">
-                                <rect key="frame" x="83" y="182" width="668" height="112.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xR-Bp-8hW" userLabel="Event Name View">
+                                <rect key="frame" x="83" y="99" width="668" height="112"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hometown Hall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo6-6X-h0z">
-                                        <rect key="frame" x="66" y="11" width="536" height="90.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="66" y="10.5" width="536" height="91"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -41,13 +41,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qzt-52-q5D">
-                                <rect key="frame" x="83" y="294.5" width="668" height="723.5"/>
+                                <rect key="frame" x="83" y="221.5" width="668" height="724"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8u-iC-RZQ">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8u-iC-RZQ" userLabel="Guests View">
                                         <rect key="frame" x="0.0" y="0.0" width="668" height="352"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="70" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EBO-ho-5az">
-                                                <rect key="frame" x="16" y="146.5" width="636" height="58.5"/>
+                                                <rect key="frame" x="16" y="147" width="636" height="58.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="41">
                                                         <attributes>
@@ -60,7 +60,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="NXR-T7-mBJ">
-                                                <rect key="frame" x="285" y="215" width="98" height="38.5"/>
+                                                <rect key="frame" x="285" y="215.5" width="98" height="38.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -76,8 +76,8 @@
                                             <constraint firstItem="EBO-ho-5az" firstAttribute="leading" secondItem="i8u-iC-RZQ" secondAttribute="leading" constant="16" id="zAG-Yb-foK"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJj-Kt-vji">
-                                        <rect key="frame" x="0.0" y="372" width="668" height="351.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJj-Kt-vji" userLabel="Checked In Students View">
+                                        <rect key="frame" x="0.0" y="372" width="668" height="352"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnJ-uQ-ksp">
                                                 <rect key="frame" x="304.5" y="146" width="59" height="60"/>
@@ -113,8 +113,8 @@
                             <constraint firstItem="qzt-52-q5D" firstAttribute="height" secondItem="TrQ-wb-Uvo" secondAttribute="height" multiplier="0.65" constant="1" id="POq-Ch-gzU"/>
                             <constraint firstItem="7xR-Bp-8hW" firstAttribute="top" secondItem="oMu-F5-B5f" secondAttribute="bottom" id="Zxz-h3-o9f"/>
                             <constraint firstItem="oMu-F5-B5f" firstAttribute="centerX" secondItem="5nL-8A-NVN" secondAttribute="centerX" id="cNE-9y-3El"/>
-                            <constraint firstItem="qzt-52-q5D" firstAttribute="top" secondItem="7xR-Bp-8hW" secondAttribute="bottom" id="eaT-O4-Odx"/>
-                            <constraint firstItem="oMu-F5-B5f" firstAttribute="height" secondItem="TrQ-wb-Uvo" secondAttribute="height" multiplier="0.1" constant="1" id="xiE-H3-R4g"/>
+                            <constraint firstItem="qzt-52-q5D" firstAttribute="top" secondItem="7xR-Bp-8hW" secondAttribute="bottom" multiplier="1.05" id="eaT-O4-Odx"/>
+                            <constraint firstItem="oMu-F5-B5f" firstAttribute="height" secondItem="TrQ-wb-Uvo" secondAttribute="height" multiplier="0.025" constant="1" id="xiE-H3-R4g"/>
                             <constraint firstItem="qzt-52-q5D" firstAttribute="width" secondItem="TrQ-wb-Uvo" secondAttribute="width" multiplier="0.8" constant="1" id="ydd-fF-GdR"/>
                             <constraint firstItem="7xR-Bp-8hW" firstAttribute="width" secondItem="TrQ-wb-Uvo" secondAttribute="width" multiplier="0.8" constant="1" id="yqd-FC-KHM"/>
                         </constraints>
@@ -123,7 +123,10 @@
                     <navigationItem key="navigationItem" title="Event Details" id="oj6-6t-LbB"/>
                     <connections>
                         <outlet property="checkInCount" destination="FnJ-uQ-ksp" id="yxc-Vj-yxu"/>
+                        <outlet property="checkedInStudentsView" destination="mJj-Kt-vji" id="yLZ-3H-Bja"/>
+                        <outlet property="eventName" destination="jo6-6X-h0z" id="InG-ut-XGL"/>
                         <outlet property="guestCount" destination="EBO-ho-5az" id="LrI-IV-NuQ"/>
+                        <outlet property="guestView" destination="i8u-iC-RZQ" id="K4y-QA-8QP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZp-nX-TQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
