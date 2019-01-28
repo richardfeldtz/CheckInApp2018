@@ -228,24 +228,18 @@
                                 <rect key="frame" x="0.0" y="70" width="768" height="31.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSX-iT-4QP">
-                                <rect key="frame" x="38" y="101.5" width="692" height="73"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMl-zZ-n1x">
-                                <rect key="frame" x="38" y="174.5" width="692" height="205.5"/>
+                                <rect key="frame" x="38" y="120" width="692" height="206"/>
                                 <connections>
                                     <segue destination="hlw-aG-uVN" kind="embed" id="RVc-qT-O5S"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Gt-Aw-Q6w">
-                                <rect key="frame" x="-0.5" y="380" width="769" height="21.5"/>
+                                <rect key="frame" x="-0.5" y="326" width="769" height="21.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rY3-lN-TOD">
-                                <rect key="frame" x="38" y="401.5" width="692" height="513"/>
+                                <rect key="frame" x="38" y="347.5" width="692" height="513"/>
                                 <connections>
                                     <segue destination="ogN-8X-rlp" kind="embed" id="ydz-2g-zmy"/>
                                 </connections>
@@ -257,20 +251,16 @@
                             <constraint firstItem="8Gt-Aw-Q6w" firstAttribute="height" secondItem="xao-RA-KBl" secondAttribute="height" multiplier="0.02" constant="1" id="51s-dS-262"/>
                             <constraint firstItem="b0P-4B-fUJ" firstAttribute="width" secondItem="xao-RA-KBl" secondAttribute="width" id="5FA-b1-9iO"/>
                             <constraint firstItem="JMl-zZ-n1x" firstAttribute="width" secondItem="xao-RA-KBl" secondAttribute="width" multiplier="0.9" constant="1" id="9aw-gP-CKR"/>
-                            <constraint firstItem="eSX-iT-4QP" firstAttribute="height" secondItem="xao-RA-KBl" secondAttribute="height" multiplier="0.07" constant="1" id="Aea-4O-QxH"/>
                             <constraint firstItem="rY3-lN-TOD" firstAttribute="centerX" secondItem="M2w-a0-6xK" secondAttribute="centerX" id="Bim-aN-hsX"/>
                             <constraint firstItem="b0P-4B-fUJ" firstAttribute="centerX" secondItem="M2w-a0-6xK" secondAttribute="centerX" id="Bue-Ku-x8p"/>
-                            <constraint firstItem="eSX-iT-4QP" firstAttribute="top" secondItem="b0P-4B-fUJ" secondAttribute="bottom" id="Eew-Wx-MI5"/>
                             <constraint firstItem="b0P-4B-fUJ" firstAttribute="top" secondItem="M2w-a0-6xK" secondAttribute="top" id="GPA-KG-ZwI"/>
                             <constraint firstItem="rY3-lN-TOD" firstAttribute="height" secondItem="xao-RA-KBl" secondAttribute="height" multiplier="0.5" constant="1" id="GhZ-97-2KF"/>
-                            <constraint firstItem="JMl-zZ-n1x" firstAttribute="top" secondItem="eSX-iT-4QP" secondAttribute="bottom" id="PdF-AD-r68"/>
                             <constraint firstItem="8Gt-Aw-Q6w" firstAttribute="centerX" secondItem="M2w-a0-6xK" secondAttribute="centerX" id="Tdq-vP-zYX"/>
                             <constraint firstItem="8Gt-Aw-Q6w" firstAttribute="width" secondItem="xao-RA-KBl" secondAttribute="width" constant="1" id="YtH-gD-FyQ"/>
                             <constraint firstItem="b0P-4B-fUJ" firstAttribute="height" secondItem="xao-RA-KBl" secondAttribute="height" multiplier="0.03" constant="1" id="ZIA-QX-KUM"/>
                             <constraint firstItem="8Gt-Aw-Q6w" firstAttribute="top" secondItem="JMl-zZ-n1x" secondAttribute="bottom" id="Zu2-h9-Gya"/>
                             <constraint firstItem="rY3-lN-TOD" firstAttribute="top" secondItem="8Gt-Aw-Q6w" secondAttribute="bottom" id="mSx-om-enn"/>
-                            <constraint firstItem="eSX-iT-4QP" firstAttribute="centerX" secondItem="M2w-a0-6xK" secondAttribute="centerX" id="nAj-Ia-aa9"/>
-                            <constraint firstItem="eSX-iT-4QP" firstAttribute="width" secondItem="xao-RA-KBl" secondAttribute="width" multiplier="0.9" constant="1" id="nXa-9z-oVg"/>
+                            <constraint firstItem="JMl-zZ-n1x" firstAttribute="top" secondItem="M2w-a0-6xK" secondAttribute="top" constant="50" id="o37-dY-YhF"/>
                             <constraint firstItem="JMl-zZ-n1x" firstAttribute="centerX" secondItem="M2w-a0-6xK" secondAttribute="centerX" id="rSf-iz-GaQ"/>
                             <constraint firstItem="rY3-lN-TOD" firstAttribute="width" secondItem="xao-RA-KBl" secondAttribute="width" multiplier="0.9" constant="1" id="vTQ-7w-AWw"/>
                         </constraints>
@@ -287,9 +277,21 @@
             <objects>
                 <viewController id="hlw-aG-uVN" customClass="SelectEventController" customModule="CheckIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gCY-YI-2cN">
-                        <rect key="frame" x="0.0" y="0.0" width="692" height="205.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="692" height="206"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSX-iT-4QP">
+                                <rect key="frame" x="20" y="20" width="228" height="51.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eSX-iT-4QP" firstAttribute="leading" secondItem="gUn-po-F9P" secondAttribute="leading" constant="20" id="t79-Vp-Yz4"/>
+                            <constraint firstItem="eSX-iT-4QP" firstAttribute="top" secondItem="gUn-po-F9P" secondAttribute="top" id="zR0-CT-w9c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gUn-po-F9P"/>
                     </view>
                 </viewController>
