@@ -81,7 +81,6 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         }
         
         let milisecondsDate = self.miliSecFromDate(date: eventDate.text! + " " + eventTime.text!)
-        
         let localData = CoreDataHelper.retrieveData("Device_Info")
         for data in localData {
             self.identifier = (data as AnyObject).value(forKey: "identifier") as! String
@@ -95,13 +94,12 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         let uploadAlert = UIAlertController(title: "Success", message: "Event successfully created", preferredStyle: .alert)
         uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
             (alertAction: UIAlertAction) in
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }))
         self.present(uploadAlert, animated: true)
     }
     
     func miliSecFromDate(date : String) -> String {
-        print(date)
         let strTime = date
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy hh:mm a"

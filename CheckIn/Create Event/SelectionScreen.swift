@@ -11,10 +11,10 @@ import UIKit
 class SelectionScreen: UIViewController {
     
     
-    @IBOutlet var selectEventLabel: UILabel!
-    @IBOutlet var createEventLabel: UILabel!
-    @IBOutlet var createEventView: UIView!
-    @IBOutlet var selectEventView: UIView!
+//    @IBOutlet var selectEventLabel: UILabel!
+//    @IBOutlet var createEventLabel: UILabel!
+//    @IBOutlet var createEventView: UIView!
+//    @IBOutlet var selectEventView: UIView!
     
     
     func formatView(view : UIView){
@@ -29,27 +29,27 @@ class SelectionScreen: UIViewController {
     }
     
     func setUpTouchHandlers() {
-        createEventView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(createEventTapped)))
-        selectEventView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectEventTapped)))
+//        createEventView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(createEventTapped)))
+//        selectEventView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectEventTapped)))
         
     }
     
-    @objc func createEventTapped() {
-        let storyboard = UIStoryboard(name: "CreateEvent", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CreateEventViewController") as! CreateEventViewController
-        let navVc = UINavigationController(rootViewController: vc)
-        vc.navigationItem.setRightBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-delete-filled-25"), style: .plain, target: self, action: #selector(removeScreen)), animated: true)
-        self.show(navVc, sender: self)
-        
-    }
+//    @objc func createEventTapped() {
+//        let storyboard = UIStoryboard(name: "CreateEvent", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "CreateEventViewController") as! CreateEventViewController
+//        let navVc = UINavigationController(rootViewController: vc)
+//        vc.navigationItem.setRightBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-delete-filled-25"), style: .plain, target: self, action: #selector(removeScreen)), animated: true)
+//        self.show(navVc, sender: self)
+//
+//    }
     
-    @objc func selectEventTapped() {
-        let storyboard = UIStoryboard(name: "CreateEvent", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "eventCollectionViewController") as! SelectEventViewController
-        let navVc = UINavigationController(rootViewController: vc)
-        vc.navigationItem.setRightBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-delete-filled-25"), style: .plain, target: self, action: #selector(removeScreen)), animated: true)
-        self.show(navVc, sender: self)
-    }
+//    @objc func selectEventTapped() {
+//        let storyboard = UIStoryboard(name: "CreateEvent", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "eventCollectionViewController") as! SelectEventViewController
+//        let navVc = UINavigationController(rootViewController: vc)
+//        vc.navigationItem.setRightBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-delete-filled-25"), style: .plain, target: self, action: #selector(removeScreen)), animated: true)
+//        self.show(navVc, sender: self)
+//    }
     
     @objc func removeScreen() {
         self.dismiss(animated: true, completion: nil)
@@ -57,13 +57,13 @@ class SelectionScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpTouchHandlers()
+        //setUpTouchHandlers()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        formatView(view: createEventView)
-        formatView(view: selectEventView)
+        //formatView(view: createEventView)
+        //formatView(view: selectEventView)
     }
 }
