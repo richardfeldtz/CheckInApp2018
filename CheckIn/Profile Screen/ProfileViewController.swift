@@ -19,31 +19,33 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 10
+        return 12
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(row)
+        if row == 0 {
+            return "Pick number of guests"
+        }
+        else {
+            return String(row - 1)
+        }
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        guestTextField.text = String(row)
-    }
     
-    
-    var pickerView = UIPickerView()
     var guestsWithStudent: Int = 0
     var name = ""
     var sname = ""
     var id = ""
     
-    @IBOutlet var guestTextField: UITextField!
+    @IBOutlet weak var buttonView: UIView!
     @IBOutlet var checkInLabel: UILabel!
-    
+    @IBOutlet weak var schoolNameLabel: UILabel!
+    @IBOutlet weak var guestPicker: UIPickerView!
     @IBAction func dismissProfile(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func checkIn(_ sender: UIButton) {
+    
+    @objc func buttonClick(_ : UITapGestureRecognizer) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -53,11 +55,13 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
         let checkedStudent = NSManagedObject(entity: descrEntity, insertInto: managedContext)
         checkedStudent.setValue(id, forKey: "id")
         checkedStudent.setValue("API Event", forKey: "event_name")
-        var guestCount = Int(guestTextField.text!)
-        //If guest count is not updated, set it to 0
-        if guestCount == nil {
-            guestCount = 0
+        
+        var guestCount = 0
+        let selectedPickerRow = Int(guestPicker.selectedRow(inComponent: 0))
+        if selectedPickerRow > 0 {
+            guestCount = selectedPickerRow - 1;
         }
+        print(guestCount)
         checkedStudent.setValue(guestCount, forKey: "guests")
 
         //Update checkin flag
@@ -126,29 +130,20 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
     }
     
     override func viewDidLoad() {
-        pickerView.delegate = self
+        guestPicker.dataSource=self
+        guestPicker.delegate=self
+        guestPicker.autoresizesSubviews=true
+        buttonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonClick(_ :))))
         checkInLabel.text = name
-        guestTextField.delegate = self
-        guestTextField.inputView = pickerView
-        guestTextField.inputAccessoryView = setUpToolbar(functionType: #selector(cancelPicker))
+        schoolNameLabel.text = sname
         navigationController?.setNavigationBarHidden(false, animated: true)
         preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
     }
     
-    func setUpToolbar(functionType: Selector) -> UIToolbar {
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: functionType)
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        //        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(cancelPicker))
-        toolbar.setItems([spaceButton,doneButton], animated: false)
-        
-        return toolbar
+    override func viewDidLayoutSubviews() {
+        buttonView.layer.cornerRadius = 10
+        buttonView.layer.shouldRasterize = false
     }
     
-    @objc func cancelPicker(){
-        self.view.endEditing(true)
-    }
     
 }
