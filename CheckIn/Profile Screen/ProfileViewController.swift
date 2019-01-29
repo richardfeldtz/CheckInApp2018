@@ -36,8 +36,11 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
     var name = ""
     var sname = ""
     var id = ""
+    var alreadyChecked = false
     
     @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var checkInButtonText: UILabel!
+    @IBOutlet weak var deleteButtonView: UIView!
     @IBOutlet var checkInLabel: UILabel!
     @IBOutlet weak var schoolNameLabel: UILabel!
     @IBOutlet weak var guestPicker: UIPickerView!
@@ -45,57 +48,37 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc func buttonClick(_ : UITapGestureRecognizer) {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let descrEntity = NSEntityDescription.entity(forEntityName: "Checkins", in: managedContext)!
-        let checkedStudent = NSManagedObject(entity: descrEntity, insertInto: managedContext)
-        checkedStudent.setValue(id, forKey: "id")
-        checkedStudent.setValue("API Event", forKey: "event_name")
-        
-        var guestCount = 0
-        let selectedPickerRow = Int(guestPicker.selectedRow(inComponent: 0))
-        if selectedPickerRow > 0 {
-            guestCount = selectedPickerRow - 1;
-        }
-        print(guestCount)
-        checkedStudent.setValue(guestCount, forKey: "guests")
-
-        //Update checkin flag
-        var studentResult : [NSManagedObject]
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-        
-        let index = StudentListViewController.idmap[id]
-        StudentListViewController.data[index!].checked=true
-        
-        do {
-            studentResult = try managedContext.fetch(fetchRequest)
-            let student=studentResult.first
-            student?.setValue(true, forKey: "checked")
-            try managedContext.save()
-            print("Checkin successful")
-            StudentListViewController.searchController.searchBar.text=nil
-            self.dismiss(animated: true, completion: nil)
-            
-        }
-        catch _ as NSError{
-            print("Could not check-in student")
-        }
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         
         if StudentListViewController.data[StudentListViewController.idmap[id]!].checked {
+            
+            //Get guest count for student who is already checked in
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return
+            }
+            let managedContext = appDelegate.persistentContainer.viewContext
+            var checkInResult : [NSManagedObject]
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Checkins")
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+            do {
+                checkInResult = try managedContext.fetch(fetchRequest)
+                let studentCheckIn=checkInResult.first
+                guestPicker.selectRow(studentCheckIn?.value(forKey: "guests") as! Int + 1, inComponent: 0, animated: true)
+            }
+            catch _ as NSError{
+                print("Error fetching guest count from check in table")
+            }
+            
+            //Change check-in button text
+            self.checkInButtonText.text = "Update"
+            alreadyChecked = true
             let checkInAlert = UIAlertController(title: "Warning", message: "The student has already been checked in", preferredStyle: .alert)
-            checkInAlert.addAction(UIAlertAction(title: "Go back", style: .cancel, handler:{
-                    (alertAction: UIAlertAction) in
-                    self.dismiss(animated: true, completion: nil)
-            }))
+            checkInAlert.addAction(UIAlertAction(title: "Ok", style: .cancel))
             self.present(checkInAlert, animated: true)
+        }
+        else {
+            deleteButtonView.isHidden = true
         }
         
         var lastNameDoesNotMatchFilter = true
@@ -134,6 +117,7 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
         guestPicker.delegate=self
         guestPicker.autoresizesSubviews=true
         buttonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonClick(_ :))))
+        deleteButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteButtonClick(_ :))))
         checkInLabel.text = name
         schoolNameLabel.text = sname
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -143,7 +127,99 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
     override func viewDidLayoutSubviews() {
         buttonView.layer.cornerRadius = 10
         buttonView.layer.shouldRasterize = false
+        deleteButtonView.layer.cornerRadius = 10
+        deleteButtonView.layer.shouldRasterize = false
     }
     
+    @objc func buttonClick(_ : UITapGestureRecognizer) {
+        
+        var guestCount = 0
+        let selectedPickerRow = Int(guestPicker.selectedRow(inComponent: 0))
+        if selectedPickerRow > 0 {
+            guestCount = selectedPickerRow - 1;
+        }
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        if !alreadyChecked {
+            let descrEntity = NSEntityDescription.entity(forEntityName: "Checkins", in: managedContext)!
+            let checkedStudent = NSManagedObject(entity: descrEntity, insertInto: managedContext)
+            checkedStudent.setValue(id, forKey: "id")
+            checkedStudent.setValue("API Event", forKey: "event_name")
+            checkedStudent.setValue(guestCount, forKey: "guests")
+            
+            //Update checkin flag
+            var studentResult : [NSManagedObject]
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+            
+            let index = StudentListViewController.idmap[id]
+            StudentListViewController.data[index!].checked=true
+            
+            do {
+                studentResult = try managedContext.fetch(fetchRequest)
+                let student=studentResult.first
+                student?.setValue(true, forKey: "checked")
+                try managedContext.save()
+                print("Checkin successful")
+                StudentListViewController.searchController.searchBar.text=nil
+                self.dismiss(animated: true, completion: nil)
+                
+            }
+            catch _ as NSError{
+                print("Could not check-in student")
+            }
+        }
+        else {
+            var checkInResult : [NSManagedObject]
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Checkins")
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+            do {
+                checkInResult = try managedContext.fetch(fetchRequest)
+                let studentCheckIn=checkInResult.first
+                studentCheckIn?.setValue(guestCount, forKey: "guests")
+                try managedContext.save()
+                print("Update successful")
+                StudentListViewController.searchController.searchBar.text=nil
+                self.dismiss(animated: true, completion: nil)
+                
+            }
+            catch _ as NSError{
+                print("Could not update check-in")
+            }
+        }
+    }
+    
+    @objc func deleteButtonClick(_ : UITapGestureRecognizer) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        var studentResult : NSManagedObject
+        let checkInFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Checkins")
+        let studentFetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
+        checkInFetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        studentFetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        do {
+            let delCheckIn = NSBatchDeleteRequest(fetchRequest: checkInFetchRequest)
+            try managedContext.execute(delCheckIn)
+            print("Check in delete successful")
+            studentResult = try managedContext.fetch(studentFetchRequest).first!
+            studentResult.setValue(false, forKey: "checked")
+            try managedContext.save()
+            print("Student data updated")
+            StudentListViewController.data[StudentListViewController.idmap[id]!].checked = false
+            print("Local student data updated")
+            StudentListViewController.searchController.searchBar.text=nil
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+        catch _ as NSError{
+            print("Could not update check-in")
+        }
+        
+    }
     
 }

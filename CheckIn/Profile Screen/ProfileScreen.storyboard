@@ -59,6 +59,10 @@
                                     <constraint firstItem="GlG-eC-SiF" firstAttribute="height" secondItem="p0l-WM-YdT" secondAttribute="height" multiplier="0.8" constant="1" id="orP-LP-4xq"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZS-Tw-vaU">
+                                <rect key="frame" x="0.0" y="804" width="768" height="52.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIH-VT-vZz">
                                 <rect key="frame" x="16" y="972" width="44" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -67,24 +71,46 @@
                                     <action selector="dismissProfile:" destination="8Sq-P5-Z6J" eventType="touchUpInside" id="RAx-HG-22m"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJC-Uo-hLs">
+                                <rect key="frame" x="230" y="856.5" width="308" height="52"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Check-in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-La-ewE">
+                                        <rect key="frame" x="30" y="4.5" width="248" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Nax-La-ewE" firstAttribute="centerY" secondItem="BJC-Uo-hLs" secondAttribute="centerY" id="IIm-jr-tQi"/>
+                                    <constraint firstItem="Nax-La-ewE" firstAttribute="height" secondItem="BJC-Uo-hLs" secondAttribute="height" multiplier="0.8" constant="1" id="UyN-mc-ESN"/>
+                                    <constraint firstItem="Nax-La-ewE" firstAttribute="width" secondItem="BJC-Uo-hLs" secondAttribute="width" multiplier="0.8" constant="1" id="dPb-kc-8Bo"/>
+                                    <constraint firstItem="Nax-La-ewE" firstAttribute="centerX" secondItem="BJC-Uo-hLs" secondAttribute="centerX" id="zvQ-7L-pl4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ECR-ya-mG2" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.01" constant="1" id="0V6-5J-NT4"/>
                             <constraint firstItem="p0l-WM-YdT" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.4" constant="1" id="5Zg-Ql-jfm"/>
+                            <constraint firstItem="TZS-Tw-vaU" firstAttribute="top" secondItem="p0l-WM-YdT" secondAttribute="bottom" id="Atm-EW-HHF"/>
                             <constraint firstItem="p0l-WM-YdT" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="BfE-je-gXK"/>
                             <constraint firstItem="7pj-2I-o75" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.05" constant="1" id="D6B-Ng-ggZ"/>
                             <constraint firstItem="XQE-pj-Ofn" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.15" constant="1" id="DnN-h1-oFm"/>
                             <constraint firstItem="7pj-2I-o75" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.9" constant="1" id="EXy-e0-4Td"/>
                             <constraint firstItem="XQE-pj-Ofn" firstAttribute="top" secondItem="QEA-t4-7mN" secondAttribute="top" id="HbY-iL-16j"/>
                             <constraint firstItem="OZW-qd-CEz" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.4" constant="1" id="HtA-GE-wuG"/>
+                            <constraint firstItem="TZS-Tw-vaU" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="Irc-Rl-jEn"/>
                             <constraint firstItem="XQE-pj-Ofn" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="KCE-mi-TR4"/>
                             <constraint firstItem="7pj-2I-o75" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="M93-H9-LXB"/>
                             <constraint firstItem="OZW-qd-CEz" firstAttribute="top" secondItem="ECR-ya-mG2" secondAttribute="bottom" id="MJ7-AR-ZBB"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="QfW-mL-jyv"/>
                             <constraint firstItem="OZW-qd-CEz" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.8" constant="1" id="SZY-R6-SZC"/>
                             <constraint firstItem="ECR-ya-mG2" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="TBl-Zk-mDB"/>
+                            <constraint firstItem="TZS-Tw-vaU" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.05" constant="1" id="TEi-eB-J7z"/>
                             <constraint firstItem="7pj-2I-o75" firstAttribute="top" secondItem="rfc-gS-gBx" secondAttribute="bottom" id="Ujl-WK-qoq"/>
+                            <constraint firstItem="BJC-Uo-hLs" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="XIn-Ml-v4X"/>
                             <constraint firstItem="p0l-WM-YdT" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.05" constant="1" id="YNJ-RO-Gs4"/>
                             <constraint firstItem="p0l-WM-YdT" firstAttribute="top" secondItem="OZW-qd-CEz" secondAttribute="bottom" id="YUL-uJ-zB5"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="top" secondItem="XQE-pj-Ofn" secondAttribute="bottom" id="aZK-cO-eCU"/>
@@ -92,17 +118,23 @@
                             <constraint firstItem="OZW-qd-CEz" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="bSL-QV-N1p"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.1" constant="1" id="c2o-o1-WdE"/>
                             <constraint firstItem="ECR-ya-mG2" firstAttribute="top" secondItem="7pj-2I-o75" secondAttribute="bottom" id="esj-kX-cFS"/>
+                            <constraint firstItem="BJC-Uo-hLs" firstAttribute="top" secondItem="TZS-Tw-vaU" secondAttribute="bottom" id="hcN-Nl-CZy"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="n17-Oy-Wt9"/>
                             <constraint firstItem="XQE-pj-Ofn" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="saH-Sc-zKi"/>
+                            <constraint firstItem="TZS-Tw-vaU" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="sd4-3p-Lip"/>
                             <constraint firstItem="QEA-t4-7mN" firstAttribute="bottom" secondItem="pIH-VT-vZz" secondAttribute="bottom" constant="16" id="v93-vE-bzf"/>
+                            <constraint firstItem="BJC-Uo-hLs" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.4" constant="1" id="w7Y-fu-7NM"/>
                             <constraint firstItem="pIH-VT-vZz" firstAttribute="leading" secondItem="QEA-t4-7mN" secondAttribute="leading" constant="16" id="wZa-mv-3Qw"/>
+                            <constraint firstItem="BJC-Uo-hLs" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.05" constant="1" id="xmo-Pj-m27"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QEA-t4-7mN"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="667"/>
                     <connections>
                         <outlet property="buttonView" destination="p0l-WM-YdT" id="Agg-gf-Ciu"/>
+                        <outlet property="checkInButtonText" destination="GlG-eC-SiF" id="B9B-03-QNJ"/>
                         <outlet property="checkInLabel" destination="rfc-gS-gBx" id="41J-7v-nC1"/>
+                        <outlet property="deleteButtonView" destination="BJC-Uo-hLs" id="aer-1g-gyc"/>
                         <outlet property="guestPicker" destination="OZW-qd-CEz" id="aVa-Se-jTh"/>
                         <outlet property="schoolNameLabel" destination="7pj-2I-o75" id="9Be-9X-wj7"/>
                     </connections>
