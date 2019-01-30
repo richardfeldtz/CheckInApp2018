@@ -16,6 +16,7 @@ protocol FooTwoViewControllerDelegate:class {
 
 class StudentListViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, FooTwoViewControllerDelegate {
     
+    var easterEggView = UIImageView(image: UIImage(named: "car"))
     
     func myVCDidFinish(_ controller: ProfileViewController, text: String) {
         //swift 3
@@ -62,16 +63,21 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             self.tableView.reloadData()
         }
         tableView.setNeedsDisplay()
+        
+        //LJFFmobile easter egg setup
+        self.view.bringSubviewToFront(easterEggView)
+        easterEggView.frame = CGRect(x:0, y:0, width: 400, height: 360)
+        self.view.addSubview(easterEggView)
+        easterEggView.center.y = self.view.bounds.height - 100
+        easterEggView.center.x = -200
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //generateDummyData()
         
         view.addSubview(roundButton)
         tableView.dataSource = self
         tableView.delegate = self
-        
         
         // Setup the Search Controller
         StudentListViewController.searchController.searchResultsUpdater = self
@@ -79,6 +85,12 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         StudentListViewController.searchController.searchBar.placeholder = "Search Students"
         navigationItem.searchController = StudentListViewController.searchController
         definesPresentationContext = true
+        
+        //LJFFmobile easter egg action recognizer
+        let easterSwipe = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(showBatMobile(_ :)))
+        easterSwipe.edges = .left
+        self.view.addGestureRecognizer(easterSwipe)
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -170,6 +182,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             profile.id = (selectedStudent?.id)!
             profile.sname = (selectedStudent?.sname)!
         }
+        else if segue.destination is GifViewController {
+            
+        }
+        
     }
     
     @IBAction func pressedAdminTools(_ sender: Any) {
@@ -200,22 +216,31 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         tableView.reloadData()
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-//        headerView.addSubview(firstNameLabel)
-//        NSLayoutConstraint.activate([
-//            firstNameLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
-//            firstNameLabel.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 0.1 * headerView.frame.width + 10),
-//        ])
-//
-//        return headerView
-//    }
+    //LJFFmobile easter egg animation
+    @objc func showBatMobile(_ recognizer : UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            UIView.animate(withDuration: 3, delay: 0.4, options: [.curveEaseOut],
+                       animations: {
+                        self.easterEggView.center.x = self.view.bounds.width + 200
+            },completion: {
+                (finished : Bool) in
+                    self.easterEggView.center.x = -200
+                })
+        }
+    }
     
 }
 
 //Extension updates delegate when search text changes
 extension StudentListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
+        
+        //ShowLebron easter egg segue
+        if searchController.searchBar.text! == "23" {
+            self.performSegue(withIdentifier: "showLebron", sender: self)
+        }
+        else{
+            filterContentForSearchText(searchController.searchBar.text!)
+        }
     }
 }

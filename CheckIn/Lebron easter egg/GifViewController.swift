@@ -12,13 +12,11 @@ class GifViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         mainView.backgroundColor=UIColor.black
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
         gifView.image=UIImage.gifImageWithName("lj")
-        
+        StudentListViewController.searchController.searchBar.text=nil
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
-            self.navigationController?.popToRootViewController(animated: false)
+            self.dismiss(animated: false, completion: nil)
         }
     }
     

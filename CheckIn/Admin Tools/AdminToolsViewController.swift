@@ -39,7 +39,6 @@ class AdminToolsViewController: UIViewController {
         formatView(view: eventDetailsView)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGestureRecognizers()
