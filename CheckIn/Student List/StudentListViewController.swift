@@ -58,14 +58,14 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         StudentListViewController.searchController.searchBar.text=nil
-        navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.title = StudentListViewController.eventName
         DispatchQueue.main.async{
             self.tableView.reloadData()
         }
         tableView.setNeedsDisplay()
-        self.view.bringSubviewToFront(easterEggView)
         
+        //LJFFmobile easter egg setup
+        self.view.bringSubviewToFront(easterEggView)
         easterEggView.frame = CGRect(x:0, y:0, width: 400, height: 360)
         self.view.addSubview(easterEggView)
         easterEggView.center.y = self.view.bounds.height - 100
@@ -74,12 +74,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //generateDummyData()
         
         view.addSubview(roundButton)
         tableView.dataSource = self
         tableView.delegate = self
-        
         
         // Setup the Search Controller
         StudentListViewController.searchController.searchResultsUpdater = self
@@ -88,9 +86,9 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         navigationItem.searchController = StudentListViewController.searchController
         definesPresentationContext = true
         
+        //LJFFmobile easter egg action recognizer
         let easterSwipe = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(showBatMobile(_ :)))
         easterSwipe.edges = .left
-        
         self.view.addGestureRecognizer(easterSwipe)
         
     }
@@ -184,6 +182,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             profile.id = (selectedStudent?.id)!
             profile.sname = (selectedStudent?.sname)!
         }
+        else if segue.destination is GifViewController {
+            
+        }
+        
     }
     
     @IBAction func pressedAdminTools(_ sender: Any) {
@@ -214,6 +216,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         tableView.reloadData()
     }
     
+    //LJFFmobile easter egg animation
     @objc func showBatMobile(_ recognizer : UIScreenEdgePanGestureRecognizer) {
         if recognizer.state == .recognized {
             UIView.animate(withDuration: 3, delay: 0.4, options: [.curveEaseOut],
@@ -232,6 +235,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
 extension StudentListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         
+        //ShowLebron easter egg segue
         if searchController.searchBar.text! == "23" {
             self.performSegue(withIdentifier: "showLebron", sender: self)
         }

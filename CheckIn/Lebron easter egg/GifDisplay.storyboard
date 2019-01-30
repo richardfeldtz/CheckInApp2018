@@ -31,7 +31,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kvd-0k-gNw"/>
                     </view>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="gifView" destination="cy6-bO-NbF" id="ec3-Hk-eNR"/>
                         <outlet property="mainView" destination="SH4-it-cxK" id="bOL-0u-tTs"/>

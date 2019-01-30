@@ -112,7 +112,7 @@
                     <connections>
                         <outlet property="tableView" destination="hX1-PY-291" id="vhr-6A-mXG"/>
                         <segue destination="LFg-uu-NOa" kind="presentation" identifier="showProfile" id="XZ9-XM-GLo"/>
-                        <segue destination="Wkn-Bc-ixh" kind="show" identifier="showLebron" animates="NO" id="mZq-CG-b4t"/>
+                        <segue destination="Wkn-Bc-ixh" kind="showDetail" identifier="showLebron" animates="NO" id="mZq-CG-b4t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bs-pz-0GU" userLabel="First Responder" sceneMemberID="firstResponder"/>
