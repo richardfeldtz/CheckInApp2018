@@ -232,7 +232,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
 extension StudentListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         
-        if searchController.searchBar.text! == "L" {
+        if searchController.searchBar.text! == "23" {
             self.performSegue(withIdentifier: "showLebron", sender: self)
         }
         else{
