@@ -34,15 +34,16 @@ class EventDetailsViewController: UIViewController {
 	
     override func viewDidLoad() {
 		super.viewDidLoad();
+		setupGestureRecognizers();
 		eventName.text = StudentListViewController.eventName;
 		let coreData = CoreDataHelper.retrieveData("Checkins");
 		updateCheckInCount(checkInData: coreData as! [Checkins]);
 		updateGuestCount(checkInData: coreData as! [Checkins]);
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+	
+	fileprivate func setupGestureRecognizers() {
+		checkedInStudentsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCheckedInStudentsVC)))
+	}
 	
 	func updateCheckInCount(checkInData: [Checkins]) {
 		checkInCount.text = String(checkInData.count);
@@ -54,5 +55,11 @@ class EventDetailsViewController: UIViewController {
 			totalGuests += checkIns.guests;
 		}
 		guestCount.text = String(totalGuests);
+	}
+	
+	@objc func openCheckedInStudentsVC() {
+		let storyboard: UIStoryboard = UIStoryboard(name: "CheckedInStudents", bundle: nil)
+		let vc = storyboard.instantiateViewController(withIdentifier: "CheckedInStudents") as! CheckedInStudentsViewController
+		self.show(vc, sender: self)
 	}
 }

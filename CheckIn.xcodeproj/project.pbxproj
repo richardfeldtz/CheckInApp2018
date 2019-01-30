@@ -27,6 +27,10 @@
 		14E9946F21B5A637005105A4 /* DeviceRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E9946E21B5A637005105A4 /* DeviceRegistration.storyboard */; };
 		14E9947221B5E061005105A4 /* InternetConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9947121B5E061005105A4 /* InternetConnectionTest.swift */; };
 		14E9947421B5E125005105A4 /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9947321B5E125005105A4 /* RestHelper.swift */; };
+		AAE432E2220213DA005070AF /* CheckedInStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432DE220213DA005070AF /* CheckedInStudentsViewController.swift */; };
+		AAE432E3220213DA005070AF /* CheckedInStudents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432DF220213DA005070AF /* CheckedInStudents.storyboard */; };
+		AAE432E4220213DA005070AF /* CheckedInStudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432E0220213DA005070AF /* CheckedInStudentData.swift */; };
+		AAE432E5220213DA005070AF /* CheckedInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432E1220213DA005070AF /* CheckedInTableViewCell.swift */; };
 		FB1C5DCD21DD3A1600992842 /* LoadStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DCC21DD3A1600992842 /* LoadStudentsViewController.swift */; };
 		FB1C5DCF21DE984900992842 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DCE21DE984900992842 /* UIView.swift */; };
 		FB1C5DD121DE9A4C00992842 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DD021DE9A4C00992842 /* UILabel.swift */; };
@@ -73,6 +77,10 @@
 		14E9946E21B5A637005105A4 /* DeviceRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeviceRegistration.storyboard; sourceTree = "<group>"; };
 		14E9947121B5E061005105A4 /* InternetConnectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionTest.swift; sourceTree = "<group>"; };
 		14E9947321B5E125005105A4 /* RestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
+		AAE432DE220213DA005070AF /* CheckedInStudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInStudentsViewController.swift; sourceTree = "<group>"; };
+		AAE432DF220213DA005070AF /* CheckedInStudents.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckedInStudents.storyboard; sourceTree = "<group>"; };
+		AAE432E0220213DA005070AF /* CheckedInStudentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInStudentData.swift; sourceTree = "<group>"; };
+		AAE432E1220213DA005070AF /* CheckedInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInTableViewCell.swift; sourceTree = "<group>"; };
 		FB1C5DCC21DD3A1600992842 /* LoadStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStudentsViewController.swift; sourceTree = "<group>"; };
 		FB1C5DCE21DE984900992842 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FB1C5DD021DE9A4C00992842 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -178,6 +186,7 @@
 				FB1C5DC921DD39E400992842 /* Load Students */,
 				FB85E10821C18C59004C7871 /* Create Event */,
 				FB85E10321C15A79004C7871 /* Event Details */,
+				AAE432DD220213DA005070AF /* Checked In Students */,
 				FB85E0FE21C056E3004C7871 /* Admin Tools */,
 				149B8E9821B78D580009ACC3 /* Lebron easter egg */,
 				149B8E9321B785EE0009ACC3 /* QR code scan */,
@@ -219,6 +228,17 @@
 				FBAE5EE921F7B71800B14040 /* String.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		AAE432DD220213DA005070AF /* Checked In Students */ = {
+			isa = PBXGroup;
+			children = (
+				AAE432DE220213DA005070AF /* CheckedInStudentsViewController.swift */,
+				AAE432DF220213DA005070AF /* CheckedInStudents.storyboard */,
+				AAE432E0220213DA005070AF /* CheckedInStudentData.swift */,
+				AAE432E1220213DA005070AF /* CheckedInTableViewCell.swift */,
+			);
+			path = "Checked In Students";
 			sourceTree = "<group>";
 		};
 		FB1C5DC921DD39E400992842 /* Load Students */ = {
@@ -335,6 +355,7 @@
 				14E9946121B58D9F005105A4 /* Assets.xcassets in Resources */,
 				FB85E10521C15A92004C7871 /* EventDetails.storyboard in Resources */,
 				149B8E9721B789160009ACC3 /* QRCodeScan.storyboard in Resources */,
+				AAE432E3220213DA005070AF /* CheckedInStudents.storyboard in Resources */,
 				14A5BAA721E792C1007FDFFD /* lj.gif in Resources */,
 				14E9945C21B58D9E005105A4 /* Main.storyboard in Resources */,
 				FBC4C6B821C1A6F800ADC472 /* AdminTools.storyboard in Resources */,
@@ -372,12 +393,14 @@
 				149B8E9521B786DF0009ACC3 /* QRScannerViewController.swift in Sources */,
 				149B8E8B21B756E10009ACC3 /* StudentListViewController.swift in Sources */,
 				FBAE5EF021F8FA3D00B14040 /* SelectionScreen.swift in Sources */,
+				AAE432E4220213DA005070AF /* CheckedInStudentData.swift in Sources */,
 				FB85E10A21C18C72004C7871 /* CreateEventViewController.swift in Sources */,
 				14E9946C21B5A3BA005105A4 /* RegistrationCheckViewController.swift in Sources */,
 				FB1C5DD121DE9A4C00992842 /* UILabel.swift in Sources */,
 				14E9945921B58D9E005105A4 /* LaunchViewController.swift in Sources */,
 				FB1C5DD521DFC74300992842 /* IndentedTextField.swift in Sources */,
 				FB62670621E54CE6009CB9CA /* ViewController.swift in Sources */,
+				AAE432E2220213DA005070AF /* CheckedInStudentsViewController.swift in Sources */,
 				14E9945F21B58D9E005105A4 /* CheckIn.xcdatamodeld in Sources */,
 				FB62670221E52A68009CB9CA /* CoreDataHelper.swift in Sources */,
 				FBB0FBF121FA52A500A6507D /* EventCollectionViewCell.swift in Sources */,
@@ -391,6 +414,7 @@
 				FB85E10021C0571C004C7871 /* AdminToolsViewController.swift in Sources */,
 				FBAE5EEA21F7B71800B14040 /* String.swift in Sources */,
 				14E9947221B5E061005105A4 /* InternetConnectionTest.swift in Sources */,
+				AAE432E5220213DA005070AF /* CheckedInTableViewCell.swift in Sources */,
 				149B8E9221B76E730009ACC3 /* ProfileViewController.swift in Sources */,
 				FB62670821E6940E009CB9CA /* Date.swift in Sources */,
 				14E9947421B5E125005105A4 /* RestHelper.swift in Sources */,
