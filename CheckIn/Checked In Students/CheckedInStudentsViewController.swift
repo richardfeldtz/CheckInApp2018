@@ -18,7 +18,10 @@ class CheckedInStudentsViewController: UIViewController, UITableViewDataSource, 
 	
 	override func viewDidLoad() {
 		super.viewDidLoad();
-		loadCheckInData();
+		let checkins = CoreDataHelper.retrieveData("Checkins");
+		let students = CoreDataHelper.retrieveData("Student");
+		loadCheckInData(checkInData: checkins as! [Checkins],
+						studentData: students as! [Student]);
 		tableView.dataSource = self
 		tableView.delegate = self
 	}
@@ -50,7 +53,7 @@ class CheckedInStudentsViewController: UIViewController, UITableViewDataSource, 
 		if CheckedInStudentsViewController.data.count == 0 {
 			return UITableViewCell()
 		}
-		student = CheckedInStudentsViewController.data[0]//indexPath.row]
+		student = CheckedInStudentsViewController.data[indexPath.row]
 		
 		cell.fName.text = student!.fname
 		cell.lName.text = student!.lname
@@ -73,8 +76,21 @@ class CheckedInStudentsViewController: UIViewController, UITableViewDataSource, 
 		return cell
 	}
 	
-	func loadCheckInData() {
-		let studentDataItem = CheckedInStudentData(id: "444", fname: "Richard", lname: "Feldtz", guests: "2")
-		CheckedInStudentsViewController.data.append(studentDataItem)
+	func loadCheckInData(checkInData: [Checkins], studentData: [Student]) {
+		CheckedInStudentsViewController.data.removeAll()
+		for student in studentData {
+			if (student.checked) {
+				for checkin in checkInData {
+					if (student.id == checkin.id) {
+						let checkedInStudent = CheckedInStudentData(
+												id: student.id,
+												fname: student.fname,
+												lname: student.lname,
+												guests: String(checkin.guests));
+						CheckedInStudentsViewController.data.append(checkedInStudent)
+					}
+				}
+			}
+		}
 	}
 }
