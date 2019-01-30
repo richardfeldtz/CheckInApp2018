@@ -166,7 +166,6 @@
 		14E9944A21B58D9E005105A4 = {
 			isa = PBXGroup;
 			children = (
-				AAE432DD220213DA005070AF /* Checked In Students */,
 				14E9945521B58D9E005105A4 /* CheckIn */,
 				14E9945421B58D9E005105A4 /* Products */,
 			);
@@ -187,6 +186,7 @@
 				FB1C5DC921DD39E400992842 /* Load Students */,
 				FB85E10821C18C59004C7871 /* Create Event */,
 				FB85E10321C15A79004C7871 /* Event Details */,
+				AAE432DD220213DA005070AF /* Checked In Students */,
 				FB85E0FE21C056E3004C7871 /* Admin Tools */,
 				149B8E9821B78D580009ACC3 /* Lebron easter egg */,
 				149B8E9321B785EE0009ACC3 /* QR code scan */,
@@ -238,8 +238,7 @@
 				AAE432E0220213DA005070AF /* CheckedInStudentData.swift */,
 				AAE432E1220213DA005070AF /* CheckedInTableViewCell.swift */,
 			);
-			name = "Checked In Students";
-			path = "CheckIn/Checked In Students";
+			path = "Checked In Students";
 			sourceTree = "<group>";
 		};
 		FB1C5DC921DD39E400992842 /* Load Students */ = {
