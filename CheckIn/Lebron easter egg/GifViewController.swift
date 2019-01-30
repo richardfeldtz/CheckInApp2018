@@ -15,6 +15,7 @@ class GifViewController : UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         gifView.image=UIImage.gifImageWithName("lj")
         
+        StudentListViewController.searchController.searchBar.text=nil
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             self.navigationController?.setNavigationBarHidden(false, animated: true)

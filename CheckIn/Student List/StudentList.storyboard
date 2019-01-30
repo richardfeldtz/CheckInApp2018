@@ -112,6 +112,7 @@
                     <connections>
                         <outlet property="tableView" destination="hX1-PY-291" id="vhr-6A-mXG"/>
                         <segue destination="LFg-uu-NOa" kind="presentation" identifier="showProfile" id="XZ9-XM-GLo"/>
+                        <segue destination="Wkn-Bc-ixh" kind="show" identifier="showLebron" animates="NO" id="mZq-CG-b4t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bs-pz-0GU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,6 +126,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7R0-25-1L6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1384" y="-83"/>
+        </scene>
+        <!--GifDisplay-->
+        <scene sceneID="Fnb-xr-tfQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FIE-OM-rur" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="GifDisplay" id="Wkn-Bc-ixh" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="1401" y="142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MVo-Xi-T57">

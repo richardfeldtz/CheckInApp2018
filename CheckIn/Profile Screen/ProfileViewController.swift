@@ -205,13 +205,10 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
         do {
             let delCheckIn = NSBatchDeleteRequest(fetchRequest: checkInFetchRequest)
             try managedContext.execute(delCheckIn)
-            print("Check in delete successful")
             studentResult = try managedContext.fetch(studentFetchRequest).first!
             studentResult.setValue(false, forKey: "checked")
             try managedContext.save()
-            print("Student data updated")
             StudentListViewController.data[StudentListViewController.idmap[id]!].checked = false
-            print("Local student data updated")
             StudentListViewController.searchController.searchBar.text=nil
             self.dismiss(animated: true, completion: nil)
             

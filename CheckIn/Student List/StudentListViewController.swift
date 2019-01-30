@@ -16,6 +16,7 @@ protocol FooTwoViewControllerDelegate:class {
 
 class StudentListViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, FooTwoViewControllerDelegate {
     
+    var easterEggView = UIImageView(image: UIImage(named: "car"))
     
     func myVCDidFinish(_ controller: ProfileViewController, text: String) {
         //swift 3
@@ -57,11 +58,18 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         StudentListViewController.searchController.searchBar.text=nil
+        navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.title = StudentListViewController.eventName
         DispatchQueue.main.async{
             self.tableView.reloadData()
         }
         tableView.setNeedsDisplay()
+        self.view.bringSubviewToFront(easterEggView)
+        
+        easterEggView.frame = CGRect(x:0, y:0, width: 400, height: 360)
+        self.view.addSubview(easterEggView)
+        easterEggView.center.y = self.view.bounds.height - 100
+        easterEggView.center.x = -200
     }
     
     override func viewDidLoad() {
@@ -79,6 +87,12 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         StudentListViewController.searchController.searchBar.placeholder = "Search Students"
         navigationItem.searchController = StudentListViewController.searchController
         definesPresentationContext = true
+        
+        let easterSwipe = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(showBatMobile(_ :)))
+        easterSwipe.edges = .left
+        
+        self.view.addGestureRecognizer(easterSwipe)
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -200,22 +214,29 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         tableView.reloadData()
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-//        headerView.addSubview(firstNameLabel)
-//        NSLayoutConstraint.activate([
-//            firstNameLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
-//            firstNameLabel.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 0.1 * headerView.frame.width + 10),
-//        ])
-//
-//        return headerView
-//    }
+    @objc func showBatMobile(_ recognizer : UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            UIView.animate(withDuration: 3, delay: 0.4, options: [.curveEaseOut],
+                       animations: {
+                        self.easterEggView.center.x = self.view.bounds.width + 200
+            },completion: {
+                (finished : Bool) in
+                    self.easterEggView.center.x = -200
+                })
+        }
+    }
     
 }
 
 //Extension updates delegate when search text changes
 extension StudentListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
+        
+        if searchController.searchBar.text! == "L" {
+            self.performSegue(withIdentifier: "showLebron", sender: self)
+        }
+        else{
+            filterContentForSearchText(searchController.searchBar.text!)
+        }
     }
 }
