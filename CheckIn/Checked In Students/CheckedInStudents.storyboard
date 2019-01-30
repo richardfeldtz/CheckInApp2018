@@ -153,7 +153,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Checked In Students" id="dKU-8C-SLj" userLabel="Checked In Students"/>
                     <connections>
-                        <outlet property="headerView" destination="USo-mI-dgO" id="QYJ-BO-4yZ"/>
                         <outlet property="tableView" destination="Ebv-aI-RF4" id="Mfx-Vc-nAL"/>
                     </connections>
                 </viewController>
