@@ -17,6 +17,7 @@ protocol FooTwoViewControllerDelegate:class {
 class StudentListViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, FooTwoViewControllerDelegate {
     
     var easterEggView = UIImageView(image: UIImage(named: "car"))
+    var tableAnimated = false
     
     func myVCDidFinish(_ controller: ProfileViewController, text: String) {
         //swift 3
@@ -59,17 +60,23 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         super.viewWillAppear(animated)
         StudentListViewController.searchController.searchBar.text=nil
         self.navigationItem.title = StudentListViewController.eventName
-        DispatchQueue.main.async{
-            self.tableView.reloadData()
-        }
-        tableView.setNeedsDisplay()
-        
+    
         //LJFFmobile easter egg setup
         self.view.bringSubviewToFront(easterEggView)
         easterEggView.frame = CGRect(x:0, y:0, width: 400, height: 360)
         self.view.addSubview(easterEggView)
         easterEggView.center.y = self.view.bounds.height - 100
         easterEggView.center.x = -200
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super .viewDidAppear(animated)
+        self.tableView.reloadData()
+        if !tableAnimated {
+            animateTable()
+            tableAnimated = true
+        }
+        tableView.setNeedsDisplay()
     }
     
     override func viewDidLoad() {
@@ -226,6 +233,24 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
                 (finished : Bool) in
                     self.easterEggView.center.x = -200
                 })
+        }
+    }
+    
+    func animateTable() {
+        let cells = self.tableView.visibleCells
+        
+        let tableHeight = self.tableView.bounds.height
+        
+        for cell in cells {
+            cell.transform = CGAffineTransform(translationX: 0, y: tableHeight)
+        }
+        
+        var delay = 0
+        for cell in cells {
+            UIView.animate(withDuration: 1.75, delay: Double(delay) * 0.05, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                cell.transform = CGAffineTransform.identity
+            }, completion: nil)
+            delay += 1
         }
     }
     
