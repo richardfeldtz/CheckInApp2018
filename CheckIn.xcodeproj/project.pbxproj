@@ -174,8 +174,6 @@
 		14E9944A21B58D9E005105A4 = {
 			isa = PBXGroup;
 			children = (
-				AAE432EB220DE4F5005070AF /* DataRead */,
-				AAE432EE220DE4F5005070AF /* DataShare */,
 				14E9945521B58D9E005105A4 /* CheckIn */,
 				14E9945421B58D9E005105A4 /* Products */,
 			);
@@ -192,6 +190,8 @@
 		14E9945521B58D9E005105A4 /* CheckIn */ = {
 			isa = PBXGroup;
 			children = (
+				AAE432EB220DE4F5005070AF /* DataRead */,
+				AAE432EE220DE4F5005070AF /* DataShare */,
 				FB6266FC21E3D491009CB9CA /* Filter Students */,
 				FB1C5DC921DD39E400992842 /* Load Students */,
 				FB85E10821C18C59004C7871 /* Create Event */,
@@ -257,8 +257,7 @@
 				AAE432EC220DE4F5005070AF /* DataRead.storyboard */,
 				AAE432ED220DE4F5005070AF /* DataReadViewController.swift */,
 			);
-			name = DataRead;
-			path = CheckIn/DataRead;
+			path = DataRead;
 			sourceTree = "<group>";
 		};
 		AAE432EE220DE4F5005070AF /* DataShare */ = {
@@ -267,8 +266,7 @@
 				AAE432EF220DE4F5005070AF /* DataShare.storyboard */,
 				AAE432F0220DE4F5005070AF /* DataShareViewController.swift */,
 			);
-			name = DataShare;
-			path = CheckIn/DataShare;
+			path = DataShare;
 			sourceTree = "<group>";
 		};
 		FB1C5DC921DD39E400992842 /* Load Students */ = {
