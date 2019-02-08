@@ -82,7 +82,7 @@ class RegistrationCheckViewController : UIViewController {
             let url = URL(string:RestHelper.urls["Register_Device"]!)!
             let params = ["identifier":identifier] as Dictionary<String,String>
             let response = RestHelper.makePost(url, params)
-            if response == "\"Device Registered\"" {
+            if response == "\"Device Successfully Registered.\"" {
                 let registrationAlert = UIAlertController(title: "Success", message: "A device registration request was successfully created for your device with the name "+identifier+". Once the request is approved, you can use this device for check-ins. Please reopen the app when the request is approved.", preferredStyle: .alert)
                 registrationAlert.addAction(UIAlertAction(title: "OK", style: .cancel , handler:
                     {
@@ -91,7 +91,11 @@ class RegistrationCheckViewController : UIViewController {
                         self.navigationController?.popToRootViewController(animated: true)
                 }))
                 self.present(registrationAlert, animated: true)
-            }
+			} else if response == "\"A device with this name has already been registered. Please choose a different name.\"" {
+				let registrationAlert = UIAlertController(title: "Error", message: "A device with this name has already been registered. Please choose a different name.", preferredStyle: .alert)
+				registrationAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+				self.present(registrationAlert, animated: true)
+			}
         }
     }
     
