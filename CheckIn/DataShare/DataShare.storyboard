@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rwo-ML-TGK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Data Share View Controller-->
+        <scene sceneID="Tao-H4-dzH">
+            <objects>
+                <viewController id="rwo-ML-TGK" customClass="DataShareViewController" customModule="CheckIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ew9-Va-6Qc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCr-gg-txR">
+                                <rect key="frame" x="37" y="109.5" width="301" height="468"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yv1-4n-SLM">
+                                        <rect key="frame" x="22.5" y="106" width="256" height="256"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="256" id="iLA-OI-jTL"/>
+                                            <constraint firstAttribute="width" secondItem="yv1-4n-SLM" secondAttribute="height" multiplier="1:1" id="lzT-Wl-u97"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m7a-CK-YSG">
+                                        <rect key="frame" x="14.5" y="382" width="272" height="71"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="m7a-CK-YSG" firstAttribute="centerX" secondItem="fCr-gg-txR" secondAttribute="centerX" id="Ewe-b3-nfO"/>
+                                    <constraint firstItem="m7a-CK-YSG" firstAttribute="top" secondItem="yv1-4n-SLM" secondAttribute="bottom" constant="20" id="KDm-33-SAd"/>
+                                    <constraint firstItem="yv1-4n-SLM" firstAttribute="centerX" secondItem="fCr-gg-txR" secondAttribute="centerX" id="Mk7-Zr-ABH"/>
+                                    <constraint firstItem="m7a-CK-YSG" firstAttribute="width" secondItem="fCr-gg-txR" secondAttribute="width" multiplier="0.9" constant="1" id="h9V-8H-Hkp"/>
+                                    <constraint firstItem="yv1-4n-SLM" firstAttribute="centerY" secondItem="fCr-gg-txR" secondAttribute="centerY" id="o0B-3I-Fs8"/>
+                                    <constraint firstItem="m7a-CK-YSG" firstAttribute="height" secondItem="fCr-gg-txR" secondAttribute="height" multiplier="0.15" constant="1" id="t0G-VC-4NS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fCr-gg-txR" firstAttribute="width" secondItem="ew9-Va-6Qc" secondAttribute="width" multiplier="0.8" constant="1" id="P9v-3L-HGI"/>
+                            <constraint firstItem="fCr-gg-txR" firstAttribute="centerX" secondItem="dom-7D-bIj" secondAttribute="centerX" id="i09-Ye-0ci"/>
+                            <constraint firstItem="fCr-gg-txR" firstAttribute="centerY" secondItem="dom-7D-bIj" secondAttribute="centerY" id="i2L-Mj-UKz"/>
+                            <constraint firstItem="fCr-gg-txR" firstAttribute="height" secondItem="ew9-Va-6Qc" secondAttribute="height" multiplier="0.7" constant="1" id="swL-To-Igo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dom-7D-bIj"/>
+                    </view>
+                    <connections>
+                        <outlet property="QRCode" destination="yv1-4n-SLM" id="Csz-Hz-gI0"/>
+                        <outlet property="cardView" destination="fCr-gg-txR" id="fHi-5o-T0h"/>
+                        <outlet property="textLabel" destination="m7a-CK-YSG" id="AfN-VM-hby"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEa-ZB-lim" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-121" y="90"/>
+        </scene>
+    </scenes>
+</document>
