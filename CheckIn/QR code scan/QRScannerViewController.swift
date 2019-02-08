@@ -15,6 +15,9 @@ class QRScannerViewController : UIViewController {
     //Variable used to identify selected student before passing it to the profile view
     var selectedStudent: StudentData?
     
+    //Variable used to store the shared data
+    var sharedData: String?
+    
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
@@ -126,15 +129,24 @@ class QRScannerViewController : UIViewController {
     func analyzeInput(_ code:String){
         if scan {
             scan = false
-            let index = StudentListViewController.idmap[code]
-            if(index == nil){
-                //Show alert
-                print("Not found : "+code)
-                scan = true
+            
+            if code.contains(":")
+            {
+                sharedData = code
+                self.performSegue(withIdentifier: "dataRead", sender: self)
             }
             else {
-                selectedStudent = StudentListViewController.data[index!]
-                self.performSegue(withIdentifier: "scanProfile", sender: self)
+            
+                let index = StudentListViewController.idmap[code]
+                if(index == nil){
+                    //Show alert
+                    print("Not found : "+code)
+                    scan = true
+                }
+                else {
+                    selectedStudent = StudentListViewController.data[index!]
+                    self.performSegue(withIdentifier: "scanProfile", sender: self)
+                }
             }
         }
     }
@@ -148,6 +160,10 @@ class QRScannerViewController : UIViewController {
             profile.id = (selectedStudent?.id)!
             
         }
+        else if let dataRead = segue.destination as? DataReadViewController
+        {
+            dataRead.data = sharedData!
+        }
     }
     
     @objc func returnToStudentList() {
@@ -156,7 +172,6 @@ class QRScannerViewController : UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.popToRootViewController(animated: true)
     }
     
 }

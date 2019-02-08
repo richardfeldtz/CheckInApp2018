@@ -103,6 +103,11 @@
                         <viewLayoutGuide key="safeArea" id="Tzd-A1-ima"/>
                     </view>
                     <navigationItem key="navigationItem" id="it5-05-iGs">
+                        <barButtonItem key="leftBarButtonItem" title="Share" id="HuD-gI-7oD">
+                            <connections>
+                                <segue destination="gnk-NN-io4" kind="show" animates="NO" id="Qdx-ae-dhS"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Admin tools" id="UtG-Bn-XII">
                             <connections>
                                 <action selector="pressedAdminTools:" destination="2mP-p9-kkM" id="gfN-MO-lPe"/>
@@ -119,6 +124,14 @@
             </objects>
             <point key="canvasLocation" x="537" y="-83"/>
         </scene>
+        <!--DataShare-->
+        <scene sceneID="gGD-rV-7fv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DataShare" id="gnk-NN-io4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SzE-VS-4Xx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1374" y="-279"/>
+        </scene>
         <!--ProfileScreen-->
         <scene sceneID="u9c-92-Fqf">
             <objects>
@@ -130,8 +143,8 @@
         <!--GifDisplay-->
         <scene sceneID="Fnb-xr-tfQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FIE-OM-rur" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="GifDisplay" id="Wkn-Bc-ixh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FIE-OM-rur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1401" y="142"/>
         </scene>
