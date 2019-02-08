@@ -31,6 +31,10 @@
 		AAE432E3220213DA005070AF /* CheckedInStudents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432DF220213DA005070AF /* CheckedInStudents.storyboard */; };
 		AAE432E4220213DA005070AF /* CheckedInStudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432E0220213DA005070AF /* CheckedInStudentData.swift */; };
 		AAE432E5220213DA005070AF /* CheckedInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432E1220213DA005070AF /* CheckedInTableViewCell.swift */; };
+		AAE432F1220DE4F6005070AF /* DataRead.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432EC220DE4F5005070AF /* DataRead.storyboard */; };
+		AAE432F2220DE4F6005070AF /* DataReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432ED220DE4F5005070AF /* DataReadViewController.swift */; };
+		AAE432F3220DE4F6005070AF /* DataShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432EF220DE4F5005070AF /* DataShare.storyboard */; };
+		AAE432F4220DE4F6005070AF /* DataShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432F0220DE4F5005070AF /* DataShareViewController.swift */; };
 		FB1C5DCD21DD3A1600992842 /* LoadStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DCC21DD3A1600992842 /* LoadStudentsViewController.swift */; };
 		FB1C5DCF21DE984900992842 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DCE21DE984900992842 /* UIView.swift */; };
 		FB1C5DD121DE9A4C00992842 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DD021DE9A4C00992842 /* UILabel.swift */; };
@@ -81,6 +85,10 @@
 		AAE432DF220213DA005070AF /* CheckedInStudents.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckedInStudents.storyboard; sourceTree = "<group>"; };
 		AAE432E0220213DA005070AF /* CheckedInStudentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInStudentData.swift; sourceTree = "<group>"; };
 		AAE432E1220213DA005070AF /* CheckedInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInTableViewCell.swift; sourceTree = "<group>"; };
+		AAE432EC220DE4F5005070AF /* DataRead.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataRead.storyboard; sourceTree = "<group>"; };
+		AAE432ED220DE4F5005070AF /* DataReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReadViewController.swift; sourceTree = "<group>"; };
+		AAE432EF220DE4F5005070AF /* DataShare.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataShare.storyboard; sourceTree = "<group>"; };
+		AAE432F0220DE4F5005070AF /* DataShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataShareViewController.swift; sourceTree = "<group>"; };
 		FB1C5DCC21DD3A1600992842 /* LoadStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStudentsViewController.swift; sourceTree = "<group>"; };
 		FB1C5DCE21DE984900992842 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FB1C5DD021DE9A4C00992842 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -166,6 +174,8 @@
 		14E9944A21B58D9E005105A4 = {
 			isa = PBXGroup;
 			children = (
+				AAE432EB220DE4F5005070AF /* DataRead */,
+				AAE432EE220DE4F5005070AF /* DataShare */,
 				14E9945521B58D9E005105A4 /* CheckIn */,
 				14E9945421B58D9E005105A4 /* Products */,
 			);
@@ -239,6 +249,26 @@
 				AAE432E1220213DA005070AF /* CheckedInTableViewCell.swift */,
 			);
 			path = "Checked In Students";
+			sourceTree = "<group>";
+		};
+		AAE432EB220DE4F5005070AF /* DataRead */ = {
+			isa = PBXGroup;
+			children = (
+				AAE432EC220DE4F5005070AF /* DataRead.storyboard */,
+				AAE432ED220DE4F5005070AF /* DataReadViewController.swift */,
+			);
+			name = DataRead;
+			path = CheckIn/DataRead;
+			sourceTree = "<group>";
+		};
+		AAE432EE220DE4F5005070AF /* DataShare */ = {
+			isa = PBXGroup;
+			children = (
+				AAE432EF220DE4F5005070AF /* DataShare.storyboard */,
+				AAE432F0220DE4F5005070AF /* DataShareViewController.swift */,
+			);
+			name = DataShare;
+			path = CheckIn/DataShare;
 			sourceTree = "<group>";
 		};
 		FB1C5DC921DD39E400992842 /* Load Students */ = {
@@ -349,6 +379,7 @@
 			files = (
 				149B8E9C21B78E3C0009ACC3 /* GifDisplay.storyboard in Resources */,
 				149B8E9021B76D520009ACC3 /* ProfileScreen.storyboard in Resources */,
+				AAE432F3220DE4F6005070AF /* DataShare.storyboard in Resources */,
 				149B8E8921B751A80009ACC3 /* StudentList.storyboard in Resources */,
 				14E9946421B58D9F005105A4 /* LaunchScreen.storyboard in Resources */,
 				FB85E10C21C18CE4004C7871 /* CreateEvent.storyboard in Resources */,
@@ -359,6 +390,7 @@
 				14A5BAA721E792C1007FDFFD /* lj.gif in Resources */,
 				14E9945C21B58D9E005105A4 /* Main.storyboard in Resources */,
 				FBC4C6B821C1A6F800ADC472 /* AdminTools.storyboard in Resources */,
+				AAE432F1220DE4F6005070AF /* DataRead.storyboard in Resources */,
 				14E9946F21B5A637005105A4 /* DeviceRegistration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +442,7 @@
 				FBB0FBF321FF81A500A6507D /* SelectEventController.swift in Sources */,
 				14E9945721B58D9E005105A4 /* AppDelegate.swift in Sources */,
 				FB1C5DCD21DD3A1600992842 /* LoadStudentsViewController.swift in Sources */,
+				AAE432F4220DE4F6005070AF /* DataShareViewController.swift in Sources */,
 				149B8E9A21B78D970009ACC3 /* GifViewController.swift in Sources */,
 				FB85E10021C0571C004C7871 /* AdminToolsViewController.swift in Sources */,
 				FBAE5EEA21F7B71800B14040 /* String.swift in Sources */,
@@ -421,6 +454,7 @@
 				FB1C5DCF21DE984900992842 /* UIView.swift in Sources */,
 				FBAE5EEC21F8E64C00B14040 /* PageViewController.swift in Sources */,
 				149B8E8D21B762700009ACC3 /* StudentTableViewCell.swift in Sources */,
+				AAE432F2220DE4F6005070AF /* DataReadViewController.swift in Sources */,
 				FB85E10721C15AA7004C7871 /* EventDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
