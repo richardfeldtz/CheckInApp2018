@@ -213,7 +213,9 @@
                         <outlet property="eventLocation" destination="w9n-38-KbW" id="uqF-ee-3xj"/>
                         <outlet property="eventName" destination="Vke-WP-ciY" id="zPV-vZ-86n"/>
                         <outlet property="eventTime" destination="LZe-EC-qG7" id="6z1-LY-Gfd"/>
+                        <outlet property="hometownHallSwitch" destination="RXR-na-MVN" id="CUU-Vc-eY3"/>
                         <outlet property="loadStudentsView" destination="5D4-Bl-X4W" id="9e5-Du-utZ"/>
+                        <outlet property="orientationSwitch" destination="IlA-zy-gYz" id="nbP-26-uwp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wc1-lX-ROe" userLabel="First Responder" sceneMemberID="firstResponder"/>
