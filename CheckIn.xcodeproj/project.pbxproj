@@ -52,7 +52,6 @@
 		FB85E10721C15AA7004C7871 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E10621C15AA7004C7871 /* EventDetailsViewController.swift */; };
 		FB85E10A21C18C72004C7871 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E10921C18C72004C7871 /* CreateEventViewController.swift */; };
 		FB85E10C21C18CE4004C7871 /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */; };
-		FBAE5EEC21F8E64C00B14040 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EEB21F8E64C00B14040 /* PageViewController.swift */; };
 		FBAE5EF021F8FA3D00B14040 /* SelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */; };
 		FBB0FBF121FA52A500A6507D /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */; };
 		FBB0FBF321FF81A500A6507D /* SelectEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0FBF221FF81A500A6507D /* SelectEventController.swift */; };
@@ -109,7 +108,6 @@
 		FB85E10621C15AA7004C7871 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		FB85E10921C18C72004C7871 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
-		FBAE5EEB21F8E64C00B14040 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionScreen.swift; sourceTree = "<group>"; };
 		FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBB0FBF221FF81A500A6507D /* SelectEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEventController.swift; sourceTree = "<group>"; };
@@ -332,7 +330,6 @@
 			children = (
 				FB85E10921C18C72004C7871 /* CreateEventViewController.swift */,
 				FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */,
-				FBAE5EEB21F8E64C00B14040 /* PageViewController.swift */,
 				FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */,
 				FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */,
 				FBB0FBF221FF81A500A6507D /* SelectEventController.swift */,
@@ -522,7 +519,6 @@
 				FB62670821E6940E009CB9CA /* Date.swift in Sources */,
 				14E9947421B5E125005105A4 /* RestHelper.swift in Sources */,
 				FB1C5DCF21DE984900992842 /* UIView.swift in Sources */,
-				FBAE5EEC21F8E64C00B14040 /* PageViewController.swift in Sources */,
 				149B8E8D21B762700009ACC3 /* StudentTableViewCell.swift in Sources */,
 				AAE432F2220DE4F6005070AF /* DataReadViewController.swift in Sources */,
 				FB85E10721C15AA7004C7871 /* EventDetailsViewController.swift in Sources */,

@@ -139,45 +139,55 @@ class AdminToolsViewController: UIViewController {
         SVProgressHUD.show(withStatus: "Downloading Data...")
         SVProgressHUD.setSuccessImage(#imageLiteral(resourceName: "blackLogo"))
         
-        let url = URL(string:RestHelper.urls["Get_Students"]!)!
-        let schoolURL = URL(string:RestHelper.urls["Get_Schools"]!)!
-        let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
-        let schoolList = RestHelper.makePost(schoolURL, ["identifier": self.identifier!, "key": self.key!])
         
-        CoreDataHelper.deleteAllData(from: "Checkins")
-        CoreDataHelper.deleteAllData(from: "Student")
-        CoreDataHelper.deleteAllData(from: "School")
-        StudentListViewController.data.removeAll()
-        StudentListViewController.idmap.removeAll()
-        
-        let data = jsonString.data(using: .utf8)!
-        let schoolData = schoolList.data(using: .utf8)!
-        do {
-            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>],
-                let schoolArray = try JSONSerialization.jsonObject(with: schoolData, options : .allowFragments) as? [String]{
-                
-                for school in schoolArray {
-                    CoreDataHelper.saveSchoolData("School", school)
+        DispatchQueue.global(qos: .background).async {
+            
+            let url = URL(string:RestHelper.urls["Get_Students"]!)!
+            let schoolURL = URL(string:RestHelper.urls["Get_Schools"]!)!
+            let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
+            let schoolList = RestHelper.makePost(schoolURL, ["identifier": self.identifier!, "key": self.key!])
+            
+            CoreDataHelper.deleteAllData(from: "Checkins")
+            CoreDataHelper.deleteAllData(from: "Student")
+            CoreDataHelper.deleteAllData(from: "School")
+            StudentListViewController.data.removeAll()
+            StudentListViewController.idmap.removeAll()
+            
+            let data = jsonString.data(using: .utf8)!
+            let schoolData = schoolList.data(using: .utf8)!
+            do {
+                if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>],
+                    let schoolArray = try JSONSerialization.jsonObject(with: schoolData, options : .allowFragments) as? [String]{
+                    
+                    for school in schoolArray {
+                        CoreDataHelper.saveSchoolData("School", school)
+                    }
+                    
+                    
+                    for item in jsonArray {
+                        let studentDataItem = StudentData(id: item["APS_Student_ID"], fname: item["FirstName"], lname: item["LastName"], checked: false , sname: item["School_Name"])
+                        StudentListViewController.data.append(studentDataItem)
+                        StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
+                        CoreDataHelper.saveStudentData(item, "Student")
+                    }
+                    
+                    SVProgressHUD.showSuccess(withStatus: "Downloaded Student Data!")
+                    SVProgressHUD.dismiss(withDelay: .init(floatLiteral: 2))
+                    
+                    
+                } else {
+                    print("bad json")
                 }
- 
-                
-                for item in jsonArray {
-                    let studentDataItem = StudentData(id: item["APS_Student_ID"], fname: item["FirstName"], lname: item["LastName"], checked: false , sname: item["School_Name"])
-                    StudentListViewController.data.append(studentDataItem)
-                    StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
-                    CoreDataHelper.saveStudentData(item, "Student")
-                }
-                
-                SVProgressHUD.showSuccess(withStatus: "Downloaded Student Data!")
-                SVProgressHUD.dismiss(withDelay: .init(floatLiteral: 2))
-                
-                
-            } else {
-                print("bad json")
+            } catch let error as NSError {
+                print(error)
             }
-        } catch let error as NSError {
-            print(error)
+            
+            DispatchQueue.main.async {
+                //SVProgressHUD.dismiss()
+            }
         }
+        
+        
         
     }
     
