@@ -88,7 +88,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
 
         }
         
-        let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/createEvent")!
+        let url = URL(string:RestHelper.urls["Create_Event"]!)!
         RestHelper.makePost(url, ["identifier": self.identifier, "key": self.key, "eventName": eventName.text!, "location": eventLocation.text!, "eventDate": milisecondsDate, "isHometownHall": "false", "isOrientation": "false"])
         
         let uploadAlert = UIAlertController(title: "Success", message: "Event successfully created", preferredStyle: .alert)

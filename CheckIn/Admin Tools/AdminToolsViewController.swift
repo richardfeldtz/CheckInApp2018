@@ -98,7 +98,7 @@ class AdminToolsViewController: UIViewController {
             idString.removeLast()
             guestNumbers.removeLast()
         
-            let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/event/attendance")!
+            let url = URL(string:RestHelper.urls["Attendance"])!
             var response = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!, "eventName": StudentListViewController.eventName, "studentIds": idString, "guestCounts": guestNumbers])
             
             response.removeFirst()
@@ -128,8 +128,8 @@ class AdminToolsViewController: UIViewController {
             return
         }
         
-        let url = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/students")!
-        let schoolURL = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/schools")!
+        let url = URL(string:RestHelper.urls["Get_Students"]!)!
+        let schoolURL = URL(string:RestHelper.urls["Get_Schools"]!)!
         let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
         let schoolList = RestHelper.makePost(schoolURL, ["identifier": self.identifier!, "key": self.key!])
         

@@ -50,7 +50,6 @@
 		FB85E10721C15AA7004C7871 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E10621C15AA7004C7871 /* EventDetailsViewController.swift */; };
 		FB85E10A21C18C72004C7871 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E10921C18C72004C7871 /* CreateEventViewController.swift */; };
 		FB85E10C21C18CE4004C7871 /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */; };
-		FBAE5EEA21F7B71800B14040 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EE921F7B71800B14040 /* String.swift */; };
 		FBAE5EEC21F8E64C00B14040 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EEB21F8E64C00B14040 /* PageViewController.swift */; };
 		FBAE5EF021F8FA3D00B14040 /* SelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */; };
 		FBB0FBF121FA52A500A6507D /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */; };
@@ -104,7 +103,6 @@
 		FB85E10621C15AA7004C7871 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		FB85E10921C18C72004C7871 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
-		FBAE5EE921F7B71800B14040 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FBAE5EEB21F8E64C00B14040 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionScreen.swift; sourceTree = "<group>"; };
 		FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 				FB62670121E52A68009CB9CA /* CoreDataHelper.swift */,
 				FB62670521E54CE6009CB9CA /* ViewController.swift */,
 				FB62670721E6940E009CB9CA /* Date.swift */,
-				FBAE5EE921F7B71800B14040 /* String.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -443,7 +440,6 @@
 				AAE432F4220DE4F6005070AF /* DataShareViewController.swift in Sources */,
 				149B8E9A21B78D970009ACC3 /* GifViewController.swift in Sources */,
 				FB85E10021C0571C004C7871 /* AdminToolsViewController.swift in Sources */,
-				FBAE5EEA21F7B71800B14040 /* String.swift in Sources */,
 				14E9947221B5E061005105A4 /* InternetConnectionTest.swift in Sources */,
 				AAE432E5220213DA005070AF /* CheckedInTableViewCell.swift in Sources */,
 				149B8E9221B76E730009ACC3 /* ProfileViewController.swift in Sources */,
@@ -600,7 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V9MNS6CX39;
+				DEVELOPMENT_TEAM = C7HGN23NTW;
 				INFOPLIST_FILE = CheckIn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -619,7 +615,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V9MNS6CX39;
+				DEVELOPMENT_TEAM = C7HGN23NTW;
 				INFOPLIST_FILE = CheckIn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

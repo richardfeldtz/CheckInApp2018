@@ -81,8 +81,8 @@ class SelectEventController: UIViewController, UIPickerViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         SelectEventController.events.removeAll()
-        let eventURL = URL(string:"https://dev1-ljff.cs65.force.com/test/services/apexrest/event")!
-        let eventList = RestHelper.makePost(eventURL, ["identifier": "test", "key": "123456"])
+        let eventURL = URL(string:RestHelper.urls["Get_Events"]!)!
+        let eventList = RestHelper.makePost(eventURL, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!])
         let eventData = eventList.data(using: .utf8)!
         do {
             if let jsonArray = try JSONSerialization.jsonObject(with: eventData, options : .allowFragments) as? [String]{

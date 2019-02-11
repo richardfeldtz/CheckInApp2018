@@ -18,6 +18,8 @@ public class RestHelper {
         "Get_Events":host+"/event",
         "Get_Schools":host+"/schools",
         "Get_Students":host+"/students",
+        "Attendance":host+"/event/attendance",
+        "Create_Event":host+"/createEvent",
         "Get_Students_By_School":host+"/schools/" + schoolName] as Dictionary<String,String>
     
     //Method to make POST REST call
