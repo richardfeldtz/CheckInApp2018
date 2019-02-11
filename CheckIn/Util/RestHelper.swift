@@ -38,22 +38,21 @@ public class RestHelper {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonData as Data
         
-        let (data, response, error) = URLSession.shared.synchronousDataTask(urlrequest: request)
+        let (data, _, error) = URLSession.shared.synchronousDataTask(urlrequest: request)
         if let error = error {
             return ("API call returned error: \(error)")
         }
         else {
-            print("Made Request, status code \(String(describing: response?.getStatusCode()))")
-            print(url)
-            print(String(data: request.httpBody!, encoding: String.Encoding.utf8)!)
-            print(String(data: data!, encoding: String.Encoding.utf8)!)
-            print(error)
+//            print("Made Request, status code \(String(describing: response?.getStatusCode()))")
+//            print(url)
+//            print(String(data: request.httpBody!, encoding: String.Encoding.utf8)!)
+//            print(String(data: data!, encoding: String.Encoding.utf8)!)
+//            print(error)
             return String(data: data!, encoding: String.Encoding.utf8)!
         }
 
     }
     
-    var test = "abc"
     
     //Method to make GET REST call
     class func makeGet(_ url:String, _ params: Dictionary<String, String>?) -> String {

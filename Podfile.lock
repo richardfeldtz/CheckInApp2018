@@ -1,16 +1,20 @@
 PODS:
   - FLAnimatedImage (1.0.12)
+  - SVProgressHUD (2.2.1)
 
 DEPENDENCIES:
   - FLAnimatedImage
+  - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FLAnimatedImage
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
 
-PODFILE CHECKSUM: ecaa739669fd7d958fe89e8a19d1592761035103
+PODFILE CHECKSUM: fbdba17b27ba37c317ee0e9a0a6a35e1c8f0590f
 
 COCOAPODS: 1.6.0

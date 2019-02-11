@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SVProgressHUD
 
 class AdminToolsViewController: UIViewController {
     
@@ -16,6 +17,7 @@ class AdminToolsViewController: UIViewController {
     @IBOutlet var filterView: UIView!
     @IBOutlet var createEventView: UIView!
     @IBOutlet var eventDetailsView: UIView!
+    
     
     var key : String?
     var identifier : String?
@@ -66,12 +68,17 @@ class AdminToolsViewController: UIViewController {
     
     
     
-    @objc func uploadData(){
+    @objc func uploadData() {
         
         //Return if not connected to the internet
         if !checkInternetConnection(){
             return
         }
+        
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.show(withStatus: "Uploading Data...")
+        SVProgressHUD.setSuccessImage(#imageLiteral(resourceName: "blackLogo"))
         
         let localData = CoreDataHelper.retrieveData("Checkins")
         var ids: Array<String> = []
@@ -104,9 +111,8 @@ class AdminToolsViewController: UIViewController {
             response.removeFirst()
             response.removeLast()
             if response == "Success" {
-                let uploadAlert = UIAlertController(title: "Success", message: "Check in list successfully uploaded", preferredStyle: .alert)
-                uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
-                self.present(uploadAlert, animated: true)
+                SVProgressHUD.showSuccess(withStatus: "Successfully uploaded Student Data!")
+                SVProgressHUD.dismiss(withDelay: .init(floatLiteral: 2))
             }
             else {
                 let uploadAlert = UIAlertController(title: "Error", message: "There was an error uploading the check-in records.", preferredStyle: .alert)
@@ -127,6 +133,11 @@ class AdminToolsViewController: UIViewController {
         if !checkInternetConnection(){
             return
         }
+        
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.show(withStatus: "Downloading Data...")
+        SVProgressHUD.setSuccessImage(#imageLiteral(resourceName: "blackLogo"))
         
         let url = URL(string:RestHelper.urls["Get_Students"]!)!
         let schoolURL = URL(string:RestHelper.urls["Get_Schools"]!)!
@@ -157,9 +168,8 @@ class AdminToolsViewController: UIViewController {
                     CoreDataHelper.saveStudentData(item, "Student")
                 }
                 
-                let downloadAlert = UIAlertController(title: "Success", message: "Student list successfully downloaded", preferredStyle: .alert)
-                downloadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
-                self.present(downloadAlert, animated: true)
+                SVProgressHUD.showSuccess(withStatus: "Downloaded Student Data!")
+                SVProgressHUD.dismiss(withDelay: .init(floatLiteral: 2))
                 
                 
             } else {
@@ -180,9 +190,15 @@ class AdminToolsViewController: UIViewController {
     }
     
     @objc func openCreateEventVC() {
-        let storyboard: UIStoryboard = UIStoryboard(name: "CreateEvent", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "selectionScreenViewController") as! SelectionScreen
-        self.show(vc, sender: self)
+        
+        
+        
+            let storyboard: UIStoryboard = UIStoryboard(name: "CreateEvent", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "selectionScreenViewController") as! SelectionScreen
+            self.show(vc, sender: self)
+        
+        
+        
     }
     
     @objc func openEventDetailsVC() {

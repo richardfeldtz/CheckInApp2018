@@ -10,33 +10,15 @@ import Foundation
 import CoreData
 import UIKit
 
-protocol FooTwoViewControllerDelegate:class {
-    func myVCDidFinish(_ controller: ProfileViewController, text: String)
-}
 
-class StudentListViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, FooTwoViewControllerDelegate {
+
+class StudentListViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var easterEggView = UIImageView(image: UIImage(named: "car"))
     var tableAnimated = false
     
-    func myVCDidFinish(_ controller: ProfileViewController, text: String) {
-        //swift 3
-        DispatchQueue.main.async{
-            self.tableView.reloadData()
-        }
-        print("back to student list")
-        tableView.setNeedsDisplay()
-    }
-    
 
     @IBOutlet weak var tableView: UITableView!
-    
-    private lazy var roundButton: UIButton = {
-        let roundButton = UIButton(type: .custom)
-        roundButton.setTitleColor(UIColor.orange, for: .normal)
-        roundButton.addTarget(self, action: #selector(openQRCodeScanner), for: .touchUpInside)
-        return roundButton
-    }()
     
     private lazy var firstNameLabel: UILabel = {
         let label = UILabel()
@@ -83,7 +65,6 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(roundButton)
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -102,12 +83,23 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     }
     
     override func viewWillLayoutSubviews() {
-        roundButton.layer.cornerRadius = 5// roundButton.layer.frame.size.width/2
+        
+        let roundButton = UIButton(frame: .init(x: 0, y: 0, width: 100, height: 100))
+        roundButton.addTarget(self, action: #selector(openQRCodeScanner), for: .touchUpInside)
+        roundButton.layer.cornerRadius = 0.5 * roundButton.bounds.size.width
         roundButton.backgroundColor = .gray
-        roundButton.clipsToBounds = true
+        //roundButton.clipsToBounds = true
         roundButton.setImage(#imageLiteral(resourceName: "icons8-qr-code-filled-100"), for: .normal)
-        roundButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        roundButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
+        roundButton.imageView?.layer.masksToBounds = true
         roundButton.translatesAutoresizingMaskIntoConstraints = false
+        roundButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        roundButton.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        roundButton.layer.shadowOpacity = 1.0
+        roundButton.layer.shadowRadius = 0.0
+        roundButton.layer.masksToBounds = false
+
+        view.addSubview(roundButton)
         NSLayoutConstraint.activate([
             roundButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             roundButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
