@@ -3,7 +3,7 @@
 import Foundation
 import UIKit
 import AudioToolbox
-import 
+import FLAnimatedImage
 
 class GifViewController : UIViewController {
     

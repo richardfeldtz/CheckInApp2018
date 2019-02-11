@@ -98,7 +98,7 @@ class AdminToolsViewController: UIViewController {
             idString.removeLast()
             guestNumbers.removeLast()
         
-            let url = URL(string:RestHelper.urls["Attendance"])!
+            let url = URL(string:RestHelper.urls["Attendance"]!)!
             var response = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!, "eventName": StudentListViewController.eventName, "studentIds": idString, "guestCounts": guestNumbers])
             
             response.removeFirst()
