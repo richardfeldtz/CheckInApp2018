@@ -9,12 +9,13 @@ class GifViewController : UIViewController {
     
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var gifView: FLAnimatedImageView!
+    static var imageName = ""
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         mainView.backgroundColor=UIColor.black
         
-        let path1 : String = Bundle.main.path(forResource: "lj", ofType: "gif")!
+        let path1 : String = Bundle.main.path(forResource: GifViewController.imageName, ofType: "gif")!
         let url = URL(fileURLWithPath: path1)
         do{
             let gifData = try Data(contentsOf: url)
