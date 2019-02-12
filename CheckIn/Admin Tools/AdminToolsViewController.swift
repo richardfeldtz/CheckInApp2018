@@ -87,15 +87,15 @@ class AdminToolsViewController: UIViewController {
         var ids: Array<String> = []
         var guests: Array<Int> = []
         do{
-        for data in localData {
-            ids.append((data as AnyObject).value(forKey: "id") as! String)
-            guests.append((data as AnyObject).value(forKey: "guests") as! Int)
-        }}
+            for data in localData {
+                ids.append((data as AnyObject).value(forKey: "id") as! String)
+                guests.append((data as AnyObject).value(forKey: "guests") as! Int)
+            }}
         
         //Generate checkin id list
         var idString = ""
         var guestNumbers = ""
-
+        
         for number in ids {
             idString = idString + number + ","
         }
@@ -107,7 +107,7 @@ class AdminToolsViewController: UIViewController {
         if(idString != "") {
             idString.removeLast()
             guestNumbers.removeLast()
-        
+            
             let url = URL(string:RestHelper.urls["Attendance"]!)!
             var response = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!, "eventName": StudentListViewController.eventName, "studentIds": idString, "guestCounts": guestNumbers])
             
@@ -174,9 +174,10 @@ class AdminToolsViewController: UIViewController {
                         CoreDataHelper.saveStudentData(item, "Student")
                     }
                     
-                    SVProgressHUD.showSuccess(withStatus: "Downloaded Student Data!")
-                    SVProgressHUD.dismiss(withDelay: .init(floatLiteral: 2))
-                    
+                    DispatchQueue.main.async {
+                        SVProgressHUD.showSuccess(withStatus: "Downloaded Student Data!")
+                        SVProgressHUD.dismiss(withDelay: .init(floatLiteral: 2))
+                    }
                     
                 } else {
                     print("bad json")
@@ -185,9 +186,6 @@ class AdminToolsViewController: UIViewController {
                 print(error)
             }
             
-            DispatchQueue.main.async {
-                //SVProgressHUD.dismiss()
-            }
         }
         
         
@@ -239,7 +237,7 @@ class AdminToolsViewController: UIViewController {
             }
         }
         do{
-        try managedContext.save()
+            try managedContext.save()
         }
         catch _ as NSError {
             print("Error clearing data")
@@ -259,9 +257,9 @@ class AdminToolsViewController: UIViewController {
         
         
         
-            let storyboard: UIStoryboard = UIStoryboard(name: "CreateEvent", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "selectionScreenViewController") as! SelectionScreen
-            self.show(vc, sender: self)
+        let storyboard: UIStoryboard = UIStoryboard(name: "CreateEvent", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "selectionScreenViewController") as! SelectionScreen
+        self.show(vc, sender: self)
         
         
         

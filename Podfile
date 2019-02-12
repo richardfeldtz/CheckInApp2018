@@ -8,5 +8,5 @@ target 'CheckIn' do
   # Pods for CheckIn
   pod ‘SVProgressHUD’
   pod ‘FLAnimatedImage’
-
+  
 end
