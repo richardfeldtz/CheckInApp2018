@@ -50,6 +50,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         self.view.addSubview(easterEggView)
         easterEggView.center.y = self.view.bounds.height - 100
         easterEggView.center.x = -200
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,6 +80,11 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         let easterSwipe = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(showBatMobile(_ :)))
         easterSwipe.edges = .left
         self.view.addGestureRecognizer(easterSwipe)
+        
+        //Scroll to top gesture recognizer
+        let scrollToTopSwipe = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(scrollToTop(_ :)))
+        scrollToTopSwipe.edges = .right
+        self.view.addGestureRecognizer(scrollToTopSwipe)
         
     }
     
@@ -177,15 +183,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     {
         if let profile = segue.destination as? ProfileViewController
         {
-            
             profile.name = (selectedStudent?.name)!
             profile.id = (selectedStudent?.id)!
             profile.sname = (selectedStudent?.sname)!
         }
-        else if segue.destination is GifViewController {
-            
-        }
-        
     }
     
     @IBAction func pressedAdminTools(_ sender: Any) {
@@ -227,6 +228,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
                     self.easterEggView.center.x = -200
                 })
         }
+    }
+    
+    @objc func scrollToTop(_ recognizer : UIScreenEdgePanGestureRecognizer) {
+        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
     func animateTable() {
