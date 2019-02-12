@@ -17,6 +17,9 @@ class StudentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        checkMark.layer.cornerRadius = 10
+        checkMark.layer.shouldRasterize = false
+        checkMark.layer.borderWidth = 0.5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

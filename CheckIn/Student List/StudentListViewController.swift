@@ -266,6 +266,7 @@ extension StudentListViewController: UISearchResultsUpdating {
         
         //ShowLebron easter egg segue
         if searchController.searchBar.text! == "23" {
+            GifViewController.imageName = "lj"
             self.performSegue(withIdentifier: "showLebron", sender: self)
         }
         else{

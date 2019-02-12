@@ -14,6 +14,7 @@ class AdminToolsViewController: UIViewController {
     
     @IBOutlet var uploadDataView: UIView!
     @IBOutlet var downloadDataView: UIView!
+    @IBOutlet weak var clearCheckInsView: UIView!
     @IBOutlet var filterView: UIView!
     @IBOutlet var createEventView: UIView!
     @IBOutlet var eventDetailsView: UIView!
@@ -36,6 +37,7 @@ class AdminToolsViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         formatView(view: uploadDataView)
         formatView(view: downloadDataView)
+        formatView(view: clearCheckInsView)
         formatView(view: filterView)
         formatView(view: createEventView)
         formatView(view: eventDetailsView)
@@ -51,6 +53,7 @@ class AdminToolsViewController: UIViewController {
     fileprivate func setupGestureRecognizers() {
         uploadDataView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(uploadData)))
         downloadDataView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(downloadData)))
+        clearCheckInsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clearCheckins)))
         filterView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(filterStudentsTapped)))
         createEventView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCreateEventVC)))
         eventDetailsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openEventDetailsVC)))
@@ -189,6 +192,59 @@ class AdminToolsViewController: UIViewController {
         
         
         
+    }
+    
+    @objc func clearCheckins() {
+        
+        let clearDataAlert = UIAlertController(title: "Warning", message: "You are about to clear all the check in data on this device. Are you sure you want to continue?", preferredStyle: .alert)
+        clearDataAlert.addAction(UIAlertAction(title: "No", style: .cancel))
+        clearDataAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+            action in
+            let reconfirmAlert = UIAlertController(title: "Really?", message: "Are you absolutely sure you want to clear all the check in data on this device?", preferredStyle: .alert)
+            reconfirmAlert.addAction(UIAlertAction(title: "What? No!", style: .cancel))
+            reconfirmAlert.addAction(UIAlertAction(title: "Yes!", style: .default, handler: {
+                action in
+                self.clear()
+                let confirmDeleteAlert = UIAlertController(title: "Success", message: "Checkin data deleted from device.", preferredStyle: .alert)
+                confirmDeleteAlert.addAction(UIAlertAction(title: "Phew! Finally!", style: .cancel))
+                self.present(confirmDeleteAlert, animated:true)
+            }))
+            self.present(reconfirmAlert, animated:true)
+        }))
+        self.present(clearDataAlert, animated:true)
+        
+        
+    }
+    
+    func clear() {
+        let localData = CoreDataHelper.retrieveData("Checkins")
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        var checkInResult : [NSManagedObject]
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
+        for data in localData {
+            let studentId = (data as AnyObject).value(forKey: "id") as! String
+            (StudentListViewController.data[StudentListViewController.idmap[studentId]!]).checked = false
+            fetchRequest.predicate = NSPredicate(format: "id == %@", studentId)
+            do {
+                checkInResult = try managedContext.fetch(fetchRequest)
+                let studentCheckIn=checkInResult.first
+                studentCheckIn?.setValue(false, forKey: "checked")
+                
+            }
+            catch _ as NSError{
+                print("Error changing checked flags")
+            }
+        }
+        do{
+        try managedContext.save()
+        }
+        catch _ as NSError {
+            print("Error clearing data")
+        }
+        CoreDataHelper.deleteAllData(from: "Checkins")
     }
     
     @objc func filterStudentsTapped(){
