@@ -30,6 +30,8 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     private lazy var roundButton: UIButton = {
         let roundButton = UIButton(type: .custom)
@@ -60,7 +62,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         StudentListViewController.searchController.searchBar.text=nil
-        self.navigationItem.title = StudentListViewController.eventName
+        titleLabel.text = StudentListViewController.eventName
     
         //LJFFmobile easter egg setup
         self.view.bringSubviewToFront(easterEggView)
@@ -101,9 +103,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         self.view.addGestureRecognizer(easterSwipe)
         
         //Scroll to top gesture recognizer
-        let scrollToTopSwipe = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(scrollToTop(_ :)))
-        scrollToTopSwipe.edges = .right
-        self.view.addGestureRecognizer(scrollToTopSwipe)
+        titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(scrollToTop(_:))))
         
     }
     
