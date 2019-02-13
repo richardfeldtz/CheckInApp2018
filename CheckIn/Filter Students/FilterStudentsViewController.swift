@@ -10,12 +10,20 @@ import UIKit
 
 class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     
+    fileprivate let alphabet = ["A","B","C","D","E","F","G",
+    "H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    
     let schoolPickerView = UIPickerView()
-    let gradePickerView = UIPickerView()
+    let lastNamePickerView: UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        return picker
+    }()
+    
+    
     var schoolData = [String]()
-    let lastNameData = ["A-D", "E-H", "I-L", "M-P", "Q-T", "U-Z"]
     static var currentSelectedSchool: String?
-    static var currentSelectedLastNameFilter: String?
+    static var currentSelectedLastNameFilter: [String] = ["A", "A"]
     
     static var schoolFilterFlag = false
     static var nameFilterFlag = false
@@ -70,17 +78,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         return textField
     }()
     
-    lazy var lastNameTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Last Name"
-        textField.textAlignment = .center
-        textField.inputView = gradePickerView
-        textField.text = FilterStudentsViewController.currentSelectedLastNameFilter
-        textField.inputAccessoryView = setUpToolbar(functionType: #selector(cancelPicker))
-        textField.addTarget(self, action: #selector(self.addGradePickerView), for: .touchUpInside)
-        return textField
-    }()
+
     
     lazy var byLastNameLabel: UILabel = {
         let label = UILabel()
@@ -90,7 +88,15 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     }()
     
     @objc func removeScreen(){
-        self.dismiss(animated: true, completion: nil)
+        let firstLetter = UnicodeScalar(FilterStudentsViewController.currentSelectedLastNameFilter.first!)
+        let lastLetter = UnicodeScalar(FilterStudentsViewController.currentSelectedLastNameFilter.last!)
+        if firstLetter!.value > lastLetter!.value{
+            let filterAlert = UIAlertController(title: "Warning", message: "Invalid Filter", preferredStyle: .alert)
+            filterAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:nil))
+            self.present(filterAlert, animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc func addSchoolPickerView() {
@@ -98,7 +104,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     }
     
     @objc func addGradePickerView() {
-        view.addSubview(gradePickerView)
+        view.addSubview(lastNamePickerView)
     }
     
     @objc func schoolFilterWasSwitched(){
@@ -123,19 +129,23 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
         schoolPickerView.delegate = self
         schoolPickerView.dataSource = self
-        gradePickerView.delegate = self
-        gradePickerView.dataSource = self
+        lastNamePickerView.delegate = self
+        lastNamePickerView.dataSource = self
+        
+        
+        let firstLetterIndex = returnIndexOfAlphabet(FilterStudentsViewController.currentSelectedLastNameFilter.first!)
+        let lastLetterIndex = returnIndexOfAlphabet(FilterStudentsViewController.currentSelectedLastNameFilter.last!)
+        lastNamePickerView.selectRow(firstLetterIndex, inComponent: 0, animated: false)
+        lastNamePickerView.selectRow(lastLetterIndex, inComponent: 1, animated: false)
         view.addSubview(xButton)
         view.addSubview(filterStudentsLabel)
         view.addSubview(studentsFromLabel)
         view.addSubview(schoolTextField)
         view.addSubview(byLastNameLabel)
-        view.addSubview(lastNameTextField)
+        view.addSubview(lastNamePickerView)
         view.addSubview(schoolFilterSwitch)
         view.addSubview(lastNameFilterSwitch)
     }
-    
-    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -171,9 +181,10 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
             byLastNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
         NSLayoutConstraint.activate([
-            lastNameTextField.topAnchor.constraint(equalTo: byLastNameLabel.bottomAnchor, constant: 20),
-            lastNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            ])
+            lastNamePickerView.topAnchor.constraint(equalTo: byLastNameLabel.bottomAnchor, constant: 20),
+            lastNamePickerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            lastNamePickerView.heightAnchor.constraint(equalToConstant: 100)
+        ])
         
         //switch constraints
         NSLayoutConstraint.activate([
@@ -181,10 +192,14 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
             schoolFilterSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
         NSLayoutConstraint.activate([
-            lastNameFilterSwitch.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 20),
+            lastNameFilterSwitch.topAnchor.constraint(equalTo: lastNamePickerView.bottomAnchor, constant: 20),
             lastNameFilterSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor)
 
             ])
+    }
+    
+    func returnIndexOfAlphabet(_ letter: String) -> Int {
+        return self.alphabet.firstIndex(of: letter) ?? 0
     }
     
     @objc func cancelPicker(){
@@ -209,44 +224,32 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
             schoolTextField.text = schoolData[row]
             FilterStudentsViewController.currentSelectedSchool = schoolData[row]
         } else {
-            lastNameTextField.text = lastNameData[row]
-            FilterStudentsViewController.currentSelectedLastNameFilter = lastNameData[row]
+            FilterStudentsViewController.currentSelectedLastNameFilter.removeAll()
+            FilterStudentsViewController.currentSelectedLastNameFilter.append(alphabet[lastNamePickerView.selectedRow(inComponent: 0)])
+            FilterStudentsViewController.currentSelectedLastNameFilter.append(alphabet[lastNamePickerView.selectedRow(inComponent: 1)])
         }
+        
     }
     
 }
 
-extension FilterStudentsViewController {
-    class func getFilterString(_ filter: String?) -> String {
-        switch filter {
-        case "A-D":
-            return "abcd"
-        case "E-H":
-            return "efgh"
-        case "I-L":
-            return "ijkl"
-        case "M-P":
-            return "mnop"
-        case "Q-T":
-            return "qrst"
-        case "U-Z":
-            return "uvwxyz"
-        default:
-            return ""
-        }
-    }
-}
-
 extension FilterStudentsViewController: UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        if pickerView == schoolPickerView {
+            return 1
+        }
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return 100
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == schoolPickerView {
             return CoreDataHelper.countOfEntity("School")
         } else {
-            return lastNameData.count
+            return alphabet.count
         }
     }
     
@@ -254,7 +257,7 @@ extension FilterStudentsViewController: UIPickerViewDelegate {
         if pickerView == schoolPickerView {
             return schoolData[row]
         } else {
-            return String(lastNameData[row])
+            return String(alphabet[row])
         }
     }
 }

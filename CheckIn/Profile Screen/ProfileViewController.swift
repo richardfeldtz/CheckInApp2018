@@ -81,17 +81,26 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
             deleteButtonView.isHidden = true
         }
         
-        var lastNameDoesNotMatchFilter = true
-        let filterString = FilterStudentsViewController.getFilterString(FilterStudentsViewController.currentSelectedLastNameFilter)
+        var lastNameDoesNotMatchFilter = false
+        let firstLetter = FilterStudentsViewController.currentSelectedLastNameFilter.first!
+        let lastLetter = FilterStudentsViewController.currentSelectedLastNameFilter.last!
+        var filterString = ""
+        for val in UnicodeScalar(firstLetter)!.value...UnicodeScalar(lastLetter)!.value{
+            filterString += String(UnicodeScalar(val)!)
+            
+        }
+        
+        filterString = filterString.lowercased()
+        
         let nameArray = name.byWords
         for (_, char) in filterString.enumerated() {
             if (Character((nameArray.last?.prefix(1).lowercased())!) == char) {
-                lastNameDoesNotMatchFilter = false
+                lastNameDoesNotMatchFilter = true
             }
         }
         
         if FilterStudentsViewController.nameFilterFlag {
-            if lastNameDoesNotMatchFilter {
+            if !lastNameDoesNotMatchFilter {
                 let checkInAlert = UIAlertController(title: "Warning", message: "The selected student does not match the filter", preferredStyle: .alert)
                 checkInAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{
                     (alertAction: UIAlertAction) in
