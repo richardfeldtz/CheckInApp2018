@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SVProgressHUD
 
 class SelectEventController: UIViewController, UIPickerViewDataSource {
     
@@ -80,18 +81,32 @@ class SelectEventController: UIViewController, UIPickerViewDataSource {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        SelectEventController.events.removeAll()
-        let eventURL = URL(string:RestHelper.urls["Get_Events"]!)!
-        let eventList = RestHelper.makePost(eventURL, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!])
-        let eventData = eventList.data(using: .utf8)!
-        do {
-            if let jsonArray = try JSONSerialization.jsonObject(with: eventData, options : .allowFragments) as? [String]{
-                for event in jsonArray {
-                    SelectEventController.events.append(event)
+        
+        SVProgressHUD.show()
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultMaskType(.black)
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            SelectEventController.events.removeAll()
+            let eventURL = URL(string:RestHelper.urls["Get_Events"]!)!
+            let eventList = RestHelper.makePost(eventURL, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!])
+            let eventData = eventList.data(using: .utf8)!
+            do {
+                if let jsonArray = try JSONSerialization.jsonObject(with: eventData, options : .allowFragments) as? [String]{
+                    for event in jsonArray {
+                        SelectEventController.events.append(event)
+                    }
                 }
+                
+            } catch {
+                print("error")
             }
-        } catch {
-            print("error")
+        
+            // Bounce back to the main thread to update the UI
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+            }
         }
     }
 }

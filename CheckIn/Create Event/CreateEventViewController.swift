@@ -17,11 +17,18 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var createEventButton: UIButton!
     @IBOutlet var loadStudentsView: UIView!
     
+    
+    @IBOutlet var hometownHallSwitch: UISwitch!
+    @IBOutlet var orientationSwitch: UISwitch!
+    
+    
     fileprivate let datePicker = UIDatePicker()
     fileprivate let timePicker = UIDatePicker()
     
     fileprivate var identifier = ""
     fileprivate var key = ""
+    fileprivate var isHomeTownHall = false
+    fileprivate var isOrientation = false
     
     
     func formatView(view : UIView){
@@ -51,6 +58,8 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         eventName.delegate = self
         eventDate.delegate = self
         eventTime.delegate = self
+        hometownHallSwitch.addTarget(self, action: #selector(switchValueChanged(mySwitch:)), for: .valueChanged)
+        orientationSwitch.addTarget(self, action: #selector(switchValueChanged(mySwitch:)), for: .valueChanged)
         let createEventGesture = UITapGestureRecognizer(target: self, action: #selector(self.createEventPressed(_:)))
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         loadStudentsView.addGestureRecognizer(tapGesture)
@@ -63,6 +72,13 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func switchValueChanged(mySwitch: UISwitch) {
+        if mySwitch == hometownHallSwitch {
+            isHomeTownHall = mySwitch.isOn
+        } else {
+            isOrientation = mySwitch.isOn
+        }
+    }
     
     @objc func createEventPressed(_ sender: UITapGestureRecognizer) {
         
@@ -89,7 +105,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         }
         
         let url = URL(string:RestHelper.urls["Create_Event"]!)!
-        RestHelper.makePost(url, ["identifier": self.identifier, "key": self.key, "eventName": eventName.text!, "location": eventLocation.text!, "eventDate": milisecondsDate, "isHometownHall": "false", "isOrientation": "false"])
+        let _ = RestHelper.makePost(url, ["identifier": self.identifier, "key": self.key, "eventName": eventName.text!, "location": eventLocation.text!, "eventDate": milisecondsDate, "isHometownHall": String(isHomeTownHall), "isOrientation": String(isOrientation)])
         
         let uploadAlert = UIAlertController(title: "Success", message: "Event successfully created", preferredStyle: .alert)
         uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {

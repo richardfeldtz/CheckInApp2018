@@ -27,6 +27,7 @@
 		14E9946F21B5A637005105A4 /* DeviceRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E9946E21B5A637005105A4 /* DeviceRegistration.storyboard */; };
 		14E9947221B5E061005105A4 /* InternetConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9947121B5E061005105A4 /* InternetConnectionTest.swift */; };
 		14E9947421B5E125005105A4 /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9947321B5E125005105A4 /* RestHelper.swift */; };
+		A0176B3C16292E2D54091D4E /* Pods_CheckIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165D38F778E064A6C904B674 /* Pods_CheckIn.framework */; };
 		AAE432E2220213DA005070AF /* CheckedInStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432DE220213DA005070AF /* CheckedInStudentsViewController.swift */; };
 		AAE432E3220213DA005070AF /* CheckedInStudents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432DF220213DA005070AF /* CheckedInStudents.storyboard */; };
 		AAE432E4220213DA005070AF /* CheckedInStudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432E0220213DA005070AF /* CheckedInStudentData.swift */; };
@@ -35,7 +36,6 @@
 		AAE432F2220DE4F6005070AF /* DataReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432ED220DE4F5005070AF /* DataReadViewController.swift */; };
 		AAE432F3220DE4F6005070AF /* DataShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432EF220DE4F5005070AF /* DataShare.storyboard */; };
 		AAE432F4220DE4F6005070AF /* DataShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432F0220DE4F5005070AF /* DataShareViewController.swift */; };
-		E92FACE3856E92774790E817 /* Pods_CheckIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59700559676CC0BB6BC52EC /* Pods_CheckIn.framework */; };
 		FB1C5DCD21DD3A1600992842 /* LoadStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DCC21DD3A1600992842 /* LoadStudentsViewController.swift */; };
 		FB1C5DCF21DE984900992842 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DCE21DE984900992842 /* UIView.swift */; };
 		FB1C5DD121DE9A4C00992842 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DD021DE9A4C00992842 /* UILabel.swift */; };
@@ -52,7 +52,6 @@
 		FB85E10721C15AA7004C7871 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E10621C15AA7004C7871 /* EventDetailsViewController.swift */; };
 		FB85E10A21C18C72004C7871 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E10921C18C72004C7871 /* CreateEventViewController.swift */; };
 		FB85E10C21C18CE4004C7871 /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */; };
-		FBAE5EEC21F8E64C00B14040 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EEB21F8E64C00B14040 /* PageViewController.swift */; };
 		FBAE5EF021F8FA3D00B14040 /* SelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */; };
 		FBB0FBF121FA52A500A6507D /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */; };
 		FBB0FBF321FF81A500A6507D /* SelectEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0FBF221FF81A500A6507D /* SelectEventController.swift */; };
@@ -82,9 +81,8 @@
 		14E9946E21B5A637005105A4 /* DeviceRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeviceRegistration.storyboard; sourceTree = "<group>"; };
 		14E9947121B5E061005105A4 /* InternetConnectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionTest.swift; sourceTree = "<group>"; };
 		14E9947321B5E125005105A4 /* RestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
-		1626EDEA18620537D87F0340 /* Pods-CheckIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckIn.release.xcconfig"; path = "Target Support Files/Pods-CheckIn/Pods-CheckIn.release.xcconfig"; sourceTree = "<group>"; };
-		6D41776268E129B37B131819 /* Pods-CheckIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckIn.debug.xcconfig"; path = "Target Support Files/Pods-CheckIn/Pods-CheckIn.debug.xcconfig"; sourceTree = "<group>"; };
-		A59700559676CC0BB6BC52EC /* Pods_CheckIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		165D38F778E064A6C904B674 /* Pods_CheckIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7527F2C7E09EFF9F404A4D3 /* Pods-CheckIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckIn.debug.xcconfig"; path = "Target Support Files/Pods-CheckIn/Pods-CheckIn.debug.xcconfig"; sourceTree = "<group>"; };
 		AAE432DE220213DA005070AF /* CheckedInStudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInStudentsViewController.swift; sourceTree = "<group>"; };
 		AAE432DF220213DA005070AF /* CheckedInStudents.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckedInStudents.storyboard; sourceTree = "<group>"; };
 		AAE432E0220213DA005070AF /* CheckedInStudentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInStudentData.swift; sourceTree = "<group>"; };
@@ -93,6 +91,7 @@
 		AAE432ED220DE4F5005070AF /* DataReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReadViewController.swift; sourceTree = "<group>"; };
 		AAE432EF220DE4F5005070AF /* DataShare.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataShare.storyboard; sourceTree = "<group>"; };
 		AAE432F0220DE4F5005070AF /* DataShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataShareViewController.swift; sourceTree = "<group>"; };
+		D60A36999C590C2DCAA3C697 /* Pods-CheckIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckIn.release.xcconfig"; path = "Target Support Files/Pods-CheckIn/Pods-CheckIn.release.xcconfig"; sourceTree = "<group>"; };
 		FB1C5DCC21DD3A1600992842 /* LoadStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStudentsViewController.swift; sourceTree = "<group>"; };
 		FB1C5DCE21DE984900992842 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FB1C5DD021DE9A4C00992842 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -109,7 +108,6 @@
 		FB85E10621C15AA7004C7871 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		FB85E10921C18C72004C7871 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
-		FBAE5EEB21F8E64C00B14040 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionScreen.swift; sourceTree = "<group>"; };
 		FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBB0FBF221FF81A500A6507D /* SelectEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEventController.swift; sourceTree = "<group>"; };
@@ -121,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E92FACE3856E92774790E817 /* Pods_CheckIn.framework in Frameworks */,
+				A0176B3C16292E2D54091D4E /* Pods_CheckIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,8 +129,8 @@
 		11C8BF5FE56C73DF325652B8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6D41776268E129B37B131819 /* Pods-CheckIn.debug.xcconfig */,
-				1626EDEA18620537D87F0340 /* Pods-CheckIn.release.xcconfig */,
+				A7527F2C7E09EFF9F404A4D3 /* Pods-CheckIn.debug.xcconfig */,
+				D60A36999C590C2DCAA3C697 /* Pods-CheckIn.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -191,7 +189,7 @@
 				14E9945521B58D9E005105A4 /* CheckIn */,
 				14E9945421B58D9E005105A4 /* Products */,
 				11C8BF5FE56C73DF325652B8 /* Pods */,
-				7E677B3DE2778FDD077737E1 /* Frameworks */,
+				BB6F062855153202CA16C2B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -256,14 +254,6 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		7E677B3DE2778FDD077737E1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A59700559676CC0BB6BC52EC /* Pods_CheckIn.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		AAE432DD220213DA005070AF /* Checked In Students */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +281,14 @@
 				AAE432F0220DE4F5005070AF /* DataShareViewController.swift */,
 			);
 			path = DataShare;
+			sourceTree = "<group>";
+		};
+		BB6F062855153202CA16C2B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				165D38F778E064A6C904B674 /* Pods_CheckIn.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FB1C5DC921DD39E400992842 /* Load Students */ = {
@@ -332,7 +330,6 @@
 			children = (
 				FB85E10921C18C72004C7871 /* CreateEventViewController.swift */,
 				FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */,
-				FBAE5EEB21F8E64C00B14040 /* PageViewController.swift */,
 				FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */,
 				FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */,
 				FBB0FBF221FF81A500A6507D /* SelectEventController.swift */,
@@ -347,12 +344,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14E9946821B58D9F005105A4 /* Build configuration list for PBXNativeTarget "CheckIn" */;
 			buildPhases = (
-				F90C5F788BD974C6CDC6F8D3 /* [CP] Check Pods Manifest.lock */,
+				A59C6BE4B8CC373D3AABEBAE /* [CP] Check Pods Manifest.lock */,
 				14E9944F21B58D9E005105A4 /* Sources */,
 				14E9945021B58D9E005105A4 /* Frameworks */,
 				14E9945121B58D9E005105A4 /* Resources */,
 				FB85E0D921BEC257004C7871 /* ShellScript */,
-				213DF199A27DB2D308AC57D4 /* [CP] Embed Pods Frameworks */,
+				7E46B188F1EF34CCF8B80167 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -422,7 +419,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		213DF199A27DB2D308AC57D4 /* [CP] Embed Pods Frameworks */ = {
+		7E46B188F1EF34CCF8B80167 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -432,19 +429,21 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CheckIn/Pods-CheckIn-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CheckIn/Pods-CheckIn-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F90C5F788BD974C6CDC6F8D3 /* [CP] Check Pods Manifest.lock */ = {
+		A59C6BE4B8CC373D3AABEBAE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -520,7 +519,6 @@
 				FB62670821E6940E009CB9CA /* Date.swift in Sources */,
 				14E9947421B5E125005105A4 /* RestHelper.swift in Sources */,
 				FB1C5DCF21DE984900992842 /* UIView.swift in Sources */,
-				FBAE5EEC21F8E64C00B14040 /* PageViewController.swift in Sources */,
 				149B8E8D21B762700009ACC3 /* StudentTableViewCell.swift in Sources */,
 				AAE432F2220DE4F6005070AF /* DataReadViewController.swift in Sources */,
 				FB85E10721C15AA7004C7871 /* EventDetailsViewController.swift in Sources */,
@@ -667,7 +665,7 @@
 		};
 		14E9946921B58D9F005105A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D41776268E129B37B131819 /* Pods-CheckIn.debug.xcconfig */;
+			baseConfigurationReference = A7527F2C7E09EFF9F404A4D3 /* Pods-CheckIn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -687,7 +685,7 @@
 		};
 		14E9946A21B58D9F005105A4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1626EDEA18620537D87F0340 /* Pods-CheckIn.release.xcconfig */;
+			baseConfigurationReference = D60A36999C590C2DCAA3C697 /* Pods-CheckIn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

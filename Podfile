@@ -6,7 +6,7 @@ target 'CheckIn' do
   use_frameworks!
 
   # Pods for CheckIn
-
+  pod ‘SVProgressHUD’
   pod ‘FLAnimatedImage’
-
+  
 end
