@@ -16,11 +16,17 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     var easterEggView = UIImageView(image: UIImage(named: "car"))
     var tableAnimated = false
+    var helpIndicator = false
     
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var shareImage: UIImageView!
+    @IBOutlet weak var qrImage: UIImageView!
+    @IBOutlet weak var scrollImage: UIImageView!
+    @IBOutlet weak var fnameImage: UIImageView!
+    @IBOutlet weak var lnameImage: UIImageView!
     
     private lazy var firstNameLabel: UILabel = {
         let label = UILabel()
@@ -52,7 +58,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         self.view.addSubview(easterEggView)
         easterEggView.center.y = self.view.bounds.height - 100
         easterEggView.center.x = -200
-    
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,7 +90,9 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         self.view.addGestureRecognizer(easterSwipe)
         
         //Scroll to top gesture recognizer
-        titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(scrollToTop(_:))))
+        titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(scrollToTop)))
+        
+        self.view.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(showHelpLayer(_:))))
         
     }
     
@@ -115,9 +123,11 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     }
     
     @objc func openQRCodeScanner() {
-        let storyboard: UIStoryboard = UIStoryboard(name: "QRCodeScan", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "QRScannerViewController") as! QRScannerViewController
-        self.show(vc, sender: self)
+        if(!helpIndicator) {
+            let storyboard: UIStoryboard = UIStoryboard(name: "QRCodeScan", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "QRScannerViewController") as! QRScannerViewController
+            self.show(vc, sender: self)
+        }
     }
     
     //Method to return the number of sections
@@ -173,8 +183,9 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         else {
             selectedStudent = StudentListViewController.data[indexPath.row]
         }
-        
-        self.performSegue(withIdentifier: "showProfile", sender: self)
+        if !helpIndicator{
+            self.performSegue(withIdentifier: "showProfile", sender: self)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -230,9 +241,50 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         }
     }
     
-    @objc func scrollToTop(_ recognizer : UIScreenEdgePanGestureRecognizer) {
-        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+    @objc func scrollToTop() {
+        if(!helpIndicator) {
+            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        }
     }
+    
+    @objc func showHelpLayer(_ recognizer : UIPinchGestureRecognizer) {
+        if recognizer.state == .ended {
+            scrollToTop()
+            if (recognizer.scale < 1.0) {
+                if !helpIndicator {
+                    self.tableView.allowsSelection = false
+                    self.tableView.isScrollEnabled = false
+                    self.navigationItem.leftBarButtonItem?.isEnabled = false
+                    self.navigationItem.rightBarButtonItem?.isEnabled = false
+                    helpIndicator = true
+                    self.tableView.alpha = 0.1
+                    shareImage.isHidden = false
+                    qrImage.isHidden = false
+                    scrollImage.isHidden = false
+                    fnameImage.isHidden = false
+                    lnameImage.isHidden = false
+                }
+            }
+            else {
+                if helpIndicator {
+                    self.tableView.allowsSelection = true
+                    self.tableView.isScrollEnabled = true
+                    self.navigationItem.leftBarButtonItem?.isEnabled = true
+                    self.navigationItem.rightBarButtonItem?.isEnabled = true
+                    helpIndicator = false
+                    self.tableView.alpha = 1
+                    shareImage.isHidden = true
+                    qrImage.isHidden = true
+                    scrollImage.isHidden = true
+                    fnameImage.isHidden = true
+                    lnameImage.isHidden = true
+                }
+            }
+        }
+    }
+    
+    
+    
     
     func animateTable() {
         let cells = self.tableView.visibleCells
