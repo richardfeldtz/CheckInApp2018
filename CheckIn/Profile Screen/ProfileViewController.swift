@@ -19,16 +19,11 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 12
+        return 11
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if row == 0 {
-            return "Pick number of guests"
-        }
-        else {
-            return String(row - 1)
-        }
+		return String(row)
     }
     
     
@@ -64,7 +59,7 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
             do {
                 checkInResult = try managedContext.fetch(fetchRequest)
                 let studentCheckIn=checkInResult.first
-                guestPicker.selectRow(studentCheckIn?.value(forKey: "guests") as! Int + 1, inComponent: 0, animated: true)
+                guestPicker.selectRow(studentCheckIn?.value(forKey: "guests") as! Int + 0, inComponent: 0, animated: true)
             }
             catch _ as NSError{
                 print("Error fetching guest count from check in table")
@@ -145,7 +140,7 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
         var guestCount = 0
         let selectedPickerRow = Int(guestPicker.selectedRow(inComponent: 0))
         if selectedPickerRow > 0 {
-            guestCount = selectedPickerRow - 1;
+			guestCount = selectedPickerRow;
         }
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
