@@ -23,13 +23,6 @@ class QRScannerViewController : UIViewController {
     var qrCodeFrameView: UIView?
     var scan = true
     
-    lazy var returnToTableButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.addTarget(self, action: #selector(returnToStudentList), for: .touchUpInside)
-        button.backgroundColor = .gray
-        return button
-    }()
-    
     private let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
                                       AVMetadataObject.ObjectType.code39,
                                       AVMetadataObject.ObjectType.code39Mod43,
@@ -106,18 +99,27 @@ class QRScannerViewController : UIViewController {
             view.bringSubviewToFront(qrCodeFrameView)
         }
         
-        returnToTableButton.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
-        returnToTableButton.layer.cornerRadius = 5
-        returnToTableButton.clipsToBounds = true
-        returnToTableButton.setImage(#imageLiteral(resourceName: "icons8-menu-filled-100"), for: .normal)
-        returnToTableButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        returnToTableButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(returnToTableButton)
+        let roundButton = UIButton(frame: .init(x: 0, y: 0, width: 100, height: 100))
+        roundButton.addTarget(self, action: #selector(self.returnToStudentList), for: .touchUpInside)
+        roundButton.layer.cornerRadius = 0.5 * roundButton.bounds.size.width
+        roundButton.backgroundColor = .gray
+        //roundButton.clipsToBounds = true
+        roundButton.setImage(#imageLiteral(resourceName: "icons8-menu-filled-100"), for: .normal)
+        roundButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
+        roundButton.imageView?.layer.masksToBounds = true
+        roundButton.translatesAutoresizingMaskIntoConstraints = false
+        roundButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        roundButton.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        roundButton.layer.shadowOpacity = 1.0
+        roundButton.layer.shadowRadius = 0.0
+        roundButton.layer.masksToBounds = false
+        
+        view.addSubview(roundButton)
         NSLayoutConstraint.activate([
-            returnToTableButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            returnToTableButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
-            returnToTableButton.widthAnchor.constraint(equalToConstant: 100),
-            returnToTableButton.heightAnchor.constraint(equalToConstant: 100)
+            roundButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            roundButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
+            roundButton.widthAnchor.constraint(equalToConstant: 100),
+            roundButton.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     

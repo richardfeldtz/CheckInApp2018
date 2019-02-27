@@ -43,6 +43,7 @@ class AdminToolsViewController: UIViewController {
         formatView(view: eventDetailsView)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGestureRecognizers()
@@ -247,10 +248,10 @@ class AdminToolsViewController: UIViewController {
     
     @objc func filterStudentsTapped(){
         let vc = FilterStudentsViewController()
-        vc.modalPresentationStyle = .formSheet
+        //vc.modalPresentationStyle = .formSheet
         vc.storyboard?.instantiateInitialViewController()
-        vc.preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
-        self.present(vc, animated: true, completion: nil)
+        //vc.preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
+        present(vc, animated: true, completion: nil)
     }
     
     @objc func openCreateEventVC() {
@@ -260,8 +261,6 @@ class AdminToolsViewController: UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "CreateEvent", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "selectionScreenViewController") as! SelectionScreen
         self.show(vc, sender: self)
-        
-        
         
     }
     
