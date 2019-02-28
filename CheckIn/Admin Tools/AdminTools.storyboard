@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wyuDMzgk" translatesAutoresizingMaskIntoConstraints="NO" id="JKL-kb-Jdy">
+                                <rect key="frame" x="0.0" y="70" width="768" height="954"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xw1-Vx-9y0">
                                 <rect key="frame" x="76.5" y="165" width="615" height="764"/>
                                 <subviews>
@@ -138,7 +141,7 @@
                                                 <rect key="frame" x="143.5" y="0.0" width="59.5" height="110.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear Checkins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Maa-bJ-RGg">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear Check-in's" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Maa-bJ-RGg">
                                                 <rect key="frame" x="203" y="28" width="339.5" height="54"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <nil key="textColor"/>
@@ -326,10 +329,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="YmE-53-lYJ" firstAttribute="trailing" secondItem="JKL-kb-Jdy" secondAttribute="trailing" id="9lD-Q6-ffw"/>
                             <constraint firstItem="xw1-Vx-9y0" firstAttribute="centerX" secondItem="YmE-53-lYJ" secondAttribute="centerX" id="AgU-MG-IM9"/>
                             <constraint firstItem="xw1-Vx-9y0" firstAttribute="width" secondItem="YmE-53-lYJ" secondAttribute="width" multiplier="0.8" constant="1" id="Bih-bP-dBT"/>
+                            <constraint firstItem="JKL-kb-Jdy" firstAttribute="leading" secondItem="YmE-53-lYJ" secondAttribute="leading" id="Gip-Yr-cAv"/>
                             <constraint firstItem="xw1-Vx-9y0" firstAttribute="height" secondItem="YmE-53-lYJ" secondAttribute="height" multiplier="0.8" constant="1" id="f7C-um-aJC"/>
                             <constraint firstItem="xw1-Vx-9y0" firstAttribute="centerY" secondItem="YmE-53-lYJ" secondAttribute="centerY" id="stk-aK-sqC"/>
+                            <constraint firstItem="JKL-kb-Jdy" firstAttribute="top" secondItem="YmE-53-lYJ" secondAttribute="top" id="ywO-mX-qhL"/>
+                            <constraint firstItem="YmE-53-lYJ" firstAttribute="bottom" secondItem="JKL-kb-Jdy" secondAttribute="bottom" id="z1S-ke-Eay"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YmE-53-lYJ"/>
                     </view>
@@ -345,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJx-eo-4Fw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2816.5467625899282" y="-345.32374100719426"/>
+            <point key="canvasLocation" x="2816.40625" y="-345.703125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xpy-sM-h6c">
@@ -373,5 +380,6 @@
         <image name="icons8-info-filled-100" width="100" height="100"/>
         <image name="icons8-planner-filled-100" width="100" height="100"/>
         <image name="icons8-upward-arrow-filled-100" width="100" height="100"/>
+        <image name="wyuDMzgk" width="1898" height="2335"/>
     </resources>
 </document>

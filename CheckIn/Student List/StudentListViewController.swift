@@ -98,9 +98,9 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     override func viewWillLayoutSubviews() {
         
-        let roundButton = UIButton(frame: .init(x: 0, y: 0, width: 100, height: 100))
+        let roundButton = UIButton(frame: .init(x: 0, y: 0, width: 50, height: 50))
         roundButton.addTarget(self, action: #selector(openQRCodeScanner), for: .touchUpInside)
-        roundButton.layer.cornerRadius = 0.5 * roundButton.bounds.size.width
+        roundButton.layer.cornerRadius = roundButton.bounds.size.width
         roundButton.backgroundColor = .gray
         //roundButton.clipsToBounds = true
         roundButton.setImage(#imageLiteral(resourceName: "icons8-qr-code-filled-100"), for: .normal)
@@ -115,8 +115,8 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
 
         view.addSubview(roundButton)
         NSLayoutConstraint.activate([
-            roundButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            roundButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
+            roundButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            roundButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
             roundButton.widthAnchor.constraint(equalToConstant: 100),
             roundButton.heightAnchor.constraint(equalToConstant: 100)
         ])
@@ -147,6 +147,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentListCell") as! StudentTableViewCell
         
+        
         var student:StudentData?
         if isFiltering() {
             student = filteredStudents[indexPath.row]
@@ -156,6 +157,13 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             }
             student = StudentListViewController.data[indexPath.row]
         }
+        
+        
+        cell.backgroundColor = indexPath.row % 2 == 0 ? .white : .lightGray
+        cell.leftOfCheckView.backgroundColor = indexPath.row % 2 == 0 ? .white : .lightGray
+        cell.leftOfLastNameView.backgroundColor = indexPath.row % 2 == 0 ? .white : .lightGray
+        cell.leftOfFirstNameView.backgroundColor = indexPath.row % 2 == 0 ? .white : .lightGray
+        
         
         cell.fname.text = student!.fname
         cell.lname.text = student!.lname

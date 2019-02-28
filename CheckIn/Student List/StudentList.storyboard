@@ -30,28 +30,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfW-At-kF4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="13.5" height="59.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="31.5" height="59.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="checkImage" translatesAutoresizingMaskIntoConstraints="NO" id="UDf-tQ-OeB">
-                                                    <rect key="frame" x="13.5" y="8.5" width="42.5" height="42.5"/>
+                                                    <rect key="frame" x="31.5" y="8.5" width="103.5" height="42.5"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETg-7B-mjR">
-                                                    <rect key="frame" x="56" y="0.0" width="17.5" height="59.5"/>
+                                                    <rect key="frame" x="135" y="0.0" width="42" height="59.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="fname" text="FName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tpx-uQ-Ksg">
-                                                    <rect key="frame" x="73.5" y="0.0" width="125" height="59.5"/>
+                                                    <rect key="frame" x="177" y="0.0" width="308.5" height="59.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETP-rh-Bcf">
-                                                    <rect key="frame" x="198.5" y="0.0" width="17.5" height="59.5"/>
+                                                    <rect key="frame" x="485.5" y="0.0" width="41.5" height="59.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lname" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDg-ch-LCB">
-                                                    <rect key="frame" x="216" y="0.0" width="187.5" height="59.5"/>
+                                                    <rect key="frame" x="527" y="0.0" width="462" height="59.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -87,6 +87,9 @@
                                         <connections>
                                             <outlet property="checkMark" destination="UDf-tQ-OeB" id="YK6-en-DEV"/>
                                             <outlet property="fname" destination="Tpx-uQ-Ksg" id="T6u-rh-ngC"/>
+                                            <outlet property="leftOfCheckView" destination="JfW-At-kF4" id="QM9-C4-74Z"/>
+                                            <outlet property="leftOfFirstNameView" destination="ETg-7B-mjR" id="Mr5-wd-3ey"/>
+                                            <outlet property="leftOfLastNameView" destination="ETP-rh-Bcf" id="uIc-l6-ZFz"/>
                                             <outlet property="lname" destination="QDg-ch-LCB" id="iJc-YF-7Xg"/>
                                         </connections>
                                     </tableViewCell>

@@ -10,6 +10,9 @@ import UIKit
 
 class StudentTableViewCell: UITableViewCell {
 
+    @IBOutlet var leftOfLastNameView: UIView!
+    @IBOutlet var leftOfFirstNameView: UIView!
+    @IBOutlet var leftOfCheckView: UIView!
     @IBOutlet weak var checkMark: UIImageView!
     @IBOutlet weak var fname: UILabel!
     @IBOutlet weak var lname: UILabel!

@@ -71,7 +71,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     lazy var studentsFromLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(36)
+        label.adjustsFontSizeToFitWidth = true
         label.text = "Only check in students from: "
         return label
     }()
@@ -79,7 +79,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     lazy var byLastNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(36)
+        label.adjustsFontSizeToFitWidth = true
         label.text = "Only check in students with the last name:"
         return label
     }()
@@ -190,8 +190,8 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
             ])
         
         NSLayoutConstraint.activate([
-            xButton.trailingAnchor.constraint(equalTo: schoolContainerView.trailingAnchor, constant: -50),
-            xButton.topAnchor.constraint(equalTo: schoolContainerView.topAnchor, constant: 50),
+            xButton.trailingAnchor.constraint(equalTo: schoolContainerView.trailingAnchor, constant: -30),
+            xButton.topAnchor.constraint(equalTo: schoolContainerView.topAnchor, constant: 30),
             xButton.widthAnchor.constraint(equalToConstant: 25),
             xButton.heightAnchor.constraint(equalToConstant: 25)
             ])
@@ -253,18 +253,6 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         self.view.endEditing(true)
     }
     
-//    func setUpToolbar(functionType: Selector) -> UIToolbar {
-//        let toolbar = UIToolbar()
-//        toolbar.sizeToFit()
-//        //done button & cancel button
-//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: functionType)
-//        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-//        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(cancelPicker))
-//        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
-//
-//        return toolbar
-//    }
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == schoolPickerView {
             // schoolPickerView.selectedRow(inComponent: 0). .text = schoolData[row]
@@ -274,7 +262,6 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
             FilterStudentsViewController.currentSelectedLastNameFilter.append(alphabet[lastNamePickerView.selectedRow(inComponent: 0)])
             FilterStudentsViewController.currentSelectedLastNameFilter.append(alphabet[lastNamePickerView.selectedRow(inComponent: 1)])
         }
-        
     }
     
 }
