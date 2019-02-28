@@ -19,27 +19,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RC-Fa-nLp">
-                                <rect key="frame" x="0.0" y="20" width="692" height="32"/>
+                                <rect key="frame" x="0.0" y="20" width="690" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YeT-1y-wbj">
-                                <rect key="frame" x="17" y="52" width="658" height="62.5"/>
+                                <rect key="frame" x="17" y="52" width="656.5" height="62.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bga-ol-9rY">
-                                <rect key="frame" x="0.0" y="114.5" width="692" height="31.5"/>
+                                <rect key="frame" x="0.0" y="114.5" width="690" height="31.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qCx-KI-Aye">
-                                <rect key="frame" x="34" y="146" width="624" height="339.5"/>
+                                <rect key="frame" x="34" y="146" width="622" height="339.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrs-lQ-6jx">
-                                        <rect key="frame" x="0.0" y="0.0" width="624" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="622" height="70"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vke-WP-ciY" customClass="IndentedTextField" customModule="CheckIn" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="624" height="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="622" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -56,10 +56,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOV-iz-TWG">
-                                        <rect key="frame" x="0.0" y="90" width="624" height="69.5"/>
+                                        <rect key="frame" x="0.0" y="90" width="622" height="69.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Location" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="w9n-38-KbW" customClass="IndentedTextField" customModule="CheckIn" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-1" width="624" height="70"/>
+                                                <rect key="frame" x="0.0" y="-1" width="622" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -75,10 +75,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8W-Er-hlx">
-                                        <rect key="frame" x="0.0" y="179.5" width="624" height="70"/>
+                                        <rect key="frame" x="0.0" y="179.5" width="622" height="70"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FrC-5f-WpO" customClass="IndentedTextField" customModule="CheckIn" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="624" height="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="622" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -94,10 +94,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJ3-4X-LQY">
-                                        <rect key="frame" x="0.0" y="269.5" width="624" height="70"/>
+                                        <rect key="frame" x="0.0" y="269.5" width="622" height="70"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZe-EC-qG7" customClass="IndentedTextField" customModule="CheckIn" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="624" height="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="622" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -114,10 +114,10 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5D4-Bl-X4W">
-                                        <rect key="frame" x="0.0" y="339.5" width="624" height="64"/>
+                                        <rect key="frame" x="0.0" y="339.5" width="622" height="64"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Students to Load" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mxj-d3-YCT">
-                                                <rect key="frame" x="16" y="32" width="592" height="0.0"/>
+                                                <rect key="frame" x="16" y="32" width="590" height="0.0"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -134,16 +134,16 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okl-VK-pTQ">
-                                <rect key="frame" x="276.5" y="576" width="139" height="50.5"/>
+                                <rect key="frame" x="275.5" y="576" width="139" height="50.5"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Create Event">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZ0-kN-oFx">
-                                <rect key="frame" x="34" y="485.5" width="624" height="60.5"/>
+                                <rect key="frame" x="34" y="485.5" width="622" height="60.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Hometown Hall?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvN-ZJ-2G7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Hometown Hall?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvN-ZJ-2G7">
                                         <rect key="frame" x="0.0" y="-4.5" width="177.5" height="69.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
@@ -153,10 +153,10 @@
                                         <rect key="frame" x="187.5" y="14.5" width="51" height="31"/>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IlA-zy-gYz">
-                                        <rect key="frame" x="575" y="14.5" width="51" height="31"/>
+                                        <rect key="frame" x="573" y="14.5" width="51" height="31"/>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Orientation?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaH-LD-XYe">
-                                        <rect key="frame" x="427" y="-4.5" width="138" height="69.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Orientation?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaH-LD-XYe">
+                                        <rect key="frame" x="425" y="-4.5" width="138" height="69.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -180,6 +180,7 @@
                             <constraint firstItem="bga-ol-9rY" firstAttribute="width" secondItem="n5m-tt-rX9" secondAttribute="width" id="6Fw-H3-6lx"/>
                             <constraint firstItem="qCx-KI-Aye" firstAttribute="width" secondItem="n5m-tt-rX9" secondAttribute="width" multiplier="0.9" constant="1" id="7kJ-S8-edV"/>
                             <constraint firstItem="qCx-KI-Aye" firstAttribute="top" secondItem="bga-ol-9rY" secondAttribute="bottom" id="Afj-sd-qbs"/>
+                            <constraint firstItem="MvN-ZJ-2G7" firstAttribute="leading" secondItem="H14-ok-Uhh" secondAttribute="leading" constant="34" id="Am1-xk-5c6"/>
                             <constraint firstItem="okl-VK-pTQ" firstAttribute="width" secondItem="n5m-tt-rX9" secondAttribute="width" multiplier="0.2" constant="1" id="C6B-M6-iVo"/>
                             <constraint firstItem="qCx-KI-Aye" firstAttribute="centerX" secondItem="H14-ok-Uhh" secondAttribute="centerX" id="DOJ-fN-35B"/>
                             <constraint firstItem="okl-VK-pTQ" firstAttribute="top" secondItem="PZ0-kN-oFx" secondAttribute="bottom" constant="30" id="FgU-ce-Hyo"/>
@@ -203,6 +204,7 @@
                             <constraint firstItem="1RC-Fa-nLp" firstAttribute="width" secondItem="n5m-tt-rX9" secondAttribute="width" id="vVh-hI-P4E"/>
                             <constraint firstItem="1RC-Fa-nLp" firstAttribute="top" secondItem="H14-ok-Uhh" secondAttribute="top" id="wRv-Gy-yWz"/>
                             <constraint firstItem="MvN-ZJ-2G7" firstAttribute="height" secondItem="LZe-EC-qG7" secondAttribute="height" id="ySO-an-fLT"/>
+                            <constraint firstItem="H14-ok-Uhh" firstAttribute="trailing" secondItem="IlA-zy-gYz" secondAttribute="trailing" constant="34" id="zBL-Ay-78Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H14-ok-Uhh"/>
                     </view>
@@ -243,10 +245,10 @@
         <!--Page View Controller-->
         <scene sceneID="48A-RT-zQy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6AI-4n-oGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Qqk-0G-0LH" customClass="PageViewController" customModule="CheckIn" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="vJs-FY-Aqa"/>
                 </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6AI-4n-oGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-313" y="877"/>
         </scene>
