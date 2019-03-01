@@ -259,8 +259,8 @@ class AdminToolsViewController: UIViewController {
         
         
         let storyboard: UIStoryboard = UIStoryboard(name: "CreateEvent", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "selectionScreenViewController") as! SelectionScreen
-        self.show(vc, sender: self)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CreateEventViewController") as! CreateEventViewController
+        show(vc, sender: self)
         
     }
     
