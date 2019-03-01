@@ -101,7 +101,12 @@ class SelectEventViewController : UIViewController, UIPickerViewDelegate, UIPick
             print(error)
         }
         StudentListViewController.eventName=events[EventList.selectedRow(inComponent: 0)]
-        navigationController?.popViewController(animated: true)
+        for controller in self.navigationController!.viewControllers as Array {
+            if controller.isKind(of: AdminToolsViewController.self) {
+                self.navigationController!.popToViewController(controller, animated: true)
+                break
+            }
+        }
     }
     
 }
