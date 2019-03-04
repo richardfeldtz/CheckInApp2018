@@ -284,27 +284,27 @@
                                 <rect key="frame" x="0.0" y="35" width="768" height="1024"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vX-AR-E1v">
-                                <rect key="frame" x="76.5" y="239.5" width="615" height="615"/>
+                                <rect key="frame" x="76.5" y="137" width="615" height="820"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJf-9y-6cK">
-                                        <rect key="frame" x="153" y="0.0" width="309" height="62.5"/>
+                                        <rect key="frame" x="153" y="0.0" width="309" height="83"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Event" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVI-HA-X6l">
-                                        <rect key="frame" x="61" y="62.5" width="493" height="93"/>
+                                        <rect key="frame" x="61" y="83" width="493" height="124"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKS-9p-9PT">
-                                        <rect key="frame" x="61" y="155.5" width="493" height="278"/>
+                                        <rect key="frame" x="61" y="207" width="493" height="370"/>
                                     </pickerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd5-cY-sYH">
-                                        <rect key="frame" x="0.0" y="433.5" width="615" height="32"/>
+                                        <rect key="frame" x="0.0" y="577" width="615" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Basketball" translatesAutoresizingMaskIntoConstraints="NO" id="RQD-bO-YYc">
-                                        <rect key="frame" x="245.5" y="465.5" width="124" height="123"/>
+                                        <rect key="frame" x="245.5" y="619" width="124" height="123"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="RQD-bO-YYc" secondAttribute="height" multiplier="1:1" constant="1" id="sci-oQ-E7h"/>
                                         </constraints>
@@ -343,7 +343,7 @@
                             <constraint firstItem="nba-8X-cZw" firstAttribute="height" secondItem="O5r-VF-Flq" secondAttribute="height" id="dBB-RL-foN"/>
                             <constraint firstItem="nba-8X-cZw" firstAttribute="width" secondItem="O5r-VF-Flq" secondAttribute="width" id="qaK-P8-UgY"/>
                             <constraint firstItem="8vX-AR-E1v" firstAttribute="centerX" secondItem="vhH-HE-z7P" secondAttribute="centerX" id="vLm-OG-Qmm"/>
-                            <constraint firstItem="8vX-AR-E1v" firstAttribute="height" secondItem="O5r-VF-Flq" secondAttribute="height" multiplier="0.6" constant="1" id="xLe-qi-YCs"/>
+                            <constraint firstItem="8vX-AR-E1v" firstAttribute="height" secondItem="O5r-VF-Flq" secondAttribute="height" multiplier="0.8" constant="1" id="xLe-qi-YCs"/>
                             <constraint firstItem="nba-8X-cZw" firstAttribute="centerX" secondItem="vhH-HE-z7P" secondAttribute="centerX" id="zee-9d-gip"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vhH-HE-z7P"/>

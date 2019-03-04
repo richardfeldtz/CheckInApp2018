@@ -18,6 +18,8 @@ class AdminToolsViewController: UIViewController {
     @IBOutlet var filterView: UIView!
     @IBOutlet var createEventView: UIView!
     @IBOutlet var eventDetailsView: UIView!
+    @IBOutlet weak var checkInNumberView: UIView!
+    @IBOutlet weak var checkInCount: UILabel!
     
     
     var key : String?
@@ -41,6 +43,7 @@ class AdminToolsViewController: UIViewController {
         formatView(view: filterView)
         formatView(view: createEventView)
         formatView(view: eventDetailsView)
+        checkInNumberView.layer.cornerRadius = 10
     }
     
     
@@ -49,6 +52,8 @@ class AdminToolsViewController: UIViewController {
         setupGestureRecognizers()
         self.key = LaunchViewController.key
         self.identifier = LaunchViewController.identifier
+        let coreData = CoreDataHelper.retrieveData("Checkins");
+        updateCheckInCount(checkInData: coreData as! [Checkins]);
     }
     
     fileprivate func setupGestureRecognizers() {
@@ -268,6 +273,10 @@ class AdminToolsViewController: UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "EventDetails", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "EventDetails") as! EventDetailsViewController
         self.show(vc, sender: self)
+    }
+    
+    func updateCheckInCount(checkInData: [Checkins]) {
+        checkInCount.text = String(checkInData.count);
     }
     
     

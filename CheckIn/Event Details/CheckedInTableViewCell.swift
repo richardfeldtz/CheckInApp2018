@@ -10,10 +10,10 @@ import UIKit
 
 class CheckedInTableViewCell: UITableViewCell {
 	
-	@IBOutlet weak var fName: UILabel!
-	@IBOutlet weak var lName: UILabel!
-	@IBOutlet weak var guests: UILabel!
-	
+    @IBOutlet weak var fname: UILabel!
+    @IBOutlet weak var lname: UILabel!
+    @IBOutlet weak var guests: UILabel!
+    
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		// Initialization code
