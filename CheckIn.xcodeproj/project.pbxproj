@@ -30,6 +30,7 @@
 		A0176B3C16292E2D54091D4E /* Pods_CheckIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165D38F778E064A6C904B674 /* Pods_CheckIn.framework */; };
 		AA230F7E222EF4DB00F86B09 /* CheckedInStudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA230F7C222EF4DB00F86B09 /* CheckedInStudentData.swift */; };
 		AA230F7F222EF4DB00F86B09 /* CheckedInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA230F7D222EF4DB00F86B09 /* CheckedInTableViewCell.swift */; };
+		AA230F81222EFB1100F86B09 /* SelectEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA230F80222EFB1100F86B09 /* SelectEventViewController.swift */; };
 		AAE432F1220DE4F6005070AF /* DataRead.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432EC220DE4F5005070AF /* DataRead.storyboard */; };
 		AAE432F2220DE4F6005070AF /* DataReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432ED220DE4F5005070AF /* DataReadViewController.swift */; };
 		AAE432F3220DE4F6005070AF /* DataShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432EF220DE4F5005070AF /* DataShare.storyboard */; };
@@ -83,6 +84,7 @@
 		A7527F2C7E09EFF9F404A4D3 /* Pods-CheckIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckIn.debug.xcconfig"; path = "Target Support Files/Pods-CheckIn/Pods-CheckIn.debug.xcconfig"; sourceTree = "<group>"; };
 		AA230F7C222EF4DB00F86B09 /* CheckedInStudentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInStudentData.swift; sourceTree = "<group>"; };
 		AA230F7D222EF4DB00F86B09 /* CheckedInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInTableViewCell.swift; sourceTree = "<group>"; };
+		AA230F80222EFB1100F86B09 /* SelectEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEventViewController.swift; sourceTree = "<group>"; };
 		AAE432EC220DE4F5005070AF /* DataRead.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataRead.storyboard; sourceTree = "<group>"; };
 		AAE432ED220DE4F5005070AF /* DataReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReadViewController.swift; sourceTree = "<group>"; };
 		AAE432EF220DE4F5005070AF /* DataShare.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataShare.storyboard; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		FB85E10821C18C59004C7871 /* Create Event */ = {
 			isa = PBXGroup;
 			children = (
+				AA230F80222EFB1100F86B09 /* SelectEventViewController.swift */,
 				FB85E10921C18C72004C7871 /* CreateEventViewController.swift */,
 				FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */,
 				FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */,
@@ -479,6 +482,7 @@
 				FBAE5EF021F8FA3D00B14040 /* SelectionScreen.swift in Sources */,
 				FB85E10A21C18C72004C7871 /* CreateEventViewController.swift in Sources */,
 				AA230F7F222EF4DB00F86B09 /* CheckedInTableViewCell.swift in Sources */,
+				AA230F81222EFB1100F86B09 /* SelectEventViewController.swift in Sources */,
 				14E9946C21B5A3BA005105A4 /* RegistrationCheckViewController.swift in Sources */,
 				FB1C5DD121DE9A4C00992842 /* UILabel.swift in Sources */,
 				14E9945921B58D9E005105A4 /* LaunchViewController.swift in Sources */,
