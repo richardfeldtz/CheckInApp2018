@@ -28,10 +28,9 @@
 		14E9947221B5E061005105A4 /* InternetConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9947121B5E061005105A4 /* InternetConnectionTest.swift */; };
 		14E9947421B5E125005105A4 /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9947321B5E125005105A4 /* RestHelper.swift */; };
 		A0176B3C16292E2D54091D4E /* Pods_CheckIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165D38F778E064A6C904B674 /* Pods_CheckIn.framework */; };
-		AAE432E2220213DA005070AF /* CheckedInStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432DE220213DA005070AF /* CheckedInStudentsViewController.swift */; };
-		AAE432E3220213DA005070AF /* CheckedInStudents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432DF220213DA005070AF /* CheckedInStudents.storyboard */; };
-		AAE432E4220213DA005070AF /* CheckedInStudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432E0220213DA005070AF /* CheckedInStudentData.swift */; };
-		AAE432E5220213DA005070AF /* CheckedInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432E1220213DA005070AF /* CheckedInTableViewCell.swift */; };
+		AA230F7E222EF4DB00F86B09 /* CheckedInStudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA230F7C222EF4DB00F86B09 /* CheckedInStudentData.swift */; };
+		AA230F7F222EF4DB00F86B09 /* CheckedInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA230F7D222EF4DB00F86B09 /* CheckedInTableViewCell.swift */; };
+		AA230F81222EFB1100F86B09 /* SelectEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA230F80222EFB1100F86B09 /* SelectEventViewController.swift */; };
 		AAE432F1220DE4F6005070AF /* DataRead.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432EC220DE4F5005070AF /* DataRead.storyboard */; };
 		AAE432F2220DE4F6005070AF /* DataReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432ED220DE4F5005070AF /* DataReadViewController.swift */; };
 		AAE432F3220DE4F6005070AF /* DataShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432EF220DE4F5005070AF /* DataShare.storyboard */; };
@@ -83,10 +82,9 @@
 		14E9947321B5E125005105A4 /* RestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
 		165D38F778E064A6C904B674 /* Pods_CheckIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7527F2C7E09EFF9F404A4D3 /* Pods-CheckIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckIn.debug.xcconfig"; path = "Target Support Files/Pods-CheckIn/Pods-CheckIn.debug.xcconfig"; sourceTree = "<group>"; };
-		AAE432DE220213DA005070AF /* CheckedInStudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInStudentsViewController.swift; sourceTree = "<group>"; };
-		AAE432DF220213DA005070AF /* CheckedInStudents.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckedInStudents.storyboard; sourceTree = "<group>"; };
-		AAE432E0220213DA005070AF /* CheckedInStudentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInStudentData.swift; sourceTree = "<group>"; };
-		AAE432E1220213DA005070AF /* CheckedInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInTableViewCell.swift; sourceTree = "<group>"; };
+		AA230F7C222EF4DB00F86B09 /* CheckedInStudentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInStudentData.swift; sourceTree = "<group>"; };
+		AA230F7D222EF4DB00F86B09 /* CheckedInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInTableViewCell.swift; sourceTree = "<group>"; };
+		AA230F80222EFB1100F86B09 /* SelectEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEventViewController.swift; sourceTree = "<group>"; };
 		AAE432EC220DE4F5005070AF /* DataRead.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataRead.storyboard; sourceTree = "<group>"; };
 		AAE432ED220DE4F5005070AF /* DataReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReadViewController.swift; sourceTree = "<group>"; };
 		AAE432EF220DE4F5005070AF /* DataShare.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataShare.storyboard; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 				FB1C5DC921DD39E400992842 /* Load Students */,
 				FB85E10821C18C59004C7871 /* Create Event */,
 				FB85E10321C15A79004C7871 /* Event Details */,
-				AAE432DD220213DA005070AF /* Checked In Students */,
 				FB85E0FE21C056E3004C7871 /* Admin Tools */,
 				149B8E9821B78D580009ACC3 /* Lebron easter egg */,
 				149B8E9321B785EE0009ACC3 /* QR code scan */,
@@ -252,17 +249,6 @@
 				FB2906E42211E50C0009D49C /* String.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		AAE432DD220213DA005070AF /* Checked In Students */ = {
-			isa = PBXGroup;
-			children = (
-				AAE432DE220213DA005070AF /* CheckedInStudentsViewController.swift */,
-				AAE432DF220213DA005070AF /* CheckedInStudents.storyboard */,
-				AAE432E0220213DA005070AF /* CheckedInStudentData.swift */,
-				AAE432E1220213DA005070AF /* CheckedInTableViewCell.swift */,
-			);
-			path = "Checked In Students";
 			sourceTree = "<group>";
 		};
 		AAE432EB220DE4F5005070AF /* DataRead */ = {
@@ -319,6 +305,8 @@
 		FB85E10321C15A79004C7871 /* Event Details */ = {
 			isa = PBXGroup;
 			children = (
+				AA230F7C222EF4DB00F86B09 /* CheckedInStudentData.swift */,
+				AA230F7D222EF4DB00F86B09 /* CheckedInTableViewCell.swift */,
 				FB85E10421C15A92004C7871 /* EventDetails.storyboard */,
 				FB85E10621C15AA7004C7871 /* EventDetailsViewController.swift */,
 			);
@@ -328,6 +316,7 @@
 		FB85E10821C18C59004C7871 /* Create Event */ = {
 			isa = PBXGroup;
 			children = (
+				AA230F80222EFB1100F86B09 /* SelectEventViewController.swift */,
 				FB85E10921C18C72004C7871 /* CreateEventViewController.swift */,
 				FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */,
 				FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */,
@@ -408,7 +397,6 @@
 				14E9946121B58D9F005105A4 /* Assets.xcassets in Resources */,
 				FB85E10521C15A92004C7871 /* EventDetails.storyboard in Resources */,
 				149B8E9721B789160009ACC3 /* QRCodeScan.storyboard in Resources */,
-				AAE432E3220213DA005070AF /* CheckedInStudents.storyboard in Resources */,
 				14E9945C21B58D9E005105A4 /* Main.storyboard in Resources */,
 				FBC4C6B821C1A6F800ADC472 /* AdminTools.storyboard in Resources */,
 				AAE432F1220DE4F6005070AF /* DataRead.storyboard in Resources */,
@@ -492,14 +480,14 @@
 				149B8E9521B786DF0009ACC3 /* QRScannerViewController.swift in Sources */,
 				149B8E8B21B756E10009ACC3 /* StudentListViewController.swift in Sources */,
 				FBAE5EF021F8FA3D00B14040 /* SelectionScreen.swift in Sources */,
-				AAE432E4220213DA005070AF /* CheckedInStudentData.swift in Sources */,
 				FB85E10A21C18C72004C7871 /* CreateEventViewController.swift in Sources */,
+				AA230F7F222EF4DB00F86B09 /* CheckedInTableViewCell.swift in Sources */,
+				AA230F81222EFB1100F86B09 /* SelectEventViewController.swift in Sources */,
 				14E9946C21B5A3BA005105A4 /* RegistrationCheckViewController.swift in Sources */,
 				FB1C5DD121DE9A4C00992842 /* UILabel.swift in Sources */,
 				14E9945921B58D9E005105A4 /* LaunchViewController.swift in Sources */,
 				FB1C5DD521DFC74300992842 /* IndentedTextField.swift in Sources */,
 				FB62670621E54CE6009CB9CA /* ViewController.swift in Sources */,
-				AAE432E2220213DA005070AF /* CheckedInStudentsViewController.swift in Sources */,
 				14E9945F21B58D9E005105A4 /* CheckIn.xcdatamodeld in Sources */,
 				FB62670221E52A68009CB9CA /* CoreDataHelper.swift in Sources */,
 				FBB0FBF121FA52A500A6507D /* EventCollectionViewCell.swift in Sources */,
@@ -513,8 +501,8 @@
 				AAE432F4220DE4F6005070AF /* DataShareViewController.swift in Sources */,
 				149B8E9A21B78D970009ACC3 /* GifViewController.swift in Sources */,
 				FB85E10021C0571C004C7871 /* AdminToolsViewController.swift in Sources */,
+				AA230F7E222EF4DB00F86B09 /* CheckedInStudentData.swift in Sources */,
 				14E9947221B5E061005105A4 /* InternetConnectionTest.swift in Sources */,
-				AAE432E5220213DA005070AF /* CheckedInTableViewCell.swift in Sources */,
 				149B8E9221B76E730009ACC3 /* ProfileViewController.swift in Sources */,
 				FB62670821E6940E009CB9CA /* Date.swift in Sources */,
 				14E9947421B5E125005105A4 /* RestHelper.swift in Sources */,
