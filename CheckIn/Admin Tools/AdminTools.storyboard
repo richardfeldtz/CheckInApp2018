@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SFUIText.ttf">
+            <string>.SFUIText</string>
+        </array>
         <array key="orange juice 2.0.ttf">
             <string>orangejuice</string>
         </array>
@@ -291,7 +294,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4A-g0-XdV">
                                                         <rect key="frame" x="0.0" y="0.0" width="89.5" height="89.5"/>
-                                                        <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="45"/>
+                                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="45"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -357,7 +360,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YmE-53-lYJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Admin Tools" id="mKW-Mq-M70"/>
+                    <navigationItem key="navigationItem" id="mKW-Mq-M70"/>
                     <connections>
                         <outlet property="checkInCount" destination="q4A-g0-XdV" id="WW2-hF-pu2"/>
                         <outlet property="checkInNumberView" destination="toG-F3-D3g" id="XmQ-lQ-B92"/>

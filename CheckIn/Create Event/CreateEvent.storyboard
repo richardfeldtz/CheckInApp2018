@@ -9,8 +9,13 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="orange juice 2.0.ttf">
+            <string>orangejuice</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Create Event-->
+        <!--Create Event View Controller-->
         <scene sceneID="QUe-y3-95k">
             <objects>
                 <viewController storyboardIdentifier="CreateEventViewController" id="ogN-8X-rlp" customClass="CreateEventViewController" customModule="CheckIn" customModuleProvider="target" sceneMemberID="viewController">
@@ -230,7 +235,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H14-ok-Uhh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Event" id="7kY-Ut-dgN"/>
                     <connections>
                         <outlet property="CardView" destination="wTD-wY-7Oq" id="hO8-ay-Smv"/>
                         <outlet property="EventDateView" destination="dGK-YP-U1H" id="D4n-3m-LJf"/>
@@ -286,7 +290,7 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Event" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVI-HA-X6l">
                                         <rect key="frame" x="61" y="83" width="493" height="124"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                        <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="55"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
