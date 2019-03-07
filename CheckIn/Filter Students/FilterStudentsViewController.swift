@@ -156,6 +156,11 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "Filter Students"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -173,7 +178,6 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        self.title = "Filter Students"
         let schools = CoreDataHelper.retrieveData("School")
         
         for school in schools {
@@ -184,7 +188,8 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
             backgroundImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: 0),
             backgroundImage.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: 0),
             backgroundImage.heightAnchor.constraint(equalToConstant: view.frame.height),
-            backgroundImage.widthAnchor.constraint(equalToConstant: view.frame.width)
+            backgroundImage.widthAnchor.constraint(equalToConstant: view.frame.width),
+            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0)
             
             ])
         
@@ -223,7 +228,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
             ])
         
         NSLayoutConstraint.activate([
-            schoolFilterSwitch.topAnchor.constraint(equalTo: schoolPickerView.bottomAnchor, constant: 0),
+            schoolFilterSwitch.bottomAnchor.constraint(equalTo: schoolContainerView.bottomAnchor, constant: -20),
             schoolFilterSwitch.centerXAnchor.constraint(equalTo: schoolContainerView.centerXAnchor)
             ])
         
@@ -245,12 +250,12 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         NSLayoutConstraint.activate([
             lastNamePickerView.centerYAnchor.constraint(equalTo: lastNameContainerView.centerYAnchor),
             lastNamePickerView.centerXAnchor.constraint(equalTo: lastNameContainerView.centerXAnchor),
-            lastNamePickerView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.25),
+            lastNamePickerView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.15),
             lastNamePickerView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.5)
             ])
         
         NSLayoutConstraint.activate([
-            lastNameFilterSwitch.topAnchor.constraint(equalTo: lastNamePickerView.bottomAnchor, constant: 0),
+            lastNameFilterSwitch.bottomAnchor.constraint(equalTo: lastNameContainerView.bottomAnchor, constant: -20),
             lastNameFilterSwitch.centerXAnchor.constraint(equalTo: lastNameContainerView.centerXAnchor)
             ])
         
