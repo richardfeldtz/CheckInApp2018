@@ -18,38 +18,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="yh3-g6-IFG">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RBu-M8-iBx">
-                                <rect key="frame" x="74.5" y="143" width="226" height="401"/>
+                                <rect key="frame" x="37" y="76" width="301" height="535"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lee-bn-d6K">
-                                        <rect key="frame" x="56" y="0.0" width="114" height="81"/>
+                                        <rect key="frame" x="75" y="0.0" width="151.5" height="108"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vuC-1k-Cym">
-                                        <rect key="frame" x="22" y="81" width="182" height="41.5"/>
+                                        <rect key="frame" x="29.5" y="108" width="242" height="54.5"/>
                                         <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlV-g9-uvs">
-                                        <rect key="frame" x="22" y="122.5" width="182" height="41"/>
+                                        <rect key="frame" x="29.5" y="162.5" width="242" height="54.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4w-qN-hhZ">
-                                        <rect key="frame" x="22" y="163.5" width="182" height="81"/>
+                                        <rect key="frame" x="29.5" y="217" width="242" height="108"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcE-Tc-9Kv">
-                                        <rect key="frame" x="22" y="244.5" width="182" height="41"/>
+                                        <rect key="frame" x="29.5" y="325" width="242" height="54.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2X-bB-Yah">
-                                        <rect key="frame" x="67.5" y="285.5" width="91" height="41.5"/>
+                                        <rect key="frame" x="90" y="379.5" width="121" height="54.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jx-zX-9m4">
-                                                <rect key="frame" x="0.0" y="0.0" width="91" height="41.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="121" height="54.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -95,10 +98,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RBu-M8-iBx" firstAttribute="width" secondItem="LZQ-Ja-Exf" secondAttribute="width" multiplier="0.6" constant="1" id="4EH-5N-sUG"/>
+                            <constraint firstItem="RBu-M8-iBx" firstAttribute="width" secondItem="LZQ-Ja-Exf" secondAttribute="width" multiplier="0.8" constant="1" id="4EH-5N-sUG"/>
                             <constraint firstItem="RBu-M8-iBx" firstAttribute="centerX" secondItem="DoR-lS-2NI" secondAttribute="centerX" id="QBV-v9-N9d"/>
-                            <constraint firstItem="RBu-M8-iBx" firstAttribute="height" secondItem="LZQ-Ja-Exf" secondAttribute="height" multiplier="0.6" constant="1" id="uwG-LD-Rvv"/>
+                            <constraint firstItem="yh3-g6-IFG" firstAttribute="width" secondItem="LZQ-Ja-Exf" secondAttribute="width" id="qwF-KE-N1k"/>
+                            <constraint firstItem="yh3-g6-IFG" firstAttribute="centerX" secondItem="DoR-lS-2NI" secondAttribute="centerX" id="uMV-vM-8U3"/>
+                            <constraint firstItem="RBu-M8-iBx" firstAttribute="height" secondItem="LZQ-Ja-Exf" secondAttribute="height" multiplier="0.8" constant="1" id="uwG-LD-Rvv"/>
                             <constraint firstItem="RBu-M8-iBx" firstAttribute="centerY" secondItem="DoR-lS-2NI" secondAttribute="centerY" id="vtj-fZ-zuV"/>
+                            <constraint firstItem="yh3-g6-IFG" firstAttribute="height" secondItem="LZQ-Ja-Exf" secondAttribute="height" id="yFp-bk-DqQ"/>
+                            <constraint firstItem="yh3-g6-IFG" firstAttribute="centerY" secondItem="DoR-lS-2NI" secondAttribute="centerY" id="z6a-uJ-Yao"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DoR-lS-2NI"/>
                     </view>
@@ -113,4 +120,7 @@
             <point key="canvasLocation" x="-81" y="69"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="3794" height="4669"/>
+    </resources>
 </document>
