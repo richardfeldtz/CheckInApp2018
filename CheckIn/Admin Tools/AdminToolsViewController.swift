@@ -262,10 +262,10 @@ class AdminToolsViewController: UIViewController {
     
     @objc func openCreateEventVC() {
         
-        
+        SelectEventViewController.apiCall = true
         
         let storyboard: UIStoryboard = UIStoryboard(name: "CreateEvent", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CreateEventViewController") as! CreateEventViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "SelectEventViewController") as! SelectEventViewController
         show(vc, sender: self)
         
     }

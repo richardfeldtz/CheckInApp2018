@@ -230,13 +230,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H14-ok-Uhh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Event" id="7kY-Ut-dgN">
-                        <barButtonItem key="rightBarButtonItem" title="Select Existing Event" id="xBK-gN-5f8">
-                            <connections>
-                                <segue destination="xw4-gb-1sL" kind="show" id="wQN-gG-Sxo"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Create Event" id="7kY-Ut-dgN"/>
                     <connections>
                         <outlet property="CardView" destination="wTD-wY-7Oq" id="hO8-ay-Smv"/>
                         <outlet property="EventDateView" destination="dGK-YP-U1H" id="D4n-3m-LJf"/>
@@ -252,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wc1-lX-ROe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688" y="149"/>
+            <point key="canvasLocation" x="2037" y="149"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Xo-jP-aX7">
@@ -265,7 +259,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ogN-8X-rlp" kind="relationship" relationship="rootViewController" id="orZ-Fr-zXO"/>
+                        <segue destination="xw4-gb-1sL" kind="relationship" relationship="rootViewController" id="1eC-2D-VbH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfT-ZC-GZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -348,7 +342,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vhH-HE-z7P"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iqr-hr-n1A"/>
+                    <navigationItem key="navigationItem" id="iqr-hr-n1A">
+                        <barButtonItem key="rightBarButtonItem" title="Create Event" id="Lx6-jB-WGO">
+                            <connections>
+                                <segue destination="ogN-8X-rlp" kind="show" id="GdC-uF-GjB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="CardView" destination="8vX-AR-E1v" id="34a-In-JTB"/>
                         <outlet property="EventList" destination="gKS-9p-9PT" id="E3y-P4-QHa"/>
@@ -357,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7F0-7z-2gO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2057" y="149"/>
+            <point key="canvasLocation" x="771" y="149"/>
         </scene>
     </scenes>
     <resources>

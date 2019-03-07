@@ -16,6 +16,7 @@ class SelectEventViewController : UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var CardView: UIView!
     @IBOutlet weak var EventList: UIPickerView!
     @IBOutlet weak var doneButton: UIImageView!
+    static var apiCall = false
     
     var events = [String]()
     
@@ -39,31 +40,34 @@ class SelectEventViewController : UIViewController, UIPickerViewDelegate, UIPick
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        SVProgressHUD.show(withStatus:"Getting list of events...")
-        SVProgressHUD.setDefaultStyle(.dark)
-        SVProgressHUD.setDefaultMaskType(.black)
-        
-        DispatchQueue.global(qos: .userInitiated).async {
+        if(SelectEventViewController.apiCall){
+            SelectEventViewController.apiCall = false
+            SVProgressHUD.show(withStatus:"Getting list of events...")
+            SVProgressHUD.setDefaultStyle(.dark)
+            SVProgressHUD.setDefaultMaskType(.black)
             
-            self.events.removeAll()
-            let eventURL = URL(string:RestHelper.urls["Get_Events"]!)!
-            let eventList = RestHelper.makePost(eventURL, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!])
-            let eventData = eventList.data(using: .utf8)!
-            do {
-                if let jsonArray = try JSONSerialization.jsonObject(with: eventData, options : .allowFragments) as? [String]{
-                    for event in jsonArray {
-                        self.events.append(event)
+            DispatchQueue.global(qos: .userInitiated).async {
+                
+                self.events.removeAll()
+                let eventURL = URL(string:RestHelper.urls["Get_Events"]!)!
+                let eventList = RestHelper.makePost(eventURL, ["identifier": LaunchViewController.identifier!, "key": LaunchViewController.key!])
+                let eventData = eventList.data(using: .utf8)!
+                do {
+                    if let jsonArray = try JSONSerialization.jsonObject(with: eventData, options : .allowFragments) as? [String]{
+                        for event in jsonArray {
+                            self.events.append(event)
+                        }
                     }
+                    
+                } catch {
+                    print("error")
                 }
                 
-            } catch {
-                print("error")
-            }
-            
-            // Bounce back to the main thread to update the UI
-            DispatchQueue.main.async {
-                self.EventList.reloadAllComponents()
-                SVProgressHUD.dismiss()
+                // Bounce back to the main thread to update the UI
+                DispatchQueue.main.async {
+                    self.EventList.reloadAllComponents()
+                    SVProgressHUD.dismiss()
+                }
             }
         }
     }
