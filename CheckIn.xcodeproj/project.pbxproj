@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		142029532231B62700B8B4FF /* orange juice 2.0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 142029522231B62700B8B4FF /* orange juice 2.0.ttf */; };
+		142029582231C86200B8B4FF /* orange juice 2.0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 142029572231C86200B8B4FF /* orange juice 2.0.ttf */; };
 		149B8E8921B751A80009ACC3 /* StudentList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149B8E8821B751A80009ACC3 /* StudentList.storyboard */; };
 		149B8E8B21B756E10009ACC3 /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B8E8A21B756E10009ACC3 /* StudentListViewController.swift */; };
 		149B8E8D21B762700009ACC3 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B8E8C21B762700009ACC3 /* StudentTableViewCell.swift */; };
@@ -59,7 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		142029522231B62700B8B4FF /* orange juice 2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "orange juice 2.0.ttf"; path = "../../../../Downloads/orange_juice/orange juice 2.0.ttf"; sourceTree = "<group>"; };
+		142029572231C86200B8B4FF /* orange juice 2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "orange juice 2.0.ttf"; path = "../../../../Downloads/orange_juice/orange juice 2.0.ttf"; sourceTree = "<group>"; };
 		149B8E8821B751A80009ACC3 /* StudentList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentList.storyboard; sourceTree = "<group>"; };
 		149B8E8A21B756E10009ACC3 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
 		149B8E8C21B762700009ACC3 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
@@ -135,10 +135,10 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		142029512231B60800B8B4FF /* Custom Fonts */ = {
+		142029562231C84200B8B4FF /* Custom Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				142029522231B62700B8B4FF /* orange juice 2.0.ttf */,
+				142029572231C86200B8B4FF /* orange juice 2.0.ttf */,
 			);
 			name = "Custom Fonts";
 			path = "New Group";
@@ -213,7 +213,7 @@
 		14E9945521B58D9E005105A4 /* CheckIn */ = {
 			isa = PBXGroup;
 			children = (
-				142029512231B60800B8B4FF /* Custom Fonts */,
+				142029562231C84200B8B4FF /* Custom Fonts */,
 				AAE432EB220DE4F5005070AF /* DataRead */,
 				AAE432EE220DE4F5005070AF /* DataShare */,
 				FB6266FC21E3D491009CB9CA /* Filter Students */,
@@ -407,7 +407,7 @@
 				14AB466A2212161100B79155 /* lj.gif in Resources */,
 				FB85E10C21C18CE4004C7871 /* CreateEvent.storyboard in Resources */,
 				14E9946121B58D9F005105A4 /* Assets.xcassets in Resources */,
-				142029532231B62700B8B4FF /* orange juice 2.0.ttf in Resources */,
+				142029582231C86200B8B4FF /* orange juice 2.0.ttf in Resources */,
 				FB85E10521C15A92004C7871 /* EventDetails.storyboard in Resources */,
 				149B8E9721B789160009ACC3 /* QRCodeScan.storyboard in Resources */,
 				14E9945C21B58D9E005105A4 /* Main.storyboard in Resources */,
@@ -670,7 +670,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C7HGN23NTW;
+				DEVELOPMENT_TEAM = V9MNS6CX39;
 				INFOPLIST_FILE = CheckIn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -690,7 +690,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C7HGN23NTW;
+				DEVELOPMENT_TEAM = V9MNS6CX39;
 				INFOPLIST_FILE = CheckIn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
