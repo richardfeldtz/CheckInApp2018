@@ -171,12 +171,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         cell.checkMark.image = student!.checked ? UIImage(named: "checkmark") : nil
         
         cell.fname.numberOfLines=0;
-        cell.fname.font = UIFont(name: "HelveticaNeue", size: 20)
         cell.fname.minimumScaleFactor = 0.1
         cell.fname.adjustsFontSizeToFitWidth=true
         
         cell.lname.numberOfLines=0;
-        cell.lname.font = UIFont(name: "HelveticaNeue", size: 20)
         cell.lname.minimumScaleFactor = 0.1
         cell.lname.adjustsFontSizeToFitWidth=true
         
