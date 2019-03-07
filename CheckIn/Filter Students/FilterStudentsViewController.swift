@@ -10,12 +10,36 @@ import UIKit
 
 class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+    var schoolData = [String]()
+    static var currentSelectedSchool: String?
+    static var currentSelectedLastNameFilter: [String] = ["A", "A"]
+    
+    static var schoolFilterFlag = false
+    static var nameFilterFlag = false
     
     fileprivate let alphabet = ["A","B","C","D","E","F","G",
                                 "H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    let cardContrainerView: UIView = {
+        let card = UIView()
+        card.translatesAutoresizingMaskIntoConstraints = false
+        card.backgroundColor = .white
+        card.layer.cornerRadius = 10
+        card.layer.shouldRasterize = false
+        card.layer.borderWidth = 1
+        
+        card.layer.shadowColor = UIColor.black.cgColor
+        card.layer.shadowOpacity = 1
+        card.layer.shadowOffset = CGSize.zero
+        card.layer.shadowRadius = 10
+        return card
+    }()
+    
+    let backgroundImage: UIImageView = {
+        let iv = UIImageView(image: #imageLiteral(resourceName: "wyuDMzgk"))
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFill
+        return iv
+    }()
     
     let schoolPickerView: UIPickerView = {
         let picker = UIPickerView()
@@ -27,13 +51,6 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         picker.translatesAutoresizingMaskIntoConstraints = false
         return picker
     }()
-    
-    var schoolData = [String]()
-    static var currentSelectedSchool: String?
-    static var currentSelectedLastNameFilter: [String] = ["A", "A"]
-    
-    static var schoolFilterFlag = false
-    static var nameFilterFlag = false
     
     lazy var schoolFilterSwitch: UISwitch = {
         let schoolSwitch = UISwitch()
@@ -50,15 +67,6 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         schoolSwitch.addTarget(self, action: #selector(nameFilterWasSwitched), for: .valueChanged)
         schoolSwitch.translatesAutoresizingMaskIntoConstraints = false
         return schoolSwitch
-    }()
-    
-    
-    lazy var xButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(#imageLiteral(resourceName: "icons8-delete-filled-25"), for: UIControl.State.normal)
-        button.addTarget(self, action: #selector(self.removeScreen), for: .touchUpInside)
-        return button
     }()
     
     lazy var filterStudentsLabel: UnderLinedLabel = {
@@ -87,44 +95,22 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     lazy var schoolContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.borderWidth = 3
         view.layer.cornerRadius = 10
+        view.layer.borderWidth = 2
         view.layer.borderColor = UIColor.black.cgColor
+        
         return view
     }()
     
     lazy var lastNameContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.borderWidth = 3
         view.layer.cornerRadius = 10
         view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 2
         return view
     }()
-    
-    func formatView(view : UIView){
-        view.layer.cornerRadius = 10
-        view.layer.shouldRasterize = false
-        view.layer.borderWidth = 1
-        
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = CGSize.zero
-        view.layer.shadowRadius = 10
-    }
-    
-    @objc func removeScreen(){
-        let firstLetter = UnicodeScalar(FilterStudentsViewController.currentSelectedLastNameFilter.first!)
-        let lastLetter = UnicodeScalar(FilterStudentsViewController.currentSelectedLastNameFilter.last!)
-        if firstLetter!.value > lastLetter!.value{
-            let filterAlert = UIAlertController(title: "Warning", message: "Invalid Filter", preferredStyle: .alert)
-            filterAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:nil))
-            self.present(filterAlert, animated: true)
-        } else {
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
+
     @objc func addSchoolPickerView() {
         view.addSubview(schoolPickerView)
     }
@@ -152,8 +138,6 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: true)
-        view.backgroundColor = .gray
-        // preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
         schoolPickerView.delegate = self
         schoolPickerView.dataSource = self
         lastNamePickerView.delegate = self
@@ -168,40 +152,43 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        self.title = "Filter Students"
         let schools = CoreDataHelper.retrieveData("School")
         
         for school in schools {
             schoolData.append((school as AnyObject).value(forKey: "sname") as! String)
         }
+        view.addSubview(backgroundImage)
+        NSLayoutConstraint.activate([
+            backgroundImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: 0),
+            backgroundImage.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: 0),
+            backgroundImage.heightAnchor.constraint(equalToConstant: view.frame.height),
+            backgroundImage.widthAnchor.constraint(equalToConstant: view.frame.width)
+            
+            ])
         
-        view.addSubview(schoolContainerView)
-        schoolContainerView.addSubview(xButton)
-        //schoolContainerView.addSubview(filterStudentsLabel)
+        view.addSubview(cardContrainerView)
+        NSLayoutConstraint.activate([
+            cardContrainerView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: 0),
+            cardContrainerView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: 0),
+            cardContrainerView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.8),
+            cardContrainerView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.8)
+            
+            ])
+        
+        cardContrainerView.addSubview(schoolContainerView)
         schoolContainerView.addSubview(schoolPickerView)
         schoolContainerView.addSubview(schoolFilterSwitch)
         schoolContainerView.addSubview(studentsFromLabel)
         
         
         NSLayoutConstraint.activate([
-            schoolContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            schoolContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
-            schoolContainerView.heightAnchor.constraint(equalToConstant: view.frame.height/2 - 20),
-            schoolContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -20)
+            schoolContainerView.centerXAnchor.constraint(equalTo: cardContrainerView.safeAreaLayoutGuide.centerXAnchor, constant: 0),
+            schoolContainerView.topAnchor.constraint(equalTo: cardContrainerView.safeAreaLayoutGuide.topAnchor, constant: 10),
+            schoolContainerView.heightAnchor.constraint(equalToConstant: (view.frame.height * 0.4) - 20),
+            schoolContainerView.widthAnchor.constraint(equalToConstant: (view.frame.width * 0.8) - 20)
             ])
         
-        NSLayoutConstraint.activate([
-            xButton.trailingAnchor.constraint(equalTo: schoolContainerView.trailingAnchor, constant: -30),
-            xButton.topAnchor.constraint(equalTo: schoolContainerView.topAnchor, constant: 30),
-            xButton.widthAnchor.constraint(equalToConstant: 25),
-            xButton.heightAnchor.constraint(equalToConstant: 25)
-            ])
-        
-//        NSLayoutConstraint.activate([
-//            filterStudentsLabel.centerXAnchor.constraint(equalTo: schoolContainerView.centerXAnchor),
-//            filterStudentsLabel.topAnchor.constraint(equalTo: schoolContainerView.topAnchor, constant: 50),
-//            filterStudentsLabel.heightAnchor.constraint(equalToConstant: 50)
-//            ])
-
         NSLayoutConstraint.activate([
             schoolPickerView.centerYAnchor.constraint(equalTo: schoolContainerView.centerYAnchor),
             schoolPickerView.centerXAnchor.constraint(equalTo: schoolContainerView.centerXAnchor)
@@ -223,12 +210,10 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         lastNameContainerView.addSubview(lastNamePickerView)
         lastNameContainerView.addSubview(lastNameFilterSwitch)
         NSLayoutConstraint.activate([
-            lastNameContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            lastNameContainerView.topAnchor.constraint(equalTo: schoolContainerView.bottomAnchor, constant: 10),
-            lastNameContainerView.heightAnchor.constraint(equalToConstant: view.frame.height/2 - 20),
-            lastNameContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -20)
-            ])
-        
+            lastNameContainerView.centerXAnchor.constraint(equalTo: cardContrainerView.safeAreaLayoutGuide.centerXAnchor, constant: 0),
+            lastNameContainerView.topAnchor.constraint(equalTo: schoolContainerView.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+            lastNameContainerView.heightAnchor.constraint(equalToConstant: (view.frame.height * 0.4) - 20),
+            lastNameContainerView.widthAnchor.constraint(equalToConstant: (view.frame.width * 0.8) - 20)            ])
         NSLayoutConstraint.activate([
             byLastNameLabel.topAnchor.constraint(equalTo: lastNameContainerView.topAnchor, constant: 50),
             byLastNameLabel.centerXAnchor.constraint(equalTo: lastNameContainerView.centerXAnchor)
@@ -261,6 +246,16 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
             FilterStudentsViewController.currentSelectedLastNameFilter.removeAll()
             FilterStudentsViewController.currentSelectedLastNameFilter.append(alphabet[lastNamePickerView.selectedRow(inComponent: 0)])
             FilterStudentsViewController.currentSelectedLastNameFilter.append(alphabet[lastNamePickerView.selectedRow(inComponent: 1)])
+            
+            
+            let firstLetter = UnicodeScalar(FilterStudentsViewController.currentSelectedLastNameFilter.first!)
+            let lastLetter = UnicodeScalar(FilterStudentsViewController.currentSelectedLastNameFilter.last!)
+            if firstLetter!.value > lastLetter!.value{
+                self.navigationItem.setHidesBackButton(true, animated: true)
+                
+            } else {
+                self.navigationItem.setHidesBackButton(false, animated: true)
+            }
         }
     }
     

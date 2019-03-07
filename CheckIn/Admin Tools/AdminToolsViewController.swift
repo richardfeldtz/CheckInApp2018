@@ -256,7 +256,8 @@ class AdminToolsViewController: UIViewController {
         //vc.modalPresentationStyle = .formSheet
         vc.storyboard?.instantiateInitialViewController()
         //vc.preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
-        present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+        //present(vc, animated: true, completion: nil)
     }
     
     @objc func openCreateEventVC() {

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe5d4ee2-a9ee-4ae6-b03c-a4d44b0bbd8c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CheckIn/Assets.xcassets/background.imageset/backdround.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CheckIn/Assets.xcassets/background.imageset/Contents.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CheckIn.xcworkspace/xcuserdata/Steeze.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/CheckIn.xcworkspace/xcuserdata/Steeze.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CheckIn/Admin Tools/AdminTools.storyboard" afterPath="$PROJECT_DIR$/CheckIn/Admin Tools/AdminTools.storyboard" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -140,12 +137,12 @@
       <option name="presentableId" value="Default" />
       <updated>1548440528053</updated>
       <workItem from="1548440529995" duration="574000" />
-      <workItem from="1551387917147" duration="22000" />
+      <workItem from="1551387917147" duration="434000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="596000" />
+    <option name="totallyTimeSpent" value="1008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="23" width="1238" height="725" extended-state="0" />
