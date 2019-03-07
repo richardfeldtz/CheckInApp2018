@@ -38,6 +38,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         let iv = UIImageView(image: #imageLiteral(resourceName: "wyuDMzgk"))
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
         return iv
     }()
     
@@ -80,6 +81,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
         label.text = "Only check in students from: "
         return label
     }()
@@ -88,7 +90,10 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
         label.text = "Only check in students with the last name:"
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.numberOfLines = 0
         return label
     }()
     
@@ -110,6 +115,22 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         view.layer.borderWidth = 2
         return view
     }()
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel: UILabel? = (view as? UILabel)
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            //pickerLabel?.adjustsFontSizeToFitWidth = true
+            //pickerLabel?.font = UIFont(name: "<Your Font Name>", size: <Font Size>)
+            pickerLabel?.textAlignment = .center
+            if pickerView == schoolPickerView {
+                pickerLabel?.text = schoolData[row]
+            } else {
+                 pickerLabel?.text = String(alphabet[row])
+            }
+        }
+        return pickerLabel!
+    }
 
     @objc func addSchoolPickerView() {
         view.addSubview(schoolPickerView)
@@ -191,7 +212,9 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         
         NSLayoutConstraint.activate([
             schoolPickerView.centerYAnchor.constraint(equalTo: schoolContainerView.centerYAnchor),
-            schoolPickerView.centerXAnchor.constraint(equalTo: schoolContainerView.centerXAnchor)
+            schoolPickerView.centerXAnchor.constraint(equalTo: schoolContainerView.centerXAnchor),
+            schoolPickerView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.25),
+            schoolPickerView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.5)
             ])
         
         NSLayoutConstraint.activate([
@@ -200,7 +223,7 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
             ])
         
         NSLayoutConstraint.activate([
-            schoolFilterSwitch.bottomAnchor.constraint(equalTo: schoolContainerView.bottomAnchor, constant: -50),
+            schoolFilterSwitch.topAnchor.constraint(equalTo: schoolPickerView.bottomAnchor, constant: 0),
             schoolFilterSwitch.centerXAnchor.constraint(equalTo: schoolContainerView.centerXAnchor)
             ])
         
@@ -216,15 +239,18 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
             lastNameContainerView.widthAnchor.constraint(equalToConstant: (view.frame.width * 0.8) - 20)            ])
         NSLayoutConstraint.activate([
             byLastNameLabel.topAnchor.constraint(equalTo: lastNameContainerView.topAnchor, constant: 50),
-            byLastNameLabel.centerXAnchor.constraint(equalTo: lastNameContainerView.centerXAnchor)
+            byLastNameLabel.centerXAnchor.constraint(equalTo: lastNameContainerView.centerXAnchor),
+            byLastNameLabel.widthAnchor.constraint(equalToConstant: view.frame.width * 0.5)
             ])
         NSLayoutConstraint.activate([
             lastNamePickerView.centerYAnchor.constraint(equalTo: lastNameContainerView.centerYAnchor),
             lastNamePickerView.centerXAnchor.constraint(equalTo: lastNameContainerView.centerXAnchor),
+            lastNamePickerView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.25),
+            lastNamePickerView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.5)
             ])
         
         NSLayoutConstraint.activate([
-            lastNameFilterSwitch.bottomAnchor.constraint(equalTo: lastNameContainerView.bottomAnchor, constant: -50),
+            lastNameFilterSwitch.topAnchor.constraint(equalTo: lastNamePickerView.bottomAnchor, constant: 0),
             lastNameFilterSwitch.centerXAnchor.constraint(equalTo: lastNameContainerView.centerXAnchor)
             ])
         
