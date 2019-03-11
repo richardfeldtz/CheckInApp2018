@@ -122,8 +122,8 @@ public class CoreDataHelper {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        var fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        var request = NSBatchDeleteRequest(fetchRequest: fetch)
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let request = NSBatchDeleteRequest(fetchRequest: fetch)
         let _ = try! managedContext.execute(request)
         
 //        fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Checkins")
