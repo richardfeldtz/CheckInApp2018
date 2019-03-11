@@ -58,7 +58,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-4l-pga">
                                                 <rect key="frame" x="0.0" y="0.0" width="493" height="42.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -90,7 +90,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCF-gh-uX1">
                                                 <rect key="frame" x="48.5" y="0.0" width="396" height="42"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -122,7 +122,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUj-0q-61G">
                                                 <rect key="frame" x="0.0" y="1.5" width="99.5" height="39"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -134,7 +134,7 @@
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orientation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JjN-1g-AoJ">
                                                 <rect key="frame" x="303.5" y="1.5" width="134" height="39"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -163,23 +163,23 @@
                                         <rect key="frame" x="276" y="682.5" width="63" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Basketball" translatesAutoresizingMaskIntoConstraints="NO" id="k8D-b8-Ld7">
-                                        <rect key="frame" x="265.5" y="724.5" width="84" height="83"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="createEventButton" translatesAutoresizingMaskIntoConstraints="NO" id="k8D-b8-Ld7">
+                                        <rect key="frame" x="163" y="724.5" width="289" height="83"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="k8D-b8-Ld7" secondAttribute="height" multiplier="1:1" constant="1" id="Zz8-KV-oab"/>
+                                            <constraint firstAttribute="width" secondItem="k8D-b8-Ld7" secondAttribute="height" multiplier="467:134" id="BM2-cJ-hOm"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="pZk-zU-yda" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="145-I7-sx3"/>
+                                    <constraint firstItem="k8D-b8-Ld7" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.1" constant="1" id="2Nf-bM-btU"/>
                                     <constraint firstItem="hkm-rd-sAd" firstAttribute="top" secondItem="SyM-81-mmv" secondAttribute="bottom" id="3SJ-tC-TX9"/>
                                     <constraint firstItem="BVF-ZI-lXo" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.05" constant="1" id="4Si-O5-qaG"/>
                                     <constraint firstItem="k8D-b8-Ld7" firstAttribute="top" secondItem="BVF-ZI-lXo" secondAttribute="bottom" id="5gy-A1-dd8"/>
                                     <constraint firstItem="8u1-La-8kq" firstAttribute="top" secondItem="wt0-xb-Phw" secondAttribute="bottom" id="A8n-Tx-EAb"/>
                                     <constraint firstItem="dGK-YP-U1H" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.8" constant="1" id="BAq-lP-MkP"/>
                                     <constraint firstItem="7J6-l6-MpW" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.8" constant="1" id="BFx-ww-fde"/>
-                                    <constraint firstItem="k8D-b8-Ld7" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.1" constant="1" id="BNw-16-XL2"/>
                                     <constraint firstItem="8u1-La-8kq" firstAttribute="bottom" secondItem="pZk-zU-yda" secondAttribute="top" id="DGU-Nr-1gN"/>
                                     <constraint firstItem="wt0-xb-Phw" firstAttribute="top" secondItem="dGK-YP-U1H" secondAttribute="bottom" id="EiE-uZ-0HI"/>
                                     <constraint firstItem="BVF-ZI-lXo" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.1" constant="1" id="FQc-hp-JbD"/>
@@ -301,10 +301,10 @@
                                         <rect key="frame" x="0.0" y="577" width="615" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Basketball" translatesAutoresizingMaskIntoConstraints="NO" id="RQD-bO-YYc">
-                                        <rect key="frame" x="245.5" y="619" width="124" height="123"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selectEventButton" translatesAutoresizingMaskIntoConstraints="NO" id="RQD-bO-YYc">
+                                        <rect key="frame" x="163.5" y="619" width="288" height="83"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="RQD-bO-YYc" secondAttribute="height" multiplier="1:1" constant="1" id="sci-oQ-E7h"/>
+                                            <constraint firstAttribute="width" secondItem="RQD-bO-YYc" secondAttribute="height" multiplier="465:134" id="VP9-dx-1rN"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -320,13 +320,13 @@
                                     <constraint firstItem="pd5-cY-sYH" firstAttribute="width" secondItem="8vX-AR-E1v" secondAttribute="width" id="Pxi-kd-dAS"/>
                                     <constraint firstItem="gKS-9p-9PT" firstAttribute="bottom" secondItem="pd5-cY-sYH" secondAttribute="top" id="QL6-HJ-2du"/>
                                     <constraint firstItem="RQD-bO-YYc" firstAttribute="centerX" secondItem="8vX-AR-E1v" secondAttribute="centerX" id="W8V-HP-iqb"/>
-                                    <constraint firstItem="RQD-bO-YYc" firstAttribute="width" secondItem="8vX-AR-E1v" secondAttribute="width" multiplier="0.2" constant="1" id="XKj-7a-h5e"/>
                                     <constraint firstItem="gKS-9p-9PT" firstAttribute="width" secondItem="8vX-AR-E1v" secondAttribute="width" multiplier="0.8" constant="1" id="YHg-qr-szM"/>
                                     <constraint firstItem="gKS-9p-9PT" firstAttribute="centerX" secondItem="8vX-AR-E1v" secondAttribute="centerX" id="Zkt-oF-ExZ"/>
                                     <constraint firstItem="gKS-9p-9PT" firstAttribute="height" secondItem="8vX-AR-E1v" secondAttribute="height" multiplier="0.45" constant="1" id="f4u-1A-esf"/>
                                     <constraint firstItem="dVI-HA-X6l" firstAttribute="centerX" secondItem="8vX-AR-E1v" secondAttribute="centerX" id="lH9-aU-BQb"/>
                                     <constraint firstItem="pd5-cY-sYH" firstAttribute="height" secondItem="8vX-AR-E1v" secondAttribute="height" multiplier="0.05" constant="1" id="okN-kU-C0P"/>
                                     <constraint firstItem="dVI-HA-X6l" firstAttribute="top" secondItem="GJf-9y-6cK" secondAttribute="bottom" id="qbp-7v-gi1"/>
+                                    <constraint firstItem="RQD-bO-YYc" firstAttribute="height" secondItem="8vX-AR-E1v" secondAttribute="height" multiplier="0.1" constant="1" id="tp0-PV-F4n"/>
                                     <constraint firstItem="GJf-9y-6cK" firstAttribute="top" secondItem="8vX-AR-E1v" secondAttribute="top" id="vkM-Nq-VaS"/>
                                     <constraint firstItem="gKS-9p-9PT" firstAttribute="top" secondItem="dVI-HA-X6l" secondAttribute="bottom" id="xNb-Ad-NzG"/>
                                 </constraints>
@@ -365,7 +365,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Basketball" width="1245" height="1242"/>
         <image name="background" width="3794" height="4669"/>
+        <image name="createEventButton" width="467" height="134"/>
+        <image name="selectEventButton" width="465" height="134"/>
     </resources>
 </document>

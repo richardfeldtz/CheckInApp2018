@@ -68,7 +68,7 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
             
             //Change check-in button image
             //self.checkInButtonText.text = "Update"
-            self.checkInImageview.image = #imageLiteral(resourceName: "ljff_buttons (3)")
+            self.checkInImageview.image = UIImage(named: "updateButton")
             alreadyChecked = true
             let checkInAlert = UIAlertController(title: "Warning", message: "The student has already been checked in", preferredStyle: .alert)
             checkInAlert.addAction(UIAlertAction(title: "Ok", style: .cancel))

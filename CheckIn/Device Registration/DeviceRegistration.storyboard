@@ -64,21 +64,20 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zmw-WU-IGz">
-                                        <rect key="frame" x="75" y="300" width="151.5" height="29"/>
+                                        <rect key="frame" x="75" y="300" width="151.5" height="41"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ok-b7-hF7">
-                                                <rect key="frame" x="0.0" y="0.0" width="151.5" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registerButton" translatesAutoresizingMaskIntoConstraints="NO" id="3LW-F0-SKH">
+                                                <rect key="frame" x="37" y="0.0" width="77" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="3LW-F0-SKH" secondAttribute="height" multiplier="15:8" id="sOk-iR-bHI"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="8ok-b7-hF7" firstAttribute="height" secondItem="Zmw-WU-IGz" secondAttribute="height" id="4hT-bx-8T7"/>
-                                            <constraint firstItem="8ok-b7-hF7" firstAttribute="centerY" secondItem="Zmw-WU-IGz" secondAttribute="centerY" id="Bit-sg-xLK"/>
-                                            <constraint firstItem="8ok-b7-hF7" firstAttribute="width" secondItem="Zmw-WU-IGz" secondAttribute="width" id="ZOx-pp-QOp"/>
-                                            <constraint firstItem="8ok-b7-hF7" firstAttribute="centerX" secondItem="Zmw-WU-IGz" secondAttribute="centerX" id="oan-wX-po7"/>
+                                            <constraint firstItem="3LW-F0-SKH" firstAttribute="centerX" secondItem="Zmw-WU-IGz" secondAttribute="centerX" id="M31-4z-CNA"/>
+                                            <constraint firstItem="3LW-F0-SKH" firstAttribute="centerY" secondItem="Zmw-WU-IGz" secondAttribute="centerY" id="hoD-Mb-PDa"/>
+                                            <constraint firstItem="3LW-F0-SKH" firstAttribute="height" secondItem="Zmw-WU-IGz" secondAttribute="height" id="ncp-hG-ZFH"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -97,7 +96,7 @@
                                     <constraint firstItem="nZw-s1-BHT" firstAttribute="top" secondItem="9Es-JJ-DjB" secondAttribute="bottom" id="G7L-RS-ayd"/>
                                     <constraint firstItem="ZRY-vK-ymQ" firstAttribute="height" secondItem="Lyc-pv-C6j" secondAttribute="height" multiplier="0.1" constant="1" id="GuP-SS-CjL"/>
                                     <constraint firstItem="ffT-Nq-b7D" firstAttribute="top" secondItem="Lyc-pv-C6j" secondAttribute="top" id="Jue-dF-Oip"/>
-                                    <constraint firstItem="Zmw-WU-IGz" firstAttribute="height" secondItem="Lyc-pv-C6j" secondAttribute="height" multiplier="0.07" constant="1" id="OAW-HO-xVB"/>
+                                    <constraint firstItem="Zmw-WU-IGz" firstAttribute="height" secondItem="Lyc-pv-C6j" secondAttribute="height" multiplier="0.1" constant="1" id="OAW-HO-xVB"/>
                                     <constraint firstItem="Zmw-WU-IGz" firstAttribute="centerX" secondItem="Lyc-pv-C6j" secondAttribute="centerX" id="QU0-Ft-9Nj"/>
                                     <constraint firstItem="ffT-Nq-b7D" firstAttribute="centerX" secondItem="Lyc-pv-C6j" secondAttribute="centerX" id="QjS-y8-Il3"/>
                                     <constraint firstItem="9Es-JJ-DjB" firstAttribute="centerX" secondItem="Lyc-pv-C6j" secondAttribute="centerX" id="Spz-bF-uMO"/>
@@ -145,5 +144,6 @@
     </scenes>
     <resources>
         <image name="background" width="3794" height="4669"/>
+        <image name="registerButton" width="520" height="209"/>
     </resources>
 </document>

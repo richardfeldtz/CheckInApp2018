@@ -26,11 +26,11 @@ class CreateEventViewController: UIViewController {
     fileprivate var key = ""
     
     override func viewDidLayoutSubviews() {
-        EventDateView.layer.shouldRasterize = false
-        EventDateView.layer.borderWidth = 1
-        
-        EventTimeView.layer.shouldRasterize = false
-        EventTimeView.layer.borderWidth = 1
+//        EventDateView.layer.shouldRasterize = false
+//        EventDateView.layer.borderWidth = 1
+//        
+//        EventTimeView.layer.shouldRasterize = false
+//        EventTimeView.layer.borderWidth = 1
         
         CardView.layer.cornerRadius = 10
         CardView.layer.shouldRasterize = false

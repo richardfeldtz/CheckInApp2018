@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SFUIText.ttf">
-            <string>.SFUIText</string>
-        </array>
         <array key="orange juice 2.0.ttf">
             <string>orangejuice</string>
         </array>
@@ -39,7 +36,7 @@
                                                 <rect key="frame" x="0.0" y="43.5" width="31.5" height="23.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-upward-arrow-filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="bLB-G3-c4k">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bLB-G3-c4k">
                                                 <rect key="frame" x="31.5" y="10.5" width="89.5" height="89.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="bLB-G3-c4k" secondAttribute="height" multiplier="1:1" id="NhH-CX-CQh"/>
@@ -89,7 +86,7 @@
                                                 <rect key="frame" x="0.0" y="44" width="31.5" height="23"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-below-filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="B3L-On-bJ7">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadIcon" translatesAutoresizingMaskIntoConstraints="NO" id="B3L-On-bJ7">
                                                 <rect key="frame" x="31.5" y="10.5" width="89.5" height="89.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="B3L-On-bJ7" secondAttribute="height" multiplier="1:1" id="MaB-AC-zeb"/>
@@ -139,7 +136,7 @@
                                                 <rect key="frame" x="0.0" y="43.5" width="31.5" height="23"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear" translatesAutoresizingMaskIntoConstraints="NO" id="MqI-Ln-X5N">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clearIcon" translatesAutoresizingMaskIntoConstraints="NO" id="MqI-Ln-X5N">
                                                 <rect key="frame" x="31.5" y="10.5" width="89.5" height="89.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="MqI-Ln-X5N" secondAttribute="height" multiplier="1:1" id="uHo-Kw-pMo"/>
@@ -189,7 +186,7 @@
                                                 <rect key="frame" x="0.0" y="44" width="31.5" height="23"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-filter-filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="FaT-zm-cv7">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FaT-zm-cv7">
                                                 <rect key="frame" x="31.5" y="10.5" width="89.5" height="89.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="FaT-zm-cv7" secondAttribute="height" multiplier="1:1" id="EQM-sC-ZHh"/>
@@ -239,7 +236,7 @@
                                                 <rect key="frame" x="0.0" y="44" width="31.5" height="23"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-planner-filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="vJt-8S-dy6">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventSelectionIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vJt-8S-dy6">
                                                 <rect key="frame" x="31.5" y="11" width="89.5" height="89.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="vJt-8S-dy6" secondAttribute="height" multiplier="1:1" id="A33-5e-ejg"/>
@@ -292,19 +289,26 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toG-F3-D3g">
                                                 <rect key="frame" x="31.5" y="10.5" width="89.5" height="89.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4A-g0-XdV">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detailsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Na7-EB-4DW">
                                                         <rect key="frame" x="0.0" y="0.0" width="89.5" height="89.5"/>
-                                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="45"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4A-g0-XdV">
+                                                        <rect key="frame" x="15" y="13" width="59.5" height="63.5"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="q4A-g0-XdV" firstAttribute="centerX" secondItem="toG-F3-D3g" secondAttribute="centerX" id="HDg-2y-kFf"/>
+                                                    <constraint firstItem="Na7-EB-4DW" firstAttribute="height" secondItem="toG-F3-D3g" secondAttribute="height" id="NoB-2J-OKj"/>
                                                     <constraint firstAttribute="width" secondItem="toG-F3-D3g" secondAttribute="height" multiplier="1:1" id="WNB-FW-lyO"/>
+                                                    <constraint firstItem="Na7-EB-4DW" firstAttribute="centerX" secondItem="toG-F3-D3g" secondAttribute="centerX" id="X5a-Q0-iaM"/>
                                                     <constraint firstItem="q4A-g0-XdV" firstAttribute="centerY" secondItem="toG-F3-D3g" secondAttribute="centerY" id="YAE-f2-RFg"/>
-                                                    <constraint firstItem="q4A-g0-XdV" firstAttribute="height" secondItem="toG-F3-D3g" secondAttribute="height" id="YLT-a5-wse"/>
-                                                    <constraint firstItem="q4A-g0-XdV" firstAttribute="width" secondItem="toG-F3-D3g" secondAttribute="width" id="kWp-oS-DF8"/>
+                                                    <constraint firstItem="q4A-g0-XdV" firstAttribute="height" secondItem="toG-F3-D3g" secondAttribute="height" multiplier="0.7" constant="1" id="YLT-a5-wse"/>
+                                                    <constraint firstItem="q4A-g0-XdV" firstAttribute="width" secondItem="toG-F3-D3g" secondAttribute="width" multiplier="0.65" constant="1" id="kWp-oS-DF8"/>
+                                                    <constraint firstItem="Na7-EB-4DW" firstAttribute="centerY" secondItem="toG-F3-D3g" secondAttribute="centerY" id="lTc-lN-7zR"/>
+                                                    <constraint firstItem="Na7-EB-4DW" firstAttribute="width" secondItem="toG-F3-D3g" secondAttribute="width" id="nVF-0z-rar"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44F-qO-EOG">
@@ -397,10 +401,11 @@
     </scenes>
     <resources>
         <image name="background" width="3794" height="4669"/>
-        <image name="clear" width="512" height="512"/>
-        <image name="icons8-below-filled-100" width="100" height="100"/>
-        <image name="icons8-filter-filled-100" width="100" height="100"/>
-        <image name="icons8-planner-filled-100" width="100" height="100"/>
-        <image name="icons8-upward-arrow-filled-100" width="100" height="100"/>
+        <image name="clearIcon" width="350" height="350"/>
+        <image name="detailsBackground" width="225" height="225"/>
+        <image name="downloadIcon" width="350" height="350"/>
+        <image name="eventSelectionIcon" width="350" height="350"/>
+        <image name="filterIcon" width="350" height="350"/>
+        <image name="uploadIcon" width="350" height="350"/>
     </resources>
 </document>

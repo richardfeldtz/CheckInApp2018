@@ -24,38 +24,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQE-pj-Ofn">
-                                <rect key="frame" x="0.0" y="20" width="768" height="154.5"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="103.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rfc-gS-gBx" customClass="UnderLinedLabel" customModule="CheckIn" customModuleProvider="target">
-                                <rect key="frame" x="25" y="174.5" width="718" height="103.5"/>
+                                <rect key="frame" x="25" y="123.5" width="718" height="103.5"/>
                                 <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="55"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7pj-2I-o75">
-                                <rect key="frame" x="38" y="278" width="692" height="52"/>
+                                <rect key="frame" x="38" y="227" width="692" height="52"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECR-ya-mG2">
-                                <rect key="frame" x="0.0" y="330" width="768" height="52.5"/>
+                                <rect key="frame" x="0.0" y="279" width="768" height="42"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guests:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="054-93-Cak" userLabel="Guest Label">
-                                <rect key="frame" x="0.0" y="382.5" width="768" height="98"/>
+                                <rect key="frame" x="0.0" y="321" width="768" height="98"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZW-qd-CEz">
-                                <rect key="frame" x="268.5" y="480.5" width="231" height="206"/>
+                                <rect key="frame" x="268.5" y="419" width="231" height="206"/>
                             </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foT-7n-waq">
+                                <rect key="frame" x="0.0" y="625" width="768" height="62.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0l-WM-YdT">
-                                <rect key="frame" x="76.5" y="696.5" width="615" height="124"/>
+                                <rect key="frame" x="76.5" y="687.5" width="615" height="124"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ljff_buttons (2)" translatesAutoresizingMaskIntoConstraints="NO" id="Hfv-8Z-fid">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkInButton" translatesAutoresizingMaskIntoConstraints="NO" id="Hfv-8Z-fid">
                                         <rect key="frame" x="0.0" y="0.0" width="615" height="124"/>
                                     </imageView>
                                 </subviews>
@@ -68,13 +72,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZS-Tw-vaU">
-                                <rect key="frame" x="0.0" y="820.5" width="768" height="52"/>
+                                <rect key="frame" x="0.0" y="811.5" width="768" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJC-Uo-hLs">
-                                <rect key="frame" x="76.5" y="872.5" width="615" height="124"/>
+                                <rect key="frame" x="76.5" y="863.5" width="615" height="124"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ljff_buttons (4)" translatesAutoresizingMaskIntoConstraints="NO" id="DBo-L6-CQe">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deleteButton" translatesAutoresizingMaskIntoConstraints="NO" id="DBo-L6-CQe">
                                         <rect key="frame" x="0.0" y="0.0" width="615" height="124"/>
                                     </imageView>
                                 </subviews>
@@ -96,19 +100,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ECR-ya-mG2" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.05" constant="1" id="0V6-5J-NT4"/>
+                            <constraint firstItem="ECR-ya-mG2" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.04" constant="1" id="0V6-5J-NT4"/>
                             <constraint firstItem="p0l-WM-YdT" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.8" constant="1" id="5Zg-Ql-jfm"/>
                             <constraint firstItem="pIH-VT-vZz" firstAttribute="top" secondItem="QEA-t4-7mN" secondAttribute="top" constant="16" id="78E-4T-EAG"/>
-                            <constraint firstItem="p0l-WM-YdT" firstAttribute="top" secondItem="OZW-qd-CEz" secondAttribute="bottom" constant="10" id="7mY-sa-HMv"/>
                             <constraint firstItem="TZS-Tw-vaU" firstAttribute="top" secondItem="p0l-WM-YdT" secondAttribute="bottom" id="Atm-EW-HHF"/>
                             <constraint firstItem="p0l-WM-YdT" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="BfE-je-gXK"/>
                             <constraint firstItem="7pj-2I-o75" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.05" constant="1" id="D6B-Ng-ggZ"/>
-                            <constraint firstItem="XQE-pj-Ofn" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.15" constant="1" id="DnN-h1-oFm"/>
+                            <constraint firstItem="XQE-pj-Ofn" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.1" constant="1" id="DnN-h1-oFm"/>
                             <constraint firstItem="7pj-2I-o75" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.9" constant="1" id="EXy-e0-4Td"/>
+                            <constraint firstItem="OZW-qd-CEz" firstAttribute="bottom" secondItem="foT-7n-waq" secondAttribute="top" id="Elo-iI-eTa"/>
                             <constraint firstItem="XQE-pj-Ofn" firstAttribute="top" secondItem="QEA-t4-7mN" secondAttribute="top" id="HbY-iL-16j"/>
                             <constraint firstItem="TZS-Tw-vaU" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="Irc-Rl-jEn"/>
+                            <constraint firstItem="foT-7n-waq" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="JhH-E2-eUj"/>
                             <constraint firstItem="XQE-pj-Ofn" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="KCE-mi-TR4"/>
                             <constraint firstItem="7pj-2I-o75" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="M93-H9-LXB"/>
+                            <constraint firstItem="foT-7n-waq" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.06" constant="1" id="MeT-83-IRg"/>
                             <constraint firstItem="054-93-Cak" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="OV0-w7-6qe"/>
                             <constraint firstItem="OZW-qd-CEz" firstAttribute="top" secondItem="054-93-Cak" secondAttribute="bottom" id="Ofx-ER-ey4"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="QfW-mL-jyv"/>
@@ -124,12 +130,14 @@
                             <constraint firstItem="ECR-ya-mG2" firstAttribute="top" secondItem="7pj-2I-o75" secondAttribute="bottom" id="esj-kX-cFS"/>
                             <constraint firstItem="BJC-Uo-hLs" firstAttribute="top" secondItem="TZS-Tw-vaU" secondAttribute="bottom" id="hcN-Nl-CZy"/>
                             <constraint firstItem="OZW-qd-CEz" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.3" constant="1" id="inv-Yx-rI5"/>
+                            <constraint firstItem="p0l-WM-YdT" firstAttribute="top" secondItem="foT-7n-waq" secondAttribute="bottom" id="jzg-BQ-Ztn"/>
                             <constraint firstItem="OZW-qd-CEz" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.2" constant="1" id="lk4-zf-0Jf"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" constant="-50" id="n17-Oy-Wt9"/>
                             <constraint firstItem="054-93-Cak" firstAttribute="top" secondItem="ECR-ya-mG2" secondAttribute="bottom" id="oFx-he-Mdd"/>
                             <constraint firstItem="XQE-pj-Ofn" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="saH-Sc-zKi"/>
                             <constraint firstItem="TZS-Tw-vaU" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="sd4-3p-Lip"/>
                             <constraint firstItem="pIH-VT-vZz" firstAttribute="trailing" secondItem="XQE-pj-Ofn" secondAttribute="trailing" constant="-16" id="siK-yu-W28"/>
+                            <constraint firstItem="foT-7n-waq" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="tZu-8T-6Um"/>
                             <constraint firstItem="BJC-Uo-hLs" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.8" constant="1" id="w7Y-fu-7NM"/>
                             <constraint firstItem="BJC-Uo-hLs" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.12" constant="1" id="xmo-Pj-m27"/>
                             <constraint firstItem="054-93-Cak" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="ylr-At-cMs"/>
@@ -153,8 +161,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkInButton" width="517" height="209"/>
+        <image name="deleteButton" width="556" height="127"/>
         <image name="icons8-delete-filled-25" width="25" height="25"/>
-        <image name="ljff_buttons (2)" width="526" height="211"/>
-        <image name="ljff_buttons (4)" width="566" height="130"/>
     </resources>
 </document>
