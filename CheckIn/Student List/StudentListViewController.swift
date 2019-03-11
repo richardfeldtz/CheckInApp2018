@@ -159,10 +159,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         }
         
         
-        cell.backgroundColor = indexPath.row % 2 == 0 ? .white : .lightGray
-        cell.leftOfCheckView.backgroundColor = indexPath.row % 2 == 0 ? .white : .lightGray
-        cell.leftOfLastNameView.backgroundColor = indexPath.row % 2 == 0 ? .white : .lightGray
-        cell.leftOfFirstNameView.backgroundColor = indexPath.row % 2 == 0 ? .white : .lightGray
+        cell.backgroundColor = indexPath.row % 2 == 0 ? .white : UIColor.lightGray.withAlphaComponent(0.1)
         
         
         cell.fname.text = student!.fname
