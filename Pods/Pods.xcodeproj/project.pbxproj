@@ -9,31 +9,31 @@
 /* Begin PBXBuildFile section */
 		06D7EF262069772CDEB476DDB9A9C91E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8208F2D0FCC50FAEF2EA76B2D82815E1 /* QuartzCore.framework */; };
 		0A89E1789BD29AC8053B863B43504C86 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 05B4A5292C0264299BB22475E928B0B4 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C39F3031226B02EFB8A049EAC792AE5 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 875A7ED6788A4E86AB181B62FE77B54D /* FLAnimatedImage.m */; };
+		189EE351FF346A0831C7D024D49EC7E0 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5845BE4560F0BCC25930A05C4D1FF5A0 /* FLAnimatedImageView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1956ACE1626B4359B4AD8C05ACC1DCA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBCB74675343B61174A8839FCAC990F /* Foundation.framework */; };
 		2C470BF74B0CD39E8AC1E462304B87C8 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9336B850EFC7E40C54C842463A3B0423 /* SVProgressHUD.bundle */; };
+		30B9806E80FF72FF271A6197918A9323 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F52B9E7CC2CDEF22734034FBFD631120 /* SVIndefiniteAnimatedView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3A5603A556ACF6445EA439A16CC99132 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8837557476B2318481564842BAAD980 /* MobileCoreServices.framework */; };
 		48DDBC9907C089FAE2FA9968C4ECF859 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B634FF6F0FBCF34E4B579172137EE0A4 /* ImageIO.framework */; };
-		4C5300BA1FA6D75025BC614AA71D163C /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44417619A7908870B79B45630BAEE7B6 /* SVRadialGradientLayer.m */; };
 		53B102500F0D481FA1ADEFB1C0609127 /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0C2D1CF808C58653D09FA5E1693F265 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53ED957D78D20FCA11034DFBE0EB8582 /* Pods-CheckIn-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B915A5DA48D2A83F524DB2FCEDE5AB /* Pods-CheckIn-dummy.m */; };
-		55A8FBD7F24B060B3C6BFADDAE97024E /* FLAnimatedImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9641D981169AD41FD9A4D0D5AB1619 /* FLAnimatedImage-dummy.m */; };
 		6C534C6F0F77B9EA4F9A4CC630CFA6A7 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 798C5C97C8AF92BE9A56838A582EC270 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		753576B2AFDC8214EF0B204B209F0D1A /* FLAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2538D25B85A911EAC5C14D5DD8E9E3BC /* FLAnimatedImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82FE9C5D5F5DD493BB41645BDCB7185B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D737611790C6D4FF3E98B3E88D83035 /* SVProgressHUD.m */; };
-		8A99F4EECE410138328590521B8854B2 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D95DE285DC3D6196AD8547BC2281B7 /* SVProgressAnimatedView.m */; };
-		9EE8408E12EC6C397B545D3A26A15BDC /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F96A3972B13B3DB37E0FF2F7009674D /* SVProgressHUD-dummy.m */; };
+		77C6FE07B8F4C908AC9766D0F9D8BC37 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 875A7ED6788A4E86AB181B62FE77B54D /* FLAnimatedImage.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A86EF66831E7CE3B159E4A25430E9529 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBCB74675343B61174A8839FCAC990F /* Foundation.framework */; };
 		AF2DEF23C33175A01FC1369DD5B2A81E /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E5B01B1B7061B83EE3EBA89E0CE5999 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B19CD67D3D8A1EBE73C1596854215596 /* FLAnimatedImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8C0591AB866BCF613B0790573A10146 /* FLAnimatedImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B32FD7D2ADC8B5EDB6851BEF2EF19543 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44417619A7908870B79B45630BAEE7B6 /* SVRadialGradientLayer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B37D5C070F10491F38B97DFBD095AFAB /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F96A3972B13B3DB37E0FF2F7009674D /* SVProgressHUD-dummy.m */; };
 		B7BB784E0F33437037CEA2AD51196248 /* FLAnimatedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = ED9AEFF853AC59B9F458CE0C396174FD /* FLAnimatedImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE48D09ED446F33FDDC21DD07574445E /* SVProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FF954B0EEAC4976AE232ADBF85FE21B2 /* SVProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C76FFD57F494AFF3459194A0E9F1A4F6 /* Pods-CheckIn-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 163C7F4927D9757952B633E74818D0BA /* Pods-CheckIn-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D2D5FE5E52DB3382E99AE09A92138DA2 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5845BE4560F0BCC25930A05C4D1FF5A0 /* FLAnimatedImageView.m */; };
+		CCC5843E588E352E2E9C8996C8F03ECC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D737611790C6D4FF3E98B3E88D83035 /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DB34C6B5A9959E9D580D6781FAD5B86C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8208F2D0FCC50FAEF2EA76B2D82815E1 /* QuartzCore.framework */; };
+		DDE8A3AA067B11D3146D643AACD05013 /* FLAnimatedImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9641D981169AD41FD9A4D0D5AB1619 /* FLAnimatedImage-dummy.m */; };
 		E09280686F3B3D38B3CEA2D2E1591938 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBCB74675343B61174A8839FCAC990F /* Foundation.framework */; };
-		E9F8972D02B2179B502B1E9D670EAD00 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F52B9E7CC2CDEF22734034FBFD631120 /* SVIndefiniteAnimatedView.m */; };
 		F2A9E981086CF54E8280AAEE7FA7C70A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194CA0F19F6339BF7C954724CB5976A6 /* CoreGraphics.framework */; };
+		F90297A834F1C35AA3126874BA908909 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D95DE285DC3D6196AD8547BC2281B7 /* SVProgressAnimatedView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -315,7 +315,7 @@
 			buildConfigurationList = 223F5A8B86B4484DD481208F9A9E30E7 /* Build configuration list for PBXNativeTarget "FLAnimatedImage" */;
 			buildPhases = (
 				5A6DC5301F099FAE5C072AAA9A1D6667 /* Headers */,
-				1ED07DFD1BB0B568BFEF6EDD41AE8A0D /* Sources */,
+				79221D13587E3BDD2505CB195B0F38E8 /* Sources */,
 				C26804AA687EAC33AD46FBCB5EA99767 /* Frameworks */,
 				1AC306099B77C2343CA93A1427E92910 /* Resources */,
 			);
@@ -333,7 +333,7 @@
 			buildConfigurationList = 2322F7C26A408AB712C8F4935CB724F0 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
 			buildPhases = (
 				F823364F73A08D20589BBFBE22FC29D3 /* Headers */,
-				5D7491726405994030E20BE822495BE5 /* Sources */,
+				4FD1EBE14A7957E1D36BC2D2BF91C160 /* Sources */,
 				855F9CD9918B0B38671D2D4B113A687D /* Frameworks */,
 				7A9DE09DF38D2DC11BA85BD9D2CEA5F1 /* Resources */,
 			);
@@ -420,16 +420,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1ED07DFD1BB0B568BFEF6EDD41AE8A0D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55A8FBD7F24B060B3C6BFADDAE97024E /* FLAnimatedImage-dummy.m in Sources */,
-				0C39F3031226B02EFB8A049EAC792AE5 /* FLAnimatedImage.m in Sources */,
-				D2D5FE5E52DB3382E99AE09A92138DA2 /* FLAnimatedImageView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		45F12990796A598C3536918D351D9CEC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,15 +428,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D7491726405994030E20BE822495BE5 /* Sources */ = {
+		4FD1EBE14A7957E1D36BC2D2BF91C160 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F8972D02B2179B502B1E9D670EAD00 /* SVIndefiniteAnimatedView.m in Sources */,
-				8A99F4EECE410138328590521B8854B2 /* SVProgressAnimatedView.m in Sources */,
-				9EE8408E12EC6C397B545D3A26A15BDC /* SVProgressHUD-dummy.m in Sources */,
-				82FE9C5D5F5DD493BB41645BDCB7185B /* SVProgressHUD.m in Sources */,
-				4C5300BA1FA6D75025BC614AA71D163C /* SVRadialGradientLayer.m in Sources */,
+				30B9806E80FF72FF271A6197918A9323 /* SVIndefiniteAnimatedView.m in Sources */,
+				F90297A834F1C35AA3126874BA908909 /* SVProgressAnimatedView.m in Sources */,
+				B37D5C070F10491F38B97DFBD095AFAB /* SVProgressHUD-dummy.m in Sources */,
+				CCC5843E588E352E2E9C8996C8F03ECC /* SVProgressHUD.m in Sources */,
+				B32FD7D2ADC8B5EDB6851BEF2EF19543 /* SVRadialGradientLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79221D13587E3BDD2505CB195B0F38E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDE8A3AA067B11D3146D643AACD05013 /* FLAnimatedImage-dummy.m in Sources */,
+				77C6FE07B8F4C908AC9766D0F9D8BC37 /* FLAnimatedImage.m in Sources */,
+				189EE351FF346A0831C7D024D49EC7E0 /* FLAnimatedImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

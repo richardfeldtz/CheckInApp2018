@@ -59,7 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		142029572231C86200B8B4FF /* orange juice 2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "orange juice 2.0.ttf"; path = "../../../../Downloads/orange_juice/orange juice 2.0.ttf"; sourceTree = "<group>"; };
+		142029572231C86200B8B4FF /* orange juice 2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "orange juice 2.0.ttf"; path = "CheckIn/Custom Fonts/orange juice 2.0.ttf"; sourceTree = SOURCE_ROOT; };
 		149B8E8821B751A80009ACC3 /* StudentList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentList.storyboard; sourceTree = "<group>"; };
 		149B8E8A21B756E10009ACC3 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
 		149B8E8C21B762700009ACC3 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
@@ -670,7 +670,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V9MNS6CX39;
+				DEVELOPMENT_TEAM = C7HGN23NTW;
 				INFOPLIST_FILE = CheckIn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -690,7 +690,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V9MNS6CX39;
+				DEVELOPMENT_TEAM = C7HGN23NTW;
 				INFOPLIST_FILE = CheckIn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

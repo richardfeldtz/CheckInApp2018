@@ -82,7 +82,21 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
-        label.text = "Only check in students from: "
+        if let infoDict = Bundle.main.infoDictionary,
+            let fontFiles = infoDict["UIAppFonts"] as? [String] {
+            for fontFile in fontFiles {
+                if let url = Bundle.main.url(forResource: fontFile, withExtension: nil),
+                    let fontData = NSData(contentsOf: url),
+                    let fontDataProvider = CGDataProvider(data: fontData) {
+                    let loadedFont = CGFont(fontDataProvider)
+                    if let fullName = loadedFont!.fullName {
+                        label.font = UIFont(name: fullName as String, size: 45)
+                        
+                    }
+                }
+            }
+        }
+        label.text = "Filter by School: "
         return label
     }()
     
@@ -91,8 +105,22 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
-        label.text = "Only check in students with the last name:"
+        label.text = "Filter by Last Name:"
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        if let infoDict = Bundle.main.infoDictionary,
+            let fontFiles = infoDict["UIAppFonts"] as? [String] {
+            for fontFile in fontFiles {
+                if let url = Bundle.main.url(forResource: fontFile, withExtension: nil),
+                    let fontData = NSData(contentsOf: url),
+                    let fontDataProvider = CGDataProvider(data: fontData) {
+                    let loadedFont = CGFont(fontDataProvider)
+                    if let fullName = loadedFont!.fullName {
+                        label.font = UIFont(name: fullName as String, size: 45)
+                        
+                    }
+                }
+            }
+        }
         label.numberOfLines = 0
         return label
     }()
@@ -126,12 +154,12 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
             if pickerView == schoolPickerView {
                 pickerLabel?.text = schoolData[row]
             } else {
-                 pickerLabel?.text = String(alphabet[row])
+                pickerLabel?.text = String(alphabet[row])
             }
         }
         return pickerLabel!
     }
-
+    
     @objc func addSchoolPickerView() {
         view.addSubview(schoolPickerView)
     }
@@ -178,6 +206,10 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
+        
+        let viewMargin = view.frame.width * 0.1
+        
         let schools = CoreDataHelper.retrieveData("School")
         
         for school in schools {
@@ -210,21 +242,23 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         
         NSLayoutConstraint.activate([
             schoolContainerView.centerXAnchor.constraint(equalTo: cardContrainerView.safeAreaLayoutGuide.centerXAnchor, constant: 0),
-            schoolContainerView.topAnchor.constraint(equalTo: cardContrainerView.safeAreaLayoutGuide.topAnchor, constant: 10),
-            schoolContainerView.heightAnchor.constraint(equalToConstant: (view.frame.height * 0.4) - 20),
-            schoolContainerView.widthAnchor.constraint(equalToConstant: (view.frame.width * 0.8) - 20)
+            schoolContainerView.topAnchor.constraint(equalTo: cardContrainerView.safeAreaLayoutGuide.topAnchor, constant: viewMargin),
+            schoolContainerView.heightAnchor.constraint(equalToConstant: (view.frame.height * 0.3)),
+            schoolContainerView.widthAnchor.constraint(equalToConstant: (view.frame.width * 0.8) - viewMargin)
             ])
         
-        NSLayoutConstraint.activate([
-            schoolPickerView.centerYAnchor.constraint(equalTo: schoolContainerView.centerYAnchor),
-            schoolPickerView.centerXAnchor.constraint(equalTo: schoolContainerView.centerXAnchor),
-            schoolPickerView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.25),
-            schoolPickerView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.5)
-            ])
         
         NSLayoutConstraint.activate([
             studentsFromLabel.topAnchor.constraint(equalTo: schoolContainerView.topAnchor, constant: 50),
+            studentsFromLabel.widthAnchor.constraint(equalToConstant: view.frame.width * 0.8),
             studentsFromLabel.centerXAnchor.constraint(equalTo: schoolContainerView.centerXAnchor)
+            ])
+        
+        NSLayoutConstraint.activate([
+            schoolPickerView.centerYAnchor.constraint(equalTo: schoolContainerView.centerYAnchor, constant: 15),
+            schoolPickerView.centerXAnchor.constraint(equalTo: schoolContainerView.centerXAnchor),
+            schoolPickerView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.25),
+            schoolPickerView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.8)
             ])
         
         NSLayoutConstraint.activate([
@@ -239,9 +273,9 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         lastNameContainerView.addSubview(lastNameFilterSwitch)
         NSLayoutConstraint.activate([
             lastNameContainerView.centerXAnchor.constraint(equalTo: cardContrainerView.safeAreaLayoutGuide.centerXAnchor, constant: 0),
-            lastNameContainerView.topAnchor.constraint(equalTo: schoolContainerView.safeAreaLayoutGuide.bottomAnchor, constant: 10),
-            lastNameContainerView.heightAnchor.constraint(equalToConstant: (view.frame.height * 0.4) - 20),
-            lastNameContainerView.widthAnchor.constraint(equalToConstant: (view.frame.width * 0.8) - 20)            ])
+            lastNameContainerView.bottomAnchor.constraint(equalTo: cardContrainerView.safeAreaLayoutGuide.bottomAnchor, constant: viewMargin * -1),
+            lastNameContainerView.heightAnchor.constraint(equalToConstant: (view.frame.height * 0.3)),
+            lastNameContainerView.widthAnchor.constraint(equalToConstant: (view.frame.width * 0.8) - viewMargin)            ])
         NSLayoutConstraint.activate([
             byLastNameLabel.topAnchor.constraint(equalTo: lastNameContainerView.topAnchor, constant: 50),
             byLastNameLabel.centerXAnchor.constraint(equalTo: lastNameContainerView.centerXAnchor),
@@ -302,9 +336,9 @@ extension FilterStudentsViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         if pickerView == schoolPickerView {
-            return 200
+            return view.frame.width * 0.8
         }
-        return 100
+        return view.frame.width * 0.1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
