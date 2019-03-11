@@ -50,6 +50,7 @@ class AdminToolsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGestureRecognizers()
+        self.navigationController?.navigationItem.backBarButtonItem?.tintColor = .black
         self.key = LaunchViewController.key
         self.identifier = LaunchViewController.identifier
         let coreData = CoreDataHelper.retrieveData("Checkins");

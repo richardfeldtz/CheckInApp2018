@@ -109,7 +109,7 @@
                                 </constraints>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRCheat" translatesAutoresizingMaskIntoConstraints="NO" id="eQJ-4u-pjT">
-                                <rect key="frame" x="228.66666666666663" y="502" width="125.33333333333334" height="94"/>
+                                <rect key="frame" x="228.66666666666666" y="502" width="125.33333333333334" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eQJ-4u-pjT" secondAttribute="height" multiplier="4:3" id="CAN-jT-DEI"/>
                                 </constraints>
@@ -121,7 +121,7 @@
                                 </constraints>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fnameCheat" translatesAutoresizingMaskIntoConstraints="NO" id="JB8-tT-9cv">
-                                <rect key="frame" x="61.666666666666657" y="430" width="125.33333333333334" height="94"/>
+                                <rect key="frame" x="61.666666666666664" y="430" width="125.33333333333334" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JB8-tT-9cv" secondAttribute="height" multiplier="4:3" id="OTn-dS-8RN"/>
                                 </constraints>
@@ -158,6 +158,7 @@
                     <navigationItem key="navigationItem" id="it5-05-iGs">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Share" id="HuD-gI-7oD">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="gnk-NN-io4" kind="show" animates="NO" id="Qdx-ae-dhS"/>
                             </connections>
@@ -182,6 +183,7 @@
                             </constraints>
                         </view>
                         <barButtonItem key="rightBarButtonItem" title="Admin tools" id="UtG-Bn-XII">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="pressedAdminTools:" destination="2mP-p9-kkM" id="gfN-MO-lPe"/>
                             </connections>
