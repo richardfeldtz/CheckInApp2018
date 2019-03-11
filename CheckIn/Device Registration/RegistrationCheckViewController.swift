@@ -79,6 +79,7 @@ class RegistrationCheckViewController : UIViewController {
         }
         else{
             identifier = deviceName.text!
+            identifier = identifier.trimmingCharacters(in: [" "])
             let url = URL(string:RestHelper.urls["Register_Device"]!)!
             let params = ["identifier":identifier] as Dictionary<String,String>
             let response = RestHelper.makePost(url, params)
