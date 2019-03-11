@@ -33,8 +33,9 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
     var id = ""
     var alreadyChecked = false
     
+    @IBOutlet var checkInImageview: UIImageView!
     @IBOutlet weak var buttonView: UIView!
-    @IBOutlet weak var checkInButtonText: UILabel!
+    //@IBOutlet weak var checkInButtonText: UILabel!
     @IBOutlet weak var deleteButtonView: UIView!
     @IBOutlet var checkInLabel: UILabel!
     @IBOutlet weak var schoolNameLabel: UILabel!
@@ -65,8 +66,9 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
                 print("Error fetching guest count from check in table")
             }
             
-            //Change check-in button text
-            self.checkInButtonText.text = "Update"
+            //Change check-in button image
+            //self.checkInButtonText.text = "Update"
+            self.checkInImageview.image = #imageLiteral(resourceName: "ljff_buttons (3)")
             alreadyChecked = true
             let checkInAlert = UIAlertController(title: "Warning", message: "The student has already been checked in", preferredStyle: .alert)
             checkInAlert.addAction(UIAlertAction(title: "Ok", style: .cancel))
@@ -184,7 +186,6 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
                 let studentCheckIn=checkInResult.first
                 studentCheckIn?.setValue(guestCount, forKey: "guests")
                 try managedContext.save()
-                print("Update successful")
                 StudentListViewController.searchController.searchBar.text=nil
                 self.dismiss(animated: true, completion: nil)
                 
