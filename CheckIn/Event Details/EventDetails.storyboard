@@ -126,12 +126,64 @@
                                         <rect key="frame" x="0.0" y="315" width="668" height="45.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qq-RC-CBS">
+                                        <rect key="frame" x="0.0" y="360.5" width="668" height="45.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXZ-eh-9ww">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="45.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ1-LA-kAj">
+                                                <rect key="frame" x="20" y="0.0" width="468.5" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hw6-0V-Ugv">
+                                                <rect key="frame" x="488.5" y="0.0" width="14.5" height="45.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDt-Or-Ggf">
+                                                <rect key="frame" x="503" y="0.0" width="201.5" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="kXZ-eh-9ww" firstAttribute="centerY" secondItem="4qq-RC-CBS" secondAttribute="centerY" id="AiJ-f9-6We"/>
+                                            <constraint firstItem="hw6-0V-Ugv" firstAttribute="width" secondItem="4qq-RC-CBS" secondAttribute="width" multiplier="0.02" constant="1" id="D2y-Pv-4N3"/>
+                                            <constraint firstItem="kXZ-eh-9ww" firstAttribute="height" secondItem="4qq-RC-CBS" secondAttribute="height" id="FpZ-j6-rbi"/>
+                                            <constraint firstItem="EDt-Or-Ggf" firstAttribute="width" secondItem="4qq-RC-CBS" secondAttribute="width" multiplier="0.3" constant="1" id="JBN-a7-hLg"/>
+                                            <constraint firstItem="hZ1-LA-kAj" firstAttribute="height" secondItem="4qq-RC-CBS" secondAttribute="height" id="SnG-bU-h2R"/>
+                                            <constraint firstItem="kXZ-eh-9ww" firstAttribute="leading" secondItem="4qq-RC-CBS" secondAttribute="leading" id="Vyw-cg-bto"/>
+                                            <constraint firstItem="hw6-0V-Ugv" firstAttribute="centerY" secondItem="4qq-RC-CBS" secondAttribute="centerY" id="WBi-cq-JHk"/>
+                                            <constraint firstItem="hZ1-LA-kAj" firstAttribute="leading" secondItem="kXZ-eh-9ww" secondAttribute="trailing" id="aOX-QM-4EN"/>
+                                            <constraint firstItem="hZ1-LA-kAj" firstAttribute="width" secondItem="4qq-RC-CBS" secondAttribute="width" multiplier="0.7" constant="1" id="cgZ-1d-i8M"/>
+                                            <constraint firstItem="kXZ-eh-9ww" firstAttribute="width" secondItem="4qq-RC-CBS" secondAttribute="width" multiplier="0.03" id="epM-UJ-OOb"/>
+                                            <constraint firstItem="hw6-0V-Ugv" firstAttribute="leading" secondItem="hZ1-LA-kAj" secondAttribute="trailing" id="gtq-O1-yff"/>
+                                            <constraint firstItem="EDt-Or-Ggf" firstAttribute="height" secondItem="4qq-RC-CBS" secondAttribute="height" id="oFb-R5-nrq"/>
+                                            <constraint firstItem="hZ1-LA-kAj" firstAttribute="centerY" secondItem="4qq-RC-CBS" secondAttribute="centerY" id="oMc-on-Y20"/>
+                                            <constraint firstItem="EDt-Or-Ggf" firstAttribute="leading" secondItem="hw6-0V-Ugv" secondAttribute="trailing" id="rPK-3P-j6e"/>
+                                            <constraint firstItem="hw6-0V-Ugv" firstAttribute="height" secondItem="4qq-RC-CBS" secondAttribute="height" id="yvC-BR-lhO"/>
+                                            <constraint firstItem="EDt-Or-Ggf" firstAttribute="centerY" secondItem="4qq-RC-CBS" secondAttribute="centerY" id="z2v-k6-Fod"/>
+                                        </constraints>
+                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IDK-t4-XfH">
-                                        <rect key="frame" x="0.0" y="360.5" width="668" height="526.5"/>
+                                        <rect key="frame" x="0.0" y="406" width="668" height="526.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkedInStudentCell" id="XKa-sF-lKR" customClass="CheckedInTableViewCell" customModule="CheckIn" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hb4-Tu-nkD" userLabel="Header Cell">
                                                 <rect key="frame" x="0.0" y="28" width="668" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hb4-Tu-nkD" id="V8w-xm-fCT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="668" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkedInStudentCell" id="XKa-sF-lKR" customClass="CheckedInTableViewCell" customModule="CheckIn" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="72" width="668" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XKa-sF-lKR" id="l7Z-cp-1nD">
                                                     <rect key="frame" x="0.0" y="0.0" width="668" height="43.5"/>
@@ -210,16 +262,20 @@
                                     <constraint firstItem="HN8-Ur-Tx2" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" id="5i3-6X-HWT"/>
                                     <constraint firstItem="t4J-Ps-1ba" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.05" constant="1" id="6X9-Z8-8Ss"/>
                                     <constraint firstItem="HEv-E3-06a" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="7zg-Fd-oAn"/>
+                                    <constraint firstItem="4qq-RC-CBS" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" id="93p-1e-XaI"/>
                                     <constraint firstItem="HN8-Ur-Tx2" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.2" constant="1" id="BwV-4J-cqb"/>
                                     <constraint firstItem="07K-jR-Cmf" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.1" constant="1" id="CWy-F2-QZg"/>
-                                    <constraint firstItem="IDK-t4-XfH" firstAttribute="top" secondItem="t4J-Ps-1ba" secondAttribute="bottom" id="H9b-Ee-b8k"/>
                                     <constraint firstItem="HEv-E3-06a" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" multiplier="0.2" constant="1" id="Hvr-ol-ixv"/>
                                     <constraint firstItem="IDK-t4-XfH" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" id="J4M-AJ-YHa"/>
+                                    <constraint firstItem="IDK-t4-XfH" firstAttribute="top" secondItem="4qq-RC-CBS" secondAttribute="bottom" id="M3l-vn-F9X"/>
                                     <constraint firstItem="HN8-Ur-Tx2" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="Rjh-9a-TrU"/>
                                     <constraint firstItem="IDK-t4-XfH" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="Ruw-on-dk1"/>
+                                    <constraint firstItem="4qq-RC-CBS" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.05" constant="1" id="VnI-ul-BpS"/>
                                     <constraint firstItem="HN8-Ur-Tx2" firstAttribute="top" secondItem="07K-jR-Cmf" secondAttribute="bottom" id="XZG-So-L56"/>
                                     <constraint firstItem="07K-jR-Cmf" firstAttribute="top" secondItem="HEv-E3-06a" secondAttribute="bottom" id="YhB-MT-DYg"/>
                                     <constraint firstItem="07K-jR-Cmf" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="dc4-o0-1yn"/>
+                                    <constraint firstItem="4qq-RC-CBS" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="ea3-a9-j3S"/>
+                                    <constraint firstItem="4qq-RC-CBS" firstAttribute="top" secondItem="t4J-Ps-1ba" secondAttribute="bottom" id="fqN-qX-423"/>
                                     <constraint firstItem="HEv-E3-06a" firstAttribute="top" secondItem="TMf-UF-ZbM" secondAttribute="top" id="gEA-hg-v8I"/>
                                     <constraint firstItem="07K-jR-Cmf" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" multiplier="0.8" constant="1" id="hJs-hu-n8Z"/>
                                     <constraint firstItem="IDK-t4-XfH" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.59" constant="1" id="kBS-xJ-q0T"/>
