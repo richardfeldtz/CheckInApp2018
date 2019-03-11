@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="orange juice 2.0.ttf">
+            <string>orangejuice</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Profile View Controller-->
         <scene sceneID="EjU-S4-JnP">
@@ -24,34 +29,34 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rfc-gS-gBx" customClass="UnderLinedLabel" customModule="CheckIn" customModuleProvider="target">
                                 <rect key="frame" x="25" y="174.5" width="718" height="103.5"/>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="45"/>
+                                <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="55"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7pj-2I-o75">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7pj-2I-o75">
                                 <rect key="frame" x="38" y="278" width="692" height="52"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECR-ya-mG2">
-                                <rect key="frame" x="0.0" y="330" width="768" height="11.5"/>
+                                <rect key="frame" x="0.0" y="330" width="768" height="52.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZW-qd-CEz">
-                                <rect key="frame" x="423" y="341.5" width="308" height="410.5"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guests:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="054-93-Cak" userLabel="Guest Label">
-                                <rect key="frame" x="39" y="341.5" width="308" height="410.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guests:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="054-93-Cak" userLabel="Guest Label">
+                                <rect key="frame" x="0.0" y="382.5" width="768" height="98"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZW-qd-CEz">
+                                <rect key="frame" x="268.5" y="480.5" width="231" height="308.5"/>
+                            </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0l-WM-YdT">
-                                <rect key="frame" x="230" y="752" width="308" height="52"/>
+                                <rect key="frame" x="230" y="789" width="308" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GlG-eC-SiF">
-                                        <rect key="frame" x="30" y="5" width="248" height="42.5"/>
+                                        <rect key="frame" x="30" y="4.5" width="248" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -66,11 +71,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZS-Tw-vaU">
-                                <rect key="frame" x="0.0" y="804" width="768" height="52.5"/>
+                                <rect key="frame" x="0.0" y="841" width="768" height="52.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJC-Uo-hLs">
-                                <rect key="frame" x="230" y="856.5" width="308" height="52"/>
+                                <rect key="frame" x="230" y="893.5" width="308" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Check-in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-La-ewE">
                                         <rect key="frame" x="30" y="4.5" width="248" height="43"/>
@@ -97,45 +102,44 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ECR-ya-mG2" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.01" constant="1" id="0V6-5J-NT4"/>
+                            <constraint firstItem="ECR-ya-mG2" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.05" constant="1" id="0V6-5J-NT4"/>
                             <constraint firstItem="p0l-WM-YdT" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.4" constant="1" id="5Zg-Ql-jfm"/>
                             <constraint firstItem="pIH-VT-vZz" firstAttribute="top" secondItem="QEA-t4-7mN" secondAttribute="top" constant="16" id="78E-4T-EAG"/>
-                            <constraint firstItem="p0l-WM-YdT" firstAttribute="top" secondItem="054-93-Cak" secondAttribute="bottom" id="7zW-zR-i8B"/>
+                            <constraint firstItem="p0l-WM-YdT" firstAttribute="top" secondItem="OZW-qd-CEz" secondAttribute="bottom" id="7mY-sa-HMv"/>
                             <constraint firstItem="TZS-Tw-vaU" firstAttribute="top" secondItem="p0l-WM-YdT" secondAttribute="bottom" id="Atm-EW-HHF"/>
                             <constraint firstItem="p0l-WM-YdT" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="BfE-je-gXK"/>
                             <constraint firstItem="7pj-2I-o75" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.05" constant="1" id="D6B-Ng-ggZ"/>
                             <constraint firstItem="XQE-pj-Ofn" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.15" constant="1" id="DnN-h1-oFm"/>
                             <constraint firstItem="7pj-2I-o75" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.9" constant="1" id="EXy-e0-4Td"/>
                             <constraint firstItem="XQE-pj-Ofn" firstAttribute="top" secondItem="QEA-t4-7mN" secondAttribute="top" id="HbY-iL-16j"/>
-                            <constraint firstItem="OZW-qd-CEz" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.4" constant="1" id="HtA-GE-wuG"/>
                             <constraint firstItem="TZS-Tw-vaU" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="Irc-Rl-jEn"/>
                             <constraint firstItem="XQE-pj-Ofn" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="KCE-mi-TR4"/>
                             <constraint firstItem="7pj-2I-o75" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="M93-H9-LXB"/>
-                            <constraint firstItem="OZW-qd-CEz" firstAttribute="top" secondItem="ECR-ya-mG2" secondAttribute="bottom" id="MJ7-AR-ZBB"/>
-                            <constraint firstItem="054-93-Cak" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" multiplier="0.5" constant="1" id="OYI-4v-ZoA"/>
+                            <constraint firstItem="054-93-Cak" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="OV0-w7-6qe"/>
+                            <constraint firstItem="OZW-qd-CEz" firstAttribute="top" secondItem="054-93-Cak" secondAttribute="bottom" id="Ofx-ER-ey4"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="QfW-mL-jyv"/>
-                            <constraint firstItem="OZW-qd-CEz" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.4" constant="1" id="SZY-R6-SZC"/>
                             <constraint firstItem="ECR-ya-mG2" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="TBl-Zk-mDB"/>
                             <constraint firstItem="TZS-Tw-vaU" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.05" constant="1" id="TEi-eB-J7z"/>
-                            <constraint firstItem="054-93-Cak" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.4" constant="1" id="TvK-VL-QPc"/>
                             <constraint firstItem="7pj-2I-o75" firstAttribute="top" secondItem="rfc-gS-gBx" secondAttribute="bottom" id="Ujl-WK-qoq"/>
                             <constraint firstItem="BJC-Uo-hLs" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="XIn-Ml-v4X"/>
                             <constraint firstItem="p0l-WM-YdT" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.05" constant="1" id="YNJ-RO-Gs4"/>
-                            <constraint firstItem="p0l-WM-YdT" firstAttribute="top" secondItem="OZW-qd-CEz" secondAttribute="bottom" id="YUL-uJ-zB5"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="top" secondItem="XQE-pj-Ofn" secondAttribute="bottom" id="aZK-cO-eCU"/>
                             <constraint firstItem="ECR-ya-mG2" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="b4S-JP-j9t"/>
-                            <constraint firstItem="OZW-qd-CEz" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" multiplier="1.5" constant="1" id="bSL-QV-N1p"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.1" constant="1" id="c2o-o1-WdE"/>
-                            <constraint firstItem="054-93-Cak" firstAttribute="top" secondItem="ECR-ya-mG2" secondAttribute="bottom" id="dm0-nD-nFL"/>
+                            <constraint firstItem="OZW-qd-CEz" firstAttribute="centerX" secondItem="QEA-t4-7mN" secondAttribute="centerX" id="efW-4R-PQO"/>
                             <constraint firstItem="ECR-ya-mG2" firstAttribute="top" secondItem="7pj-2I-o75" secondAttribute="bottom" id="esj-kX-cFS"/>
-                            <constraint firstItem="054-93-Cak" firstAttribute="width" secondItem="ECR-ya-mG2" secondAttribute="width" multiplier="0.4" constant="1" id="f3A-rk-uG4"/>
                             <constraint firstItem="BJC-Uo-hLs" firstAttribute="top" secondItem="TZS-Tw-vaU" secondAttribute="bottom" id="hcN-Nl-CZy"/>
+                            <constraint firstItem="OZW-qd-CEz" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.3" constant="1" id="inv-Yx-rI5"/>
+                            <constraint firstItem="OZW-qd-CEz" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.3" constant="1" id="lk4-zf-0Jf"/>
                             <constraint firstItem="rfc-gS-gBx" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" constant="-50" id="n17-Oy-Wt9"/>
+                            <constraint firstItem="054-93-Cak" firstAttribute="top" secondItem="ECR-ya-mG2" secondAttribute="bottom" id="oFx-he-Mdd"/>
                             <constraint firstItem="XQE-pj-Ofn" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="saH-Sc-zKi"/>
                             <constraint firstItem="TZS-Tw-vaU" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="sd4-3p-Lip"/>
                             <constraint firstItem="pIH-VT-vZz" firstAttribute="trailing" secondItem="XQE-pj-Ofn" secondAttribute="trailing" constant="-16" id="siK-yu-W28"/>
                             <constraint firstItem="BJC-Uo-hLs" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" multiplier="0.4" constant="1" id="w7Y-fu-7NM"/>
                             <constraint firstItem="BJC-Uo-hLs" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.05" constant="1" id="xmo-Pj-m27"/>
+                            <constraint firstItem="054-93-Cak" firstAttribute="width" secondItem="Zpb-ip-rJZ" secondAttribute="width" id="ylr-At-cMs"/>
+                            <constraint firstItem="054-93-Cak" firstAttribute="height" secondItem="Zpb-ip-rJZ" secondAttribute="height" multiplier="0.095" constant="1" id="z7K-1q-gMv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QEA-t4-7mN"/>
                     </view>
