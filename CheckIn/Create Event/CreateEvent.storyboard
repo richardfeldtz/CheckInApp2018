@@ -33,84 +33,108 @@
                                         <rect key="frame" x="153" y="0.0" width="309" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Event Name" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="7J6-l6-MpW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jus-Np-2VX">
                                         <rect key="frame" x="61" y="42" width="493" height="42"/>
+                                        <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Event Name" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="7J6-l6-MpW">
+                                        <rect key="frame" x="61" y="84" width="493" height="42"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVJ-p3-T6J">
-                                        <rect key="frame" x="153" y="84" width="309" height="25.5"/>
+                                        <rect key="frame" x="153" y="126" width="309" height="25.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtT-W9-W6Z">
+                                        <rect key="frame" x="0.0" y="151.5" width="615" height="42"/>
+                                        <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Event Loaction" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="SyM-81-mmv">
-                                        <rect key="frame" x="61" y="109.5" width="493" height="42"/>
+                                        <rect key="frame" x="61" y="193.5" width="493" height="42"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkm-rd-sAd">
-                                        <rect key="frame" x="153" y="151.5" width="309" height="25.5"/>
+                                        <rect key="frame" x="153" y="235.5" width="309" height="9.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGK-YP-U1H">
-                                        <rect key="frame" x="61" y="177" width="493" height="206"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAq-ex-SeC">
+                                        <rect key="frame" x="61" y="245" width="493" height="370"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-4l-pga">
-                                                <rect key="frame" x="0.0" y="0.0" width="493" height="42.5"/>
-                                                <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7zP-vg-0k0">
-                                                <rect key="frame" x="24" y="42.5" width="445" height="165.5"/>
-                                                <date key="date" timeIntervalSinceReferenceDate="573103875.57767701">
-                                                    <!--2019-03-01 03:31:15 +0000-->
-                                                </date>
-                                            </datePicker>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGK-YP-U1H">
+                                                <rect key="frame" x="0.0" y="18" width="297" height="334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-4l-pga">
+                                                        <rect key="frame" x="0.0" y="0.0" width="297" height="67.5"/>
+                                                        <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7zP-vg-0k0">
+                                                        <rect key="frame" x="14" y="67.5" width="268.5" height="268.5"/>
+                                                        <date key="date" timeIntervalSinceReferenceDate="573103875.57767701">
+                                                            <!--2019-03-01 03:31:15 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="eaU-4l-pga" firstAttribute="top" secondItem="dGK-YP-U1H" secondAttribute="top" id="6oC-zb-RgA"/>
+                                                    <constraint firstItem="7zP-vg-0k0" firstAttribute="height" secondItem="dGK-YP-U1H" secondAttribute="height" multiplier="0.8" constant="1" id="A3o-e1-3Zj"/>
+                                                    <constraint firstItem="7zP-vg-0k0" firstAttribute="width" secondItem="dGK-YP-U1H" secondAttribute="width" multiplier="0.9" constant="1" id="FZc-6e-C1g"/>
+                                                    <constraint firstItem="eaU-4l-pga" firstAttribute="centerX" secondItem="dGK-YP-U1H" secondAttribute="centerX" id="IIZ-cT-VEm"/>
+                                                    <constraint firstItem="7zP-vg-0k0" firstAttribute="centerX" secondItem="dGK-YP-U1H" secondAttribute="centerX" id="LjA-vW-X8g"/>
+                                                    <constraint firstItem="eaU-4l-pga" firstAttribute="height" secondItem="dGK-YP-U1H" secondAttribute="height" multiplier="0.2" constant="1" id="pav-nW-Occ"/>
+                                                    <constraint firstItem="eaU-4l-pga" firstAttribute="width" secondItem="dGK-YP-U1H" secondAttribute="width" id="sgA-RU-feg"/>
+                                                    <constraint firstItem="eaU-4l-pga" firstAttribute="bottom" secondItem="7zP-vg-0k0" secondAttribute="top" id="sro-Ds-0kO"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8u1-La-8kq">
+                                                <rect key="frame" x="344" y="18" width="149" height="334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCF-gh-uX1">
+                                                        <rect key="frame" x="-0.5" y="0.0" width="150" height="67.5"/>
+                                                        <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="6Pv-B5-Iu1">
+                                                        <rect key="frame" x="7" y="67.5" width="135" height="268.5"/>
+                                                        <date key="date" timeIntervalSinceReferenceDate="573104961.13315296">
+                                                            <!--2019-03-01 03:49:21 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="XCF-gh-uX1" firstAttribute="bottom" secondItem="6Pv-B5-Iu1" secondAttribute="top" id="BgY-5b-90P"/>
+                                                    <constraint firstItem="XCF-gh-uX1" firstAttribute="width" secondItem="8u1-La-8kq" secondAttribute="width" constant="1" id="F9q-JA-53o"/>
+                                                    <constraint firstItem="XCF-gh-uX1" firstAttribute="centerX" secondItem="8u1-La-8kq" secondAttribute="centerX" id="Uma-eu-iGx"/>
+                                                    <constraint firstItem="6Pv-B5-Iu1" firstAttribute="centerX" secondItem="8u1-La-8kq" secondAttribute="centerX" id="fjh-b7-wfE"/>
+                                                    <constraint firstItem="XCF-gh-uX1" firstAttribute="top" secondItem="8u1-La-8kq" secondAttribute="top" id="jkI-OM-IjE"/>
+                                                    <constraint firstItem="6Pv-B5-Iu1" firstAttribute="width" secondItem="8u1-La-8kq" secondAttribute="width" multiplier="0.9" constant="1" id="o3i-0p-ohJ"/>
+                                                    <constraint firstItem="6Pv-B5-Iu1" firstAttribute="height" secondItem="8u1-La-8kq" secondAttribute="height" multiplier="0.8" constant="1" id="qHc-JC-ThJ"/>
+                                                    <constraint firstItem="XCF-gh-uX1" firstAttribute="height" secondItem="8u1-La-8kq" secondAttribute="height" multiplier="0.2" constant="1" id="vjG-p5-YA9"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="eaU-4l-pga" firstAttribute="top" secondItem="dGK-YP-U1H" secondAttribute="top" id="6oC-zb-RgA"/>
-                                            <constraint firstItem="7zP-vg-0k0" firstAttribute="height" secondItem="dGK-YP-U1H" secondAttribute="height" multiplier="0.8" constant="1" id="A3o-e1-3Zj"/>
-                                            <constraint firstItem="7zP-vg-0k0" firstAttribute="width" secondItem="dGK-YP-U1H" secondAttribute="width" multiplier="0.9" constant="1" id="FZc-6e-C1g"/>
-                                            <constraint firstItem="eaU-4l-pga" firstAttribute="centerX" secondItem="dGK-YP-U1H" secondAttribute="centerX" id="IIZ-cT-VEm"/>
-                                            <constraint firstItem="7zP-vg-0k0" firstAttribute="centerX" secondItem="dGK-YP-U1H" secondAttribute="centerX" id="LjA-vW-X8g"/>
-                                            <constraint firstItem="eaU-4l-pga" firstAttribute="height" secondItem="dGK-YP-U1H" secondAttribute="height" multiplier="0.2" constant="1" id="pav-nW-Occ"/>
-                                            <constraint firstItem="eaU-4l-pga" firstAttribute="width" secondItem="dGK-YP-U1H" secondAttribute="width" id="sgA-RU-feg"/>
-                                            <constraint firstItem="eaU-4l-pga" firstAttribute="bottom" secondItem="7zP-vg-0k0" secondAttribute="top" id="sro-Ds-0kO"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wt0-xb-Phw">
-                                        <rect key="frame" x="153" y="383" width="309" height="26"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8u1-La-8kq">
-                                        <rect key="frame" x="61" y="409" width="493" height="206"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCF-gh-uX1">
-                                                <rect key="frame" x="48.5" y="0.0" width="396" height="42"/>
-                                                <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="6Pv-B5-Iu1">
-                                                <rect key="frame" x="24" y="42" width="445" height="166"/>
-                                                <date key="date" timeIntervalSinceReferenceDate="573104961.13315296">
-                                                    <!--2019-03-01 03:49:21 +0000-->
-                                                </date>
-                                            </datePicker>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="XCF-gh-uX1" firstAttribute="bottom" secondItem="6Pv-B5-Iu1" secondAttribute="top" id="BgY-5b-90P"/>
-                                            <constraint firstItem="XCF-gh-uX1" firstAttribute="width" secondItem="8u1-La-8kq" secondAttribute="width" multiplier="0.8" constant="1" id="F9q-JA-53o"/>
-                                            <constraint firstItem="XCF-gh-uX1" firstAttribute="centerX" secondItem="8u1-La-8kq" secondAttribute="centerX" id="Uma-eu-iGx"/>
-                                            <constraint firstItem="6Pv-B5-Iu1" firstAttribute="centerX" secondItem="8u1-La-8kq" secondAttribute="centerX" id="fjh-b7-wfE"/>
-                                            <constraint firstItem="XCF-gh-uX1" firstAttribute="top" secondItem="8u1-La-8kq" secondAttribute="top" id="jkI-OM-IjE"/>
-                                            <constraint firstItem="6Pv-B5-Iu1" firstAttribute="width" secondItem="8u1-La-8kq" secondAttribute="width" multiplier="0.9" constant="1" id="o3i-0p-ohJ"/>
-                                            <constraint firstItem="6Pv-B5-Iu1" firstAttribute="height" secondItem="8u1-La-8kq" secondAttribute="height" multiplier="0.8" constant="1" id="qHc-JC-ThJ"/>
-                                            <constraint firstItem="XCF-gh-uX1" firstAttribute="height" secondItem="8u1-La-8kq" secondAttribute="height" multiplier="0.2" constant="1" id="vjG-p5-YA9"/>
+                                            <constraint firstItem="dGK-YP-U1H" firstAttribute="leading" secondItem="pAq-ex-SeC" secondAttribute="leading" id="ASs-Pq-hbf"/>
+                                            <constraint firstItem="8u1-La-8kq" firstAttribute="height" secondItem="pAq-ex-SeC" secondAttribute="height" multiplier="0.9" constant="1" id="KUp-Fv-Vsy"/>
+                                            <constraint firstItem="dGK-YP-U1H" firstAttribute="centerY" secondItem="pAq-ex-SeC" secondAttribute="centerY" id="X6B-a7-1IS"/>
+                                            <constraint firstAttribute="trailing" secondItem="8u1-La-8kq" secondAttribute="trailing" id="euF-zl-0CU"/>
+                                            <constraint firstItem="dGK-YP-U1H" firstAttribute="height" secondItem="pAq-ex-SeC" secondAttribute="height" multiplier="0.9" constant="1" id="fv9-Cg-Yxw"/>
+                                            <constraint firstItem="8u1-La-8kq" firstAttribute="width" secondItem="pAq-ex-SeC" secondAttribute="width" multiplier="0.3" constant="1" id="pk5-yX-sfF"/>
+                                            <constraint firstItem="dGK-YP-U1H" firstAttribute="width" secondItem="pAq-ex-SeC" secondAttribute="width" multiplier="0.6" constant="1" id="tra-nD-uHZ"/>
+                                            <constraint firstItem="8u1-La-8kq" firstAttribute="centerY" secondItem="pAq-ex-SeC" secondAttribute="centerY" id="wnH-R1-VSB"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZk-zU-yda">
@@ -127,13 +151,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pkd-fb-K93">
-                                                <rect key="frame" x="99.5" y="3.5" width="27.5" height="35"/>
+                                                <rect key="frame" x="99.5" y="3.5" width="42.5" height="35"/>
                                             </switch>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ysN-IV-e88">
-                                                <rect key="frame" x="447.5" y="3.5" width="27.5" height="35"/>
+                                                <rect key="frame" x="432.5" y="3.5" width="42.5" height="35"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orientation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JjN-1g-AoJ">
-                                                <rect key="frame" x="303.5" y="1.5" width="134" height="39"/>
+                                                <rect key="frame" x="288.5" y="1.5" width="134" height="39"/>
                                                 <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -147,8 +171,8 @@
                                             <constraint firstItem="ysN-IV-e88" firstAttribute="centerY" secondItem="Ayt-7f-63o" secondAttribute="centerY" id="AgN-ON-gVk"/>
                                             <constraint firstItem="pkd-fb-K93" firstAttribute="leading" secondItem="mUj-0q-61G" secondAttribute="trailing" id="OZX-T1-6yS"/>
                                             <constraint firstItem="ysN-IV-e88" firstAttribute="leading" secondItem="JjN-1g-AoJ" secondAttribute="trailing" constant="10" id="QfG-a3-mbO"/>
-                                            <constraint firstItem="pkd-fb-K93" firstAttribute="width" secondItem="Ayt-7f-63o" secondAttribute="width" multiplier="0.05" constant="1" id="T2H-OI-MPl"/>
-                                            <constraint firstItem="ysN-IV-e88" firstAttribute="width" secondItem="Ayt-7f-63o" secondAttribute="width" multiplier="0.05" constant="1" id="W3Y-Hl-QXB"/>
+                                            <constraint firstItem="pkd-fb-K93" firstAttribute="width" secondItem="Ayt-7f-63o" secondAttribute="width" multiplier="0.08" constant="1" id="T2H-OI-MPl"/>
+                                            <constraint firstItem="ysN-IV-e88" firstAttribute="width" secondItem="Ayt-7f-63o" secondAttribute="width" multiplier="0.08" constant="1" id="W3Y-Hl-QXB"/>
                                             <constraint firstItem="pkd-fb-K93" firstAttribute="centerY" secondItem="Ayt-7f-63o" secondAttribute="centerY" id="XXM-bY-3u1"/>
                                             <constraint firstItem="ysN-IV-e88" firstAttribute="height" secondItem="Ayt-7f-63o" secondAttribute="height" multiplier="0.8" constant="1" id="bMF-in-9Eg"/>
                                             <constraint firstItem="pkd-fb-K93" firstAttribute="height" secondItem="Ayt-7f-63o" secondAttribute="height" multiplier="0.8" constant="1" id="kHa-8u-3AC"/>
@@ -172,53 +196,53 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="pAq-ex-SeC" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.45" constant="1" id="0Df-Q0-JpI"/>
                                     <constraint firstItem="pZk-zU-yda" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="145-I7-sx3"/>
+                                    <constraint firstItem="YtT-W9-W6Z" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="1x2-RH-Wn2"/>
                                     <constraint firstItem="k8D-b8-Ld7" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.1" constant="1" id="2Nf-bM-btU"/>
                                     <constraint firstItem="hkm-rd-sAd" firstAttribute="top" secondItem="SyM-81-mmv" secondAttribute="bottom" id="3SJ-tC-TX9"/>
                                     <constraint firstItem="BVF-ZI-lXo" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.05" constant="1" id="4Si-O5-qaG"/>
                                     <constraint firstItem="k8D-b8-Ld7" firstAttribute="top" secondItem="BVF-ZI-lXo" secondAttribute="bottom" id="5gy-A1-dd8"/>
-                                    <constraint firstItem="8u1-La-8kq" firstAttribute="top" secondItem="wt0-xb-Phw" secondAttribute="bottom" id="A8n-Tx-EAb"/>
-                                    <constraint firstItem="dGK-YP-U1H" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.8" constant="1" id="BAq-lP-MkP"/>
+                                    <constraint firstItem="pAq-ex-SeC" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.8" constant="1" id="8kd-hy-g45"/>
+                                    <constraint firstItem="Jus-Np-2VX" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.05" constant="1" id="AIj-O0-Rvh"/>
                                     <constraint firstItem="7J6-l6-MpW" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.8" constant="1" id="BFx-ww-fde"/>
-                                    <constraint firstItem="8u1-La-8kq" firstAttribute="bottom" secondItem="pZk-zU-yda" secondAttribute="top" id="DGU-Nr-1gN"/>
-                                    <constraint firstItem="wt0-xb-Phw" firstAttribute="top" secondItem="dGK-YP-U1H" secondAttribute="bottom" id="EiE-uZ-0HI"/>
                                     <constraint firstItem="BVF-ZI-lXo" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.1" constant="1" id="FQc-hp-JbD"/>
                                     <constraint firstItem="Ayt-7f-63o" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.8" constant="1" id="FU9-U8-4K8"/>
                                     <constraint firstItem="pZk-zU-yda" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.03" constant="1" id="G0k-aP-O3d"/>
                                     <constraint firstItem="Ayt-7f-63o" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="HeZ-9Y-VDY"/>
                                     <constraint firstItem="SyM-81-mmv" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.8" constant="1" id="Jrn-iH-ccf"/>
+                                    <constraint firstItem="YtT-W9-W6Z" firstAttribute="top" secondItem="xVJ-p3-T6J" secondAttribute="bottom" id="JvM-UV-deq"/>
                                     <constraint firstItem="xVJ-p3-T6J" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="MAd-fY-Z6z"/>
                                     <constraint firstItem="hkm-rd-sAd" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.5" constant="1" id="Nsb-aa-CMM"/>
                                     <constraint firstItem="xVJ-p3-T6J" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.03" constant="1" id="Q4f-nE-ozT"/>
                                     <constraint firstItem="4n5-Oj-1DK" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="QJz-Cx-NqG"/>
-                                    <constraint firstItem="8u1-La-8kq" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="QOd-on-Lwv"/>
-                                    <constraint firstItem="8u1-La-8kq" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.8" constant="1" id="Rbd-UO-EYU"/>
-                                    <constraint firstItem="SyM-81-mmv" firstAttribute="top" secondItem="xVJ-p3-T6J" secondAttribute="bottom" id="Slh-fh-ro7"/>
                                     <constraint firstItem="SyM-81-mmv" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="Tm4-5B-9iu"/>
-                                    <constraint firstItem="wt0-xb-Phw" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.03" constant="1" id="WR4-Y9-Sf3"/>
                                     <constraint firstItem="hkm-rd-sAd" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="WYW-6T-FDb"/>
                                     <constraint firstItem="SyM-81-mmv" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.05" constant="1" id="XQm-oY-IB3"/>
+                                    <constraint firstItem="pAq-ex-SeC" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="Xpq-h1-BYH"/>
+                                    <constraint firstItem="YtT-W9-W6Z" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" id="ZUf-6Y-CeU"/>
+                                    <constraint firstItem="YtT-W9-W6Z" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.05" constant="1" id="b1m-jJ-eHn"/>
                                     <constraint firstItem="Ayt-7f-63o" firstAttribute="bottom" secondItem="BVF-ZI-lXo" secondAttribute="top" id="bEY-xA-7WT"/>
-                                    <constraint firstItem="wt0-xb-Phw" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.5" constant="1" id="dvr-Ae-gup"/>
+                                    <constraint firstItem="7J6-l6-MpW" firstAttribute="top" secondItem="Jus-Np-2VX" secondAttribute="bottom" id="c29-Pv-chz"/>
+                                    <constraint firstItem="SyM-81-mmv" firstAttribute="top" secondItem="YtT-W9-W6Z" secondAttribute="bottom" id="dkW-s3-suo"/>
+                                    <constraint firstItem="Jus-Np-2VX" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.8" constant="1" id="eIT-Ld-cEQ"/>
                                     <constraint firstItem="Ayt-7f-63o" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.05" constant="1" id="ey4-R5-YeJ"/>
-                                    <constraint firstItem="7J6-l6-MpW" firstAttribute="top" secondItem="4n5-Oj-1DK" secondAttribute="bottom" id="gNC-FI-Z8w"/>
                                     <constraint firstItem="k8D-b8-Ld7" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="hYl-Lw-yZA"/>
-                                    <constraint firstItem="dGK-YP-U1H" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.25" constant="1" id="iGN-qk-BRo"/>
-                                    <constraint firstItem="dGK-YP-U1H" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="kHE-eq-kDf"/>
+                                    <constraint firstItem="pZk-zU-yda" firstAttribute="top" secondItem="pAq-ex-SeC" secondAttribute="bottom" id="jbD-1m-kdt"/>
                                     <constraint firstItem="4n5-Oj-1DK" firstAttribute="top" secondItem="wTD-wY-7Oq" secondAttribute="top" id="kjS-ov-pNg"/>
-                                    <constraint firstItem="8u1-La-8kq" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.25" constant="1" id="l1J-Sw-DHv"/>
-                                    <constraint firstItem="dGK-YP-U1H" firstAttribute="top" secondItem="hkm-rd-sAd" secondAttribute="bottom" id="mHt-Ot-uXf"/>
                                     <constraint firstItem="Ayt-7f-63o" firstAttribute="top" secondItem="pZk-zU-yda" secondAttribute="bottom" id="nnT-Y1-bgJ"/>
                                     <constraint firstItem="4n5-Oj-1DK" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.05" constant="1" id="ocQ-bC-se0"/>
+                                    <constraint firstItem="Jus-Np-2VX" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="pQ3-xN-vOH"/>
                                     <constraint firstItem="BVF-ZI-lXo" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="qCX-b8-FMp"/>
-                                    <constraint firstItem="wt0-xb-Phw" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="rNe-FH-r0X"/>
-                                    <constraint firstItem="hkm-rd-sAd" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.03" constant="1" id="rYx-p1-6iK"/>
+                                    <constraint firstItem="hkm-rd-sAd" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.01" constant="1" id="rYx-p1-6iK"/>
+                                    <constraint firstItem="Jus-Np-2VX" firstAttribute="top" secondItem="4n5-Oj-1DK" secondAttribute="bottom" id="sDo-0m-DME"/>
                                     <constraint firstItem="7J6-l6-MpW" firstAttribute="height" secondItem="wTD-wY-7Oq" secondAttribute="height" multiplier="0.05" constant="1" id="tVl-9L-an9"/>
                                     <constraint firstItem="7J6-l6-MpW" firstAttribute="centerX" secondItem="wTD-wY-7Oq" secondAttribute="centerX" id="tlQ-QA-etD"/>
                                     <constraint firstItem="xVJ-p3-T6J" firstAttribute="top" secondItem="7J6-l6-MpW" secondAttribute="bottom" id="wdQ-ox-Axf"/>
                                     <constraint firstItem="pZk-zU-yda" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.1" constant="1" id="xO4-ti-rfm"/>
                                     <constraint firstItem="4n5-Oj-1DK" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.5" constant="1" id="xP7-a5-BMl"/>
                                     <constraint firstItem="xVJ-p3-T6J" firstAttribute="width" secondItem="wTD-wY-7Oq" secondAttribute="width" multiplier="0.5" constant="1" id="xXO-i1-WIQ"/>
+                                    <constraint firstItem="pAq-ex-SeC" firstAttribute="top" secondItem="hkm-rd-sAd" secondAttribute="bottom" id="z12-er-Co3"/>
                                 </constraints>
                             </view>
                         </subviews>

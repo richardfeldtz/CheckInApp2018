@@ -77,17 +77,14 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
         cell.guests.text = student!.guests
         
         cell.fname.numberOfLines=0;
-        cell.fname.font = UIFont(name: "HelveticaNeue", size: 20)
         cell.fname.minimumScaleFactor = 0.1
         cell.fname.adjustsFontSizeToFitWidth=true
         
         cell.lname.numberOfLines=0;
-        cell.lname.font = UIFont(name: "HelveticaNeue", size: 20)
         cell.lname.minimumScaleFactor = 0.1
         cell.lname.adjustsFontSizeToFitWidth=true
         
         cell.guests.numberOfLines=0;
-        cell.guests.font = UIFont(name: "HelveticaNeue", size: 20)
         cell.guests.minimumScaleFactor = 0.1
         cell.guests.adjustsFontSizeToFitWidth=true
         return cell

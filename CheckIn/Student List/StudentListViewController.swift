@@ -141,7 +141,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         if isFiltering() {
             return filteredStudents.count
         }
-        return CoreDataHelper.countOfEntity("Student")
+        return StudentListViewController.data.count
         
     }
     

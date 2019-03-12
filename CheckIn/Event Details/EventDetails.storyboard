@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="orange juice 2.0.ttf">
+            <string>orangejuice</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Event Details View Controller-->
         <scene sceneID="8MC-SC-fWr">
@@ -30,7 +35,7 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="07K-jR-Cmf">
                                         <rect key="frame" x="66" y="45.5" width="536" height="90.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                        <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="55"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -46,13 +51,13 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-mJ-JH2">
                                                         <rect key="frame" x="0.0" y="0.0" width="201.5" height="126"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="65"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check-ins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pn4-GI-oaC">
                                                         <rect key="frame" x="0.0" y="126" width="201.5" height="55"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -74,13 +79,13 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxB-pZ-3uT">
                                                         <rect key="frame" x="0.0" y="0.0" width="201.5" height="126"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="65"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q42-Qc-pF0">
                                                         <rect key="frame" x="0.0" y="126" width="201.5" height="55"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -127,25 +132,25 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qq-RC-CBS">
-                                        <rect key="frame" x="0.0" y="360.5" width="668" height="45.5"/>
+                                        <rect key="frame" x="33" y="360.5" width="602" height="45.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXZ-eh-9ww">
-                                                <rect key="frame" x="0.0" y="0.0" width="20" height="45.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="18" height="45.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ1-LA-kAj">
-                                                <rect key="frame" x="20" y="0.0" width="468.5" height="45.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZ1-LA-kAj">
+                                                <rect key="frame" x="18" y="0.0" width="422.5" height="45.5"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hw6-0V-Ugv">
-                                                <rect key="frame" x="488.5" y="0.0" width="14.5" height="45.5"/>
+                                                <rect key="frame" x="440.5" y="0.0" width="13" height="45.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDt-Or-Ggf">
-                                                <rect key="frame" x="503" y="0.0" width="201.5" height="45.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDt-Or-Ggf">
+                                                <rect key="frame" x="453.5" y="0.0" width="182" height="45.5"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -171,22 +176,14 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IDK-t4-XfH">
-                                        <rect key="frame" x="0.0" y="406" width="668" height="526.5"/>
+                                        <rect key="frame" x="16" y="406" width="636" height="464"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hb4-Tu-nkD" userLabel="Header Cell">
-                                                <rect key="frame" x="0.0" y="28" width="668" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hb4-Tu-nkD" id="V8w-xm-fCT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="668" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkedInStudentCell" id="XKa-sF-lKR" customClass="CheckedInTableViewCell" customModule="CheckIn" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="72" width="668" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="636" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XKa-sF-lKR" id="l7Z-cp-1nD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="668" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="636" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bG6-r3-38d">
@@ -195,7 +192,7 @@
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iau-vT-Xib">
                                                             <rect key="frame" x="14.5" y="4" width="234.5" height="35.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -205,7 +202,7 @@
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zI8-lK-iCT">
                                                             <rect key="frame" x="283.5" y="4" width="268.5" height="35.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -215,7 +212,7 @@
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eud-fT-qg2">
                                                             <rect key="frame" x="586" y="4" width="68" height="35.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -262,11 +259,11 @@
                                     <constraint firstItem="HN8-Ur-Tx2" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" id="5i3-6X-HWT"/>
                                     <constraint firstItem="t4J-Ps-1ba" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.05" constant="1" id="6X9-Z8-8Ss"/>
                                     <constraint firstItem="HEv-E3-06a" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="7zg-Fd-oAn"/>
-                                    <constraint firstItem="4qq-RC-CBS" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" id="93p-1e-XaI"/>
+                                    <constraint firstItem="4qq-RC-CBS" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" multiplier="0.9" constant="1" id="93p-1e-XaI"/>
                                     <constraint firstItem="HN8-Ur-Tx2" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.2" constant="1" id="BwV-4J-cqb"/>
                                     <constraint firstItem="07K-jR-Cmf" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.1" constant="1" id="CWy-F2-QZg"/>
                                     <constraint firstItem="HEv-E3-06a" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" multiplier="0.2" constant="1" id="Hvr-ol-ixv"/>
-                                    <constraint firstItem="IDK-t4-XfH" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" id="J4M-AJ-YHa"/>
+                                    <constraint firstItem="IDK-t4-XfH" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" multiplier="0.95" constant="1" id="J4M-AJ-YHa"/>
                                     <constraint firstItem="IDK-t4-XfH" firstAttribute="top" secondItem="4qq-RC-CBS" secondAttribute="bottom" id="M3l-vn-F9X"/>
                                     <constraint firstItem="HN8-Ur-Tx2" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="Rjh-9a-TrU"/>
                                     <constraint firstItem="IDK-t4-XfH" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="Ruw-on-dk1"/>
@@ -278,7 +275,7 @@
                                     <constraint firstItem="4qq-RC-CBS" firstAttribute="top" secondItem="t4J-Ps-1ba" secondAttribute="bottom" id="fqN-qX-423"/>
                                     <constraint firstItem="HEv-E3-06a" firstAttribute="top" secondItem="TMf-UF-ZbM" secondAttribute="top" id="gEA-hg-v8I"/>
                                     <constraint firstItem="07K-jR-Cmf" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" multiplier="0.8" constant="1" id="hJs-hu-n8Z"/>
-                                    <constraint firstItem="IDK-t4-XfH" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.59" constant="1" id="kBS-xJ-q0T"/>
+                                    <constraint firstItem="IDK-t4-XfH" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.52" constant="1" id="kBS-xJ-q0T"/>
                                     <constraint firstItem="HEv-E3-06a" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.05" constant="1" id="kk1-6c-7V3"/>
                                     <constraint firstItem="t4J-Ps-1ba" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" id="laN-Ov-x8B"/>
                                     <constraint firstItem="t4J-Ps-1ba" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="nUo-Sb-uWu"/>
