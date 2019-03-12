@@ -175,8 +175,12 @@
                                             <constraint firstItem="EDt-Or-Ggf" firstAttribute="centerY" secondItem="4qq-RC-CBS" secondAttribute="centerY" id="z2v-k6-Fod"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-8L-2fH">
+                                        <rect key="frame" x="33" y="406" width="602" height="2"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IDK-t4-XfH">
-                                        <rect key="frame" x="16" y="406" width="636" height="464"/>
+                                        <rect key="frame" x="16" y="408" width="636" height="464"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkedInStudentCell" id="XKa-sF-lKR" customClass="CheckedInTableViewCell" customModule="CheckIn" customModuleProvider="target">
@@ -187,32 +191,32 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bG6-r3-38d">
-                                                            <rect key="frame" x="0.0" y="0.0" width="14.5" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="13.5" height="43.5"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iau-vT-Xib">
-                                                            <rect key="frame" x="14.5" y="4" width="234.5" height="35.5"/>
-                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                            <rect key="frame" x="13.5" y="4" width="224" height="35.5"/>
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYO-V2-4er">
-                                                            <rect key="frame" x="249" y="0.0" width="34.5" height="43.5"/>
+                                                            <rect key="frame" x="237.5" y="0.0" width="32.5" height="43.5"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zI8-lK-iCT">
-                                                            <rect key="frame" x="283.5" y="4" width="268.5" height="35.5"/>
-                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                            <rect key="frame" x="270" y="4" width="255.5" height="35.5"/>
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jek-iA-RXh">
-                                                            <rect key="frame" x="552" y="0.0" width="34" height="43.5"/>
+                                                            <rect key="frame" x="525.5" y="0.0" width="33" height="43.5"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eud-fT-qg2">
-                                                            <rect key="frame" x="586" y="4" width="68" height="35.5"/>
-                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                            <rect key="frame" x="558.5" y="4" width="64.5" height="35.5"/>
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -258,18 +262,22 @@
                                     <constraint firstItem="t4J-Ps-1ba" firstAttribute="top" secondItem="HN8-Ur-Tx2" secondAttribute="bottom" id="3ft-jk-KUA"/>
                                     <constraint firstItem="HN8-Ur-Tx2" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" id="5i3-6X-HWT"/>
                                     <constraint firstItem="t4J-Ps-1ba" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.05" constant="1" id="6X9-Z8-8Ss"/>
+                                    <constraint firstItem="FzO-8L-2fH" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" multiplier="0.9" constant="1" id="7O1-kp-RFi"/>
                                     <constraint firstItem="HEv-E3-06a" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="7zg-Fd-oAn"/>
                                     <constraint firstItem="4qq-RC-CBS" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" multiplier="0.9" constant="1" id="93p-1e-XaI"/>
                                     <constraint firstItem="HN8-Ur-Tx2" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.2" constant="1" id="BwV-4J-cqb"/>
                                     <constraint firstItem="07K-jR-Cmf" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.1" constant="1" id="CWy-F2-QZg"/>
+                                    <constraint firstItem="IDK-t4-XfH" firstAttribute="top" secondItem="FzO-8L-2fH" secondAttribute="bottom" id="EF5-fk-985"/>
+                                    <constraint firstItem="FzO-8L-2fH" firstAttribute="top" secondItem="4qq-RC-CBS" secondAttribute="bottom" id="GXB-iL-51j"/>
                                     <constraint firstItem="HEv-E3-06a" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" multiplier="0.2" constant="1" id="Hvr-ol-ixv"/>
                                     <constraint firstItem="IDK-t4-XfH" firstAttribute="width" secondItem="TMf-UF-ZbM" secondAttribute="width" multiplier="0.95" constant="1" id="J4M-AJ-YHa"/>
-                                    <constraint firstItem="IDK-t4-XfH" firstAttribute="top" secondItem="4qq-RC-CBS" secondAttribute="bottom" id="M3l-vn-F9X"/>
+                                    <constraint firstItem="FzO-8L-2fH" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="Kpl-Jt-mac"/>
                                     <constraint firstItem="HN8-Ur-Tx2" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="Rjh-9a-TrU"/>
                                     <constraint firstItem="IDK-t4-XfH" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="Ruw-on-dk1"/>
                                     <constraint firstItem="4qq-RC-CBS" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.05" constant="1" id="VnI-ul-BpS"/>
                                     <constraint firstItem="HN8-Ur-Tx2" firstAttribute="top" secondItem="07K-jR-Cmf" secondAttribute="bottom" id="XZG-So-L56"/>
                                     <constraint firstItem="07K-jR-Cmf" firstAttribute="top" secondItem="HEv-E3-06a" secondAttribute="bottom" id="YhB-MT-DYg"/>
+                                    <constraint firstItem="FzO-8L-2fH" firstAttribute="height" secondItem="TMf-UF-ZbM" secondAttribute="height" multiplier="0.001" constant="1" id="cam-2e-SZu"/>
                                     <constraint firstItem="07K-jR-Cmf" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="dc4-o0-1yn"/>
                                     <constraint firstItem="4qq-RC-CBS" firstAttribute="centerX" secondItem="TMf-UF-ZbM" secondAttribute="centerX" id="ea3-a9-j3S"/>
                                     <constraint firstItem="4qq-RC-CBS" firstAttribute="top" secondItem="t4J-Ps-1ba" secondAttribute="bottom" id="fqN-qX-423"/>

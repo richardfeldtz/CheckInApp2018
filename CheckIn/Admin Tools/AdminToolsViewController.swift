@@ -131,6 +131,7 @@ class AdminToolsViewController: UIViewController {
             }
         }
         else {
+            SVProgressHUD.dismiss(withDelay: .init(floatLiteral: 0))
             let uploadAlert = UIAlertController(title: "Error", message: "There are no check-in records to upload", preferredStyle: .alert)
             uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
             self.present(uploadAlert, animated: true)
@@ -147,7 +148,6 @@ class AdminToolsViewController: UIViewController {
         SVProgressHUD.setDefaultStyle(.dark)
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.show(withStatus: "Downloading Data...")
-        SVProgressHUD.setSuccessImage(#imageLiteral(resourceName: "blackLogo"))
         
         
         DispatchQueue.global(qos: .background).async {

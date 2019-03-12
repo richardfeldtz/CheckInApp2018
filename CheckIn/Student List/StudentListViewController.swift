@@ -94,6 +94,9 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(scrollToTop)))
         
         self.view.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(showHelpLayer(_:))))
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 15)!], for: .normal)
+        
         addButton()
         
     }
