@@ -63,7 +63,6 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
-        self.tableView.reloadData()
         if !tableAnimated {
             animateTable()
             tableAnimated = true
@@ -73,6 +72,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.reloadData()
         
         
         tableView.dataSource = self
