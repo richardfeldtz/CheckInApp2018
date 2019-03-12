@@ -67,12 +67,12 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             animateTable()
             tableAnimated = true
         }
-        tableView.setNeedsDisplay()
+        self.tableView.reloadData()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.reloadData()
         
         
         tableView.dataSource = self
