@@ -94,10 +94,11 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(scrollToTop)))
         
         self.view.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(showHelpLayer(_:))))
+        addButton()
         
     }
     
-    override func viewWillLayoutSubviews() {
+    func addButton()  {
         
         let roundButton = UIButton(frame: .init(x: 0, y: 0, width: 50, height: 50))
         roundButton.addTarget(self, action: #selector(openQRCodeScanner), for: .touchUpInside)
@@ -113,16 +114,15 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         roundButton.layer.shadowOpacity = 1.0
         roundButton.layer.shadowRadius = 0.0
         roundButton.layer.masksToBounds = false
-
+        
         view.addSubview(roundButton)
         NSLayoutConstraint.activate([
             roundButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             roundButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
             roundButton.widthAnchor.constraint(equalToConstant: 100),
             roundButton.heightAnchor.constraint(equalToConstant: 100)
-        ])
+            ])
     }
-    
     @objc func openQRCodeScanner() {
         if(!helpIndicator) {
             let storyboard: UIStoryboard = UIStoryboard(name: "QRCodeScan", bundle: nil)
@@ -138,43 +138,33 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     //Method to return the number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isFiltering() {
-            return filteredStudents.count
-        }
-        return StudentListViewController.data.count
-        
+        return isFiltering() ? filteredStudents.count : StudentListViewController.data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if StudentListViewController.data.count == 0 {
+            return UITableViewCell()
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentListCell") as! StudentTableViewCell
         
         
-        var student:StudentData?
-        if isFiltering() {
-            student = filteredStudents[indexPath.row]
-        } else {
-            if StudentListViewController.data.count == 0 {
-                return UITableViewCell()
-            }
-            student = StudentListViewController.data[indexPath.row]
-        }
-        
+        let student:StudentData? = isFiltering() ? filteredStudents[indexPath.row] : StudentListViewController.data[indexPath.row]
         
         cell.backgroundColor = indexPath.row % 2 == 0 ? .white : UIColor.lightGray.withAlphaComponent(0.1)
         
         
         cell.fname.text = student!.fname
         cell.lname.text = student!.lname
-        
         cell.checkMark.image = student!.checked ? UIImage(named: "checkmark") : nil
         
-        cell.fname.numberOfLines=0;
-        cell.fname.minimumScaleFactor = 0.1
-        cell.fname.adjustsFontSizeToFitWidth=true
-        
-        cell.lname.numberOfLines=0;
-        cell.lname.minimumScaleFactor = 0.1
-        cell.lname.adjustsFontSizeToFitWidth=true
+//        cell.fname.numberOfLines=0;
+//        cell.fname.minimumScaleFactor = 0.1
+//        cell.fname.adjustsFontSizeToFitWidth=true
+//        
+//        cell.lname.numberOfLines=0;
+//        cell.lname.minimumScaleFactor = 0.1
+//        cell.lname.adjustsFontSizeToFitWidth=true
         
         return cell
     }
