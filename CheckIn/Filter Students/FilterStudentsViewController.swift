@@ -197,7 +197,6 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         lastNamePickerView.delegate = self
         lastNamePickerView.dataSource = self
         
-        
         let firstLetterIndex = returnIndexOfAlphabet(FilterStudentsViewController.currentSelectedLastNameFilter.first!)
         let lastLetterIndex = returnIndexOfAlphabet(FilterStudentsViewController.currentSelectedLastNameFilter.last!)
         lastNamePickerView.selectRow(firstLetterIndex, inComponent: 0, animated: false)
@@ -215,6 +214,14 @@ class FilterStudentsViewController: UIViewController, UIPickerViewDataSource {
         for school in schools {
             schoolData.append((school as AnyObject).value(forKey: "sname") as! String)
         }
+        
+        if let selectedSchoolString = FilterStudentsViewController.currentSelectedSchool {
+            if let schoolIndex = schoolData.firstIndex(of: selectedSchoolString) {
+                schoolPickerView.selectRow(schoolIndex, inComponent: 0, animated: true)
+            }
+            
+        }
+        
         view.addSubview(backgroundImage)
         NSLayoutConstraint.activate([
             backgroundImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: 0),
