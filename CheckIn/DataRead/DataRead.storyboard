@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="orange juice 2.0.ttf">
+            <string>orangejuice</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Data Read View Controller-->
         <scene sceneID="eLj-oq-nTh">
@@ -30,7 +35,7 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vuC-1k-Cym">
                                         <rect key="frame" x="29.5" y="108" width="242" height="54.5"/>
-                                        <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="35"/>
+                                        <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -40,7 +45,7 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4w-qN-hhZ">
                                         <rect key="frame" x="29.5" y="217" width="242" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -51,19 +56,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2X-bB-Yah">
                                         <rect key="frame" x="90" y="379.5" width="121" height="54.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jx-zX-9m4">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok_smile" translatesAutoresizingMaskIntoConstraints="NO" id="maq-Xm-bMv">
                                                 <rect key="frame" x="0.0" y="0.0" width="121" height="54.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="7Jx-zX-9m4" firstAttribute="centerY" secondItem="H2X-bB-Yah" secondAttribute="centerY" id="KWV-Q3-pLf"/>
-                                            <constraint firstItem="7Jx-zX-9m4" firstAttribute="height" secondItem="H2X-bB-Yah" secondAttribute="height" id="PRO-8P-gYt"/>
-                                            <constraint firstItem="7Jx-zX-9m4" firstAttribute="centerX" secondItem="H2X-bB-Yah" secondAttribute="centerX" id="hiU-uR-H8J"/>
-                                            <constraint firstItem="7Jx-zX-9m4" firstAttribute="width" secondItem="H2X-bB-Yah" secondAttribute="width" id="kdu-6b-XPW"/>
+                                            <constraint firstItem="maq-Xm-bMv" firstAttribute="centerX" secondItem="H2X-bB-Yah" secondAttribute="centerX" id="9ei-Ow-4ba"/>
+                                            <constraint firstItem="maq-Xm-bMv" firstAttribute="centerY" secondItem="H2X-bB-Yah" secondAttribute="centerY" id="cLQ-3X-hF4"/>
+                                            <constraint firstItem="maq-Xm-bMv" firstAttribute="height" secondItem="H2X-bB-Yah" secondAttribute="height" id="nHF-67-cWw"/>
+                                            <constraint firstItem="maq-Xm-bMv" firstAttribute="width" secondItem="H2X-bB-Yah" secondAttribute="width" id="tqh-s1-kvR"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -122,5 +124,6 @@
     </scenes>
     <resources>
         <image name="background" width="3794" height="4669"/>
+        <image name="ok_smile" width="342" height="206"/>
     </resources>
 </document>

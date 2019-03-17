@@ -301,13 +301,13 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         }
     }
     
-    func rotate360() {
+    func rotate360(view: UIView) {
         UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveLinear] , animations: {
-            self.view.transform = CGAffineTransform(rotationAngle: .pi)
+            view.transform = CGAffineTransform(rotationAngle: .pi)
         }, completion: {
             (completed : Bool) in
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveLinear , animations: {
-                self.view.transform = CGAffineTransform(rotationAngle: .pi * 2)
+                view.transform = CGAffineTransform(rotationAngle: .pi * 2)
             }, completion: nil)
         } )
     }
