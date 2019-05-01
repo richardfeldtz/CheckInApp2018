@@ -63,7 +63,7 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
                 guestPicker.selectRow(studentCheckIn?.value(forKey: "guests") as! Int + 0, inComponent: 0, animated: true)
             }
             catch _ as NSError{
-                print("Error fetching guest count from check in table")
+                print("Error fetching guest count from check-in table")
             }
             
             //Change check-in button image
@@ -168,13 +168,13 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, UIPickerVie
                 let student=studentResult.first
                 student?.setValue(true, forKey: "checked")
                 try managedContext.save()
-                print("Checkin successful")
+                print("Check in successful")
                 StudentListViewController.searchController.searchBar.text=nil
                 self.dismiss(animated: true, completion: nil)
                 
             }
             catch _ as NSError{
-                print("Could not check-in student")
+                print("Could not check in student")
             }
         }
         else {

@@ -30,7 +30,7 @@ class DataShareViewController : UIViewController {
             codeData.removeLast()
         }
         
-        textLabel.text = "Scan this code from another device to transfer the " + String(checkinData.count) + " checkins."
+        textLabel.text = "Scan this code from another device to transfer the " + String(checkinData.count) + " check-ins."
         
         var codeImage : CIImage!
         

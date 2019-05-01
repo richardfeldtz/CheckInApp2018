@@ -201,16 +201,16 @@ class AdminToolsViewController: UIViewController {
     
     @objc func clearCheckins() {
         
-        let clearDataAlert = UIAlertController(title: "Warning", message: "You are about to clear all the check in data on this device. Are you sure you want to continue?", preferredStyle: .alert)
+        let clearDataAlert = UIAlertController(title: "Warning", message: "You are about to clear all the check-in data on this device. Are you sure you want to continue?", preferredStyle: .alert)
         clearDataAlert.addAction(UIAlertAction(title: "No", style: .cancel))
         clearDataAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
             action in
-            let reconfirmAlert = UIAlertController(title: "Really?", message: "Are you absolutely sure you want to clear all the check in data on this device?", preferredStyle: .alert)
+            let reconfirmAlert = UIAlertController(title: "Really?", message: "Are you absolutely sure you want to clear all the check-in data on this device?", preferredStyle: .alert)
             reconfirmAlert.addAction(UIAlertAction(title: "What? No!", style: .cancel))
             reconfirmAlert.addAction(UIAlertAction(title: "Yes!", style: .default, handler: {
                 action in
                 self.clear()
-                let confirmDeleteAlert = UIAlertController(title: "Success", message: "Checkin data deleted from device.", preferredStyle: .alert)
+                let confirmDeleteAlert = UIAlertController(title: "Success", message: "Check-in data deleted from device.", preferredStyle: .alert)
                 confirmDeleteAlert.addAction(UIAlertAction(title: "Phew! Finally!", style: .cancel))
                 self.present(confirmDeleteAlert, animated:true)
             }))

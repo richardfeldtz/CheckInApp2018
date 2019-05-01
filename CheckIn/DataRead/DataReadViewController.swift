@@ -86,10 +86,10 @@ class DataReadViewController : UIViewController {
         
         do {
             try managedContext.save()
-            textLabel.text = String(count) + " checkin records were successfully copied onto this device."
+            textLabel.text = String(count) + " check-in records were successfully copied onto this device."
         }
         catch _ as NSError {
-            print("Could not update checkins")
+            print("Could not update check-ins")
         }
         
     }
