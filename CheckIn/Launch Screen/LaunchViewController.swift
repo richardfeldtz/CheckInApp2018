@@ -50,8 +50,12 @@ class LaunchViewController :UIViewController
     {
         imagelayer.frame=animatedView.bounds
         animatedView.layer.addSublayer(imagelayer)
-        
-        imagelayer.contents = UIImage(named: "blackLogo")?.cgImage
+        if(ColorHelper.color){
+            imagelayer.contents = UIImage(named: "LJFF_logo")?.cgImage
+        }
+        else{
+            imagelayer.contents = UIImage(named: "blackLogo")?.cgImage
+        }
         imagelayer.contentsGravity = CALayerContentsGravity.resizeAspect
         imagelayer.backgroundColor=UIColor.black.cgColor
         imagelayer.shadowOpacity = 0.7

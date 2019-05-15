@@ -53,6 +53,7 @@ class DataShareViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         QRCode.image = UIImage(ciImage : transformedImage)
+        
     }
     
     override func viewWillLayoutSubviews() {

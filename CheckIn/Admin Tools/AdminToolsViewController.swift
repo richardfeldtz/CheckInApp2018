@@ -15,6 +15,7 @@ class AdminToolsViewController: UIViewController {
     @IBOutlet var uploadDataView: UIView!
     @IBOutlet var downloadDataView: UIView!
     @IBOutlet weak var clearCheckInsView: UIView!
+    @IBOutlet weak var shareDataView: UIView!
     @IBOutlet var filterView: UIView!
     @IBOutlet var createEventView: UIView!
     @IBOutlet var eventDetailsView: UIView!
@@ -36,10 +37,15 @@ class AdminToolsViewController: UIViewController {
         view.layer.shadowRadius = 10
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLayoutSubviews() {
         formatView(view: uploadDataView)
         formatView(view: downloadDataView)
         formatView(view: clearCheckInsView)
+        formatView(view: shareDataView)
         formatView(view: filterView)
         formatView(view: createEventView)
         formatView(view: eventDetailsView)
@@ -61,6 +67,7 @@ class AdminToolsViewController: UIViewController {
         uploadDataView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(uploadData)))
         downloadDataView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(downloadData)))
         clearCheckInsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clearCheckins)))
+        shareDataView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(shareData)))
         filterView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(filterStudentsTapped)))
         createEventView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openCreateEventVC)))
         eventDetailsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openEventDetailsVC)))
@@ -279,6 +286,12 @@ class AdminToolsViewController: UIViewController {
     
     func updateCheckInCount(checkInData: [Checkins]) {
         checkInCount.text = String(checkInData.count);
+    }
+    
+    @objc func shareData() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "DataShare", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DataShareViewController") as! DataShareViewController
+        show(vc, sender: self)
     }
     
     

@@ -28,6 +28,7 @@ class GifViewController : UIViewController {
         StudentListViewController.searchController.searchBar.text=nil
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            StudentListViewController.searchController.isActive=false
             self.dismiss(animated: false, completion: nil)
         }
     }

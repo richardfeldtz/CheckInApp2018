@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import UIKit
+import AudioToolbox
 
 
 
@@ -17,6 +18,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     var easterEggView = UIImageView(image: UIImage(named: "car"))
     var tableAnimated = false
     var helpIndicator = false
+    var roundButton = UIButton.init()
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -59,6 +61,8 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         easterEggView.center.y = self.view.bounds.height - 100
         easterEggView.center.x = -200
         
+        //Paint screen
+        paintScreen()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,7 +77,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.becomeFirstResponder()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -101,13 +105,26 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         
     }
     
+    /*Add stuff on screen shake
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            //Vibrate
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        }
+    }*/
+    
     func addButton()  {
         
-        let roundButton = UIButton(frame: .init(x: 0, y: 0, width: 50, height: 50))
+        roundButton = UIButton(frame: .init(x: 0, y: 0, width: 50, height: 50))
         roundButton.addTarget(self, action: #selector(openQRCodeScanner), for: .touchUpInside)
         roundButton.layer.cornerRadius = roundButton.bounds.size.width
         roundButton.backgroundColor = .gray
-        //roundButton.clipsToBounds = true
         roundButton.setImage(#imageLiteral(resourceName: "icons8-qr-code-filled-100"), for: .normal)
         roundButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
         roundButton.imageView?.layer.masksToBounds = true
@@ -154,20 +171,19 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         
         let student:StudentData? = isFiltering() ? filteredStudents[indexPath.row] : StudentListViewController.data[indexPath.row]
         
-        cell.backgroundColor = indexPath.row % 2 == 0 ? .white : UIColor.lightGray.withAlphaComponent(0.1)
-        
+        if(ColorHelper.color){
+            cell.backgroundColor = indexPath.row % 2 == 0 ? UIColor.white : ColorHelper.navBarColor.withAlphaComponent(0.1)
+        }
+        else{
+            cell.backgroundColor = indexPath.row % 2 == 0 ? .white : UIColor.lightGray.withAlphaComponent(0.1)
+        }
         
         cell.fname.text = student!.fname
         cell.lname.text = student!.lname
         cell.checkMark.image = student!.checked ? UIImage(named: "checkmark") : nil
         
-//        cell.fname.numberOfLines=0;
-//        cell.fname.minimumScaleFactor = 0.1
-//        cell.fname.adjustsFontSizeToFitWidth=true
-//        
-//        cell.lname.numberOfLines=0;
-//        cell.lname.minimumScaleFactor = 0.1
-//        cell.lname.adjustsFontSizeToFitWidth=true
+        cell.fname.textColor=ColorHelper.labelColor
+        cell.lname.textColor=ColorHelper.labelColor
         
         return cell
     }
@@ -312,6 +328,20 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         } )
     }
     
+    func paintScreen(){
+        if(ColorHelper.color){
+            self.navigationController?.navigationBar.barTintColor=ColorHelper.navBarColor
+            titleLabel.textColor = ColorHelper.navTextColor
+            self.navigationController?.navigationBar.tintColor = ColorHelper.navTextColor
+            self.navigationItem.leftBarButtonItem?.tintColor = ColorHelper.navTextColor
+            self.navigationItem.rightBarButtonItem?.tintColor = ColorHelper.navTextColor
+            roundButton.backgroundColor=ColorHelper.navBarColor
+            (StudentListViewController.searchController.searchBar.value(forKey: "cancelButton") as! UIButton).tintColor=ColorHelper.navTextColor
+            (StudentListViewController.searchController.searchBar.value(forKey: "searchField") as! UITextField).textColor = ColorHelper.navTextColor
+            StudentListViewController.searchController.searchBar.tintColor=ColorHelper.navTextColor
+        }
+    }
+    
 }
 
 //Extension updates delegate when search text changes
@@ -321,6 +351,7 @@ extension StudentListViewController: UISearchResultsUpdating {
         //ShowLebron easter egg segue
         if searchController.searchBar.text! == "23" {
             GifViewController.imageName = "lj"
+//            ColorHelper.switchToColor();
             self.performSegue(withIdentifier: "showLebron", sender: self)
         }
         else{
