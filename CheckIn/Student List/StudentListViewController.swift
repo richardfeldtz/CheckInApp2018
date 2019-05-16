@@ -54,7 +54,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         StudentListViewController.searchController.searchBar.text=nil
         titleLabel.text = StudentListViewController.eventName
         if(ColorHelper.color){
-            titleLabel.font = UIFont.init(name: "Chalkboard SE", size: 25)
+            titleLabel.font = UIFont.init(name: "Chalkduster", size: 25)
         }
     
         //LJFFmobile easter egg setup
