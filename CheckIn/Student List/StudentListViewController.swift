@@ -53,6 +53,9 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         navigationController?.setNavigationBarHidden(false, animated: true)
         StudentListViewController.searchController.searchBar.text=nil
         titleLabel.text = StudentListViewController.eventName
+        if(ColorHelper.color){
+            titleLabel.font = UIFont.init(name: "Chalkboard SE", size: 25)
+        }
     
         //LJFFmobile easter egg setup
         self.view.bringSubviewToFront(easterEggView)
@@ -170,20 +173,26 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         
         
         let student:StudentData? = isFiltering() ? filteredStudents[indexPath.row] : StudentListViewController.data[indexPath.row]
-        
+
+        //Uncomment below block to color student list
+        /*
         if(ColorHelper.color){
             cell.backgroundColor = indexPath.row % 2 == 0 ? UIColor.white : ColorHelper.navBarColor.withAlphaComponent(0.1)
         }
         else{
             cell.backgroundColor = indexPath.row % 2 == 0 ? .white : UIColor.lightGray.withAlphaComponent(0.1)
         }
+        cell.fname.textColor=ColorHelper.labelColor
+        cell.lname.textColor=ColorHelper.labelColor
+        */
+
+        //Comment below line to allow color switch
+        cell.backgroundColor = indexPath.row % 2 == 0 ? .white : UIColor.lightGray.withAlphaComponent(0.1)
         
         cell.fname.text = student!.fname
         cell.lname.text = student!.lname
         cell.checkMark.image = student!.checked ? UIImage(named: "checkmark") : nil
         
-        cell.fname.textColor=ColorHelper.labelColor
-        cell.lname.textColor=ColorHelper.labelColor
         
         return cell
     }
@@ -351,7 +360,7 @@ extension StudentListViewController: UISearchResultsUpdating {
         //ShowLebron easter egg segue
         if searchController.searchBar.text! == "23" {
             GifViewController.imageName = "lj"
-//            ColorHelper.switchToColor();
+            ColorHelper.switchToColor();
             self.performSegue(withIdentifier: "showLebron", sender: self)
         }
         else{
