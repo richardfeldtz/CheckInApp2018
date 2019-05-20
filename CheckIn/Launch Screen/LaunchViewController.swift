@@ -107,6 +107,12 @@ class LaunchViewController :UIViewController
                     StudentListViewController.data.append(studentDataItem)
                     StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
                 }
+                
+                //Read school list
+                coreData = CoreDataHelper.retrieveData("School")
+                for data in coreData {
+                    FilterStudentsViewController.schoolData.append((data as AnyObject).value(forKey: "sname") as! String)
+                }
         
                 self.performSegue(withIdentifier: "ShowList", sender: self)
             }

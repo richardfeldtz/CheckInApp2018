@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="DSl-ut-TeQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="DSl-ut-TeQ">
                                 <rect key="frame" x="0.0" y="35" width="768" height="1024"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xw1-Vx-9y0">
@@ -457,7 +457,7 @@
         <image name="downloadIcon" width="350" height="350"/>
         <image name="eventSelectionIcon" width="350" height="350"/>
         <image name="filterIcon" width="350" height="350"/>
-        <image name="share" width="376" height="376"/>
+        <image name="share" width="200" height="200"/>
         <image name="uploadIcon" width="350" height="350"/>
     </resources>
 </document>

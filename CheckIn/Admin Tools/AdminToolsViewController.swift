@@ -178,6 +178,7 @@ class AdminToolsViewController: UIViewController {
                     
                     for school in schoolArray {
                         CoreDataHelper.saveSchoolData("School", school)
+                        FilterStudentsViewController.schoolData.append(school)
                     }
                     
                     
@@ -260,12 +261,9 @@ class AdminToolsViewController: UIViewController {
     }
     
     @objc func filterStudentsTapped(){
-        let vc = FilterStudentsViewController()
-        //vc.modalPresentationStyle = .formSheet
-        vc.storyboard?.instantiateInitialViewController()
-        //vc.preferredContentSize = CGSize(width: view.frame.width/2, height: view.frame.height/2)
-        self.navigationController?.pushViewController(vc, animated: true)
-        //present(vc, animated: true, completion: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "FilterStudents", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "FilterStudentsViewController") as! FilterStudentsViewController
+        show(vc, sender: self)
     }
     
     @objc func openCreateEventVC() {

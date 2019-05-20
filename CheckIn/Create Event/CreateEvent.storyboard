@@ -78,7 +78,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7zP-vg-0k0">
-                                                        <rect key="frame" x="10.5" y="30.5" width="198" height="117.5"/>
+                                                        <rect key="frame" x="10.5" y="30.5" width="198" height="103"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="573103875.57767701">
                                                             <!--2019-03-01 03:31:15 +0000-->
                                                         </date>
@@ -87,7 +87,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="eaU-4l-pga" firstAttribute="top" secondItem="dGK-YP-U1H" secondAttribute="top" id="6oC-zb-RgA"/>
-                                                    <constraint firstItem="7zP-vg-0k0" firstAttribute="height" secondItem="dGK-YP-U1H" secondAttribute="height" multiplier="0.8" constant="1" id="A3o-e1-3Zj"/>
+                                                    <constraint firstItem="7zP-vg-0k0" firstAttribute="height" secondItem="dGK-YP-U1H" secondAttribute="height" multiplier="0.7" constant="1" id="A3o-e1-3Zj"/>
                                                     <constraint firstItem="7zP-vg-0k0" firstAttribute="width" secondItem="dGK-YP-U1H" secondAttribute="width" multiplier="0.9" constant="1" id="FZc-6e-C1g"/>
                                                     <constraint firstItem="eaU-4l-pga" firstAttribute="centerX" secondItem="dGK-YP-U1H" secondAttribute="centerX" id="IIZ-cT-VEm"/>
                                                     <constraint firstItem="7zP-vg-0k0" firstAttribute="centerX" secondItem="dGK-YP-U1H" secondAttribute="centerX" id="LjA-vW-X8g"/>
@@ -97,16 +97,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8u1-La-8kq">
-                                                <rect key="frame" x="11.5" y="168.5" width="219" height="73.5"/>
+                                                <rect key="frame" x="11.5" y="156.5" width="219" height="85.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCF-gh-uX1">
-                                                        <rect key="frame" x="-0.5" y="0.0" width="220" height="15.5"/>
+                                                        <rect key="frame" x="-0.5" y="0.0" width="220" height="26.5"/>
                                                         <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="6Pv-B5-Iu1">
-                                                        <rect key="frame" x="10.5" y="15.5" width="198" height="60"/>
+                                                        <rect key="frame" x="10.5" y="26.5" width="198" height="61"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="573104961.13315296">
                                                             <!--2019-03-01 03:49:21 +0000-->
                                                         </date>
@@ -120,14 +120,14 @@
                                                     <constraint firstItem="6Pv-B5-Iu1" firstAttribute="centerX" secondItem="8u1-La-8kq" secondAttribute="centerX" id="fjh-b7-wfE"/>
                                                     <constraint firstItem="XCF-gh-uX1" firstAttribute="top" secondItem="8u1-La-8kq" secondAttribute="top" id="jkI-OM-IjE"/>
                                                     <constraint firstItem="6Pv-B5-Iu1" firstAttribute="width" secondItem="8u1-La-8kq" secondAttribute="width" multiplier="0.9" constant="1" id="o3i-0p-ohJ"/>
-                                                    <constraint firstItem="6Pv-B5-Iu1" firstAttribute="height" secondItem="8u1-La-8kq" secondAttribute="height" multiplier="0.8" constant="1" id="qHc-JC-ThJ"/>
-                                                    <constraint firstItem="XCF-gh-uX1" firstAttribute="height" secondItem="8u1-La-8kq" secondAttribute="height" multiplier="0.2" constant="1" id="vjG-p5-YA9"/>
+                                                    <constraint firstItem="6Pv-B5-Iu1" firstAttribute="height" secondItem="8u1-La-8kq" secondAttribute="height" multiplier="0.7" constant="1" id="qHc-JC-ThJ"/>
+                                                    <constraint firstItem="XCF-gh-uX1" firstAttribute="height" secondItem="8u1-La-8kq" secondAttribute="height" multiplier="0.3" constant="1" id="vjG-p5-YA9"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="8u1-La-8kq" firstAttribute="height" secondItem="pAq-ex-SeC" secondAttribute="height" multiplier="0.3" id="1Xt-Qa-2bm">
+                                            <constraint firstItem="8u1-La-8kq" firstAttribute="height" secondItem="pAq-ex-SeC" secondAttribute="height" multiplier="0.35" id="1Xt-Qa-2bm">
                                                 <variation key="widthClass=compact" constant="1"/>
                                             </constraint>
                                             <constraint firstItem="dGK-YP-U1H" firstAttribute="top" secondItem="pAq-ex-SeC" secondAttribute="top" constant="12" id="25Z-rn-k76">
