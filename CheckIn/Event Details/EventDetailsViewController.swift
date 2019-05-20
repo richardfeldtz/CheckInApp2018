@@ -76,17 +76,6 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
         cell.lname.text = student!.lname
         cell.guests.text = student!.guests
         
-        cell.fname.numberOfLines=0;
-        cell.fname.minimumScaleFactor = 0.1
-        cell.fname.adjustsFontSizeToFitWidth=true
-        
-        cell.lname.numberOfLines=0;
-        cell.lname.minimumScaleFactor = 0.1
-        cell.lname.adjustsFontSizeToFitWidth=true
-        
-        cell.guests.numberOfLines=0;
-        cell.guests.minimumScaleFactor = 0.1
-        cell.guests.adjustsFontSizeToFitWidth=true
         return cell
     }
     
