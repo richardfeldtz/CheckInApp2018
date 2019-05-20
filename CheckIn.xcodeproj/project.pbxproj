@@ -43,6 +43,7 @@
 		AADCDA2B228C8CC900BB43F1 /* UpdateHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADCDA25228C8CC900BB43F1 /* UpdateHelpViewController.swift */; };
 		AADCDA2C228C8CC900BB43F1 /* SearchHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADCDA26228C8CC900BB43F1 /* SearchHelpViewController.swift */; };
 		AADCDAA3228C8D7A00BB43F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADCDAA2228C8D7A00BB43F1 /* Assets.xcassets */; };
+		AADCDAA52292F45100BB43F1 /* FilterStudents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AADCDAA42292F45100BB43F1 /* FilterStudents.storyboard */; };
 		AAE432F1220DE4F6005070AF /* DataRead.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432EC220DE4F5005070AF /* DataRead.storyboard */; };
 		AAE432F2220DE4F6005070AF /* DataReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432ED220DE4F5005070AF /* DataReadViewController.swift */; };
 		AAE432F3220DE4F6005070AF /* DataShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432EF220DE4F5005070AF /* DataShare.storyboard */; };
@@ -63,9 +64,7 @@
 		FB85E10721C15AA7004C7871 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E10621C15AA7004C7871 /* EventDetailsViewController.swift */; };
 		FB85E10A21C18C72004C7871 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85E10921C18C72004C7871 /* CreateEventViewController.swift */; };
 		FB85E10C21C18CE4004C7871 /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */; };
-		FBAE5EF021F8FA3D00B14040 /* SelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */; };
 		FBB0FBF121FA52A500A6507D /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */; };
-		FBB0FBF321FF81A500A6507D /* SelectEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0FBF221FF81A500A6507D /* SelectEventController.swift */; };
 		FBC4C6B821C1A6F800ADC472 /* AdminTools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC4C6B721C1A6F700ADC472 /* AdminTools.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +108,7 @@
 		AADCDA25228C8CC900BB43F1 /* UpdateHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateHelpViewController.swift; sourceTree = "<group>"; };
 		AADCDA26228C8CC900BB43F1 /* SearchHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHelpViewController.swift; sourceTree = "<group>"; };
 		AADCDAA2228C8D7A00BB43F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AADCDAA42292F45100BB43F1 /* FilterStudents.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FilterStudents.storyboard; sourceTree = "<group>"; };
 		AAE432EC220DE4F5005070AF /* DataRead.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataRead.storyboard; sourceTree = "<group>"; };
 		AAE432ED220DE4F5005070AF /* DataReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReadViewController.swift; sourceTree = "<group>"; };
 		AAE432EF220DE4F5005070AF /* DataShare.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataShare.storyboard; sourceTree = "<group>"; };
@@ -130,9 +130,7 @@
 		FB85E10621C15AA7004C7871 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		FB85E10921C18C72004C7871 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
-		FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionScreen.swift; sourceTree = "<group>"; };
 		FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
-		FBB0FBF221FF81A500A6507D /* SelectEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEventController.swift; sourceTree = "<group>"; };
 		FBC4C6B721C1A6F700ADC472 /* AdminTools.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminTools.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -340,6 +338,7 @@
 		FB6266FC21E3D491009CB9CA /* Filter Students */ = {
 			isa = PBXGroup;
 			children = (
+				AADCDAA42292F45100BB43F1 /* FilterStudents.storyboard */,
 				FB6266FD21E3D4A2009CB9CA /* FilterStudentsViewController.swift */,
 			);
 			path = "Filter Students";
@@ -371,9 +370,7 @@
 				AA230F80222EFB1100F86B09 /* SelectEventViewController.swift */,
 				FB85E10921C18C72004C7871 /* CreateEventViewController.swift */,
 				FB85E10B21C18CE4004C7871 /* CreateEvent.storyboard */,
-				FBAE5EEF21F8FA3D00B14040 /* SelectionScreen.swift */,
 				FBB0FBF021FA52A500A6507D /* EventCollectionViewCell.swift */,
-				FBB0FBF221FF81A500A6507D /* SelectEventController.swift */,
 			);
 			path = "Create Event";
 			sourceTree = "<group>";
@@ -449,6 +446,7 @@
 				AADCDA28228C8CC900BB43F1 /* Help.storyboard in Resources */,
 				AADCDA1F228C8CB100BB43F1 /* Search.gif in Resources */,
 				AADCDA1C228C8CB100BB43F1 /* Scroll_To_Top.gif in Resources */,
+				AADCDAA52292F45100BB43F1 /* FilterStudents.storyboard in Resources */,
 				FB85E10C21C18CE4004C7871 /* CreateEvent.storyboard in Resources */,
 				FB85E10521C15A92004C7871 /* EventDetails.storyboard in Resources */,
 				149B8E9721B789160009ACC3 /* QRCodeScan.storyboard in Resources */,
@@ -537,7 +535,6 @@
 			files = (
 				149B8E9521B786DF0009ACC3 /* QRScannerViewController.swift in Sources */,
 				149B8E8B21B756E10009ACC3 /* StudentListViewController.swift in Sources */,
-				FBAE5EF021F8FA3D00B14040 /* SelectionScreen.swift in Sources */,
 				FB85E10A21C18C72004C7871 /* CreateEventViewController.swift in Sources */,
 				AADCDA2C228C8CC900BB43F1 /* SearchHelpViewController.swift in Sources */,
 				AA230F7F222EF4DB00F86B09 /* CheckedInTableViewCell.swift in Sources */,
@@ -559,7 +556,6 @@
 				FB6266FE21E3D4A2009CB9CA /* FilterStudentsViewController.swift in Sources */,
 				AADCDA2A228C8CC900BB43F1 /* HelpEndViewController.swift in Sources */,
 				FB1C5DD321DFC6A300992842 /* UIColor.swift in Sources */,
-				FBB0FBF321FF81A500A6507D /* SelectEventController.swift in Sources */,
 				14E9945721B58D9E005105A4 /* AppDelegate.swift in Sources */,
 				FB1C5DCD21DD3A1600992842 /* LoadStudentsViewController.swift in Sources */,
 				AAE432F4220DE4F6005070AF /* DataShareViewController.swift in Sources */,
