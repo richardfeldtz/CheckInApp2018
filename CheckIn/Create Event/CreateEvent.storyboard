@@ -99,14 +99,14 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8u1-La-8kq">
                                                 <rect key="frame" x="11.5" y="156.5" width="219" height="85.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCF-gh-uX1">
-                                                        <rect key="frame" x="-0.5" y="0.0" width="220" height="26.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCF-gh-uX1">
+                                                        <rect key="frame" x="-0.5" y="0.0" width="220" height="18"/>
                                                         <fontDescription key="fontDescription" name="orangejuice" family="orange juice" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="6Pv-B5-Iu1">
-                                                        <rect key="frame" x="10.5" y="26.5" width="198" height="61"/>
+                                                        <rect key="frame" x="10.5" y="18" width="198" height="60.5"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="573104961.13315296">
                                                             <!--2019-03-01 03:49:21 +0000-->
                                                         </date>
@@ -121,7 +121,7 @@
                                                     <constraint firstItem="XCF-gh-uX1" firstAttribute="top" secondItem="8u1-La-8kq" secondAttribute="top" id="jkI-OM-IjE"/>
                                                     <constraint firstItem="6Pv-B5-Iu1" firstAttribute="width" secondItem="8u1-La-8kq" secondAttribute="width" multiplier="0.9" constant="1" id="o3i-0p-ohJ"/>
                                                     <constraint firstItem="6Pv-B5-Iu1" firstAttribute="height" secondItem="8u1-La-8kq" secondAttribute="height" multiplier="0.7" constant="1" id="qHc-JC-ThJ"/>
-                                                    <constraint firstItem="XCF-gh-uX1" firstAttribute="height" secondItem="8u1-La-8kq" secondAttribute="height" multiplier="0.3" constant="1" id="vjG-p5-YA9"/>
+                                                    <constraint firstItem="XCF-gh-uX1" firstAttribute="height" secondItem="8u1-La-8kq" secondAttribute="height" multiplier="0.2" constant="1" id="vjG-p5-YA9"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
