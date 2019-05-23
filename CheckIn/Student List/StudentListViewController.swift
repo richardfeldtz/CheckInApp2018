@@ -53,9 +53,6 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         navigationController?.setNavigationBarHidden(false, animated: true)
         StudentListViewController.searchController.searchBar.text=nil
         titleLabel.text = StudentListViewController.eventName
-        if(ColorHelper.color){
-            titleLabel.font = UIFont.init(name: "Chalkduster", size: 25)
-        }
     
         //LJFFmobile easter egg setup
         self.view.bringSubviewToFront(easterEggView)
@@ -108,7 +105,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         
     }
     
-    /*Add stuff on screen shake
+    //Add stuff on screen shake
     override var canBecomeFirstResponder: Bool {
         get {
             return true
@@ -119,8 +116,10 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         if motion == .motionShake {
             //Vibrate
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            ColorHelper.switchToGrayScale()
+            paintScreen()
         }
-    }*/
+    }
     
     func addButton()  {
         
@@ -348,6 +347,21 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             (StudentListViewController.searchController.searchBar.value(forKey: "cancelButton") as! UIButton).tintColor=ColorHelper.navTextColor
             (StudentListViewController.searchController.searchBar.value(forKey: "searchField") as! UITextField).textColor = ColorHelper.navTextColor
             StudentListViewController.searchController.searchBar.tintColor=ColorHelper.navTextColor
+            titleLabel.font = UIFont.init(name: "Chalkduster", size: 25)
+        }
+        else{
+            self.navigationController?.navigationBar.barTintColor=ColorHelper.navBarColor
+            titleLabel.textColor = ColorHelper.navTextColor
+            self.navigationController?.navigationBar.tintColor = ColorHelper.navTextColor
+            self.navigationItem.leftBarButtonItem?.tintColor = ColorHelper.navTextColor
+            self.navigationItem.rightBarButtonItem?.tintColor = ColorHelper.navTextColor
+            roundButton.backgroundColor=UIColor.gray
+            if StudentListViewController.searchController.searchBar.value(forKey: "cancelButton") != nil {
+            (StudentListViewController.searchController.searchBar.value(forKey: "cancelButton") as! UIButton).tintColor=ColorHelper.navTextColor
+            }
+            (StudentListViewController.searchController.searchBar.value(forKey: "searchField") as! UITextField).textColor = ColorHelper.navTextColor
+            StudentListViewController.searchController.searchBar.tintColor=ColorHelper.navTextColor
+            titleLabel.font = UIFont.init(name: "orangejuice", size: 35)
         }
     }
     

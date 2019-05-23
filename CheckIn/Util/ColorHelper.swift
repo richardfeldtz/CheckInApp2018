@@ -13,7 +13,7 @@ public class ColorHelper {
     
     public static var color = false;
     
-    public static var navBarColor:UIColor=UIColor.darkGray
+    public static var navBarColor:UIColor=UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1.0)
     public static var labelColor:UIColor=UIColor.black
     public static var textColor:UIColor=UIColor.black
     public static var lineColor:UIColor=UIColor.darkGray
@@ -29,7 +29,7 @@ public class ColorHelper {
     }
     
     public class func switchToGrayScale(){
-        navBarColor=UIColor.darkGray
+        navBarColor=UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1.0)
         labelColor=UIColor.black
         textColor=UIColor.black
         lineColor=UIColor.darkGray
