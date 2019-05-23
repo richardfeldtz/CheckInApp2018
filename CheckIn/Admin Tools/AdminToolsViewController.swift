@@ -152,56 +152,66 @@ class AdminToolsViewController: UIViewController {
             return
         }
         
-        SVProgressHUD.setDefaultStyle(.dark)
-        SVProgressHUD.setDefaultMaskType(.black)
-        SVProgressHUD.show(withStatus: "Downloading Data...")
-        
-        
-        DispatchQueue.global(qos: .background).async {
+        let downloadDataAlert = UIAlertController(title: "Warning", message: "Downloading data will also clear all the check-in data on this device. Are you sure you want to continue?", preferredStyle: .alert)
+        downloadDataAlert.addAction(UIAlertAction(title: "No", style: .cancel))
+        downloadDataAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+            action in
             
-            let url = URL(string:RestHelper.urls["Get_Students"]!)!
-            let schoolURL = URL(string:RestHelper.urls["Get_Schools"]!)!
-            let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
-            let schoolList = RestHelper.makePost(schoolURL, ["identifier": self.identifier!, "key": self.key!])
             
-            CoreDataHelper.deleteAllData(from: "Checkins")
-            CoreDataHelper.deleteAllData(from: "Student")
-            CoreDataHelper.deleteAllData(from: "School")
-            StudentListViewController.data.removeAll()
-            StudentListViewController.idmap.removeAll()
+            SVProgressHUD.setDefaultStyle(.dark)
+            SVProgressHUD.setDefaultMaskType(.black)
+            SVProgressHUD.show(withStatus: "Downloading Data...")
             
-            let data = jsonString.data(using: .utf8)!
-            let schoolData = schoolList.data(using: .utf8)!
-            do {
-                if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>],
-                    let schoolArray = try JSONSerialization.jsonObject(with: schoolData, options : .allowFragments) as? [String]{
-                    
-                    for school in schoolArray {
-                        CoreDataHelper.saveSchoolData("School", school)
-                        FilterStudentsViewController.schoolData.append(school)
+            
+            DispatchQueue.global(qos: .background).async {
+                
+                let url = URL(string:RestHelper.urls["Get_Students"]!)!
+                let schoolURL = URL(string:RestHelper.urls["Get_Schools"]!)!
+                let jsonString = RestHelper.makePost(url, ["identifier": self.identifier!, "key": self.key!])
+                let schoolList = RestHelper.makePost(schoolURL, ["identifier": self.identifier!, "key": self.key!])
+                
+                CoreDataHelper.deleteAllData(from: "Checkins")
+                CoreDataHelper.deleteAllData(from: "Student")
+                CoreDataHelper.deleteAllData(from: "School")
+                StudentListViewController.data.removeAll()
+                StudentListViewController.idmap.removeAll()
+                
+                let data = jsonString.data(using: .utf8)!
+                let schoolData = schoolList.data(using: .utf8)!
+                do {
+                    if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>],
+                        let schoolArray = try JSONSerialization.jsonObject(with: schoolData, options : .allowFragments) as? [String]{
+                        
+                        for school in schoolArray {
+                            CoreDataHelper.saveSchoolData("School", school)
+                            FilterStudentsViewController.schoolData.append(school)
+                        }
+                        
+                        
+                        for item in jsonArray {
+                            let studentDataItem = StudentData(id: item["APS_Student_ID"], fname: item["FirstName"], lname: item["LastName"], checked: false , sname: item["School_Name"])
+                            StudentListViewController.data.append(studentDataItem)
+                            StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
+                            CoreDataHelper.saveStudentData(item, "Student")
+                        }
+                        
+                        DispatchQueue.main.async {
+                            SVProgressHUD.showSuccess(withStatus: "Downloaded Student Data!")
+                            SVProgressHUD.dismiss(withDelay: .init(floatLiteral: 2))
+                        }
+                        
+                    } else {
+                        print("bad json")
                     }
-                    
-                    
-                    for item in jsonArray {
-                        let studentDataItem = StudentData(id: item["APS_Student_ID"], fname: item["FirstName"], lname: item["LastName"], checked: false , sname: item["School_Name"])
-                        StudentListViewController.data.append(studentDataItem)
-                        StudentListViewController.idmap.updateValue(StudentListViewController.data.count-1, forKey: studentDataItem.id!)
-                        CoreDataHelper.saveStudentData(item, "Student")
-                    }
-                    
-                    DispatchQueue.main.async {
-                        SVProgressHUD.showSuccess(withStatus: "Downloaded Student Data!")
-                        SVProgressHUD.dismiss(withDelay: .init(floatLiteral: 2))
-                    }
-                    
-                } else {
-                    print("bad json")
+                } catch let error as NSError {
+                    print(error)
                 }
-            } catch let error as NSError {
-                print(error)
+                
             }
             
-        }
+            return
+        }))
+        self.present(downloadDataAlert,animated: true)
         
         
         
@@ -267,6 +277,11 @@ class AdminToolsViewController: UIViewController {
     }
     
     @objc func openCreateEventVC() {
+        
+        //Return if not connected to the internet
+        if !checkInternetConnection(){
+            return
+        }
         
         SelectEventViewController.apiCall = true
         
