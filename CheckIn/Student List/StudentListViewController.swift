@@ -126,7 +126,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         roundButton = UIButton(frame: .init(x: 0, y: 0, width: 50, height: 50))
         roundButton.addTarget(self, action: #selector(openQRCodeScanner), for: .touchUpInside)
         roundButton.layer.cornerRadius = roundButton.bounds.size.width
-        roundButton.backgroundColor = .gray
+//        roundButton.backgroundColor = .lightGray
         roundButton.setImage(#imageLiteral(resourceName: "icons8-qr-code-filled-100"), for: .normal)
         roundButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
         roundButton.imageView?.layer.masksToBounds = true
@@ -135,6 +135,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
         roundButton.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         roundButton.layer.shadowOpacity = 1.0
         roundButton.layer.shadowRadius = 0.0
+        roundButton.layer.borderWidth = 2.0
         roundButton.layer.masksToBounds = false
         
         view.addSubview(roundButton)
@@ -355,7 +356,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
             self.navigationController?.navigationBar.tintColor = ColorHelper.navTextColor
             self.navigationItem.leftBarButtonItem?.tintColor = ColorHelper.navTextColor
             self.navigationItem.rightBarButtonItem?.tintColor = ColorHelper.navTextColor
-            roundButton.backgroundColor=UIColor.gray
+            roundButton.backgroundColor=ColorHelper.navBarColor
             if StudentListViewController.searchController.searchBar.value(forKey: "cancelButton") != nil {
             (StudentListViewController.searchController.searchBar.value(forKey: "cancelButton") as! UIButton).tintColor=ColorHelper.navTextColor
             }

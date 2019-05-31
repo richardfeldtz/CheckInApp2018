@@ -102,7 +102,7 @@ class QRScannerViewController : UIViewController {
         let roundButton = UIButton(frame: .init(x: 0, y: 0, width: 100, height: 100))
         roundButton.addTarget(self, action: #selector(self.returnToStudentList), for: .touchUpInside)
         roundButton.layer.cornerRadius = 0.5 * roundButton.bounds.size.width
-        roundButton.backgroundColor = .gray
+        roundButton.backgroundColor=ColorHelper.navBarColor
         //roundButton.clipsToBounds = true
         roundButton.setImage(#imageLiteral(resourceName: "icons8-menu-filled-100"), for: .normal)
         roundButton.imageEdgeInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
@@ -112,6 +112,7 @@ class QRScannerViewController : UIViewController {
         roundButton.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         roundButton.layer.shadowOpacity = 1.0
         roundButton.layer.shadowRadius = 0.0
+        roundButton.layer.borderWidth = 2.0
         roundButton.layer.masksToBounds = false
         
         view.addSubview(roundButton)
