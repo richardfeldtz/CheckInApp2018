@@ -280,7 +280,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
                     self.navigationItem.rightBarButtonItem?.isEnabled = false
                     helpIndicator = true
                     self.tableView.alpha = 0.1
-                    shareImage.isHidden = false
+//                    shareImage.isHidden = false
                     qrImage.isHidden = false
                     scrollImage.isHidden = false
                     fnameImage.isHidden = false
@@ -295,7 +295,7 @@ class StudentListViewController : UIViewController, UITableViewDataSource, UITab
                     self.navigationItem.rightBarButtonItem?.isEnabled = true
                     helpIndicator = false
                     self.tableView.alpha = 1
-                    shareImage.isHidden = true
+//                    shareImage.isHidden = true
                     qrImage.isHidden = true
                     scrollImage.isHidden = true
                     fnameImage.isHidden = true
