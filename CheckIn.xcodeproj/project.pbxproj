@@ -48,7 +48,6 @@
 		AAE432F2220DE4F6005070AF /* DataReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432ED220DE4F5005070AF /* DataReadViewController.swift */; };
 		AAE432F3220DE4F6005070AF /* DataShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE432EF220DE4F5005070AF /* DataShare.storyboard */; };
 		AAE432F4220DE4F6005070AF /* DataShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE432F0220DE4F5005070AF /* DataShareViewController.swift */; };
-		FB1C5DCD21DD3A1600992842 /* LoadStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DCC21DD3A1600992842 /* LoadStudentsViewController.swift */; };
 		FB1C5DCF21DE984900992842 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DCE21DE984900992842 /* UIView.swift */; };
 		FB1C5DD121DE9A4C00992842 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DD021DE9A4C00992842 /* UILabel.swift */; };
 		FB1C5DD321DFC6A300992842 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C5DD221DFC6A300992842 /* UIColor.swift */; };
@@ -325,14 +324,6 @@
 				165D38F778E064A6C904B674 /* Pods_CheckIn.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FB1C5DC921DD39E400992842 /* Load Students */ = {
-			isa = PBXGroup;
-			children = (
-				FB1C5DCC21DD3A1600992842 /* LoadStudentsViewController.swift */,
-			);
-			path = "Load Students";
 			sourceTree = "<group>";
 		};
 		FB6266FC21E3D491009CB9CA /* Filter Students */ = {

@@ -111,7 +111,12 @@ class CreateEventViewController: UIViewController {
             let uploadAlert = UIAlertController(title: "Success", message: "Event successfully created", preferredStyle: .alert)
             uploadAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
                 (alertAction: UIAlertAction) in
-                self.navigationController?.popViewController(animated: true)
+                for controller in self.navigationController!.viewControllers as Array {
+                    if controller.isKind(of: AdminToolsViewController.self) {
+                        self.navigationController!.popToViewController(controller, animated: true)
+                        break
+                    }
+                }
             }))
             self.present(uploadAlert, animated: true)
             
