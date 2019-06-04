@@ -161,6 +161,8 @@ class QRScannerViewController : UIViewController {
             
             profile.name = (selectedStudent?.name)!
             profile.id = (selectedStudent?.id)!
+            profile.sname = (selectedStudent?.sname)!
+            profile.alreadyChecked = (selectedStudent?.checked)!
             
         }
         else if let dataRead = segue.destination as? DataReadViewController
